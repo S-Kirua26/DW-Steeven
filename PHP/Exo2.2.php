@@ -1,8 +1,7 @@
 <?php
     $nombre = readline("Veuillez entrez un nombre");
-    $resultat = $nombre;
-
-        if ($resultat <> 0) 
+    
+        if (($nombre <= 0) or ($nombre >= 0))
         {
             $resultat = $nombre*$nombre;
             echo "le carré de votre nombre est:".$resultat;
