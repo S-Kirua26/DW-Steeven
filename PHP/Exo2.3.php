@@ -4,5 +4,5 @@
     $tva = readline("Veuillez entrez le taux de TVA");
 
     $resultat = $prix*$nombre*$tva;
-    echo $resultat;
+    echo "Le cout total TTC vaut:".$resultat;
 ?>

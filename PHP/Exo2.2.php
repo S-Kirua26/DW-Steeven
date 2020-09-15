@@ -5,6 +5,6 @@
         if ($resultat <> 0) 
         {
             $resultat = $nombre*$nombre;
-            echo $resultat;
+            echo "le carré de votre nombre est:".$resultat;
         }
 ?>
