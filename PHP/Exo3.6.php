@@ -3,11 +3,7 @@
 
     switch ($age)
     {
-        case $age < 6 :
-            echo "Votre enfant doit avoir au moins 6 ans pour entrer dans une catégorie";
-        break;
-
-        case $age < 8:
+        case $age > 5 and $age < 8:
             echo "Votre enfant est dans la catégorie poussin";
         break;
 
@@ -15,13 +11,16 @@
             echo "Votre enfant est dans la catégorie pupille";
         break;
         
-        case $age <12:
+        case $age < 12:
             echo "Votre enfant est dans la catégorie minime";
         break;
         
-        case $age >= 12:
+        case $age <= 14:
             echo "Votre enfant est dans la catégorie cadet";
         break;
+
+        default ;
+            echo "Votre enfant n'est dans aucune catégorie";
 
     }
 
