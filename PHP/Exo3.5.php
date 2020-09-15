@@ -2,12 +2,11 @@
     $nombre1 = readline("Veuillez entrez le premier nombre");
     $nombre2 = readline("Veuillez entrez le deuxieme nombre");
 
-    $produit = $nombre1*$nombre2;
-        if ($produit > 0)
+        if ($nombre1 > 0 and $nombre2 > 0)
         {
             echo "Le produit est positif";
         }
-        else if ($produit < 0)
+        else if (($nombre1 < 0 and $nombre2 > 0) or ($nombre1 > 0 and $nombre2 <0))
         {
             echo "Le produit est négatif";
         }

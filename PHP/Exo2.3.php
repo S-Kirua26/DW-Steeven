@@ -3,6 +3,7 @@
     $nombre = readline("Veuillez entrez le nombre d'articles");
     $tva = readline("Veuillez entrez le taux de TVA");
 
-    $resultat = $prix*$nombre*$tva;
-    echo "Le cout total TTC vaut:".$resultat;
+    $resultat = $prix*$nombre;
+    $resultat2 = $resultat + $tva;
+    echo "Le prix TTC de vos courses est de: ".$resultat2. "euros";
 ?>
