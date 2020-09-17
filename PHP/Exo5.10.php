@@ -1,40 +1,50 @@
 <?php
 
-// On verifie que l'utilisateur entre une donnée valide pour le nombre de chevaux partant
-$partant= readline("Veuillez inscrire le nombre de chevaux partant pour la course\n");
+// on créé une fonction nous permettant de demander facilement (efficacement) et de vérifier facilement les données d'un utilisateur
 
-while (ctype_alpha($partant) xor $partant < 0 )
+function demanderEntier ($phrase) // vérifie si l'utilisateur entre un nombre valide avec une phrase spécifique
 {
-    echo "Veuillez reesayer, saisie incorrect\n";
-    $partant = readline("Veuillez inscrire le nombre de chevaux partant pour la course\n");   
+    $partant= readline($phrase);
+
+    while (ctype_alpha($partant) xor $partant < 0 )
+    {
+        echo "Veuillez reesayer, saisie incorrect\n";
+        $partant = readline($phrase);   
+    }
+    return $partant; // renvoie le nombre de l'utilisateur
 }
+
+function factorielle($nombre) //calcule la factorielle d'un nombre
+{
+    $facto = 1;
+
+    for ($i = 2; $i <= $nombre; $i++)
+    {
+        $facto = $facto * $i; //$facto *=$i;
+    }
+    return $facto;
+}
+
+$partant = demanderEntier("Veuillez entrer le nombre de chevaux partant: \n");
 
 // On affiche le nombre de chevaux partant à l'utilisateur
 echo "Le nombre de chevaux partant est de: ". $partant. "\n";
 
-// On verifie que l'utilisateur entre une donnée valide pour le nombre de chevaux joués
-$joues= readline("Veuillez inscrire le nombre de chevaux que vous voulez joués\n");
-
-while (ctype_alpha($joues) or $joues < 0 or $joues > $partant)
-{
-    echo "Veuillez reesayer, saisie incorrect\n";
-    $joues = readline("Veuillez inscrire le nombre de chevaux que vous voulez joués\n");  
-}
+$joues = demanderEntier("Veuillez entrer le nombre de chevaux jouées: \n");
 
 // On affiche le nombre de chevaux joués à l'utilisateur
 echo "Le nombre de chevaux joués est de: ". $joues. "\n";
 
-// On initialise 2 variables pour calculer le taux de chance dans l'ordre ou dans le désordre
+// On initialise 6 variables pour calculer le taux de chance dans l'ordre ou dans le désordre 
 $ordre = 0;
 $desordre = 0;
-$soustraction = ($partant - $joues);
 $factoN = 0;
 $factoP = 0;
 $factoNP = 0;
 
-$factoN = gmp_fact($partant);
-$factoP = gmp_fact($joues);
-$factoNP = gmp_fact($soustraction);
+$factoN = factorielle($partant);
+$factoP = factorielle($joues);
+$factoNP = factorielle($partant - $joues);
 
 $ordre = $factoN / $factoNP;
 $desordre = $factoN / ($factoP * ($factoNP));
