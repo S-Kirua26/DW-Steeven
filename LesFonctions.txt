@@ -1,0 +1,58 @@
+// on créé une fonction nous permettant de demander facilement (efficacement) et de vérifier facilement les données d'un utilisateur
+
+function demanderEntier ($phrase) // vérifie si l'utilisateur entre un nombre valide avec une phrase spécifique
+{
+    $partant= readline($phrase);
+
+    while (ctype_alpha($partant) xor $partant < 0 )
+    {
+        echo "Veuillez reesayer, saisie incorrect\n";
+        $partant = readline($phrase);   
+    }
+    return $partant; // renvoie le nombre de l'utilisateur
+}
+
+$partant = demanderEntier("Veuillez entrer le nombre de chevaux partant: \n"); // La phrase remplacera automatiquement va valeur de la variable $phrase et s'affichera ensuite
+
+
+
+// permet de calculer la factrielle d'un nombre
+
+function factorielle($nombre)
+{
+    $facto = 1;
+
+    for ($i = 2; $i <= $nombre; $i++)
+    {
+        $facto = $facto * $i; //$facto *=$i;
+    }
+    return $facto;
+}
+
+$factoN = factorielle($partant); // remplace $nombre par la valeur de $partant indiquer par l'utilisateur
+
+
+
+// permet d'afficher un tableau selon les valeurs de l'utilisateur
+
+    function affichageTableau($tableau) 
+    {
+        for ($i = 1;$i<=9;$i++) 
+	{
+            echo "[".$tableau[$i]."]"."\t";
+        } 
+        return $tableau;
+    }
+
+
+
+// autre façon d'afficher un tableau
+
+    function AfficherTableau($tab)
+    {
+        foreach ($tab as $elt)
+        {
+            echo $elt;
+        }
+    }
+
