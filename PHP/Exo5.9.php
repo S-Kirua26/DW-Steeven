@@ -42,5 +42,5 @@ while ($prix != 0)
         $paye = readline("Veuillez inscrire le montant que vous voulez payer\n");;
     }
 
-
+// test en commentaire
 ?>
