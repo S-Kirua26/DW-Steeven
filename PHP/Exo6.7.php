@@ -22,6 +22,7 @@ function AfficherTableau($tab)
 }
 
 $somme = 0;
+
 // on demande à l'utilisateur d'inscrire ses notes
 for ($i = 0; $i <= 8; $i++)
 {
@@ -31,6 +32,9 @@ for ($i = 0; $i <= 8; $i++)
 
 // On affiche le tableau avec les notes
 echo AfficherTableau($notes);
-echo $somme;
+
+$moyenne = $somme / 9;
+echo "\n La valeur moyenne des notes est de ".$moyenne;
+
 
 ?>
