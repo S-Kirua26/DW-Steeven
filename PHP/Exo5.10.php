@@ -25,6 +25,7 @@ function factorielle($nombre) //calcule la factorielle d'un nombre
     return $facto;
 }
 
+// On demande à l'utilisateur le nombre de chevaux partant
 $partant = demanderEntier("Veuillez entrer le nombre de chevaux partant: \n");
 
 // On affiche le nombre de chevaux partant à l'utilisateur
