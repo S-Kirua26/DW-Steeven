@@ -1,4 +1,5 @@
 <?php
+
 // on initialise 4 variables nous permettant plus tard de savoir la somme total des courses et de savoir le nombre de billets et pieces rendu
 
 $somme = 0;
@@ -63,5 +64,4 @@ $paye = $paye - $somme;
 // On affiche la somme à restituer à l'utilisateur avec les billets de 10€, 5€ et pieces de 1€
     echo "On va vous restituer ". $billet10. " billet de 10€, ". $billet5. " billet de 5€ et ". $piece1. " piece de 1€";
 
-    // tests
 ?>
