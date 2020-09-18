@@ -4,12 +4,12 @@ function demanderEntier($phrase) // vérifie si l'utilisateur entre un nombre va
 {
     $notes= readline($phrase);
 
-    while (ctype_alpha($partant) xor $partant < 0 )
+    while (ctype_alpha($notes) xor $notes < 0 )
     {
         echo "Veuillez reesayer, saisie incorrect\n";
-        $partant = readline($phrase);   
+        $notes = readline($phrase);   
     }
-    return $partant; // renvoie le nombre de l'utilisateur
+    return $notes; // renvoie le nombre de l'utilisateur
 }
 
 // on créé une fonction nous permettant d'afficher un tableau
