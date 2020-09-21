@@ -6,7 +6,7 @@
     {
         do
         {
-            $valeur = readline("Combien de valeurs voulez-vous entrez? \n");
+            $valeur = readline("Combien de valeurs voulez-vous entrez?");
         } while (!is_numeric($valeur) xor $valeur < 0); // on verifie que la chaine de caractere ne contient que des chiffres
     } while (!is_int($valeur * 1)); // on vérifie que le nombre est entier (pas réel)
 }
@@ -22,7 +22,8 @@ for ($i = 1; $i <= $valeur; $i++)
         echo ($nombre < 0 xor !ctype_digit($nombre[$i])) ? "Saisie invalide.\n" : "";
         $nombre[$i] = readline("Inscrivez la valeur n° " . $i . ":");
     }
-        $tab2[$i] = $nombre[$i] + 1;
+
+     $tab[$i] = $nombre[$i] + 1;
 }
 
 // On affiche le tableau à l'utilisateur
@@ -33,7 +34,7 @@ for ($i = 1; $i <= $valeur; $i++)
     }
     echo "\n";
 
-    foreach ( $tab2 as $elt)
+    foreach ( $tab as $elt)
     {
         echo "[".$elt."]"."\t";
     }
