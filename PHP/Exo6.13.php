@@ -1,4 +1,10 @@
 <?php
+
+// On créé deux variable qui nous seront utiles plus tard
+
+$grand = 0;
+$position = 0;
+
     // On vérifie que les données inscrite par l'utilisateur soit valide (Pour le nombre de valeurs)
 {
     do
@@ -15,26 +21,20 @@
 for ($i = 1; $i <= $valeur; $i++) 
 {
     $tab[$i] = readline("Saisissez la valeur n°" . $i . ":");
-    while ($tab < 0 xor !ctype_digit($tab[$i])) {
+    while ($tab < 0 xor !ctype_digit($tab[$i])) 
+    {
         echo ($tab < 0 xor !ctype_digit($tab[$i])) ? "Saisie invalide.\n" : "";
         $tab[$i] = readline("Saisissez la valeur n°" . $i . ":");
-     }
-
-}
-
-$grand = 0;
-$position = 0;
-
-foreach ($tab as $elt)
-{
-    if ($elt > $grand)
-    {
-        $grand = $elt;
     }
+
+     if ($tab[$i] > $grand)
+     {
+         $grand = $tab[$i];
+         $position = $i;
+     }
 }
 
-    if ()
-
+    // On affiche le tableau à l'utilisateur
 
     foreach ( $tab as $elt)  
     {
@@ -42,6 +42,8 @@ foreach ($tab as $elt)
     }
     echo "\n";
 
-    echo "Le nombre le plus grand est: ".$grand. " et elle est en position".$position;
+    // On affiche le résultat à l'utilisateur
+
+    echo "Le nombre le plus grand est ".$grand. " et elle est en position ".$position;
 ?>
 
