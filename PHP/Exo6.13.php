@@ -10,7 +10,7 @@
     } while (!is_int($valeur * 1)); // on vérifie que le nombre est entier (pas réel)
 }
 
-// on crée un tableau en fonction du nombre de valeurs inscrite par l'utilisateur 
+// on crée un tableau en fonction du nombre de valeurs inscrite par l'utilisateur  F7F052 53D8FB 393E41
 
 for ($i = 1; $i <= $valeur; $i++) 
 {
@@ -23,6 +23,8 @@ for ($i = 1; $i <= $valeur; $i++)
 }
 
 $grand = 0;
+$position = 0;
+
 foreach ($tab as $elt)
 {
     if ($elt > $grand)
@@ -31,11 +33,15 @@ foreach ($tab as $elt)
     }
 }
 
+    if ()
+
+
     foreach ( $tab as $elt)  
     {
         echo "[".$elt."]"."\t";
     }
     echo "\n";
 
-    echo "Le nombre le plus grand est: ".$grand;
+    echo "Le nombre le plus grand est: ".$grand. " et elle est en position".$position;
 ?>
+
