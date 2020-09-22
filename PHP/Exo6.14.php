@@ -29,8 +29,11 @@ for ($i = 1; $i <= $notes; $i++)
     $somme += $tab[$i];
 }
 
+// on initialise 2 variables, une pour la moyenne et une nous permettra de savoir combien de personne auront au dessus de la moyenne
 $moyenne = $somme / $notes;
 $superieur = 0;
+
+// on calcule
 
 for ($i = 1; $i <= $notes; $i++)
 {
@@ -40,7 +43,7 @@ for ($i = 1; $i <= $notes; $i++)
     }
 }
 
-
+// on affiche le résultat à l'utilisateur
 echo "Le total des notes vaut " .$somme. " , puis la moyenne de ces sommes vaut " .$moyenne. " , et il y a eu " .$superieur. " personnes au dessus de la moyenne ou égal à la moyenne";
 
 ?>

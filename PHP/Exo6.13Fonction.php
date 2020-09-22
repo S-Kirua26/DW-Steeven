@@ -1,11 +1,9 @@
 <?php
 
+// on va chercher le fichier php contenant toutes nos fonctions
 require "LesFonctions.php";
 
-// On créé deux variable qui nous seront utiles plus tard
-
-$grand = 0;
-
+// on demande à l'utilisateur combien de valeurs il y aura dans le tableau, puis on le créé et on l'affiche
 $demande = demanderEntier2("Combien voulez-vous saisir de nombres? \n");
 $tableau = creerTableauTaille($demande);
 afficherTableauForeach($tableau);
