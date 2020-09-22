@@ -18,6 +18,6 @@ for ($i = 0; $i < $demande; $i++)
     }
 }
 
-echo "Le total des notes vaut " .$somme. " , puis la moyenne de ces sommes vaut " .$moyenne. " , et il y a eu " .$superieur. " personnes au dessus de la moyenne ou égal à la moyenne";
+echo "Le total des notes vaut " .$somme. " , puis la moyenne de la somme vaut " .$moyenne. " , et il y a eu " .$superieur. " personnes au dessus de la moyenne ou égal à la moyenne";
 
 ?>
