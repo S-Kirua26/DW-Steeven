@@ -1,15 +1,13 @@
 <?php
 
-use function PHPSTORM_META\elementType;
-
 require "LesFonctions.php";
 
 $demande = demanderEntier2("Combien de valeurs il y aura dans le tableau?");
 $tableau = creerTableauTaille($demande);
 afficherTableauForeach($tableau);
 
-$consecutif = true;
 $i = 0;
+$consecutif = true;
 
 do 
 {
@@ -19,15 +17,15 @@ do
     }
     else
     {
-        $consecutif == false;
+        $consecutif = false;
     }
-}   while ($consecutif == true && $tableau[$i] - 1);
+}   while ($consecutif = true && $tableau[$i] - 1);
 
 if ($consecutif = true)
 {
     echo "Les valeurs sont consécutif";
 }
-else
+else 
 {
     echo "Les valeurs ne sont pas consécutif";
 }
