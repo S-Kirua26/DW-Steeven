@@ -59,7 +59,7 @@ function demanderEntier2($phrase) // Demande un entier à l'utilisateur
         do
         {
             $nombre = readline($phrase);
-        } while (!is_numeric($nombre) xor $nombre < 0); // on verifie que la chaine de caracterer ne contient que des chiffres
+        } while (!is_numeric($nombre) xor $nombre < 0); // on verifie que la chaine de caractere ne contient que des chiffres et qu'il est superieur à 0
     } while (!is_int($nombre * 1)); // on vérifie que le nombre est entier (pas réel)
     return $nombre; //renvoi le nombre saisi
 }
