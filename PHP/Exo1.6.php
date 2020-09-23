@@ -9,4 +9,5 @@
     echo "\n";
     echo $b;
 
+    // inverse les valeurs des variables $a et $b
 ?>

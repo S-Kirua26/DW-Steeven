@@ -1,5 +1,10 @@
 <?php
+
+// on demande l'age de l'enfant à l'utilisateur
+
     $age= readline("Veuillez entrez l'age de votre enfant ");
+
+// selon son âge, on affiche la catégorie auquel il appartient
 
     switch ($age)
     {

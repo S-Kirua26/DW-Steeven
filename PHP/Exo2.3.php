@@ -6,4 +6,6 @@
     $resultat = $prix*$nombre;
     $resultat2 = $resultat + $tva;
     echo "Le prix TTC de vos courses est de: ".$resultat2. "euros";
+
+// on multiplie le nombre d'articles par le prix et ensuite on ajoute la TVA au prix
 ?>

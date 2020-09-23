@@ -6,4 +6,6 @@
             $resultat = $nombre*$nombre;
             echo "le carré de votre nombre est:".$resultat;
         }
+
+// Donne le carre du nombre
 ?>
