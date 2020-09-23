@@ -54,27 +54,27 @@ switch($tableau2)
     break;
 
     case $tableau2[3] == $codeA;
-    echo "Avion : ".$tableau1[3]. " Vitesse: ".$tableau3[3]. " Rayon d'action: ".$tableau4[3] . "\n";
+        echo "Avion : ".$tableau1[3]. " Vitesse: ".$tableau3[3]. " Rayon d'action: ".$tableau4[3] . "\n";
     break;
 
     case $tableau2[4] == $codeA;
-    echo "Avion : ".$tableau1[4]. " Vitesse: ".$tableau3[4]. " Rayon d'action: ".$tableau4[4] . "\n";
+        echo "Avion : ".$tableau1[4]. " Vitesse: ".$tableau3[4]. " Rayon d'action: ".$tableau4[4] . "\n";
     break;
 
     case $tableau2[5] == $codeA;
-    echo "Avion : ".$tableau1[5]. " Vitesse: ".$tableau3[5]. " Rayon d'action: ".$tableau4[5] . "\n";
+        echo "Avion : ".$tableau1[5]. " Vitesse: ".$tableau3[5]. " Rayon d'action: ".$tableau4[5] . "\n";
     break;
 
     case $tableau2[6] == $codeA;
-    echo "Avion : ".$tableau1[6]. " Vitesse: ".$tableau3[6]. " Rayon d'action: ".$tableau4[6] . "\n";
+        echo "Avion : ".$tableau1[6]. " Vitesse: ".$tableau3[6]. " Rayon d'action: ".$tableau4[6] . "\n";
     break;
 
     case $tableau2[2] == $codeA;
-    echo "Avion : ".$tableau1[6]. " Vitesse: ".$tableau3[6]. " Rayon d'action: ".$tableau4[6] . "\n";
+        echo "Avion : ".$tableau1[6]. " Vitesse: ".$tableau3[6]. " Rayon d'action: ".$tableau4[6] . "\n";
     break;
 
     case $tableau2[7] == $codeA;
-    echo "Avion : ".$tableau1[7]. " Vitesse: ".$tableau3[7]. " Rayon d'action: ".$tableau4[7] . "\n";
+        echo "Avion : ".$tableau1[7]. " Vitesse: ".$tableau3[7]. " Rayon d'action: ".$tableau4[7] . "\n";
     break;
 }
 
