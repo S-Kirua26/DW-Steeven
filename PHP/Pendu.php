@@ -27,20 +27,44 @@
 
     function testerLettre($lettre,$tableau,$depart)
     {
-      for ($i = $depart; $i < $tableau; $i++)
-       {
-           if ($lettre == $tableau[$i])
-           {
-              $tab[$i] = $i;
-           }
-       }
+        $tableauRecherche = array_slice($tableau,$depart);
+        $resultat = (array_search($lettre,$tableauRecherche));
+
+        if ($resultat === false)
+        {
+            return [];
+        }
+        else
+        {
+            $reponse[] = $resultat + $depart;
+            $positions = array_merge($reponse,testerLettre($lettre,$tableau,$resultat+$depart+1));
+            return $positions;
+        }
     }
 
+    // echo "Cette méthode doit donner 1 et 4 et ça donne \n";
     // $tableau = array('B','O','N','J','O','U','R');
-    // $positions = testerLettre('o',$tableau,0);
+    // afficherTableau(testerLettre('O',$tableau,0));
+    
 
-    //     foreach ($positions as $pos)
-    //     {
-    //         echo "position: ".$pos. "\n";
-    //     }
+    function ajouterUneLettre($lettre,$tableau,$position)
+    {
+        $tableau[$position] = $lettre;
+        return $tableau;
+    }
+
+    // echo "Cette méthode doit donner BONKOUR et ça donne: \n";
+    // $tableau = array('B','O','N','J','O','U','R');
+    // afficherTableau(ajouterUneLettre('K',$tableau,3))
+
+    function ajouterLesLettres($lettre,$tableau,$listePosition)
+    {
+        ajouterUneLettre($lettre,$tableau,$listePosition);
+        return $tableau;
+    }
+    
+    $motATrouver = "BONJOUR";
+    $tableau = array('B','_','N','J','_','U','_',);
+    echo "Cette méthode doit donner BONJOU_ et ça donne: \n";
+    afficherTableau(ajouterLesLettres('O',$tableau,testerLettre('O',$tableau,0)));
 ?>
