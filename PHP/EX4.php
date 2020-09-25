@@ -45,7 +45,6 @@ $tableau2 = ["Tableau2","CodeAvion","BO","AB","LJ","DC","CO","AN"];
 $tableau3 = ["Tableau3","Vitesse Croisiere","800","950","700","900","1400","560"];
 $tableau4 = ["Tableau4","Rayon Action","10000","12000","4500","8000","16000","2500"];
 
-array_sum($tableau4) / count($tableau4);
 
 $codeA = codeAvion("Veuillez saisir le code de l'avion");
 

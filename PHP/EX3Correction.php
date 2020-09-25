@@ -16,13 +16,13 @@ echo "Racine de l'équation du second degré: Y= a*x² + b*x + c \n";
 
 do
 {
-    $valeura = demanderEntier("Quelle est la valeur de a: \n");
-    $valeurb = demanderEntier("Quelle est la valeur de b: \n");
-    $valeurc = demanderEntier("Quelle est la valeur de c: \n");
+    $valeurA = demanderEntier("Quelle est la valeur de A: \n");
+    $valeurB = demanderEntier("Quelle est la valeur de B: \n");
+    $valeurC = demanderEntier("Quelle est la valeur de C: \n");
 
-    $delta = ($valeurb*$valeurb)-(4*$valeura*$valeurc);
+    $delta = ($valeurB*$valeurB)-(4*$valeurA*$valeurC);
 
-    if ($valeura != 0)
+    if ($valeurA != 0)
     {
         if ($delta < 0)
         {
@@ -33,42 +33,46 @@ do
         {
             echo "L'équation posséde une racine double \n";
             echo "d = ".$delta . "\n";
-            $double = -($valeurb/(2*$valeura));
+            $double = -($valeurB/(2*$valeurA));
             echo "x1 = x2 = ".$double . "\n";
         }
-        elseif ($delta < 0)
+        elseif ($delta > 0)
         {
             echo "L'equation posséde deux racine distinctes \n";
             echo "d = ".$delta . "\n";
-            $racine1 = (-$valeurb + sqrt($delta)) / (2*$valeura);
-            $racine2 = (-$valeurb - sqrt($delta)) / (2*$valeura);
+            $racine1 = (-$valeurB + sqrt($delta)) / (2*$valeurA);
+            $racine2 = (-$valeurB - sqrt($delta)) / (2*$valeurA);
             echo "x1 = ".$racine1 . "\n";
             echo "x2 = ".$racine2 . "\n";
         }
     }
-    // else
-    // {
-    //     if ($valeurb != 0)
-    //     {
-    //         echo "C'est du premier degré";
+    else
+    {
+        if ($valeurB != 0)
+        {
+            echo "C'est du premier degré \n";
+            echo "L'équation s'annule pour x= -(c/b) : -0.25 \n";
 
-    //     }
-    //     else
-    //     {
-    //         echo "L'équation n'en est plus une";
-    //     }
-    // }
+        }
+        else
+        {
+            echo "L'équation n'en est plus une !!! \n";
+        }
+    }
 
-    $continuer = strtoupper(readline("Voulez-vous continuer? (O pour oui ou N pour non) \n"));
-    $test = ($continuer != "O" && $continuer != "N");
+    do
+    {
+        $continuer = strtoupper(readline("Voulez-vous continuer? (O pour oui ou N pour non) \n"));
+        $test = ($continuer != "O" && $continuer != "N");
             if ($test)
             {
-                echo "saisie invalide, recommencer";
-            } while ($test);
+                echo "saisie invalide, ";
+            } 
+    } while ($test);
 
 
 } while ($continuer == "O");
 
-echo "Au revoir";
+echo "Au revoir et à bientôt";
 
 ?>
