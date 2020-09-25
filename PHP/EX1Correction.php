@@ -17,9 +17,9 @@ do
     $demande = demanderEntier("Quel est le rayon du cercle? \n");
 
     $circonference = 2*pi()*$demande;
-    echo "Sa circonférence est de: ".$circonference. "\n";
+        echo "Sa circonférence est de: ".$circonference. "\n";
     $surface = pi()*($demande*$demande);
-    echo "Sa surface est de: ".$surface. "\n";
+        echo "Sa surface est de: ".$surface. "\n";
 
     do
     {
