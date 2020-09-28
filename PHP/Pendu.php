@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Undocumented function
+ *
+ * @param [type] $tableau  // tableau ou le mot sera stocké
+ * @return void
+ */
     function afficherTableau($tableau)
     {
         foreach ($tableau as $elt)  // le tableau est parcouru de la 1ere à la dernière case, les cases sont mises tour à tous dans $elt
@@ -11,6 +17,12 @@
     // $tableau = array('B','O','N','J','O','U','R');
     // echo "Cette méthode doit donner BONJOUR et cela donne: \n";afficherTableau($tableau);
 
+/**
+ * Undocumented function
+ *
+ * @param [type] $test // on teste le mot choisi
+ * @return array
+ */
     function coderMot($test)
     {
         $tableau = str_split($test);
@@ -25,6 +37,14 @@
     // $test = "bonjour";
     // echo "Cette méthode doit donner _ _ _ _ _ _ _  et ça donne: \n";afficherTableau(coderMot($test));
 
+// /**
+//  * Undocumented function
+//  *
+//  * @param [type] $lettre // on indique la lettre à tester
+//  * @param [type] $tableau // dans quel mot on teste la lettre
+//  * @param [type] $depart // on spécifie la lettre de départ dans le mot
+//  * @return int
+//  */
     function testerLettre($lettre,$tableau,$depart)
     {
         $tableauRecherche = array_slice($tableau,$depart);
@@ -45,8 +65,15 @@
     // echo "Cette méthode doit donner 1 et 4 et ça donne \n";
     // $tableau = array('B','O','N','J','O','U','R');
     // afficherTableau(testerLettre('O',$tableau,0));
-    
 
+/**
+ * Undocumented function
+ *
+ * @param [type] $lettre // on indique la lettre à tester
+ * @param [type] $tableau // dans quel mot on teste la lettre
+ * @param [type] $position // position à laquel on teste la lettre
+ * @return array
+ */
     function ajouterUneLettre($lettre,$tableau,$position)
     {
         $tableau[$position] = $lettre;
@@ -57,6 +84,14 @@
     // $tableau = array('B','O','N','J','O','U','R');
     // afficherTableau(ajouterUneLettre('K',$tableau,3))
 
+/**
+ * Undocumented function
+ *
+ * @param [type] $lettre // on indique la lettre à tester
+ * @param [type] $tableau // dans quel mot on teste la lettre
+ * @param [type] $listePosition // liste des positions à laquel on teste la lettre
+ * @return array
+ */
     function ajouterLesLettres($lettre,$tableau,$listePosition)
     {
         foreach ($listePosition as $elt)
@@ -64,6 +99,12 @@
             $tableau = ajouterUneLettre($lettre,$tableau,$elt);
         }
         return $tableau;
+
+        // for ($i = 0; $i<count($listePosition); $i++)
+        // {
+        //     ajouterUneLettre($lettre,$tableau,$listePosition);
+        // }
+
     }
     
     // $motATrouver = "BONJOUR";
@@ -71,6 +112,12 @@
     // echo "Cette méthode doit donner BONJOU_ et ça donne: \n";
     // afficherTableau(ajouterLesLettres('O',$tableau,testerLettre('O',str_split($motATrouver),0)));
 
+/**
+ * Undocumented function
+ *
+ * @param [type] $listeLettres // liste des lettres qui ne sont pas dans le mot
+ * @return void
+ */
     function afficherMauvaisesLettres($listeLettres)
     {
         foreach ($listeLettres as $elt)
@@ -82,6 +129,13 @@
     // $liste = array('A','B','C');
     // echo "Les lettres non présentes sont A,B,C et ça donne: \n";
     // afficherMauvaisesLettres($liste);
+
+/**
+ * Undocumented function
+ *
+ * @param [type] $nbErreur // indique le nombre d'erreur du joueur
+ * @return void
+ */
 
 function dessinerPendu($nbErreur)
     {
@@ -182,7 +236,7 @@ function dessinerPendu($nbErreur)
 			}
     }
     
-function ChoisirMot()
+function CreerDico()
 {
         //Cree le dictionnaire de mots
     $tabMots[] = "AEROPORT";
@@ -925,6 +979,13 @@ function ChoisirMot()
     return $tabMots;
 }
 
+function choisirMot()
+{
+     $dico = creerDico();
+     $nombre = rand(0,count($dico)-1);
+     return $dico[$nombre];
+}
+
 function demanderLettre()
 {
     // on demande à l'utilisateur d'entrer une lettre et on vérifie son inscription
@@ -946,7 +1007,39 @@ function demanderLettre()
 
 function testerGagner($nberreur,$tableau)
 {
-    
+    if ($tableau == !in_array("_",$tableau))
+    {
+        $resultat = 1;
+    }
+    elseif ($nberreur >= 9)
+    {
+        $resultat = -1;
+    }
+    else
+    {
+        $resultat = 0;
+    }
+  return $resultat;
 }
+
+// $tableau = array( 'B', '_', 'N', 'J', 'O', 'U', 'R' );
+// Echo "Cette méthode doit donner -1 et ca donne " . testerGagner(9, $tableau)."\n";
+// Echo "Cette méthode doit donner 0 et ca donne " . testerGagner(3, $tableau)."\n";
+// $tableau[1] =  'O' ;
+// Echo "Cette méthode doit donner 1 et ca donne " . testerGagner(2, $tableau)."\n";
+
+function lancerPartie()
+{
+     $motAlea = choisirMot(); // choisi un mot aléatoire dans le dictionnaire
+     $motDecoupe = coderMot($motAlea); // découpe le mot en affectant une case à chaque lettre contenu dans le mot
+     $lettre = demanderLettre(); // on demande une lettre à l'utilsateur
+     $testL = testerLettre($lettre,$motDecoupe,0); // on teste si la lettre se trouve dans le mot
+     $ajoute = ajouterLesLettres($lettre,$motDecoupe,0); // si elle se trouve dans le mot, on l'ajoute 
+
+
+
+}
+
+lancerPartie();
 
 ?>
