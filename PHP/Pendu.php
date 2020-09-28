@@ -1007,19 +1007,19 @@ function demanderLettre()
 
 function testerGagner($nberreur,$tableau)
 {
-    if ($tableau == !in_array("_",$tableau))
+    if ( $nberreur == 9)
     {
-        $resultat = 1;
+        return -1;
     }
-    elseif ($nberreur >= 9)
+    elseif (in_array("_",$tableau) === false)
     {
-        $resultat = -1;
+        return 1;
     }
     else
     {
-        $resultat = 0;
+        return 0;
     }
-  return $resultat;
+
 }
 
 // $tableau = array( 'B', '_', 'N', 'J', 'O', 'U', 'R' );
@@ -1031,13 +1031,34 @@ function testerGagner($nberreur,$tableau)
 function lancerPartie()
 {
      $motAlea = choisirMot(); // choisi un mot aléatoire dans le dictionnaire
+     $tableauMotAlea = str_split($motAlea);  // transforme le mot de type string en type array
      $motDecoupe = coderMot($motAlea); // découpe le mot en affectant une case à chaque lettre contenu dans le mot
-     $lettre = demanderLettre(); // on demande une lettre à l'utilsateur
-     $testL = testerLettre($lettre,$motDecoupe,0); // on teste si la lettre se trouve dans le mot
-     $ajoute = ajouterLesLettres($lettre,$motDecoupe,0); // si elle se trouve dans le mot, on l'ajoute 
+     $nombreErreur = 0; // initialise une variable permettant de compter les erreurs
+     $gagne = false; // initialise une variable qui nous permettra de savoir si on a gagner ou non
+     $mauvaisesLettres = ""; // variable qui permetra de savoir les lettres qui ne sont pas dans le mot
+     
+     do
+     {
+        afficherTableau($motDecoupe); // affiche le mot à trouver 
+            if (!empty($mauvaisesLettres))
+            {
+                afficherMauvaisesLettres($mauvaisesLettres); // affiche la/les mauvaise(s) lettre(s) à l'utilisateur
+            }
+                $lettre = demanderLettre(); // on demande une lettre à l'utilisateur
+                $testL = testerLettre($lettre,$tableauMotAlea,0); // on teste si la lettre se trouve dans le mot
 
-
-
+                    if (empty ($testL)) // si la lettre n'est pas dans le mot
+                    {
+                        $nombreErreur ++; // on met le nombre d'erreur à + 1
+                        $mauvaisesLettres[] = $lettre; // on met la lettre dans le tableau des erreurs
+                    }
+                    else
+                    {
+                        ajouterLesLettres($lettre,$motDecoupe,$testL); // on ajoute la lettre dans le tableau
+                    } 
+        dessinerPendu($nombreErreur); // on dessine le pendu en fonction des erreurs
+        $gagne = testerGagner($nombreErreur,$motDecoupe); // on regarde si le mot est découvert ou non 
+     } while ($gagne == 0);
 }
 
 lancerPartie();

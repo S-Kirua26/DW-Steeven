@@ -60,18 +60,7 @@ do
         }
     }
 
-    do
-    {
-        $continuer = strtoupper(readline("Voulez-vous continuer? (O pour oui ou N pour non) \n"));
-        $test = ($continuer != "O" && $continuer != "N");
-            if ($test)
-            {
-                echo "saisie invalide, ";
-            } 
-    } while ($test);
-
-
-} while ($continuer == "O");
+} while ($continuer = strtoupper(readline("Voulez-vous continuer? (O pour oui ou N pour non) ")) == "O");
 
 echo "Au revoir et à bientôt";
 
