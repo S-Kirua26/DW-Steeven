@@ -996,7 +996,7 @@ function choisirMot()
 
 function demanderLettre()
 {
-
+    
 }
 
 // $demande = demanderLettre();
@@ -1028,7 +1028,6 @@ function lancerPartie()
     $nombreErreur = 0; // initialise une variable permettant de compter les erreurs
     $gagne = false; // initialise une variable qui nous permettra de savoir si on a gagner ou non
     $mauvaisesLettres = []; // variable qui permetra de savoir les lettres qui ne sont pas dans le mot
-    $motProposés = []; // variable qui permettra de savoir les lettres déjà proposés
 
     do {
         afficherTableau($motDecoupe); 
