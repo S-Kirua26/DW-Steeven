@@ -14,15 +14,15 @@ function demanderEntier($phrase) // Demande un entier à l'utilisateur
 
 do
 {
-    $demande = demanderEntier("Entrer le nombre pour lequel vous voulez la table de multiplication: \n");
+    $demande = demanderEntier("Entrer le nombre pour lequel vous voulez la table de multiplication: \n"); // on demande à l'utilisateur le nombre pour la table de multiplication
 
-    for ($i = 1; $i < 11; $i++)
+    for ($i = 1; $i < 11; $i++) // on multiplie le nombre avec la valeur de $i à chaque boucle
     {
         $resultat = $demande * $i;
         echo $demande. " x ". $i. " = ". $resultat. "\n";
     }
     
-    do
+    do // on demande à l'utilisateur si il veur continuer ou non et on verifie ses données
     {
         $continuer = strtoupper(readline("Voulez-vous continuer? (O pour oui ou N pour non) \n"));
         $test = ($continuer != "O" && $continuer != "N");
@@ -32,5 +32,5 @@ do
             } 
     } while ($test);
 
-} while($continuer == "O");
+} while($continuer == "O"); // on lui dit au revoir si il veut pas continuer
 ?>

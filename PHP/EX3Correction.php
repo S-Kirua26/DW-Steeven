@@ -16,12 +16,15 @@ echo "Racine de l'équation du second degré: Y= a*x² + b*x + c \n";
 
 do
 {
+    // on initialise 3 variables pour les valeurs de A,B et C
     $valeurA = demanderEntier("Quelle est la valeur de A: \n");
     $valeurB = demanderEntier("Quelle est la valeur de B: \n");
     $valeurC = demanderEntier("Quelle est la valeur de C: \n");
 
+    // on calcule le delta
     $delta = ($valeurB*$valeurB)-(4*$valeurA*$valeurC);
 
+    // on verifie si delta est superieur, inferieur ou bien nulle et on fait les calcul en fonction de ce résultat
     if ($valeurA != 0)
     {
         if ($delta < 0)
@@ -48,19 +51,19 @@ do
     }
     else
     {
-        if ($valeurB != 0)
+        if ($valeurB != 0) // si a == 0 et que b != 0, on indique que l'équation est du premier degré
         {
             echo "C'est du premier degré \n";
             echo "L'équation s'annule pour x= -(c/b) : -0.25 \n";
 
         }
-        else
+        else // sinon ce n'est plus une équation
         {
             echo "L'équation n'en est plus une !!! \n";
         }
     }
 
-} while ($continuer = strtoupper(readline("Voulez-vous continuer? (O pour oui ou N pour non) ")) == "O");
+} while ($continuer = strtoupper(readline("Voulez-vous continuer? (O pour oui ou N pour non) ")) == "O"); // on recommence tant que l'utilisateur répond "O"
 
 echo "Au revoir et à bientôt";
 

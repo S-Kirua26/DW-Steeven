@@ -1050,6 +1050,7 @@ function lancerPartie()
                     if (empty ($testL)) // si la lettre n'est pas dans le mot
                     {
                         $nombreErreur ++; // on met le nombre d'erreur à + 1
+                        var_dump($mauvaisesLettres);
                         $mauvaisesLettres[] = $lettre; // on met la lettre dans le tableau des erreurs
                     }
                     else
