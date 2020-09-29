@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Undocumented function
  *
@@ -22,14 +23,23 @@ function afficherTableau($tableau)
  * @param [type] $test // on teste le mot choisi
  * @return array
  */
-function coderMot($test)
+function coderMot($test, $niveau)
 {
     $tableau = str_split($test);
-
-    for ($i = 0; $i < count($tableau); $i++) {
-        $tableau[$i] = "_";
+    if ($niveau == 1)
+    {
+        for ($i = 1; $i < count($tableau) - 1; $i++) {
+            $tableau[$i] = "_";
+        }
     }
-    return $tableau;
+    else
+    {
+        for ($i = 0; $i < count($tableau); $i++)
+        {
+            $tab[$i] = "_";
+        }
+    }
+  return $tableau;
 }
 
 // $test = "bonjour";
@@ -87,18 +97,34 @@ function ajouterUneLettre($lettre, $tableau, $position)
  * @param [type] $listePosition // liste des positions à laquel on teste la lettre
  * @return array
  */
-function ajouterLesLettres($lettre, $tableau, $listePosition)
+function ajouterLesLettres($lettre, $tableau, $listePosition, $niveau)
 {
-    foreach ($listePosition as $elt) {
-        $tableau = ajouterUneLettre($lettre, $tableau, $elt);
+    switch ($niveau)
+    {
+        case 1:
+            for ($i = 0; $i < count($tableau); $i++) //boucle permettant de parcourir le tableau des positions
+                {
+                $tableau = ajouterUneLettre($lettre, $tableau, $listePosition[$i]);
+            }
+            return $tableau;
+        case 2:
+        case 4:
+            //on place les lettres une à une de gauche à droite
+            for ($i = 0; $i < count($tableau); $i++) //on parcours les positions
+                {
+                $posEtudiee = $listePosition[$i];
+                //on verifie que la position n'est pas occupée
+                if ($tableau[$posEtudiee] != $lettre)
+                {
+                    $tableau = ajouterUneLettre($lettre, $tableau, $posEtudiee);
+                    return $tableau;
+                }
+            }
+            return -1; // plus de place pour la lettre
+        case 3:
+            // on place les lettres aléatoirement
     }
-    return $tableau;
-
-    // for ($i = 0; $i<count($listePosition); $i++)
-    // {
-    //     ajouterUneLettre($lettre,$tableau,$listePosition);
-    // }
-
+    return -1;
 }
 
 // $motATrouver = "BONJOUR";
@@ -114,8 +140,35 @@ function ajouterLesLettres($lettre, $tableau, $listePosition)
  */
 function afficherMauvaisesLettres($listeLettres)
 {
-    foreach ($listeLettres as $elt) {
-        echo " \n Liste des mauvaises Lettres : \n".$elt . "\n";
+    echo "\n Les lettres non présentes sont ";
+    $taille = count($listeLettres);
+    for ($i = 0; $i < $taille; $i++)
+    {
+        if ($i == $taille - 1) // evite la , après la dernière lettre
+        {
+            echo $listeLettres[$i] . "\n";
+        }
+        else
+        {
+            echo $listeLettres[$i] . ",";
+        }
+    }
+}
+
+function afficherBonnesLettres($listeLettres)
+{
+    echo "\n Les lettres présentes sont ";
+    $taille = count($listeLettres);
+    for ($i = 0; $i < $taille; $i++)
+    {
+        if ($i == $taille - 1) // evite la , après la dernière lettre
+        {
+            echo $listeLettres[$i] . "\n";
+        }
+        else
+        {
+            echo $listeLettres[$i] . ",";
+        }
     }
 }
 
@@ -228,7 +281,7 @@ function dessinerPendu($nbErreur)
     }
 }
 
-function CreerDico()
+function creerDico()
 {
     //Cree le dictionnaire de mots
     $tabMots[] = "AEROPORT";
@@ -971,14 +1024,24 @@ function CreerDico()
     return $tabMots;
 }
 
-function choisirMot()
+function choisirMot($niveau)
 {
     $dico = creerDico();
-    $nombre = rand(0, count($dico) - 1);
-    return $dico[$nombre];
+    if ($niveau == 4) // mot <= à 4 lettres
+    {
+        do
+        {
+            $nb = rand(0, count($dico) - 1);
+        } while (strlen($dico[$nb]) > 4);
+        return $dico[$nb];
+    }
+    else
+    { //mot au hasard dans tout le dico
+        return $dico[array_rand($dico)];
+    }
 }
 
-/*function demanderLettre()
+function demanderLettre()
 {
     // on demande à l'utilisateur d'entrer une lettre et on vérifie son inscription
     do
@@ -992,11 +1055,7 @@ function choisirMot()
     // Tant que $verifier est different d'une chaine de caractere ou que la chaine est superieur à 1, la boucle recommence
     while ((!ctype_alpha($verifier)) or (strlen($verifier) > 1));
   return $verifier;
-} */
 
-function demanderLettre()
-{
-    
 }
 
 // $demande = demanderLettre();
@@ -1020,32 +1079,78 @@ function testerGagner($nberreur, $tableau)
 // $tableau[1] =  'O' ;
 // Echo "Cette méthode doit donner 1 et ca donne " . testerGagner(2, $tableau)."\n";
 
-function lancerPartie()
+function choisirNiveau()
+{
+    do
+    {
+        echo ("\t\tNiveau de difficulé :\n");
+        echo ("\tFacile (1)\t Normal (2)\t Difficile (3)\t Court(4)");
+        $niveau = readline(" : ");
+
+        if ($niveau > 4 || $niveau < 1)
+        {
+            echo ("\nSaisie invalide ! Recommencer (rappel : 1 ou 2 ou 3 ou 4) \n");
+        }
+    } while ($niveau > 4 || $niveau < 1);
+    switch ($niveau)
+    {
+        case "1":
+            echo "\nNiveau Facile ! C'est parti ! \n";
+            break;
+        case "2":
+            echo "\nNiveau Normal ! C'est parti ! \n";
+            break;
+        case "3":
+            echo "\nNiveau Difficile ! C'est parti ! \n";
+            break;
+        case "4":
+            echo "\nNiveau Court ! C'est parti ! \n";
+            break;
+    }
+    return $niveau;
+}
+
+function lancerPartie($niveau)
 {
     $motAlea = choisirMot(); // choisi un mot aléatoire dans le dictionnaire
+    echo $motAlea;
     $tableauMotAlea = str_split($motAlea); // transforme le mot de type string en type array
-    $motDecoupe = coderMot($motAlea); // découpe le mot en affectant une case à chaque lettre contenu dans le mot
+    $motDecoupe = coderMot($motAlea, $niveau); // découpe le mot en affectant une case à chaque lettre contenu dans le mot
     $nombreErreur = 0; // initialise une variable permettant de compter les erreurs
     $gagne = false; // initialise une variable qui nous permettra de savoir si on a gagner ou non
-    $mauvaisesLettres = []; // variable qui permetra de savoir les lettres qui ne sont pas dans le mot
+    $mauvaisesLettres = []; // variable qui permettra de savoir les lettres qui ne sont pas dans le mot
+    $lettresTrouvees = []; // variable qui permettra de savoir les lettres qui se trouve dans le mot
 
     do {
-        afficherTableau($motDecoupe); 
-        if (!empty($mauvaisesLettres)) {
-            afficherMauvaisesLettres($mauvaisesLettres); 
+        afficherTableau($motDecoupe); // affiche le mot à trouver
+        if (!empty($mauvaisesLettres) or !empty($lettresTrouvees)) {
+            afficherMauvaisesLettres($mauvaisesLettres); // affiche la/les mauvaise(s) lettre(s) à l'utilisateur
+            afficherBonnesLettres($lettresTrouvees); // affiche la/les lettres valides à l'utilisateur
         }
-        $lettre = demanderLettre(); 
-        $testL = testerLettre($lettre, $tableauMotAlea, 0); 
+        $lettre = demanderLettre(); // on demande une lettre à l'utilisateur
+        $testL = testerLettre($lettre, $tableauMotAlea, 0); // on teste si la lettre se trouve dans le mot
 
-        if (empty($testL)) 
+        if (empty($testL)) // si la lettre n'est pas dans le mot
         {
-            $nombreErreur++; 
-            $mauvaisesLettres[] = $lettre; 
+            $nombreErreur++; // on met le nombre d'erreur à + 1
+            $mauvaisesLettres[] = $lettre; // on met la lettre dans le tableau des erreurs
         } else {
-            $motDecoupe = ajouterLesLettres($lettre, $motDecoupe, $testL); 
+            $reponse = ajouterLesLettres($lettre, $motDecoupe, $testL, $niveau); // on ajoute la lettre dans le tableau
+            $lettresTrouvees[] = $lettre; // on met la lettre dans le tableau des lettres trouvees
+            if ($reponse == -1) // la lettre ne peut plus etre placée
+            {
+                $nombreErreur++;
+                $mauvaisesLettres[] = $lettre;
+            }
+            else
+            {
+                $motDecoupe = $reponse;
+            }
+ 
         }
-        dessinerPendu($nombreErreur); 
-        $gagne = testerGagner($nombreErreur, $motDecoupe); 
+        dessinerPendu($nombreErreur); // on dessine le pendu en fonction des erreurs
+        $gagne = testerGagner($nombreErreur, $motDecoupe); // on regarde si le mot est découvert ou non
+        echo chr(27) . chr(91) . 'H' . chr(27) . chr(91) . 'J'; //permet de vider l'écran
     } while ($gagne == 0);
 
     if ($gagne == -1)
@@ -1058,5 +1163,7 @@ function lancerPartie()
     }
 }
 
-// lancerPartie();
+$niveau = choisirNiveau();
+lancerPartie($niveau);
+
 ?>

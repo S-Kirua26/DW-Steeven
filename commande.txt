@@ -5,3 +5,4 @@ CTRL + : = Mettre en commentaire la ligne de code
 CTRL + D = Selectionner tout les "chaines" (par exemple "nombre") de la page afin de les changer plus rapidement
 CTRL + H = Pour trouver puis remplacer un mot
 CTRL + F = Rechercher un élément dans la page web
+CTRL + K ou CTRL + à = Plier le code
