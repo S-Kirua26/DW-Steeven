@@ -1,0 +1,10 @@
+Lire la colonne et la ligne pour ensuite savoir où le pion pourra s'arreter (savoir combien de pions se trouve dans tel ou tel colonne) // fonction SelectionPositions et RemplirTableau.
+
+Bloquer la victoire à 4 pions consécutifs (sinon ce n'est plus un puissance4). // variable $alignement pour gagner (fonction DemanderEntier)
+
+Creer une fonction qui compte combien de pions se trouve dans une colonne ou seulement la derniere ligne (par exemple fonction ComtePions)
+  cette fonction retournerai -1 si la ligne du haut (ou toutes les colonnes) sont remplis sinon 0 pour que la partie continue.
+
+
+
+

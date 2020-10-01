@@ -1,5 +1,4 @@
 <?php
-
 function demandeEntier($invite) // Demande un entier à l'utilisateur
 
 {
@@ -8,7 +7,7 @@ function demandeEntier($invite) // Demande un entier à l'utilisateur
         do
         {
             $nombre = readline($invite);
-        } while (!is_numeric($nombre) || !$nombre > 0); // on verifie que la chaine de caracterer ne contient que des chiffres
+        } while (!is_numeric($nombre) || !$nombre > 0); // on verifie que la chaine de caractere ne contient que des chiffres
     } while (!is_int($nombre * 1)); // on vérifie que le nombre est entier (pas réel)
     return $nombre; //renvoi le nombre saisi
 }
@@ -77,9 +76,6 @@ function afficheTableau($plateau)
 
             echo $ligneIntermediaire . "\n";
         }
-        //affichage du numéro de la ligne
-        $chiffre = $i + 1;
-        echo "    " . $chiffre;
         //affichage des élément du tableau
         for ($j = 0; $j < $nbCol; $j++)
         {
@@ -154,36 +150,11 @@ function joueurSuivant($nbJoueur, $joueurEnCours)
 function conversionPosition($coordonnee)
 {
     $coordonnee = strtoupper($coordonnee);
-    if (ctype_alpha($coordonnee[0])) //La lettre est en premier
+    if (ctype_alnum($coordonnee[0])) //si c'est une lettre
     {
-
         $alpha = $coordonnee[0];
         $numCol = ord($alpha) - ord("A");
-        if (strlen($coordonnee) == 3) // Ligne a 2 digits
-        {
-            $chiffre = 10 * $coordonnee[1] + $coordonnee[2]; // on transforme [1,5] en 15
-        }
-        else
-        {
-            $chiffre = $coordonnee[1];
-        }
     }
-    else // La lettre est en dernier
-    {
-        $longueur = strlen($coordonnee);
-        $alpha = $coordonnee[$longueur - 1];
-        $numCol = ord($alpha) - ord("A");
-
-        if ($longueur == 3)
-        {
-            $chiffre = 10 * $coordonnee[0] + $coordonnee[1];
-        }
-        else
-        {
-            $chiffre = $coordonnee[0];
-        }
-    }
-    $tabCord[0] = $chiffre - 1;
     $tabCord[1] = $numCol;
     return $tabCord;
 }
@@ -200,24 +171,18 @@ function selectionPosition($plateau, $symbole)
         do//boucle pour verifier si les position existe dans le plateau
         {
 
-            do//boucle pour verifier la position du caractere alpha au debut ou a la fin de la chaine de caractere
+            do// boucle pour la saisie et verifier si la chaine est bien alpha numerique de 2 ou 3 caractères
             {
 
-                do// boucle pour la saisie et verifier si la chaine est bien alpha numerique de 2 ou 3 caractères
-                {
+                 $chaine = readline("$symbole veuillez saisir la colonne ou positionner votre pion: ");
 
-                    $chaine = readline("$symbole veuillez saisir la position de votre pion: ");
+            } while (strlen($chaine) > 1 || !ctype_alnum($chaine));
+ 
+            $numCol = conversionPosition($chaine);
 
-                } while (strlen($chaine) > 3 || strlen($chaine) == 1 || !ctype_alnum($chaine));
-            } while (!(ctype_alpha($chaine[0]) xor ctype_alpha($chaine[strlen($chaine) - 1])));
-
-            $positions = conversionPosition($chaine);
-            $lig = $positions[0];
-            $col = $positions[1];
-
-        } while ($lig >= count($plateau) || $col >= count($plateau[0]));
-    } while ($plateau[$lig][$col] != '.');
-    return $positions;
+        } while ($numCol >= count($plateau[0]));
+    } while ($plateau[$numCol] != '.');
+    return $numCol;
 }
 
 /**
@@ -233,6 +198,7 @@ function remplirTableau($plateau, $symbole, $positions)
     $plateau[$positions[0]][$positions[1]] = $symbole;
     return $plateau;
 }
+
 
 /**
  * compte le nombre de symboles alignés successifs dans une direction à partir d'une position (cette position n'est pas comptée)
@@ -299,6 +265,22 @@ function testerGagne($plateau, $alignementPourGagner, $positions, $symbole)
     }
 }
 
+function trouverCase($plateau,$numCol)
+{
+    for($i = 0; $i < $numCol; $i++)
+    {
+        if($numCol[$i] != ".")
+        {
+            return -1;
+        }
+        else{
+            $position[0] = $i;
+            $position[1] = $numCol;
+            return $position;
+        }
+    }
+}
+
 /**
  * gère la partie avec les autres fonctions
  *
@@ -307,7 +289,18 @@ function testerGagne($plateau, $alignementPourGagner, $positions, $symbole)
 function lancerPartie()
 {
     //msg de bienvenue
-    echo "\n\n\t\t*****\tBIENVENUE AU MORPION\t*****\t\t\n\n";
+    $jeu= readline("Voulez-vous jouer au morpion ou au puissance 4? \n");
+
+    do
+    {
+        $continuer = strtoupper(readline($jeu)); // on demande à l'utilisateur si il veut continuer
+        $test = ($continuer != "M" && $continuer != "P"); // tant que la réponse est différent de "M" ou bien "P", on boucle
+            if ($test)
+            {
+                echo "saisie invalide, ";
+            } 
+    } while ($test);
+
     //initialisation
     do
     {
@@ -318,7 +311,7 @@ function lancerPartie()
         } while ($nbUser < 2 || $nbUser > 10);
         do
         {
-            $nbCol = demandeEntier("Entrer le nombre de colonne : \n");
+            $nbCol = demandeEntier("Entrer le nombre de colonnes : \n");
         } while ($nbCol < 3 || $nbCol > 25);
         do
         {
@@ -329,7 +322,7 @@ function lancerPartie()
         do
         {
             $alignementPourGagner = demandeEntier("Entrer le nombre d'alignement Pour Gagner : \n");
-        } while ($alignementPourGagner < 1 || $alignementPourGagner > $max);
+        } while ($alignementPourGagner != 4);
 
         $nbcases = $nbCol * $nbLig;
     } while ($nbcases < $nbUser * $alignementPourGagner + 1);
@@ -352,7 +345,7 @@ function lancerPartie()
     } while ($testGagner == 0);
     if ($testGagner == 1)
     {
-        echo "\n\n\n ***********   Le joueur $symboles[$joueurEnCours] a gagné **********";
+        echo "\n\n\n ***********   Le joueur $symboles[$joueurEnCours] a gagné  **********";
     }
     else
     {
@@ -370,9 +363,9 @@ function lancerPartie()
  */
 function plateauPlein($plateau)
 {
-    for ($i = 0; $i < count($plateau); $i++)
+    for ($i = 0; $i < count($plateau[0]); $i++)
     {
-        if (in_array(".", $plateau[$i]))
+        if (in_array(".", $plateau[0]))
         {
             return false;
         }
@@ -381,3 +374,4 @@ function plateauPlein($plateau)
 }
 
 lancerPartie();
+?>
