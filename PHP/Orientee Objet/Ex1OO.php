@@ -3,9 +3,9 @@
 Class Personne
 {
     // on commence par initialiser les attributs
-    private $_nom;
-    private $_prenom;
-    private $_age;
+    private $_Nom;
+    private $_Prenom;
+    private $_Age;
 
     // ensuite on défini le constructeur
     public function __construct()
@@ -30,24 +30,21 @@ Class Personne
     // on défini les assesseurs (Setteurs)
     public function setNom($nom)
     {
-        $this->_nom = $nom;
+        $this->_Nom = $nom;
     }
     public function setPrenom($prenom)
     {
-        $this->_prenom = $prenom;
+        $this->_Prenom = $prenom;
     }
     public function setAge($age)
     {
-        $this->_age = $age;
+        $this->_Age = $age;
     }
-
-    $appelle ="Michel";
-    
-var_dump($a);
-$v1=new Voiture();
-var_dump($v1);
-$v1->setMarque("Audi");
-var_dump($v1);
-echo $v1->getMarque();
 }
+
+$n = new Personne("Maurice");
+$n->setNom("Maurice");
+echo $n->getNom();
+
+
 ?>
