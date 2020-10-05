@@ -14,7 +14,7 @@ class Employe
     {
         return $this->_nom;
     }
-    public function getprenom()
+    public function getPrenom()
     {
         return $this->_prenom;
     }
@@ -40,7 +40,7 @@ class Employe
     {
         $this->_nom = ($nom);
     }
-    public function setprenom($prenom)
+    public function setPrenom($prenom)
     {
         $this->_prenom = ($prenom);
     }
@@ -82,10 +82,33 @@ class Employe
         }
     }
 
-    public function ancienneté()
+    public function toString()
     {
+        $affichage = "Monsieur/Madame ".$this->getNom()." ".$this->getPrenom()." à été embauché en ".$this->getDatembauche().". Il occupe le poste de ".$this->getFonction()." et son salaire annuel est de ".$this->getSalaire()." euros. Il se trouve dans le service ".$this->getService()
+        .". Cela fait ".$this->ancienneté($this->_datembauche)." ans qu'il se trouve dans l'entreprise et sa prime annuel est de ".$this->primeAnnuel($this->_salaire)." euros. Sa prime d'ancienneté s'élève à ".$this->primeAncienneté($this->_salaire,$this->ancienneté($this->_datembauche))." euros \n\n";
+        return $affichage;
         
     }
+
+    public function ancienneté($datembauche)
+    {
+        $annee = 2020;
+        $ancien = $annee - $datembauche;
+        return $ancien;
+    }
+
+    public function primeAnnuel($salaire)
+    {
+        $primeAnnuel = (5/100) * $salaire;
+        return $primeAnnuel;
+    }
+
+    public function primeAncienneté($salaire,$ancien)
+    {
+        $primeAnciennete = (2/100) * $salaire * $ancien;
+        return $primeAnciennete;
+    }
+
 }
 
 ?>
