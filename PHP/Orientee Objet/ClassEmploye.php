@@ -34,6 +34,10 @@ class Employe
     {
         return $this->_service;
     }
+    public function getDate()
+    {
+        return $this->_date;
+    }
 
     // on initialise les assesseurs setteurs
     public function setNom($nom)
@@ -60,6 +64,10 @@ class Employe
     {
         $this->_service = ($service);
     }
+    public function setDate(DateTime $date)
+    {
+        $this->_date = $date;
+    }
 
 
     public function __construct(array $liste = [])
@@ -84,17 +92,19 @@ class Employe
 
     public function toString()
     {
-        $affichage = "Monsieur/Madame ".$this->getNom()." ".$this->getPrenom()." à été embauché en ".$this->getDatembauche().". Il occupe le poste de ".$this->getFonction()." et son salaire annuel est de ".$this->getSalaire()." euros. Il se trouve dans le service ".$this->getService()
-        .". Cela fait ".$this->ancienneté($this->_datembauche)." ans qu'il se trouve dans l'entreprise et sa prime annuel est de ".$this->primeAnnuel($this->_salaire)." euros. Sa prime d'ancienneté s'élève à ".$this->primeAncienneté($this->_salaire,$this->ancienneté($this->_datembauche))." euros \n\n";
+        $affichage = "Monsieur/Madame ".$this->getNom()." ".$this->getPrenom()." à été embauché en ".$this->getDatembauche().".\nIl/Elle occupe le poste de ".$this->getFonction()." et son salaire annuel est de ".$this->getSalaire()."€.\nIl/Elle se trouve dans le service ".$this->getService()
+        .".\nCela fait ".$this->ancienneté($this->_datembauche)." ans qu'il(elle) se trouve dans l'entreprise et sa prime annuel est de ".$this->primeAnnuel($this->_salaire)."€.\nSa prime d'ancienneté s'élève à ".$this->primeAncienneté($this->_salaire,$this->ancienneté($this->_datembauche))."€ \n\n";
         return $affichage;
         
     }
 
-    public function ancienneté($datembauche)
+    public function ancienneté()
     {
-        $annee = 2020;
-        $ancien = $annee - $datembauche;
-        return $ancien;
+        // $date = 2020;
+        // $ancien = $date - $datembauche;
+        // return $ancien;
+        $date = new DateTime('now');
+        $difference = $date->diff($this->getDatembauche());
     }
 
     public function primeAnnuel($salaire)
