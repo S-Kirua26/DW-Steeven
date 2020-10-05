@@ -5,12 +5,14 @@ class Personne
     private $_nom;
     private $_prenom; // on déclare 3 attribut _nom, _prenom et _age pour pouvoir identifier la personne plus tard
     private $_age;
+    private $_voiture;
 
-    public function __construct($nom, $prenom, $age) // on construit le constructeur de notre fichier
+    public function __construct($nom, $prenom, $age, $v) // on construit le constructeur de notre fichier
     {
         $this->SetNom($nom);
         $this->SetPrenom($prenom); // Permet de changer les valeurs quand l'utilisateur entrera ses informations
         $this->SetAge($age);
+        $this->SetVoiture($v);
     }
 
     public function toString()
@@ -19,7 +21,7 @@ class Personne
         return $reponse;
     }
 
-    public function equalsTo($personne)
+    public function equalsTo(Personne $personne)
     {
         if($this->_nom == $personne->getNom() && $this->_prenom == $personne->getPrenom() && $this->_age == $personne->getAge())
         {
@@ -31,7 +33,7 @@ class Personne
         }
     }
 
-    public function compareTo($personne)
+    public function compareTo(Personne $personne)
     {
         if($this->_age > $personne->getAge())
         {
@@ -59,6 +61,10 @@ class Personne
     {
         return $this->_age;
     }
+    public function getVoiture()
+    {
+        return $this->_voiture;
+    }
 
     public function setNom($nom) // Permet de changer les informations de l'utilisateur et de les stockéees
     {
@@ -66,30 +72,18 @@ class Personne
     }
     public function setPrenom($prenom)
     {
-        $this->_prenom = strtoupper($prenom);
+        $this->_prenom = ucfirst($prenom);
     }
     public function setAge($age)
     {
         $this->_age = strtoupper($age);
     }
+    public function setVoiture(Voiture $v)
+    {
+        $this->_voiture = $v;
+    }
 
 }
-
-$perso = new Personne("Pichon","Bernard","29");
-echo $perso->toString();
-$perso2 = new Personne("Past","Jean-Jacques","15");
-echo $perso2->toString();
-$perso3 = new Personne("Pichon","Bernard","29");
-echo $perso3->toString();
-$perso4 = new Personne("Tristo","Allan","52");
-echo $perso4->toString();
-
-echo $perso->compareTo($perso2)."\n";
-echo $perso->compareTo($perso3)."\n";
-echo $perso->compareTo($perso4)."\n";
-
-echo $perso->equalsTo($perso3);
-echo $perso->equalsTo($perso2);
 
 ?>
  

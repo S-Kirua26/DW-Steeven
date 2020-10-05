@@ -7,14 +7,29 @@ class Voiture
     private $_km;
     private $_couleur;
 
-    public function __construct()
+    public function __construct(array $liste = [])
     {
-
+        if (!empty($liste)) // empty : renvoi vrai si le tableau est vide
+        {
+            $this->hydrate($liste);
+        }
+    }
+    public function hydrate($liste)
+    {
+        foreach ($liste as $key => $value)
+        {
+            $methode = "set" . ucfirst($key); //ucfirst met la 1ere lettre en majuscule
+            if (is_callable(([$this, $methode]))) // is_callable verifie que la methode existe
+            {
+                $this->$methode($value);
+            }
+        }
     }
 
-    public function __toString()
+    public function toString()
     {
         $reponse = "La voiture est de marque " . $this->_marque . ". Son modele est " . $this->_modele . ". Son nombre de km est de " . $this->_km . ". Sa couleur est " . $this->_couleur . "\n";
+        return $reponse;
     }
 
     public function equalsTo($voiture)
@@ -74,18 +89,3 @@ class Voiture
     }
 }
 
-$vi = new Voiture("Audi","A3","3500","bleu");
-echo $v1->toString();
-$v2 = new Personne("Audi","A1","18000","vert");
-echo $v2->toString();
-$v3 = new Personne("Citroen","C3","21000","rouge");
-echo $v3->toString();
-$v4= new Personne("Peugeot","308","250000","gris");
-echo $v4->toString();
-
-echo $v1->compareTo($v2)."\n";
-echo $v1->compareTo($v3)."\n";
-echo $v1->compareTo($v4)."\n";
-
-echo $v1->equalsTo($v3);
-echo $v1->equalsTo($v2);
