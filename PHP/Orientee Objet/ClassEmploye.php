@@ -9,6 +9,7 @@ class Employe
     private $_fonction;
     private $_salaire;
     private $_service;
+    private static $_liste = 0;
 
     // on initialise les assesseurs guetteurs
     public function getNom()
@@ -34,6 +35,10 @@ class Employe
     public function getService()
     {
         return $this->_service;
+    }
+    static public function getListe()
+    {
+        return self::$_liste;
     }
 
 
@@ -62,6 +67,10 @@ class Employe
     {
         $this->_service = $service;
     }
+    static public function setListe($liste)
+    {
+        self::$_liste = $liste;
+    }
 
 
     // on intialise le constructeur
@@ -71,6 +80,8 @@ class Employe
         {
             $this->hydrate($liste);
         }
+
+        self::$_liste ++;
     }
 
     public function hydrate($liste)
@@ -88,7 +99,7 @@ class Employe
     public function toString()
     {
         $affichage = "Monsieur/Madame " . $this->getNom() . " " . $this->getPrenom() . " à été embauché en " . $this->getDatembauche()->format('d M Y') . ".\nIl/Elle occupe le poste de " . $this->getFonction() . " et son salaire annuel est de " . $this->getSalaire() . "€.\nIl/Elle se trouve dans le service " . $this->getService()
-        . ".\nCela fait " . $this->ancienneté() . " ans qu'il(elle) se trouve dans l'entreprise et sa prime annuel est de " . $this->primeAnnuel() . "€.\nSa prime d'ancienneté s'élève à " . $this->primeAncienneté($this->_salaire, $this->ancienneté()) . "€ \n\n";
+        . ".\nCela fait " . $this->ancienneté() . " ans qu'il(elle) se trouve dans l'entreprise et sa prime annuel est de " . $this->primeAnnuel() . "€.\nSa prime d'ancienneté s'élève à " . $this->primeAncienneté() . "€. Sa prime total est de ".$this->primeTotal()."€.\n\n";
         return $affichage;
 
     }
@@ -104,15 +115,18 @@ class Employe
     // fonction permettant de calculer la prime annuel d'un employé
     private function primeAnnuel()
     {
-        $primeAnnuel = (5 / 100) * $this->getSalaire();
-        return $primeAnnuel;
+        return $this->getSalaire() * (5/100);
     }
 
     // fonction permettant de calculer la prime d'ancienneté d'un employé
-    private function primeAncienneté($salaire, $ancien)
+    private function primeAncienneté()
     {
-        $primeAnciennete = (2 / 100) * $salaire * $ancien;
-        return $primeAnciennete;
+        return $this->getSalaire() * (2/100) * $this->ancienneté(); // on retourne le montant de la prime annuelle
+    }
+
+    public function primeTotal()
+    {
+        return $this->primeAnnuel() + $this->primeAncienneté(); // on retourne le montant de la prime annuelle
     }
 
 }
