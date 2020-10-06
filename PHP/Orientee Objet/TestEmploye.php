@@ -9,6 +9,7 @@ $employe[2] = new Employe(["nom" => "Gradis", "prenom" => "Lilian", "datembauche
 $employe[3] = new Employe(["nom" => "Poivron", "prenom" => "Alima", "datembauche" => new DateTime('1999-01-23'), "fonction" => "agent immobilier", "salaire" => "2400", "service" => "immobilier"]);
 $employe[4] = new Employe(["nom" => "Fernand", "prenom" => "Léa", "datembauche" => new DateTime('2019-03-08'), "fonction" => "vétérinaire", "salaire" => "2250", "service" => "médical"]);
 
+
 $dateAct = new DateTime('2020-12-01'); // on initialise une variable avec la date du our
 $jourDePrime = (new DateTime())->setDate($dateAct->format('Y'),11,30); // on récupére l'année d'un date donnée
 
