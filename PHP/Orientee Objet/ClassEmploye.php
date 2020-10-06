@@ -9,6 +9,7 @@ class Employe
     private $_fonction;
     private $_salaire;
     private $_service;
+    private $_agence;
     private static $_liste = 0;
 
     // on initialise les assesseurs guetteurs
@@ -35,6 +36,10 @@ class Employe
     public function getService()
     {
         return $this->_service;
+    }
+    public function getAgence()
+    {
+        return $this->_agence;
     }
     static public function getListe()
     {
@@ -66,6 +71,10 @@ class Employe
     public function setService($service)
     {
         $this->_service = $service;
+    }
+    public function setAgence($agence)
+    {
+        $this->_agence = $agence;
     }
     static public function setListe($liste)
     {
