@@ -2,7 +2,7 @@
 
 class Employe
 {
-    // on commence par créer les variables dont on aura besoin
+    // on commence par créer les attributs dont on aura besoin
     private $_nom;
     private $_prenom;
     private $_datembauche;
@@ -12,7 +12,7 @@ class Employe
     private $_agence;
     private static $_liste = 0;
 
-    // on initialise les assesseurs guetteurs
+    // on initialise les getteurs
     public function getNom()
     {
         return $this->_nom;
@@ -47,7 +47,7 @@ class Employe
     }
 
 
-    // on initialise les assesseurs setteurs
+    // on initialise les setteurs
     public function setNom($nom)
     {
         $this->_nom = $nom;
@@ -133,9 +133,57 @@ class Employe
         return $this->getSalaire() * (2/100) * $this->ancienneté(); // on retourne le montant de la prime annuelle
     }
 
+    // fonction permettant de calculer la prime annuel total d'un employé
     public function primeTotal()
     {
         return $this->primeAnnuel() + $this->primeAncienneté(); // on retourne le montant de la prime annuelle
+    }
+
+    // permet de comparer la liste des employés en fonction de leurs noms et prénoms
+    public static function compareToNomPrenom($obj1, $obj2)
+    {
+        if ($obj1->getNom() < $obj2->getNom())
+        {
+            return -1;
+        }
+        else if ($obj1->getNom() > $obj2->getNom())
+        {
+            return 1;
+        }
+        else if ($obj1->getPrenom() < $obj2->getPrenom())
+        {
+            return -1;
+        }
+        else if ($obj1->getPrenom() > $obj2->getPrenom())
+        {
+            return 1;
+        }
+
+        return 0;
+    }
+
+    // permet de comparer la liste des employés en fonction de leurs services, noms et prénoms
+    public static function compareToServiceNomPrenom($obj1, $obj2)
+    {
+        if ($obj1->getService() < $obj2->getService())
+        {
+            return -1;
+        }
+        else if ($obj1->getService() > $obj2->getService())
+        {
+            return 1;
+        }
+        else
+        {
+            return self::compareToNomPrenom($obj1, $obj2);
+        }
+
+    }
+
+    // permet de calculer la masse salariale total de l'entreprise
+    public function masseSalariale()
+    {
+        return $this->getSalaire() * 12 + $this->primeTotal();
     }
 
 }

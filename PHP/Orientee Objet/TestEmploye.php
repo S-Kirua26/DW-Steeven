@@ -11,50 +11,46 @@ $employe[4] = new Employe(["nom" => "Fernand", "prenom" => "Léa", "datembauche"
 
 $dateAct = new DateTime('2020-12-01'); // on initialise une variable avec la date du our
 $jourDePrime = (new DateTime())->setDate($dateAct->format('Y'),11,30); // on récupére l'année d'un date donnée
-$listeEmploye = [$employe[0],$employe[1],$employe[2],$employe[3],$employe[4]]; // on créé une liste avec les employés
-
 
 // on affiche si le transfert des primes ont été envoyés pour chaque employés
-foreach ($listeEmploye as $elt)
+foreach ($employe as $elt)
 {
     if ($jourDePrime < $dateAct)
     {
-        echo "L'ordre de transfert à été envoyé à la banque : ".$elt->primeTotal()." au total \n\n";
+        echo "L'ordre de transfert à été envoyé à la banque pour Monsieur/Madame ".$elt->getNom()." " . $elt->getPrenom()." pour un montant de ".$elt->primeTotal()." au total \n";
     }
     else{
-        echo "L'ordre de transfert n'a pas été envoyé à la banque \n";
+        echo "L'ordre de transfert n'a pas été envoyé à la banque \n\n";
     }
 }
 
- echo "\n Dans l'entreprise, au total, il y a ".Employe::getListe()." employés \n\n";
+ echo "\n Dans l'entreprise, au total, il y a ".Employe::getListe()." employés \n\n"; // on affiche le nombre d'employés dasn l'entreprise
 
 // ********* On affiche les caractéristique des employés par ordre alphabétique en fonction du nom et prenom ************
 
-// asort($listeEmploye); // on trie les employés par ordre alphabétique
+// usort($employe,array("Employe","compareToNomPrenom"));
 
-// foreach ($listeEmploye as $elt)
-// {
-//     echo $elt->toString();
-// }
+//  foreach ($employe as $elt)
+//  {
+//      echo $elt->toString();
+//  }
 
 
 // ********** On affiche les caractéristiques des employés par leurs noms de services ******************
 
-function TriService($obj1,$obj2)
-{
-    if ($obj1->getService() == $obj2->getService())
-    {
-        return 0;
-    }
-    return ($obj1 < $obj2) ? -1 : 1;
-}
+usort($employe, array("Employe", "compareToServiceNomPrenom"));
 
-asort($listeEmploye);
-usort($listeEmploye, "TriService");
-
-foreach ($listeEmploye as $elt)
+foreach ($employe as $elt)
 {
     echo $elt->toString();
 }
+
+// on calcule la masse salariale et on l'affiche
+$masseSalarialeTotale = 0;
+foreach ($employe as $elt)
+{
+    $masseSalarialeTotale += $elt->masseSalariale();
+}
+echo "La masse salariale totale est de " . $masseSalarialeTotale . "€\n";
 
 ?>
