@@ -4,18 +4,35 @@ class Enfants
 {
 
     /*****************Attributs***************** */
-    private $_dateDeNaissance;
+    private $_ageEnfant;
+    private $_nomEnfant;
+    private $_prenomEnfant;
 
     /*****************Accesseurs***************** */
 
-    public function getDateDeNaissance()
+    public function getAgeEnfant()
     {
-        return $this->_dateDeNaissance;
+        return $this->_ageEnfant;
     }
-
-    public function setDateDeNaissance($dateDeNaissance)
+    public function getNomEnfant()
     {
-        $this->_dateDeNaissance = $dateDeNaissance;
+        return $this->_nomEnfant;
+    }
+    public function getPrenomEnfant()
+    {
+        return $this->_prenomEnfant;
+    }
+    public function setAgeEnfant($ageEnfant)
+    {
+        $this->_ageEnfant = $ageEnfant;
+    }
+    public function setNomEnfant($nomEnfant)
+    {
+        $this->_nomEnfant = $nomEnfant;
+    }
+    public function setPrenomEnfant($prenomEnfant)
+    {
+        $this->_prenomEnfant = $prenomEnfant;
     }
 
     /*****************Constructeur***************** */
@@ -42,14 +59,29 @@ class Enfants
 
     public function toStringEnfants()
     {
-        $enfants = "La date de naissance de votre enfant est le " . $this->getDateDeNaissance()->format('d M Y') . "\n";
+        $enfants = "Votre enfant a: " . $this->getAgeEnfant() .  " an(s) \nLe nom de votre enfant est: " . $this->getNomEnfant(). "\nLe prenom de votre enfant est: " . $this->getPrenomEnfant() ."\n\n";
         return $enfants;
     }
 
-    // public function Naissance()
-    // {
-    //     $dateAct = new DateTime('now'); // on initialise une variable avec la date du jour
-    //     $Naissance = new DateTime($this->getDateDeNaissance()); // on récupére l'année d'un date donnée
-    // }
+    public function montantChequeNoel()
+    {
+        $a = $this->getAgeEnfant();
+        if ($a > 0 && $a < 11)
+        {
+            return 20;
+        }
+        else if ($a < 16)
+        {
+            return 30;
+        }
+        else if ($a < 19)
+        {
+            return 50;
+        }
+        else
+        {
+            return 0;
+        }
+    }
 
 }

@@ -118,9 +118,37 @@ class Employe
     {
         $affichage = " ************ Informations sur l'employé ************ \n Monsieur/Madame " . $this->getNom() . " " . $this->getPrenom() . " à été embauché en " . $this->getDatembauche()->format('d M Y')
         . ".\nIl/Elle occupe le poste de " . $this->getFonction() . " et son salaire annuel est de " . $this->getSalaire() . "€.\nIl/Elle se trouve dans le service " . $this->getService()
-        . ".\nCela fait " . $this->ancienneté() . " ans qu'il(elle) se trouve dans l'entreprise et sa prime annuel est de " . $this->primeAnnuel() . "€.\nSa prime d'ancienneté s'élève à " . $this->primeAncienneté() . "€. Sa prime total est de ".$this->primeTotal()
-        ."€.\nL'employé dispose de ".$this->getEnfants()." enfant(s)\n\n ************ Agence de l'employé ******* \n L'employé est dans ".$this->getAgence()->toStringAgence()."L'employé dispose t-il/t-elle de chèques vacances? ".$this->ChequeVacances()
-        ."\n\n ************ Enfant(s) de l'employé ******* \n\n";
+    . ".\nCela fait " . $this->ancienneté() . " ans qu'il(elle) se trouve dans l'entreprise et sa prime annuel est de " . $this->primeAnnuel() . "€.\nSa prime d'ancienneté s'élève à " . $this->primeAncienneté() . "€. Sa prime total est de ".$this->primeTotal()
+        ."€.\n\n ************ Agence de l'employé ******* \n L'employé est dans ".$this->getAgence()->toStringAgence()."L'employé dispose t-il/t-elle de chèques vacances? ".$this->ChequeVacances()
+        ."\n\n ************ Enfant(s) de l'employé ************ \n\n ";
+
+        if (count($this->getEnfants()) > 0)
+        {
+            foreach ($this->getEnfants() as $enfant)
+            {
+                $affichage .= $enfant->toStringEnfants();
+            }
+        }
+        else
+        {
+            $affichage .= "Vous n'avez pas d'enfant\n";
+        }
+        $affichage .= "\n************  Cheques de Noël ************ \n";
+        $cheques = $this->recoitChequeNoel();
+        if (array_sum($cheques) > 0)
+        {
+            foreach ($cheques as $key=>$nbCheque) // on parcours le tableau de chèques
+            {
+                if ($nbCheque > 0)    //  si le nombre de chèque est supérieur à 0
+                {
+                    $affichage .= "Vous avez le droit à ".$nbCheque . " chèque(s) de ".$key."€\n\n";   //$nbCheque contient le nombre de chèques  et $key, la valeur du chèque
+                }
+            }
+        }
+        else
+        {
+            $affichage .= "Vous n'avez pas le droit aux chèques de Noël";
+        }
         return $affichage;
 
     }
@@ -202,6 +230,17 @@ class Employe
     public function ChequeVacances()
     {
         return $this->ancienneté() > 1 ? "oui":"non";
+    }
+
+    public function recoitChequeNoel()
+    {
+        $cheque = ["0" => 0, "20" => 0, "30" => 0, "50" => 0];
+        foreach ($this->getEnfants() as $enfant)
+        {
+            $cheque[$enfant->montantChequeNoel()] += 1; // on augmente la valeur liée à l'étiquette correspondant au montant retourné par la fonction
+        }
+        $cheque["0"] = 0;       // pour que la somme du tableau corresponde au nombre de chèques à distibuer
+        return $cheque;
     }
 
 }
