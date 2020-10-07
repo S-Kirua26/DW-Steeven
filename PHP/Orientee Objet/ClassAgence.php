@@ -8,6 +8,7 @@ class Agence
     private $_adresse;
     private $_codePostal;
     private $_ville;
+    private $_restauration;
 
     /*****************Accesseurs***************** */
 
@@ -27,6 +28,10 @@ class Agence
     {
         return $this->_ville;
     }
+    public function getRestauration()
+    {
+        return $this->_restauration;
+    }
 
     public function setNomAgence($nomAgence)
     {
@@ -43,6 +48,10 @@ class Agence
     public function setVille($ville)
     {
         $this->_ville = $ville;
+    }
+    public function setRestauration($restauration)
+    {
+        $this->_restauration = $restauration;
     }
     /*****************Constructeur***************** */
 
@@ -67,28 +76,12 @@ class Agence
 
     /*****************Autres Méthodes***************** */
  
-    public function toString()
+    public function toString2()
     {
-        $agence = "L'agence se nomme ".$this->getNomAgence()."\nSon adresse est le: ".$this->getAdresse()."\nSon code Postal est le: ".$this->getCodePostal()."\nElle se trouve dans la ville de: ".$this->getVille()."\n\n";
+        $agence = "l'agence qui se nomme ".$this->getNomAgence()."\nSon adresse est le ".$this->getAdresse()."\nSon code Postal est le ".$this->getCodePostal()."\nElle se trouve dans la ville de ".$this->getVille().
+        "\nL'agence dispose-t-elle d'une restauration? : ".$this->getRestauration()."\n";
         return $agence;
     }
-
-    public function equalsTo($obj)
-    {
-        return true;
-    }
-
-    public static function compareTo($obj1, $obj2)
-    {
-        return 0;
-
-    }
-
-    public function restauration($restauration)
-    {
-
-    }
-
 
 }
 ?>

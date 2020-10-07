@@ -107,8 +107,9 @@ class Employe
     // on initialise la fonction pour l'affichage
     public function toString()
     {
-        $affichage = "Monsieur/Madame " . $this->getNom() . " " . $this->getPrenom() . " à été embauché en " . $this->getDatembauche()->format('d M Y') . ".\nIl/Elle occupe le poste de " . $this->getFonction() . " et son salaire annuel est de " . $this->getSalaire() . "€.\nIl/Elle se trouve dans le service " . $this->getService()
-        . ".\nCela fait " . $this->ancienneté() . " ans qu'il(elle) se trouve dans l'entreprise et sa prime annuel est de " . $this->primeAnnuel() . "€.\nSa prime d'ancienneté s'élève à " . $this->primeAncienneté() . "€. Sa prime total est de ".$this->primeTotal()."€.\n\n";
+        $affichage = " ************ Informations sur l'employé ************ \n Monsieur/Madame " . $this->getNom() . " " . $this->getPrenom() . " à été embauché en " . $this->getDatembauche()->format('d M Y') . ".\nIl/Elle occupe le poste de " . $this->getFonction() . " et son salaire annuel est de " . $this->getSalaire() . "€.\nIl/Elle se trouve dans le service " . $this->getService()
+        . ".\nCela fait " . $this->ancienneté() . " ans qu'il(elle) se trouve dans l'entreprise et sa prime annuel est de " . $this->primeAnnuel() . "€.\nSa prime d'ancienneté s'élève à " . $this->primeAncienneté() . "€. Sa prime total est de ".$this->primeTotal()
+        ."€.\n\n ************ Agence de l'employé ******* \n L'employé est dans ".$this->getAgence()->toString2()."L'employé dispose t-il/t-elle de chèques vacances? ".$this->ChequeVacances()."\n\n";
         return $affichage;
 
     }
@@ -184,6 +185,12 @@ class Employe
     public function masseSalariale()
     {
         return $this->getSalaire() * 12 + $this->primeTotal();
+    }
+
+    //permet de savoir si l'employe peut disposer de chèques vacances
+    public function ChequeVacances()
+    {
+        return $this->ancienneté() > 1 ? "oui":"non";
     }
 
 }
