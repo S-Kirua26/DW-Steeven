@@ -64,8 +64,7 @@ class Agence
     }
     public function hydrate($data)
     {
-        foreach ($data as $key => $value)
-        {
+        foreach ($data as $key => $value) {
             $methode = "set" . ucfirst($key); //ucfirst met la 1ere lettre en majuscule
             if (is_callable(([$this, $methode]))) // is_callable verifie que la methode existe
             {
@@ -75,13 +74,12 @@ class Agence
     }
 
     /*****************Autres Méthodes***************** */
- 
-    public function toString2()
+
+    public function toStringAgence()
     {
-        $agence = "l'agence qui se nomme ".$this->getNomAgence()."\nSon adresse est le ".$this->getAdresse()."\nSon code Postal est le ".$this->getCodePostal()."\nElle se trouve dans la ville de ".$this->getVille().
-        "\nL'agence dispose-t-elle d'une restauration? : ".$this->getRestauration()."\n";
+        $agence = "une agence qui se nomme " . $this->getNomAgence() . ".\nSon adresse est le " . $this->getAdresse() . ".\nSon code Postal est le " . $this->getCodePostal() . ".\nElle se trouve dans la ville de " . $this->getVille() .
+        ".\nL'agence dispose-t-elle d'une restauration? : " . $this->getRestauration() . "\n";
         return $agence;
     }
 
 }
-?>

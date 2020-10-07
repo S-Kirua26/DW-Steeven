@@ -10,6 +10,7 @@ class Employe
     private $_salaire;
     private $_service;
     private $_agence;
+    private $_enfants;
     private static $_liste = 0;
 
     // on initialise les getteurs
@@ -40,6 +41,10 @@ class Employe
     public function getAgence()
     {
         return $this->_agence;
+    }
+    public function getEnfants()
+    {
+        return $this->_enfants;
     }
     static public function getListe()
     {
@@ -76,6 +81,10 @@ class Employe
     {
         $this->_agence = $agence;
     }
+    public function setEnfants($enfants)
+    {
+        $this->_enfants = $enfants;
+    }
     static public function setListe($liste)
     {
         self::$_liste = $liste;
@@ -107,9 +116,10 @@ class Employe
     // on initialise la fonction pour l'affichage
     public function toString()
     {
-        $affichage = " ************ Informations sur l'employé ************ \n Monsieur/Madame " . $this->getNom() . " " . $this->getPrenom() . " à été embauché en " . $this->getDatembauche()->format('d M Y') . ".\nIl/Elle occupe le poste de " . $this->getFonction() . " et son salaire annuel est de " . $this->getSalaire() . "€.\nIl/Elle se trouve dans le service " . $this->getService()
+        $affichage = " ************ Informations sur l'employé ************ \n Monsieur/Madame " . $this->getNom() . " " . $this->getPrenom() . " à été embauché en " . $this->getDatembauche()->format('d M Y')
+        . ".\nIl/Elle occupe le poste de " . $this->getFonction() . " et son salaire annuel est de " . $this->getSalaire() . "€.\nIl/Elle se trouve dans le service " . $this->getService()
         . ".\nCela fait " . $this->ancienneté() . " ans qu'il(elle) se trouve dans l'entreprise et sa prime annuel est de " . $this->primeAnnuel() . "€.\nSa prime d'ancienneté s'élève à " . $this->primeAncienneté() . "€. Sa prime total est de ".$this->primeTotal()
-        ."€.\n\n ************ Agence de l'employé ******* \n L'employé est dans ".$this->getAgence()->toString2()."L'employé dispose t-il/t-elle de chèques vacances? ".$this->ChequeVacances()."\n\n";
+        ."€.\nL'employé dispose de ".$this->getEnfants()." enfant(s)\n\n ************ Agence de l'employé ******* \n L'employé est dans ".$this->getAgence()->toStringAgence()."L'employé dispose t-il/t-elle de chèques vacances? ".$this->ChequeVacances()."\n\n";
         return $affichage;
 
     }
