@@ -5,7 +5,6 @@ class Enfants
 
     /*****************Attributs***************** */
     private $_dateDeNaissance;
-    private $_NombreEnfants;
 
     /*****************Accesseurs***************** */
 
@@ -19,15 +18,6 @@ class Enfants
         $this->_dateDeNaissance = $dateDeNaissance;
     }
 
-    public function getNombreEnfants()
-    {
-        return $this->_nombreEnfants;
-    }
-
-    public function setEnfants($nombreEnfants)
-    {
-        $this->_nombreEnfants = $nombreEnfants;
-    }
     /*****************Constructeur***************** */
 
     public function __construct(array $options = [])
@@ -52,7 +42,7 @@ class Enfants
 
     public function toStringEnfants()
     {
-        $enfants = $this->getNombreEnfants() . " La date de naissance de votre enfant est le " . $this->getDateDeNaissance()->format('d M Y') . "\n";
+        $enfants = "La date de naissance de votre enfant est le " . $this->getDateDeNaissance()->format('d M Y') . "\n";
         return $enfants;
     }
 

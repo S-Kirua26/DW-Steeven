@@ -119,7 +119,8 @@ class Employe
         $affichage = " ************ Informations sur l'employé ************ \n Monsieur/Madame " . $this->getNom() . " " . $this->getPrenom() . " à été embauché en " . $this->getDatembauche()->format('d M Y')
         . ".\nIl/Elle occupe le poste de " . $this->getFonction() . " et son salaire annuel est de " . $this->getSalaire() . "€.\nIl/Elle se trouve dans le service " . $this->getService()
         . ".\nCela fait " . $this->ancienneté() . " ans qu'il(elle) se trouve dans l'entreprise et sa prime annuel est de " . $this->primeAnnuel() . "€.\nSa prime d'ancienneté s'élève à " . $this->primeAncienneté() . "€. Sa prime total est de ".$this->primeTotal()
-        ."€.\nL'employé dispose de ".$this->getEnfants()." enfant(s)\n\n ************ Agence de l'employé ******* \n L'employé est dans ".$this->getAgence()->toStringAgence()."L'employé dispose t-il/t-elle de chèques vacances? ".$this->ChequeVacances()."\n\n";
+        ."€.\nL'employé dispose de ".$this->getEnfants()." enfant(s)\n\n ************ Agence de l'employé ******* \n L'employé est dans ".$this->getAgence()->toStringAgence()."L'employé dispose t-il/t-elle de chèques vacances? ".$this->ChequeVacances()
+        ."\n\n ************ Enfant(s) de l'employé ******* \n\n";
         return $affichage;
 
     }
