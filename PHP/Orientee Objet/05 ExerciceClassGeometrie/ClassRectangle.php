@@ -74,10 +74,6 @@ class Rectangle
         return ($this->getLongueur() ==  $this->getLargeur());
     }
 
-    public function afficherRectangle()
-    {
-
-    }
-    
+ 
 }
 ?>

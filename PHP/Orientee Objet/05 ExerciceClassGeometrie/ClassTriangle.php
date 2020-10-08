@@ -53,7 +53,7 @@ class Triangle
     
     public function toString()
     {
-        $triangle = "********** TRIANGLE ********** \nBaseTriangle: ".$this->getBase()."\nHauteurTriangle: ".$this->getHauteur()."\nPerimetreTriangle: ".$this->perimetreTriangle()."\nAireTriangle: ".$this->aireTriangle()."\n";
+        $triangle = "********** TRIANGLE ********** \nBaseTriangle: ".$this->getBase()."\nHauteurTriangle: ".$this->getHauteur()."\nPerimetreTriangle: ".$this->perimetre()."\nAireTriangle: ".$this->aire()."\n\n";
         return $triangle;
     }
 
@@ -64,12 +64,12 @@ class Triangle
         return $hypotenuse;
     }
 
-    public function perimetreTriangle()
+    public function perimetre()
     {
         return ($this->getBase() + $this->getHauteur() + $this->coteTriangle());
     }
 
-    public function aireTriangle()
+    public function aire()
     {
         return ($this->getHauteur() * $this->getBase()) / 2;
     }

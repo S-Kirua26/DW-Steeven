@@ -1,17 +1,27 @@
 <?php
 
-class Pave
+class Pave extends Rectangle
 {
 
     /*****************Attributs***************** */
 
+        private $_hauteur;
     /*****************Accesseurs***************** */
+    public function getHauteur()
+    {
+            return $this->_hauteur;
+    }
 
+    public function setHauteur($hauteur)
+    {
+            $this->_hauteur = $hauteur;
+    }
     
     /*****************Constructeur***************** */
 
     public function __construct(array $options = [])
     {
+        parent::__construct($options);
         if (!empty($options)) // empty : renvoi vrai si le tableau est vide
         {
             $this->hydrate($options);
@@ -30,40 +40,21 @@ class Pave
     }
 
     /*****************Autres Méthodes***************** */
-    
-    /**
-     * Transforme l'objet en chaine de caractères
-     *
-     * @return String
-     */
+
     public function toString()
     {
-        return "";
+        $pyramide = "********** PAVE ********** \n".parent::toString()."PerimetrePave: ".$this->perimetre()."\nVolumePave: ".$this->volumePave()."\n\n";
+        return $pyramide;
     }
 
-    /**
-     * Renvoi vrai si l'objet en paramètre est égal à l'objet appelant
-     *
-     * @param [type] obj
-     * @return bool
-     */
-    public function equalsTo($obj)
+    public function perimetre()
     {
-        return true;
+        return ((2 * $this->getLongueur() * $this->getLargeur() + (2 * $this->getLargeur() * $this->getHauteur() + (2 * $this->getLongueur() * $this->getHauteur()))));
     }
-    /**
-     * Compare 2 objets
-     * Renvoi 1 si le 1er est >
-     *        0 si ils sont égaux
-     *        -1 si le 1er est <
-     *
-     * @param [type] obj1
-     * @param [type] obj2
-     * @return void
-     */
-    public static function compareTo($obj1, $obj2)
+
+    public function VolumePave()
     {
-        return 0;
+        return ($this->getLongueur() * $this->getLargeur() * $this->getHauteur());
     }
 
 }

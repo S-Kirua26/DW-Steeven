@@ -1,6 +1,6 @@
 <?php
 
-class Pyramide
+class Pyramide extends Triangle
 {
 
     /*****************Attributs***************** */
@@ -12,6 +12,7 @@ class Pyramide
 
     public function __construct(array $options = [])
     {
+        parent::__construct($options);
         if (!empty($options)) // empty : renvoi vrai si le tableau est vide
         {
             $this->hydrate($options);
@@ -30,40 +31,21 @@ class Pyramide
     }
 
     /*****************Autres Méthodes***************** */
-    
-    /**
-     * Transforme l'objet en chaine de caractères
-     *
-     * @return String
-     */
+
     public function toString()
     {
-        return "";
+        $pyramide = "********** PYRAMIDE ********** \n".parent::toString()."PerimetrePyramide: ".$this->perimetrePyramide()." cm(cube)\nVolumePyramide: ".$this->volumePyramide()."\n\n";
+        return $pyramide;
     }
 
-    /**
-     * Renvoi vrai si l'objet en paramètre est égal à l'objet appelant
-     *
-     * @param [type] obj
-     * @return bool
-     */
-    public function equalsTo($obj)
+    public function perimetrePyramide()
     {
-        return true;
+        return ($this->getBase() * $this->getHauteur());
     }
-    /**
-     * Compare 2 objets
-     * Renvoi 1 si le 1er est >
-     *        0 si ils sont égaux
-     *        -1 si le 1er est <
-     *
-     * @param [type] obj1
-     * @param [type] obj2
-     * @return void
-     */
-    public static function compareTo($obj1, $obj2)
+
+    public function VolumePyramide()
     {
-        return 0;
+        return (parent::aire() * $this->getHauteur()/3);
     }
 }
 ?>
