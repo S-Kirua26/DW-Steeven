@@ -53,13 +53,26 @@ class Triangle
     
     public function toString()
     {
-        return "";
+        $triangle = "********** TRIANGLE ********** \nBaseTriangle: ".$this->getBase()."\nHauteurTriangle: ".$this->getHauteur()."\nPerimetreTriangle: ".$this->perimetreTriangle()."\nAireTriangle: ".$this->aireTriangle()."\n";
+        return $triangle;
+    }
+
+    public function coteTriangle()
+    {
+        $calcul = (($this->getBase() * $this->getBase()) + ($this->getHauteur() * $this->getHauteur()));
+        $hypotenuse = sqrt($calcul);
+        return $hypotenuse;
     }
 
     public function perimetreTriangle()
     {
-
+        return ($this->getBase() + $this->getHauteur() + $this->coteTriangle());
     }
 
+    public function aireTriangle()
+    {
+        return ($this->getHauteur() * $this->getBase()) / 2;
+    }
+    
 }
 ?>
