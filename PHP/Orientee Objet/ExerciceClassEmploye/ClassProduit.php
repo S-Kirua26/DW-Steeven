@@ -11,7 +11,7 @@ class Produit
     private $_dateValidite;
     private $_categorie;
     private $_lieuStockage;
-    private static $compteur;
+    private static $_compteur;
 
     /*****************Accesseurs***************** */
     public function getNumeroProduit()
@@ -86,12 +86,12 @@ class Produit
 
     public function getCompteur()
     {
-        return $this->compteur;
+        return $this->_compteur;
     }
 
     public function setCompteur($compteur)
     {
-        $this->compteur = $compteur;
+        $this->_compteur = $compteur;
     }
     
     /*****************Constructeur***************** */
@@ -117,39 +117,9 @@ class Produit
 
     /*****************Autres Méthodes***************** */
     
-    /**
-     * Transforme l'objet en chaine de caractères
-     *
-     * @return String
-     */
     public function toString()
     {
         return "";
-    }
-
-    /**
-     * Renvoi vrai si l'objet en paramètre est égal à l'objet appelant
-     *
-     * @param [type] obj
-     * @return bool
-     */
-    public function equalsTo($obj)
-    {
-        return true;
-    }
-    /**
-     * Compare 2 objets
-     * Renvoi 1 si le 1er est >
-     *        0 si ils sont égaux
-     *        -1 si le 1er est <
-     *
-     * @param [type] obj1
-     * @param [type] obj2
-     * @return void
-     */
-    public static function compareTo($obj1, $obj2)
-    {
-        return 0;
     }
 
 }

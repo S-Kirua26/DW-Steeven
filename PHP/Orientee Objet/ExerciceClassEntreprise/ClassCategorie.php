@@ -1,6 +1,6 @@
 <?php
 
-class XXX
+class Categorie
 {
 
     /*****************Attributs***************** */
