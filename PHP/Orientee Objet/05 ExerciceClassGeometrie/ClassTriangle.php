@@ -1,6 +1,6 @@
 <?php
 
-class TriangleRectangle
+class Triangle
 {
 
     /*****************Attributs***************** */
@@ -54,6 +54,11 @@ class TriangleRectangle
     public function toString()
     {
         return "";
+    }
+
+    public function perimetreTriangle()
+    {
+
     }
 
 }
