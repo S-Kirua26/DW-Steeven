@@ -43,13 +43,13 @@ class Pave extends Rectangle
 
     public function toString()
     {
-        $pyramide = "********** PAVE ********** \n".parent::toString()."PerimetrePave: ".$this->perimetre()."\nVolumePave: ".$this->volumePave()."\n\n";
+        $pyramide = "********** PAVE ********** \n".parent::toString()."\nHauteur: ".$this->getHauteur()."PerimetrePave: ".$this->perimetre()."\nVolumePave: ".$this->volumePave()."\n\n";
         return $pyramide;
     }
 
     public function perimetre()
     {
-        return ((2 * $this->getLongueur() * $this->getLargeur() + (2 * $this->getLargeur() * $this->getHauteur() + (2 * $this->getLongueur() * $this->getHauteur()))));
+        return ((parent::perimetre()*2)+($this->getHauteur()*4));
     }
 
     public function VolumePave()
