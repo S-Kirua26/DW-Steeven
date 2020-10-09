@@ -40,12 +40,14 @@ class Pyramide extends Triangle
 
     public function perimetrePyramide()
     {
-        return ($this->getBase() * $this->getHauteur());
+        $cote1=sqrt(pow($this->getHauteur(),2)+pow($this->getHaut(),2));
+		$cote2=sqrt(pow($this->getBase(),2)+pow($this->getHaut(),2));
+		return (parent::perimetre()+$this->getHaut()+$cote1+$cote2);
     }
 
     public function VolumePyramide()
     {
-        return (parent::aire() * $this->getHauteur()/3);
+        return (parent::aire()*$this->getHaut()/3);
     }
 }
 ?>

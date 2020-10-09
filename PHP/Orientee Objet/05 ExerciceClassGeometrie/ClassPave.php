@@ -54,7 +54,7 @@ class Pave extends Rectangle
 
     public function VolumePave()
     {
-        return ($this->getLongueur() * $this->getLargeur() * $this->getHauteur());
+        return parent::aire()*$this->getHauteur();
     }
 
 }
