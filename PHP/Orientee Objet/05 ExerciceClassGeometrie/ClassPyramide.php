@@ -5,9 +5,20 @@ class Pyramide extends Triangle
 
     /*****************Attributs***************** */
 
+    private $_haut;
+    
     /*****************Accesseurs***************** */
 
-    
+    public function getHaut()
+    {
+        return $this->_haut;
+    }
+
+    public function setHaut($haut)
+    {
+        $this->_haut = $haut;
+    }
+
     /*****************Constructeur***************** */
 
     public function __construct(array $options = [])
@@ -34,20 +45,21 @@ class Pyramide extends Triangle
 
     public function toString()
     {
-        $pyramide = "********** PYRAMIDE ********** \n".parent::toString()."PerimetrePyramide: ".$this->perimetrePyramide()." cm(cube)\nVolumePyramide: ".$this->volumePyramide()."\n\n";
+        $pyramide = "********** PYRAMIDE ".parent::toString()."\nHauteur: ".$this->getHaut()."\nPerimetrePyramide: ".$this->perimetrePyramide()." cm(cube)\nVolumePyramide: ".$this->volumePyramide()."\n\n";
         return $pyramide;
     }
 
     public function perimetrePyramide()
     {
-        $cote1=sqrt(pow($this->getHauteur(),2)+pow($this->getHaut(),2));
-		$cote2=sqrt(pow($this->getBase(),2)+pow($this->getHaut(),2));
-		return (parent::perimetre()+$this->getHaut()+$cote1+$cote2);
+        $cote1=sqrt(pow($this->getHauteur(),2)+pow($this->getHauteur(),2));
+		$cote2=sqrt(pow($this->getBase(),2)+pow($this->getHauteur(),2));
+		return (parent::perimetre()+$this->getHauteur()+$cote1+$cote2);
     }
 
     public function VolumePyramide()
     {
-        return (parent::aire()*$this->getHaut()/3);
+        return (parent::aire()*$this->getHauteur()/3);
     }
+
 }
 ?>

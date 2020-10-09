@@ -34,18 +34,18 @@ class Sphere extends Cercle
     
     public function toString()
     {
-        $pyramide = "********** SPHERE ********** \n".parent::toString()."PerimetreSphere: ".$this->perimetreSphere()."\nVolumeSphere: ".$this->volumeSphere()."\n\n";
+        $pyramide = "********** SPHERE ".parent::toString()."PerimetreSphere: ".$this->perimetre()."\nVolumeSphere: ".$this->volumeSphere()."\n\n";
         return $pyramide;
     }
 
-    public function perimetreSphere()
+    public function volumeSphere()
     {
-        return (4 * parent::aireCercle());
+        return number_format(((pow(parent::getDiametre()/2,3)*pi()*4)/3),2);
     }
 
-    public function VolumeSphere()
+    public function perimetre()
     {
-        return (pi() * ($this->getDiametre()*3));
+        return parent::aire()*4;
     }
 }
 ?>

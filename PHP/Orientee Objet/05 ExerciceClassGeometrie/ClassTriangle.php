@@ -66,12 +66,14 @@ class Triangle
 
     public function perimetre()
     {
-        return ($this->getBase() + $this->getHauteur() + $this->coteTriangle());
+        $c = sqrt(pow($this->getBase(), 2) + pow($this->getHauteur(), 2));
+        $perimetre = $this->getBase() +$this->getHauteur() + $c;
+        return $perimetre;
     }
 
     public function aire()
     {
-        return ($this->getHauteur() * $this->getBase()) / 2;
+        return $this->getBase() * $this->getHauteur() /2;
     }
     
 }

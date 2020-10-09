@@ -54,7 +54,7 @@ class Rectangle
     
     public function toString()
     {
-        $reponse =  "********** RECTANGLE ********** \n Longueur :" .$this->getLongueur(). " Largeur : " .$this->getLargeur() . " Perimetre : " .$this->perimetre(). " Aire : ".$this->aire();
+        $reponse =  "********** RECTANGLE ********** \nLongueur :" .$this->getLongueur(). " Largeur : " .$this->getLargeur() . " Perimetre : " .$this->perimetre(). " Aire : ".$this->aire();
         $reponse .= $this->estCarre()?" Il s'agit d'un carré":" Il ne s'agit pas d'un carré \n\n";
         return $reponse;;
     }

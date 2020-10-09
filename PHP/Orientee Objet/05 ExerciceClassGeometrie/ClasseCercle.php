@@ -43,19 +43,20 @@ class Cercle
     
     public function toString()
     {
-        $cercle = "********** CERCLE ********** \nDiametreCercle: ".$this->getDiametre()."\nPerimetreCercle: ".$this->perimetreCercle()."\nAireCercle: ".$this->aireCercle()."\n\n";
+        $cercle = "********** CERCLE ********** \nDiametreCercle: ".$this->getDiametre()."\nPerimetreCercle: ".$this->perimetre()."\nAireCercle: ".$this->aire()."\n\n";
         return $cercle;
     }
 
-    public function perimetreCercle()
+    public function perimetre()
     {
-        return $this->getDiametre() * pi();
+        // pi * diametre
+        return pi()*$this->getDiametre();
     }
 
-    public function aireCercle()
+    public function aire()
     {
-         return ($this->getDiametre() * $this->getDiametre() * pi() /4);
-        //pi() * (pow($this->getDiametre()/2,2));
+        // pi * rayon au carré
+        return pi()*(pow($this->getDiametre()/2,2));
     }
 
 
