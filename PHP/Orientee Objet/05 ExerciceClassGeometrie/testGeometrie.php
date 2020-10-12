@@ -8,8 +8,6 @@ require "ClassPave.php";
 require "ClassSphere.php";
 
 $rectangle[0] = new Rectangle (["longueur" => 10, "largeur" => 5]);
-// echo $rectangle[0] -> toString();
-$rectangle[1] = new Rectangle (["longueur" => 10, "largeur" => 5]);
 echo $rectangle[1] -> toString();
 
 $triangle[0] = new Triangle (["base" => 10, "hauteur" => 5]);
