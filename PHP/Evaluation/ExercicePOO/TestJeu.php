@@ -8,7 +8,7 @@ require "ClassJoueur.php";
 function lancerJeu($trace)
 { //methode qui lance le jeu
     $monHeros = new Joueur(["pV" => 50, "nom" => "monHeros"]);
-    while ($monHeros->estVivant()) // Tant que le héros est vivant, il comnbat des monstres
+    while ($monHeros->estVivant()) // Tant que le héros est vivant, il combat des monstres
     {
         $monstre = FabriqueDeMonstre();
         while ($monstre->getEstVivant() && $monHeros->estVivant()) // Attaque succéssive jusqu'à ce que l'un des 2 soit tués
