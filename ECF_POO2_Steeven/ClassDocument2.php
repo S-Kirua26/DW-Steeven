@@ -80,14 +80,7 @@ class Document2
      */
     public function equalsTo($document) // on compare si les auteurs sont les mêmes
     {
-        if($this->getAuteur() == $document)
-        {
-            return true; // si oui on renvoie vraie
-        }
-        else
-        {
-            return false; // sinon on renvoie faux
-        }
+        return ($this->getAuteur()==$document->getAuteur() && $this->getTitre()==$document->getTitre());
     }
     /**
      * Compare 2 objets
