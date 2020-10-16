@@ -1,0 +1,47 @@
+
+CREATE DATABASE Plages;
+
+CREATE TABLE NatureTerrain 
+(
+	IdNatureTerrain INT(11) not null AUTO_INCREMENT PRIMARY KEY , 
+	NatureDeTerrain VARCHAR(50)
+) ENGINE = INNODB DEFAULT CHARSET = UTF8
+
+CREATE TABLE Plage
+(
+	IdPlage INT(11) not null AUTO_INCREMENT	PRIMARY KEY ,
+	NombreKilometres INT
+) ENGINE = INNODB DEFAULT CHARSET = UTF8
+
+CREATE TABLE Ville
+(
+	IdVille INT(11) not null AUTO_INCREMENT PRIMARY KEY,
+	NomVille VARCHAR(50),
+	CodePostal VARCHAR (5),
+	NombreTouristesParAN INT
+) ENGINE = INNODB DEFAULT CHARSET = UTF8
+
+CREATE TABLE Departement
+(
+	IdDepartement INT(11) not null AUTO_INCREMENT,
+	NomDepartement VARCHAR(50),
+	PRIMARY KEY (IdDepartement)
+) ENGINE = INNODB DEFAULT CHARSET = UTF8
+
+CREATE TABLE Region
+(
+	IdRegion INT(11) not null AUTO_INCREMENT,
+	NomRegion VARCHAR(50),
+	PRIMARY KEY (IdRegion)
+) ENGINE = INNODB DEFAULT CHARSET = UTF8
+
+CREATE TABLE Responsable
+(
+	IdResponsable INT(11) not null AUTO_INCREMENT,
+	NomResponsable VARCHAR(50),
+	PrenomResponsable VARCHAR(50),
+	PRIMARY KEY (IdResponsable)
+) ENGINE = INNODB DEFAULT CHARSET = UTF8
+
+ALTER TABLE 
+
