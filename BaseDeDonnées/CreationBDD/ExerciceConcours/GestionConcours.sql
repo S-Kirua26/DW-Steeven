@@ -1,34 +1,33 @@
+DROP DATABASE IF EXISTS GestionConcours;
 
 CREATE DATABASE GestionConcours;
 
+USE GestionConcours;
+
 CREATE TABLE Concours
 (
-	IdConcours INT(11) not null AUTO_INCREMENT,
+	IdConcours INT(11) not null AUTO_INCREMENT PRIMARY KEY,
 	NomConcours VARCHAR(50),
 	LieuConcours VARCHAR(50),
 	DotationsConcours VARCHAR(50),
 	DateDuConcours DATE,
-	PRIMARY KEY (IdConcours)
 )
 CREATE TABLE Apprenti
 (
-	IdApprenti INT(11) not null AUTO_INCREMENT,
+	IdApprenti INT(11) not null AUTO_INCREMENT PRIMARY KEY,
 	NomApprenti VARCHAR(50),
 	PrenomApprenti VARCHAR(50),
-	PRIMARY KEY (IdApprenti)
 )
 CREATE TABLE Tuteur
 (
-	IdTuteur INT(11) not null AUTO_INCREMENT,
+	IdTuteur INT(11) not null AUTO_INCREMENT PRIMARY KEY,
 	NomTuteur VARCHAR(50),
 	PrenomTuteur VARCHAR(50),
-	PRIMARY KEY (IdTuteur)
 )
 CREATE TABLE ObjetCreer
 (
-	IdObjetCreer INT(11) not null AUTO_INCREMENT,
+	IdObjetCreer INT(11) not null AUTO_INCREMENT PRIMARY KEY,
 	NomObjet VARCHAR(50),
-	PRIMARY KEY (IdObjetCreer)
 )
 
 ALTER TABLE ObjetCreer ADD IdConcours INT(11);
