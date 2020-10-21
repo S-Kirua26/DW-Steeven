@@ -65,7 +65,7 @@ question K: SELECT idClient as "numero Client", idArticle as "Articles", AVG(qua
 
 question L: SELECT idClient as "numero Client", idArticle as "Articles", COUNT(quantiteCommande) as "Nombre articles pas jour" FROM commandes GROUP BY dateCommande;
 
-question M: SELECT COUNT(idClient) as "nombre de clients" FROM commandes;
+question M: SELECT COUNT(*) as "nombre de clients" FROM clients;
 
 question N: SELECT COUNT(DISTINCT(idClient)) as "nombre différent de clients" FROM commandes;
 
