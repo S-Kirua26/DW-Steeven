@@ -52,9 +52,18 @@ question E: SELECT etudiants.nomEtudiant as "Nom Etudiant" , etudiants.prenomEtu
 
 question F: ALTER TABLE etudiants ADD Hobby VARCHAR(20) NOT NULL 'SPORT' AFTER dateNaissanceEtudiant;
 
-question G: ALTER TABLE `etudiants` ADD `NewCol` INT NOT NULL AFTER `Hobby`;
-	    ALTER TABLE `etudiants` DROP `NewCol`;
+question G: ALTER TABLE etudiants ADD NewCol INT NOT NULL AFTER Hobby;
+	    ALTER TABLE etudiants DROP NewCol;
 
-question H: 
+question H: ALTER TABLE etudiants CHANGE prenomEtudiant prenomEtudiant VARCHAR(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
 
+question I: INSERT INTO epreuves VALUES (7,"interro ecrite",9,1,'1996-10-21',1,1);
+	    INSERT INTO avoir_note VALUES (NULL,1,7,10);
+	    INSERT INTO avoir_note VALUES (NULL,2,7,8);
+	    INSERT INTO avoir_note VALUES (NULL,3,7,5);
+	    INSERT INTO avoir_note VALUES (NULL,4,7,9);
+	    INSERT INTO avoir_note VALUES (NULL,17,3,15);
+
+question J: 
+	    
             
