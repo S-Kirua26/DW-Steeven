@@ -64,6 +64,8 @@ question I: INSERT INTO epreuves VALUES (7,"interro ecrite",9,1,'1996-10-21',1,1
 	    INSERT INTO avoir_note VALUES (NULL,4,7,9);
 	    INSERT INTO avoir_note VALUES (NULL,17,3,15);
 
-question J: 
+question J: SELECT etudiants.nomEtudiant as "Nom Etudiant", etudiants.prenomEtudiant as "Prenom Etudiant", avoir_note as "Notes Obtenue"
+            FROM avoir_note INNER JOIN etudiants ON avoir_note.idEtudiant = etudiants.idEtudiant
+	    WHERE 
 	    
             
