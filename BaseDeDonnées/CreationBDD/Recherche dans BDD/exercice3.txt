@@ -73,9 +73,11 @@ question L: DELETE FROM avoir_note WHERE idEpreuves = 7;
 
 question M: On utilise le DELETE CASCADE dans phpMyAdmin
 
-question N: UPDATE avoir_note SET note = note - 3 WHERE idEtudiant = 9 AND (SELECT matieres.nomMatiere as "Nom de la matiere" 
-            FROM epreuves INNER JOIN matieres ON epreuves.idMatiereEpreuve = matieres.idMatiere INNER JOIN avoir_note ON epreuves.idEpreuve = avoir_note.idEpreuve 
-	    WHERE matieres.nomMatiere = "BD");
+question N: UPDATE avoir_note INNER JOIN etudiants.idEtudiant = avoir_note.idEtudiant
+			      INNER JOIN epreuves.idEpreuve = avoir_note.idEpreuve
+			      INNER JOIN matieres.idMatiere = epreuves.idMatiereEpreuve
+            SET avoir_note.note = note - 3
+            WHERE nomEtudiant = "MARKE" AND nomMatiere = "BD";
 
 question O:
 
