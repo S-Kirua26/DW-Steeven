@@ -11,7 +11,7 @@ F) Ajoutez une colonne HOBBY à la table ETUDIANT. Cette colonne est de type cha
 Par défaut le HOBBY est mis à SPORT. 
 G) Ajouter à la table ETUDIANT une colonne NEWCOL de type INTEGER (vérifier en affichant la
 structure de la table) puis la supprimer (vérifier de nouveau la suppression).
-H) Vérifiez que PREnomEtudiant peut ne pas avoir de contenu puis indiquez que la colonne PREnomEtudiant
+H) Vérifiez que prenomEtudiant peut ne pas avoir de contenu puis indiquez que la colonne prenomEtudiant
 doit obligatoirement avoir une valeur. Vérifiez sur la description de la table.
 I)Insérez les enregistrements suivants: 7, 'interro écrite',9,1,'21-oct-96',1 dans EPREUVE 
 1,7,10
@@ -36,7 +36,7 @@ question A: SELECT nomEtudiant, prenomEtudiant, dateNaissanceEtudiant FROM etudi
 
 question B: SELECT etudiants.nomEtudiant as "Nom Etudiant" , etudiants.prenomEtudiant as "Prenom Etudiant", avoir_note.note as "Notes Obtenue" 
             FROM avoir_note INNER JOIN etudiants ON avoir_note.idEtudiant = etudiants.idEtudiant 
-	    WHERE avoir_note.idEpreuve = 4 AND note > (SELECT AVG(note) FROM avoir_note); 
+	    WHERE avoir_note.idEpreuve = 4 AND note > (SELECT AVG(note) FROM avoir_note WHERE avoir_note.idEpreuve = 4); 
 
 question C: SELECT etudiants.nomEtudiant as "Nom Etudiant", etudiants.prenomEtudiant as "Prenom Etudiant", avoir_note.note as "Notes Obtenue"
 	    FROM avoir_note INNER JOIN etudiants ON avoir_note.idEtudiant = etudiants.idEtudiant
@@ -44,28 +44,41 @@ question C: SELECT etudiants.nomEtudiant as "Nom Etudiant", etudiants.prenomEtud
 
 question D: SELECT etudiants.nomEtudiant as "Nom Etudiant" , etudiants.prenomEtudiant as "Prenom Etudiant", avoir_note.note as "Notes Obtenue" 
             FROM avoir_note INNER JOIN etudiants ON avoir_note.idEtudiant = etudiants.idEtudiant 
-	    WHERE avoir_note.idEpreuve = 4 AND note > (SELECT note FROM avoir_note INNER JOIN etudiants ON avoir_note.idEtudiant = etudiants.idEtudiant WHERE nomEtudiant = "DUPONT" AND prenomEtudiant = "Luc" AND idEpreuve = 4); 
+	    WHERE avoir_note.idEpreuve = 4 AND note > (SELECT note FROM avoir_note INNER JOIN etudiants ON avoir_note.idEtudiant = etudiants.idEtudiant WHERE nomEtudiant = "DUPONT" AND prenomEtudiant = "Luc" AND avoir_note.idEpreuve = 4); 
 
 question E: SELECT etudiants.nomEtudiant as "Nom Etudiant" , etudiants.prenomEtudiant as "Prenom Etudiant", avoir_note.note as "Notes Obtenue" 
             FROM avoir_note INNER JOIN etudiants ON avoir_note.idEtudiant = etudiants.idEtudiant 
 	    WHERE note IN (SELECT note FROM avoir_note INNER JOIN etudiants ON avoir_note.idEtudiant = etudiants.idEtudiant WHERE nomEtudiant = "DUPONT" AND prenomEtudiant = "Luc");
 
-question F: ALTER TABLE etudiants ADD Hobby VARCHAR(20) NOT NULL 'SPORT' AFTER dateNaissanceEtudiant;
+question F: ALTER TABLE etudiants ADD Hobby VARCHAR(20) NOT NULL DEFAULT "SPORT" AFTER dateNaissanceEtudiant;
 
 question G: ALTER TABLE etudiants ADD NewCol INT NOT NULL AFTER Hobby;
 	    ALTER TABLE etudiants DROP NewCol;
 
-question H: ALTER TABLE etudiants CHANGE prenomEtudiant prenomEtudiant VARCHAR(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
+question H: ALTER TABLE etudiants MODIFY prenomEtudiant VARCHAR(50) NOT NULL; 
 
-question I: INSERT INTO epreuves VALUES (7,"interro ecrite",9,1,'1996-10-21',1,1);
+question I: INSERT INTO epreuves VALUES (7,"interro ecrite",9,1,'1996-10-21',1,NULL);
 	    INSERT INTO avoir_note VALUES (NULL,1,7,10);
 	    INSERT INTO avoir_note VALUES (NULL,2,7,8);
 	    INSERT INTO avoir_note VALUES (NULL,3,7,5);
 	    INSERT INTO avoir_note VALUES (NULL,4,7,9);
 	    INSERT INTO avoir_note VALUES (NULL,17,3,15);
 
-question J: SELECT etudiants.nomEtudiant as "Nom Etudiant", etudiants.prenomEtudiant as "Prenom Etudiant", avoir_note as "Notes Obtenue"
-            FROM avoir_note INNER JOIN etudiants ON avoir_note.idEtudiant = etudiants.idEtudiant
-	    WHERE 
+question J: UPDATE avoir_note SET avoir_note.note = 7 WHERE idEtudiant = 3 AND idEpreuve = 7;
+
+question K: UPDATE avoir_note SET avoir_note.note = note + 1 WHERE idEtudiant = 1 AND idEpreuve = 7;
+
+question L: DELETE FROM avoir_note WHERE idEpreuves = 7;
+            DELETE FROM epreuves WHERE idEpreuves = 7;
+
+question M: On utilise le DELETE CASCADE dans phpMyAdmin
+
+question N: UPDATE avoir_note SET note = note - 3 WHERE idEtudiant = 9 AND (SELECT matieres.nomMatiere as "Nom de la matiere" 
+            FROM epreuves INNER JOIN matieres ON epreuves.idMatiereEpreuve = matieres.idMatiere INNER JOIN avoir_note ON epreuves.idEpreuve = avoir_note.idEpreuve 
+	    WHERE matieres.nomMatiere = "BD");
+
+question O:
+
+question P:  
 	    
             
