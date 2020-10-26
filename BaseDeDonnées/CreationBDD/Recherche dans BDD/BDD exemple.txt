@@ -190,7 +190,7 @@ il n'y a personne, classés par numéro de département.
 	FROM employe;
 
 17) Rechercher le nombre de titres différents.
-	SELECT DISTINCT(employe.titre) FROM employe;
+	SELECT COUNT(DISTINCT(employe.titre)) FROM employe;
 
 18) Pour chaque titre, compter le nombre d'employés possédant ce titre.
 	SELECT employe.titre, COUNT(*) as "nombre d'employe" FROM employe GROUP BY employe.titre;
