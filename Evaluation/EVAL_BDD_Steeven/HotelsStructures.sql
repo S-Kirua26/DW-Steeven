@@ -17,8 +17,7 @@ CREATE TABLE Hotels
 	nomHotel VARCHAR(30),
 	categorieHotel VARCHAR(30),
 	adresseHotel VARCHAR(50),
-	villeHotel VARCHAR(30),
-	idStation Int(11) NOT NULL
+	villeHotel VARCHAR(30)
 ) ENGINE = INNODB DEFAULT CHARSET = UTF8;
 
 CREATE TABLE Chambres
@@ -39,9 +38,7 @@ CREATE TABLE Clients
     dateDebutSejour DATE,
     dateFinSejour DATE,
     arrhesReservation VARCHAR(30),
-    DateReservation DATE,
-	idHotel Int(11) NOT NULL ,
-	idClient Int(11) NOT NULL
+    DateReservation DATE
 ) ENGINE = INNODB DEFAULT CHARSET = UTF8;
 
 ALTER TABLE Hotels ADD idStation INT(11);
