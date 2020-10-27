@@ -4,47 +4,83 @@ CREATE DATABASE Hotel;
 
 USE Hotel;
 
-CREATE TABLE Station
-(
-	idStation INT(11) not null AUTO_INCREMENT PRIMARY KEY,
-	nomStation VARCHAR(40),
-	altitudeStation VARCHAR(10)
-) ENGINE = INNODB DEFAULT CHARSET = UTF8;
+#------------------------------------------------------------
+#        Script MySQL.
+#------------------------------------------------------------
 
-CREATE TABLE Hotels
-(
-    idHotel INT(11) not null AUTO_INCREMENT PRIMARY KEY,
-	nomHotel VARCHAR(30),
-	categorieHotel VARCHAR(30),
-	adresseHotel VARCHAR(50),
-	villeHotel VARCHAR(30),
-	idStation Int(11) NOT NULL
-) ENGINE = INNODB DEFAULT CHARSET = UTF8;
 
-CREATE TABLE Chambres
-(
-    idChambre INT(11) not null AUTO_INCREMENT PRIMARY KEY,
-	noChambre INT,
-	typeChambre VARCHAR(30),
-	capaciteChambre VARCHAR(30)
-) ENGINE = INNODB DEFAULT CHARSET = UTF8;
+#------------------------------------------------------------
+# Table: Station
+#------------------------------------------------------------
 
-CREATE TABLE Clients
-(
-	idClient INT(11) not null AUTO_INCREMENT PRIMARY KEY,
-	nomClient VARCHAR(30),
-	prenomClient VARCHAR(30),
-	adresseClient VARCHAR(50),
-	villeClient VARCHAR(30),
-    dateDebutSejour DATE,
-    dateFinSejour DATE,
-    arrhesReservation VARCHAR(30),
-    DateReservation DATE,
-	idHotel Int(11) NOT NULL ,
-	idClient Int(11) NOT NULL
-) ENGINE = INNODB DEFAULT CHARSET = UTF8;
+CREATE TABLE Station(
+        idStation       Int  Auto_increment  NOT NULL ,
+        nomStation      Varchar (40) NOT NULL ,
+        altitudeStation Varchar (10) NOT NULL
+	,CONSTRAINT Station_PK PRIMARY KEY (idStation)
+)ENGINE=InnoDB;
 
-ALTER TABLE Hotels ADD idStation INT(11);
-ALTER TABLE Hotels ADD CONSTRAINT FK_Hotels_Station FOREIGN KEY (idStation) REFERENCES Station(idStation);
-ALTER TABLE Chambres ADD idHotel INT(11);
-ALTER TABLE Chambres ADD CONSTRAINT FK_Chambres_Hotels FOREIGN KEY (idHotel) REFERENCES Hotels(idHotel);
+
+#------------------------------------------------------------
+# Table: Hotels
+#------------------------------------------------------------
+
+CREATE TABLE Hotels(
+        idHotel        Int  Auto_increment  NOT NULL ,
+        nomHotel       Varchar (30) NOT NULL ,
+        CategorieHotel Varchar (30) NOT NULL ,
+        adresseHotel   Varchar (30) NOT NULL ,
+        villeHotel     Varchar (30) NOT NULL ,
+        idStation      Int NOT NULL
+	,CONSTRAINT Hotels_PK PRIMARY KEY (idHotel)
+
+	,CONSTRAINT Hotels_Station_FK FOREIGN KEY (idStation) REFERENCES Station(idStation)
+)ENGINE=InnoDB;
+
+#------------------------------------------------------------
+# Table: Chambres
+#------------------------------------------------------------
+
+CREATE TABLE Chambres(
+        idChambre       Int  Auto_increment  NOT NULL ,
+        noChambre       Int NOT NULL ,
+        TypeChambre     Varchar (30) NOT NULL ,
+        CapaciteChambre Varchar (30) NOT NULL ,
+        idHotel         Int NOT NULL
+	,CONSTRAINT Chambres_PK PRIMARY KEY (idChambre)
+
+	,CONSTRAINT Chambres_Hotels_FK FOREIGN KEY (idHotel) REFERENCES Hotels(idHotel)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Clients
+#------------------------------------------------------------
+
+CREATE TABLE Clients(
+        idClient      Int  Auto_increment  NOT NULL ,
+        nomClient     Varchar (30) NOT NULL ,
+        prenomClient  Varchar (30) NOT NULL ,
+        adresseClient Varchar (30) NOT NULL ,
+        villeClient   Varchar (30) NOT NULL
+	,CONSTRAINT Clients_PK PRIMARY KEY (idClient)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Reserve
+#------------------------------------------------------------
+
+CREATE TABLE Reserve(
+        idChambre         Int NOT NULL ,
+        idClient          Int NOT NULL ,
+        DateDebutSejour   Date NOT NULL ,
+        DateFinSejour     Date NOT NULL ,
+        PrixReservation   Double NOT NULL ,
+        ArrhesReservation Varchar (30) NOT NULL ,
+        DateReservation   Date NOT NULL
+	,CONSTRAINT Reserve_PK PRIMARY KEY (idChambre,idClient)
+
+	,CONSTRAINT Reserve_Chambres_FK FOREIGN KEY (idChambre) REFERENCES Chambres(idChambre)
+	,CONSTRAINT Reserve_Clients0_FK FOREIGN KEY (idClient) REFERENCES Clients(idClient)
+)ENGINE=InnoDB;
