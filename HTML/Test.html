@@ -1,35 +1,127 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
+<!-- On initialise le DOCTYPE-->
 
-<html lang="fr"> 
+<html lang="fr">
+<!-- On specifie en quel langue notre site sera écris-->
 
-<head> 
-    <meta charset="utf-8"> 
-    <title> Ma première page en HTML 5 </title> 
+<head>
+    <!-- On initialise l'entête de notre page-->
+    <meta charset="utf-8">
+    <!-- On spécifie l'encodage de notre page-->
+    <title> Ma (première) page en HTML 5 </title>
+    <!-- Titre que portera notre page web-->
+    <meta name="Description" content="Ce premier site est un entrainement pour nos futurs site web">
+    <!-- Indexation du site par les navigateur-->
+    <link href="style.css" rel="stylesheet">
+    <!-- Permet d'aller rechercher un fichier en lien avec notre fichier HTML-->
 </head>
 
-<body> 
-    <h1>
-        Le HTML 5
-    </h1> 
-    <img src="source de l'image" alt = "representation de la photo" title = "C'est une photo">
-    <p>
-        Le langage HTML, c’est fantastique.
-    </p> 
-    <h2>Test d'un h2</h2>
+<body>
+    <!-- On initialise le corp de notre page web-->
+    <h1 id="titre1"> Apprentissage de l'HTML 5 </h1>
+    <!-- Titre Principal de notre page web-->
+    <img class="image" src="Onepiece.jpg" alt="representation de la photo" title="C'est une photo">
+    <!-- Ajout d'une image sur notre page web-->
+    <p class="para"> Ce texte que j'ecris se trouve dans une balise p </p>
+    <!-- Un paragraphe de notre site-->
+    <h2 id="h2">Test d'un h2</h2>
+    <!-- Second titre moins important-->
 
-    <ol>
-        <li>J'ecris un epremiere phrase</li>
+    <p class="para"> Je fais un test de couleur</p>
+    <p class="perfect"> Je fais un test de couleur</p>
+    <p class="moisson"> Je fais un test de couleur</p>
+
+    <hr color=red>
+
+    <h2 class="test2"> Quelsque balises HTML</h2>
+
+    <ol class="ordonne">
+        <!-- Initialisation d'une liste ordonnée-->
+        <li>J'ecris une premiere phrase</li>
         <li>J'ecris une seconde ligne</li>
-        <li>J'ecris un etroisieme notion</li>
+        <li>J'ecris une troisieme notion</li>
     </ol>
 
-    <ul>
+    <ul class="nordonne">
+        <!-- Initialisation d'une liste non ordonnée-->
         <li>J'ecris une phrase autre que la premiere</li>
         <li>J'ecris une phrase autre que la seconde</li>
         <li>J'ecris une phrase autre que la troisieme</li>
     </ul>
 
+    <ul>
+        <!-- Initialisation d'une liste non-ordonne comprenant des listes ordonne-->
+        <div>
+            <ol class="directeur"> La balise B
+        </div>
+        <ol>
+            <p class="ol">Exemple d'emploi</p>
+            <p class="ol">Effet dans le navigateur</p>
+        </ol>
+        </ol>
+        <div>
+            <ol class="directeur"> La balise I
+        </div>
+        <ol>
+            <p class="ol2">Exemple d'emploi</p>
+            <p class="ol2">Effet dans le navigateur</p>
+        </ol>
+        </ol>
+        <div>
+            <ol class="directeur"> La balise U
+        </div>
+        <ol>
+            <p class="ol3">Exemple d'emploi</p>
+            <p class="ol3">Effet dans le navigateur</p>
+        </ol>
+        </ol>
+    </ul>
 
-    <script src="scripts.js"></script> 
-</body> 
+    <a id="lien" href="https://fr.wikipedia.org/wiki/Chat" title="Ce lien renvoie vers un autre site" target=blank>
+        Informations sur les chats </a>
+    <!-- Initialisation d'un lien vers un autre site-->
+    <br>
+    <br>
+    <div class="michel">
+        <table>
+            <tr>
+                <td> - </td>
+                <td>Janvier</td>
+                <td>Février</td>
+                <td>Mars</td>
+            </tr>
+            <tr>
+                <td>Pierre</td>
+                <td>65 800</td>
+                <td>53 200</td>
+                <td>46 400</td>
+            </tr>
+            <tr>
+                <td>Paul</td>
+                <td>88 000</td>
+                <td>51 500</td>
+                <td>62 300</td>
+            </tr>
+            <tr>
+                <td>Jacques</td>
+                <td>74 400</td>
+                <td>64 200</td>
+                <td>78 900</td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td>228 200</td>
+                <td>168 900</td>
+                <td>187 600</td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+
+<!-- Initialisation du pied de page-->
+<footer>
+
+</footer>
+
 </html>

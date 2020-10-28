@@ -1,0 +1,120 @@
+body {
+    background-color: #fff27f;
+}
+
+#titre1 {
+    text-align: center;
+    color: rgb(147, 26, 120);
+    text-decoration: underline;
+    font-size: 90px;
+}
+
+#h2 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 300%;
+}
+
+.para {
+    color: rgb(225, 32, 69);
+    font-style: italic;
+    font-size: 25px;
+    font-weight: 300;
+    text-indent: 10%;
+}
+
+.moisson {
+    color: rgb(36, 241, 96);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    text-align: right;
+}
+
+.perfect {
+    color: rgb(54, 54, 198);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 36px;
+    font-style: normal;
+    text-align: center;
+}
+
+.ordonne {
+    color: rgb(93, 16, 100);
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.nordonne {
+    color: rgb(190, 114, 28);
+    font-size: 20px;
+    font-weight: bold;
+    font-style: oblique;
+}
+
+#lien {
+    color: rgb(241, 36, 87);
+    font-size: 24px;
+}
+
+a:hover {
+    background-color: rgb(28, 187, 187);
+}
+
+.test2 {
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.ol {
+    color: red;
+    font-size: 30px;
+    text-indent: 5%;
+}
+
+.ol2 {
+    color: blue;
+    font-size: 30px;
+    text-indent: 5%;
+}
+
+.ol3 {
+    color: purple;
+    font-size: 30px;
+    text-indent: 5%;
+}
+
+.directeur {
+    font-weight: bold;
+    font-size: 35px;
+    text-decoration: underline;
+    color: rgb(40, 189, 27)
+}
+
+table {
+    border: medium solid #d31010;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    font-family: monospace;
+    border: thin solid #0a3380;
+    width: 100%;
+    padding: 5px;
+    background-color: #D0E3FA;
+}
+
+td {
+    font-family: sans-serif;
+    border: thin solid #0400ec;
+    width: 25%;
+    padding: 5px;
+    text-align: center;
+    background-color: #ffffff
+}
+
+.michel {
+    width: 50%;
+}
