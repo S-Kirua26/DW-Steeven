@@ -114,6 +114,8 @@
             UPDATE reservations SET Archive = "oui" WHERE dateFinSejour < NOW();
         END |
     DELIMITER ;
+    
+
 
 
 
