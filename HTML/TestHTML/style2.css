@@ -1,25 +1,71 @@
+/* /////////////////////////////////////////////////////////////////// GENERAL ////////////////////////////////////////////////////////////////////////// */
+
+
+/*On initialise des propriétés au body*/
+
 body {
     background-color: cyan;
 }
 
+
+/* /////////////////////////////////////////////////////////////////// HEADER ////////////////////////////////////////////////////////////////////////// */
+
+
+/*On initialise les propriétés au header */
+
 header {
     background-color: pink;
-    border: 3px solid blueviolet;
-    margin: 14px;
+    border: 8px solid blueviolet;
+    padding: 10px;
+    font-family: sans-serif;
+    font-size: 2em;
+    width: 80%;
 }
+
+
+/* /////////////////////////////////////////////////////////////////// CONTENU CORP DE PAGE ////////////////////////////////////////////////////////////////////////// */
+
+.test {
+    background-color: chartreuse;
+    text-align: center;
+    text-decoration: underline;
+    font-style: italic;
+    font-size: 1em;
+}
+
+.suivant {
+    color: rgb(20, 23, 201);
+    background-color: orange;
+    border: 4px medium lightseagreen;
+    text-align: center;
+    text-indent: 36%;
+    font-size: 1em;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.couleur {
+    color: rgb(125, 125, 125);
+}
+
+.image {
+    margin: 6px;
+    padding: 6px;
+    background-color: white;
+    text-align: center;
+    ;
+}
+
+
+/* /////////////////////////////////////////////////////////////////// FOOTER ////////////////////////////////////////////////////////////////////////// */
 
 footer {
     color: rgb(238, 255, 0);
     background-color: mediumslateblue;
     border: 3px solid brown;
-    margin: 18px;
-}
-
-.test {
-    background-color: chartreuse;
-}
-
-.suivant {
-    color: orchid;
-    border: 4px medium lightseagreen;
+    margin: 17px;
+    padding: 7px;
+    font-size: 1.5em;
 }
