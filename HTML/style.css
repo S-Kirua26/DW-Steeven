@@ -53,12 +53,13 @@ body {
 }
 
 #lien {
-    color: rgb(241, 36, 87);
+    color: rgb(239, 80, 245);
     font-size: 24px;
+    float: right;
 }
 
 a:hover {
-    background-color: rgb(28, 187, 187);
+    background-color: rgba(28, 187, 187, 0.4);
 }
 
 .test2 {
@@ -117,4 +118,17 @@ td {
 
 .michel {
     width: 50%;
+}
+
+.hr {
+    height: 4px;
+    background-color: black;
+}
+
+#copyright {
+    color: black;
+    font-size: medium;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: underline;
 }
