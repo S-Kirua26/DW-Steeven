@@ -1,0 +1,43 @@
+#rubrique {
+    border: 2px dashed black;
+    margin: 1.7em 2.5em;
+    padding: 2.5em 2.5em 2.5em 4.5em;
+}
+
+#article {
+    border: 2px dashed black;
+    width: 63%;
+    height: 69%;
+    margin-left: 3.1em;
+    padding: 1.2em 1.2em;
+}
+
+.bleu {
+    background-color: rgb(147, 206, 255);
+    padding-top: 2.4em;
+    padding-right: 1.7em;
+    padding-bottom: 2.4em;
+    padding-left: 0.8em;
+}
+
+#tete {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 150%;
+}
+
+#italique {
+    font-family: sans-serif;
+}
+
+#tangenciel {
+    border: 2px dashed black;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    padding-left: 0.4em;
+    margin-right: 5.2em;
+    margin-left: 5.2em;
+}
+
+#contenu {
+    font-size: 20px;
+}

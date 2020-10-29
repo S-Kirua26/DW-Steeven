@@ -1,0 +1,32 @@
+#degrade {
+    background: linear-gradient(#FFFFFF, #ddfcba);
+    width: 25vw;
+}
+
+.radio {
+    margin-left: 30%;
+}
+
+#input1 {
+    margin-left: 18%;
+}
+
+#input2 {
+    margin-left: 15.2%;
+}
+
+#input3 {
+    margin-left: 14.4%;
+}
+
+#input4 {
+    margin-left: 15.1%;
+}
+
+#input5 {
+    margin-left: 13.2%;
+}
+
+span {
+    color: red;
+}

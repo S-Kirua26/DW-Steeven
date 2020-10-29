@@ -1,0 +1,27 @@
+.vert {
+    background-color: green;
+    width: 70vw;
+    height: 70vh;
+}
+
+.rouge {
+    background-color: red;
+    width: 29vw;
+    height: 70vh;
+}
+
+.bleu {
+    background-color: blue;
+    width: 70vw;
+    height: 29vh;
+}
+
+.jaune {
+    background-color: yellow;
+    width: 29vw;
+    height: 29vh;
+}
+
+.flex {
+    display: flex;
+}
