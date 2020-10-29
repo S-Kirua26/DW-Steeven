@@ -1,0 +1,25 @@
+body {
+    background-color: cyan;
+}
+
+header {
+    background-color: pink;
+    border: 3px solid blueviolet;
+    margin: 14px;
+}
+
+footer {
+    color: rgb(238, 255, 0);
+    background-color: mediumslateblue;
+    border: 3px solid brown;
+    margin: 18px;
+}
+
+.test {
+    background-color: chartreuse;
+}
+
+.suivant {
+    color: orchid;
+    border: 4px medium lightseagreen;
+}
