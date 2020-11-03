@@ -1,0 +1,42 @@
+nav{
+    display: flex;
+    width: 75vw;
+}
+
+.espace{
+    flex: 0.2;
+}
+
+.englobe{
+    display: flex;
+    flex: 1;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.bouton{
+    flex: 1;
+    border: black 3px solid;
+    margin-top: 0.3em;
+    background-color: rgb(250, 143, 21);
+    border-radius: 50% 20% / 10% 40%;
+}
+
+.bouton:hover{
+    background: linear-gradient(rgb(209, 38, 38), rgb(233, 157, 58), rgb(59, 238, 214),rgb(233, 157, 58),rgb(209, 38, 38));
+    box-shadow: 0.2em 0.2em 0.2em rgb(48, 47, 47);
+}
+
+.menu{
+    text-align: center;
+}
+
+.bouton:hover .ssMenu
+{
+    display: flex;
+}
+
+.ssMenu{
+    display: none;
+    flex-direction: column;
+}

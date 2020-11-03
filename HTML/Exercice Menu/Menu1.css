@@ -14,12 +14,11 @@ nav{
     border: black 1px solid;
     justify-content: center;
     border-radius: 10% / 50%;
-    box-shadow:rgb(23, 12, 175);
 } 
 
 .bouton:hover{
     background: linear-gradient(rgb(62, 63, 62), rgb(141, 150, 199), rgb(42, 245, 245),rgb(141, 150, 199),rgb(62, 63, 62));
-    box-shadow: 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.774);
+    box-shadow: 0.2em 0.2em 0.2em rgb(23, 12, 175);
 }
 
 .menu{
