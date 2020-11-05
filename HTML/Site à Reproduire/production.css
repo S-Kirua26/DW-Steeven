@@ -105,7 +105,7 @@ div {
     background-size: cover;
 }
 
-.grandArticle {
+.espace {
     margin-top: 6.5em;
 }
 
@@ -124,6 +124,7 @@ div {
 
 .titreImageMini {
     font-size: 1.2em;
+    font-weight: bold;
     justify-content: center;
 }
 
