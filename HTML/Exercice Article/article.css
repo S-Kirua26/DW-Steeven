@@ -35,29 +35,29 @@
     padding-bottom: 2em;
     padding-left: 0.4em;
     margin-right: 5.2em;
-    margin-left: 5.1em;
+    margin-left: 5.2em;
 }
 
 #contenu {
     font-size: 20px;
 }
 
-.flex{
+.flex {
     display: flex;
 }
 
-#testAside{
+#testAside {
     width: 24%;
     border: 2px dashed black;
     margin-left: 2.5em;
     padding-top: 2em;
 }
 
-.navigation{
+.navigation {
     font-size: 18px;
     font-weight: bold;
 }
 
-#lien{
+#lien {
     padding-left: 7em;
 }
