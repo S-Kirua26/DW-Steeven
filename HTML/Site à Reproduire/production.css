@@ -15,6 +15,13 @@ header {
     height: 10em;
 }
 
+footer {
+    display: flex;
+    background-image: url("pp.jpg");
+    background-size: 100%;
+    height: 3em;
+}
+
 img {
     width: 100%;
 }
@@ -27,8 +34,12 @@ div {
 
 /************************************************************ HEADER ***********************************************/
 
+.logo {
+    flex: 2
+}
+
 .titrePage {
-    flex: 3;
+    flex: 5;
     justify-content: center;
     align-items: center;
     font-size: 3.2em;
@@ -38,18 +49,129 @@ div {
 
 /************************************************************* PAGE *************************************************/
 
+.largePage {
+    background-image: url(bg.jpg);
+    background-size: 100%;
+}
+
 .page {
     display: flex;
     flex-direction: column;
+    margin-top: 6.5em;
 }
+
+
+/************************************************************* PARTIE 1 *********************************************/
 
 .carreBlanc {
     flex: 3;
     flex-direction: column;
+    justify-content: center;
 }
 
-.fondImage {
+.fondImage1 {
     flex: 3;
     background-image: url("01.jpg");
-    background: no-repeat;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.titreCarreBlanc {
+    font-weight: bold;
+    font-size: 1.2em;
+    padding-top: 0.5em;
+    padding-left: 0.5em;
+    justify-content: center;
+    background-color: white;
+}
+
+.texteCarreBlanc {
+    padding-top: 1.8em;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    justify-content: center;
+    background-color: white;
+}
+
+
+/*********************************************************** PARTIE 2 ***********************************************/
+
+.fondImage2 {
+    flex: 3;
+    background-image: url("02.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.grandArticle {
+    margin-top: 6.5em;
+}
+
+
+/*********************************************************** PARTIE 3 ************************************************/
+
+.titreArticle3 {
+    font-size: 1.5em;
+    font-weight: bold;
+    justify-content: center;
+}
+
+.contenu {
+    margin: 1.3em;
+}
+
+.titreImageMini {
+    font-size: 1.2em;
+    justify-content: center;
+}
+
+.fondImage3 {
+    background-image: url("08.jpg");
+}
+
+.fondImage4 {
+    background-image: url("07.jpg");
+}
+
+.fondImage5 {
+    background-image: url("06.jpg");
+}
+
+.fondImage6 {
+    background-image: url("05.jpg");
+}
+
+.fondImage7 {
+    background-image: url("04.jpg");
+}
+
+.fondImage8 {
+    background-image: url("03.jpg");
+}
+
+.fondImage9 {
+    background-image: url("02.jpg");
+}
+
+.fondImage10 {
+    background-image: url("01.jpg");
+}
+
+.fondGlobal {
+    flex: 3;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 1.3em 1.3em 1.3em 1.3em;
+}
+
+
+/*********************************************************** FOOTER **************************************************/
+
+.titreFooter {
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
 }
