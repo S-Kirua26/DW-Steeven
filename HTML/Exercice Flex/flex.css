@@ -1,0 +1,35 @@
+.bleu{
+    background-color: blue;
+    width: 98vw;
+    height: 98vh;
+    margin-top: 2.5em;
+}
+
+.orange{
+    background-color: orange;
+    width: 90vw;
+    /*margin-top: 3em;*/
+    margin-left: 2.5em;
+    margin-bottom: 2em;
+    margin-right: 3em;
+
+}
+
+.gris{
+    background-color: grey;
+    width: 20vw;
+}
+
+.jaune{
+    background-color: yellow;
+    width: 60vw;
+    margin-left: 2.5em ;
+}
+
+.vert{
+    background-color: green;
+}
+
+.flex{
+    display: flex;
+}

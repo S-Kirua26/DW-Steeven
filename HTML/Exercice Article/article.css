@@ -20,7 +20,7 @@
     padding-left: 0.8em;
 }
 
-#tete {
+.tete {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 150%;
 }
@@ -40,4 +40,24 @@
 
 #contenu {
     font-size: 20px;
+}
+
+.flex{
+    display: flex;
+}
+
+#testAside{
+    width: 24%;
+    border: 2px dashed black;
+    margin-left: 2.5em;
+    padding-top: 2em;
+}
+
+.navigation{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#lien{
+    padding-left: 7em;
 }
