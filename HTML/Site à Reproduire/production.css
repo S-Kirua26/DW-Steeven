@@ -1,0 +1,55 @@
+/************************************************************* PAGE **************************************************/
+
+body html {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    background-image: url("sky.jpg");
+    background-size: 100%;
+    padding-top: 2em;
+    padding-left: 3em;
+    padding-bottom: 2em;
+    height: 10em;
+}
+
+img {
+    width: 100%;
+}
+
+div {
+    display: flex;
+    flex: 1;
+}
+
+
+/************************************************************ HEADER ***********************************************/
+
+.titrePage {
+    flex: 3;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.2em;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+/************************************************************* PAGE *************************************************/
+
+.page {
+    display: flex;
+    flex-direction: column;
+}
+
+.carreBlanc {
+    flex: 3;
+    flex-direction: column;
+}
+
+.fondImage {
+    flex: 3;
+    background-image: url("01.jpg");
+    background: no-repeat;
+}
