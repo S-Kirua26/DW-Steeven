@@ -1,0 +1,76 @@
+body, html{
+    padding: 0;
+    margin: 0;
+}
+
+body, html, div, footer, header, nav{
+    display: flex;
+    flex: 1
+}
+
+header {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(rgb(76, 228, 233), rgb(225, 137, 243), rgb(233, 207, 62));
+    display: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+.nav{
+    display: flex;
+    width: 100%;
+}
+
+.menu{
+    display: flex;
+    align-items: flex-start;
+    flex: 1;
+    justify-content: center;
+    margin-top: 0.4em;
+}
+.tout {
+    justify-content: center;
+    align-items: center;
+}
+
+.espace{
+    flex: 1;
+}
+
+.miniEspace{
+    flex: 0.05;
+}
+
+.bouton{
+    flex: 1;
+    justify-content: center;
+    position: relative;
+    background: linear-gradient(rgb(76, 228, 233), rgb(225, 137, 243), rgb(233, 207, 62));
+    font-size: 1.3em;
+}
+
+.bouton:hover .sousMenu{
+    display: flex;
+}
+
+.titreMenu{
+    text-align: center;
+    flex-direction: column;
+    font-weight: bold;
+    color: rgb(68, 64, 68);
+}
+
+.sousMenu{
+    justify-content: center;
+    font-size: 0.9em;
+    display: none;
+    color: rgb(0, 4, 255)
+}
+
+.sousMenu:hover{
+    color: rgb(235, 31, 31);
+    border: 1px solid rgb(235, 33, 33);
+}
+
