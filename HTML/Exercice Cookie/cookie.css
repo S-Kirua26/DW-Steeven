@@ -124,10 +124,6 @@ nav{
     padding-top: 1em;
 }
 
-.vdo{
-    flex:1;
-}
-
 video{
     width: 100%;
 }
@@ -136,7 +132,7 @@ video{
     flex: 3;
     flex-direction: column;
     padding-left: 2em;
-    height: 41vh;
+    height: 41vh; /* hauteur visible du scroll*/
     overflow-y: scroll;
 }
 
