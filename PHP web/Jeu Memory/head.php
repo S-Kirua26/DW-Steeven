@@ -3,14 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memory</title>
+    <title><?php echo $titrePage ?></title>
     <link href="memory.css" rel="stylesheet">
 </head>
 
 <body>
-    <header>
-        
-    </header>
-</body>
-
-</html>

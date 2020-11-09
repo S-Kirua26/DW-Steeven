@@ -1,0 +1,60 @@
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+body, header, footer, div{
+    display: flex;
+}
+
+body{
+    flex-direction: column;
+}
+
+header, footer{
+    flex: 1;
+}
+
+.espace{
+    flex: 1;
+}
+
+.contenu{
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.4em;
+}
+
+.ligne{
+    display: flex;
+    flex-direction: column;
+}
+
+.photo{
+    flex: 1;
+}
+
+.photo:hover{
+    background-image: url("plage.jpg");
+}
+
+img{
+    width: 100%;
+}
+
+.titreHeader{
+    flex: 8;
+    justify-content: center;
+    background-color: orangered;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.titreFooter{
+    flex: 4;
+    margin-top: 0.4em;
+    justify-content: center;
+    background-color: orangered;
+    font-size: 1.2em;
+    text-decoration: underline;
+}
