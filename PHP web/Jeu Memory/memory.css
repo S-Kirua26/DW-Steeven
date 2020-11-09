@@ -1,45 +1,38 @@
-html, body{
-    margin: 0;
-    padding: 0;
-}
-
-body, header, footer, div{
+div,body {
     display: flex;
+    flex: 1;
+    justify-content: center;
 }
 
-body{
+.page {
+    width: 80%;
+    flex: none;
+    flex-direction: column;
+    display: block;
+}
+
+.carre {
     flex-direction: column;
 }
 
-header, footer{
-    flex: 1;
+.miniEspace {
+    flex: 0.3;
 }
 
-.espace{
-    flex: 1;
+.verso {
+    display: none;
 }
 
-.contenu{
+.carre:hover .verso {
     display: flex;
-    flex-direction: column;
-    margin-top: 0.4em;
 }
 
-.ligne{
-    display: flex;
-    flex-direction: column;
+.carre:hover .recto {
+    display: none;
 }
 
-.photo{
-    flex: 1;
-}
-
-.photo:hover{
-    background-image: url("plage.jpg");
-}
-
-img{
-    width: 100%;
+.espace {
+    height: 2vh;
 }
 
 .titreHeader{

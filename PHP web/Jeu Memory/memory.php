@@ -5,25 +5,38 @@ $titreHeader = 'Memory';
 $titreFooter = "C'etait le jeu du memory";
 
 include ( 'head.php' );
+
+
+echo '<div class="page">';
+
 include ( 'header.php' );
 
-echo '<div class="contenu">';
+for ($i = 1; $i <9; $i++)
+{
+    $tableau[]=$i;
+    $tableau[]=$i;
+} // Comme il y a deux fois la meme image, on initialise deux fois $tableau
 
     for ( $i = 1; $i<5; $i++ )
     {
         echo '<div class="ligne">';
-            echo '<div class="espace"></div>';
+        echo '<div class="miniEspace"></div>';
 
-            for ( $j = 1; $j<5; $j++ )
-            {
-                echo '<img class="photo" src="'.$i.'.jpg" alt="image de jeu>';
-            }
-            echo '<div class="espace"></div>';
+        for ($j=1; $j<5; $j++)
+        {
+            $key = array_rand($tableau);
+            $nombre = $tableau[$key];
+            array_splice($tableau,$key,1);
+
+            echo '<div class="carre">
+                    <img class="recto" src="plage.jpg" alt="image quelconque">
+                    <img class="verso" src="'.$nombre.'.jpg" alt="image heureuse">
+                </div>';
+            echo '<div class = "miniEspace"></div>';
+        }
         echo '</div>';
+        echo '<div class="espace"></div>'; 
     }
-
-echo '<div>';
-
+    
 include ( 'footer.php' );
-
 echo'</html>';
