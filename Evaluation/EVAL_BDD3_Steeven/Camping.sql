@@ -65,6 +65,7 @@ CREATE TABLE Clients(
 #------------------------------------------------------------
 
 CREATE TABLE reserve(
+        idReservation Int(11) Auto_increment NOT NULL PRIMARY KEY,
         idClient  Int(11) NOT NULL,
         idEmplacement   Int(11) NOT NULL,
         dateDebutSejour Date NOT NULL ,
