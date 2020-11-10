@@ -1,0 +1,37 @@
+@media screen and (max-width: 800px)
+{
+    .tout {
+        display: block;
+    }
+
+    header {
+        display: block;
+        padding: 0.5em;
+    }
+
+    nav{
+        display: block;
+    }
+
+    .titreMenu .sousmenu{
+        z-index: 1; 
+    }
+
+    nav {
+        display : none;  
+    }
+
+    .tout:hover nav{
+        display : block;
+    }
+    .sousmenu {
+        width: 80%;
+        /* position: none; */
+    }
+    .items:hover {
+        color: rgb(243, 17, 17);
+    }
+    .boutons:hover {
+        color: rgb(243, 17, 17);
+    }
+}

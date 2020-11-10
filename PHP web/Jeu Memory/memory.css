@@ -1,0 +1,53 @@
+div,body {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+.page {
+    width: 80%;
+    flex: none;
+    flex-direction: column;
+    display: block;
+}
+
+.carre {
+    flex-direction: column;
+}
+
+.miniEspace {
+    flex: 0.3;
+}
+
+.verso {
+    display: none;
+}
+
+.carre:hover .verso {
+    display: flex;
+}
+
+.carre:hover .recto {
+    display: none;
+}
+
+.espace {
+    height: 2vh;
+}
+
+.titreHeader{
+    flex: 8;
+    justify-content: center;
+    background-color: orangered;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.titreFooter{
+    flex: 4;
+    margin-top: 0.4em;
+    justify-content: center;
+    background-color: orangered;
+    font-size: 1.2em;
+    text-decoration: underline;
+}

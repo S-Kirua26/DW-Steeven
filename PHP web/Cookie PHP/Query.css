@@ -1,0 +1,20 @@
+@media screen and (max-width: 1200px) {
+
+.page{
+    width: 98vw;
+}
+
+@media screen and (max-width: 800px) {
+
+    .descriptionSemaine{
+        flex-direction: column;
+    }
+    
+    .photoSemaine{
+        width: 50%;
+        align-self: center;
+    }
+}
+
+
+}
