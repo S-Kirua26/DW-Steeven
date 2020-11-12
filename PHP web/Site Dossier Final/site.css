@@ -1,0 +1,33 @@
+:root {
+    --degradeHeader: linear-gradient(#e2dada, #ec865d,#d1561c,#c24b06);
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+body, header, div, footer, nav{
+    display: flex;
+    flex: 1;
+}
+
+header{
+    background: var(--degradeHeader);
+}
+
+.colonne{
+    flex-direction: column;
+}
+
+.espace{
+    flex: 1;
+}
+
+.titreHeader{
+    flex: 8;
+    justify-content: center;
+    font-size: 3em;
+    font-weight: bold;
+    text-decoration: underline;
+}
