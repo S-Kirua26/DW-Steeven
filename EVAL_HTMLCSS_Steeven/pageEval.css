@@ -1,0 +1,156 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body,
+header,
+div,
+footer {
+    display: flex;
+}
+
+body {
+    background-color: #F7EFDF;
+    flex-direction: column;
+}
+
+header {
+    margin-top: 2em;
+    flex: 1;
+    justify-content: center;
+}
+
+img {
+    width: 100%;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    flex: none;
+    width: 80vw;
+    padding-left: 11em;
+}
+
+.titreHeader {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.introduction {
+    margin-top: 1.5em;
+    font-weight: bold;
+}
+
+.contenuArticle {
+    margin-top: 1.2em;
+}
+
+.texteArticle {
+    padding: 2em 2em;
+    flex: 2;
+    justify-content: center;
+}
+
+aside {
+    margin-left: 0.3em;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1em;
+    padding-left: 1em;
+    padding-bottom: 0.8em;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+ul {
+    list-style-type: circle;
+}
+
+li {
+    color: #006633;
+}
+
+.contenu {
+    padding-left: 11em;
+    padding-right: 11em;
+    margin-top: 2em;
+}
+
+.partie1 {
+    flex: 1;
+    flex-direction: column;
+}
+
+.intro1 {
+    justify-content: center;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.texte1 {
+    flex: 1;
+    margin-top: 1em;
+    letter-spacing: 0.05em;
+}
+
+.photo {
+    background-color: #F1E3C7;
+    flex: 0.5;
+    flex-direction: column;
+    border: 1px solid #BB8C00;
+}
+
+.introImage {
+    padding-left: 0.3em;
+    font-size: 1.1em;
+    font-weight: bold;
+    justify-content: center;
+}
+
+.contenuPart2 {
+    margin-top: 0.6em;
+}
+
+.texteImage {
+    padding-left: 0.3em;
+    justify-content: center;
+}
+
+.texte2 {
+    flex: 1;
+    margin-top: 1em;
+    letter-spacing: 0.05em;
+}
+
+.partie2 {
+    padding-left: 1em;
+    flex: 1;
+    flex-direction: column;
+}
+
+.contenuInf {
+    flex-direction: column;
+    flex: 1;
+}
+
+.titre {
+    font-weight: bold;
+}
+
+.espace {
+    margin-top: 1em;
+}
+
+.etage {
+    flex-direction: column;
+}
+
+span {
+    color: #000066;
+    font-weight: bold;
+}

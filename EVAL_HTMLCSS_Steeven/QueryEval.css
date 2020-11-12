@@ -1,0 +1,12 @@
+@media screen and (max-width: 800px) {
+    .contenuArticle {
+        flex-direction: column;
+    }
+    .contenu {
+        flex-direction: column;
+    }
+    .page {
+        padding-left: 5em;
+        padding-right: 5em;
+    }
+}
