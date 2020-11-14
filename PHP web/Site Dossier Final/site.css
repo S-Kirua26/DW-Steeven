@@ -111,10 +111,9 @@ nav{
 
 .sousMenu{
     display: none;
-    flex-direction: column;
     position: absolute;
+    flex-direction: column;
     background: var(--degradeSousMenu);
-    justify-content: center;
 }
 
 .sousIndex{

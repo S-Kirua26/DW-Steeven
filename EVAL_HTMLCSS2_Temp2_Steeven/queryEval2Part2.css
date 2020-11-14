@@ -1,0 +1,52 @@
+@media screen and (max-width: 800px) {
+
+    header{
+        display: none;
+    }
+
+    footer{
+        display: none;
+    }
+
+    .footerQuery{
+        display: flex;
+        flex-direction: column;
+        padding: 1em 0em;
+        background-color: var(--fondFooter);
+    }
+
+    .titreFooter{
+        padding-top: 1em;
+    }
+
+    .grandeImage{
+        display: none;
+    }
+
+    .regroupe{
+        flex-direction: column;
+    }
+
+    .imageQuery{
+        width: 50%;
+        align-self: center;
+    }
+
+    .reseaux{
+        flex: 2;
+    }
+
+    .query{
+        display: flex;
+    }
+
+    .milieu{
+        flex-direction: column;
+    }
+
+    .grandeImageQuery{
+        display: flex;
+        margin-top: 1em;
+        border-top: 3px solid blue;
+    }
+}
