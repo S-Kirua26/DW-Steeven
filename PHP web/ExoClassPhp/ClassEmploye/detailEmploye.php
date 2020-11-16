@@ -43,8 +43,8 @@ foreach ($personnes as $unePersonne)
                     <div class="texteInformation colonne">
                     <div class="texte">'.$unePersonne->getPoste().'</div>
                 </div>
-            </div>'
+            </div>
         
-        echo '</div>';
+         </div>';
     }
 }
