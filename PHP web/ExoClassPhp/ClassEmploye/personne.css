@@ -1,0 +1,44 @@
+div, a{
+    display: flex;
+    flex: 1;
+}
+.colonne{
+    flex-direction: column;
+}
+
+.age{
+    background-color: rgb(67, 194, 50);
+}
+
+.espace{
+    flex: 1;
+}
+
+.case{
+    flex: 1;
+    background-color: rgb(27, 58, 194);
+}
+
+.casePersonne{
+    flex: 1;
+    background-color: firebrick;
+}
+
+.titreAttribut{
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    justify-content: center;
+}
+
+.titreInformation{
+    color: red;
+    font-size: 1.2em;
+    justify-content: center;
+}
+
+.texteInformation{
+    color: green;
+    justify-content: center;
+}
