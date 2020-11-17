@@ -1,0 +1,16 @@
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+body, header, footer, div{
+    display: flex;
+}
+
+img, video{
+    width: 100%;
+}
+
+.espace{
+    flex: 1;
+}
