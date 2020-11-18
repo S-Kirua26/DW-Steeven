@@ -1,0 +1,38 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body,
+label,
+header,
+footer,
+form,
+div {
+    display: flex;
+    flex: 1;
+}
+
+img,
+video {
+    width: 100%;
+}
+
+.colonne {
+    flex-direction: column;
+}
+
+.center {
+    justify-content: center;
+}
+
+.marginTop {
+    margin-top: 1em;
+}
+
+button {
+    display: flex;
+    align-self: center;
+    background-color: red;
+}
