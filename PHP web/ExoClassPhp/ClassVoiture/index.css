@@ -1,0 +1,17 @@
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+body, div{
+    display: flex;
+    flex: 1;
+}
+
+.colonne{
+    flex-direction: column;
+}
+
+.voiture{
+    border: 1px solid green;
+}

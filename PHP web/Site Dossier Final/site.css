@@ -1,0 +1,207 @@
+:root {
+    --degradeHeader: linear-gradient( #f0c76e,#4fdfa8,#2140ca);
+    --degradeNav: linear-gradient(#999494, #504b4b, #464444);
+    --colorBouton: white;
+    --degradeSousMenu: #beb2b2;
+    --colorSousIndex: #e97e19;
+    --colorLien: #ff0000;
+    --fondPage: #f7d1bb;
+    --colorExperience: #f3df87;
+    --colorManga: linear-gradient(to right, #161313 , #5af8f8 , #161313);
+    --colorLi: #0d21d3;
+    --colorDescription: white;
+}
+
+html, body, p{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    color: var(--colorLien);
+}
+a:hover{
+    color: var(--colorSousIndex);
+}
+
+body, header, div, footer, nav, .page{
+    display: flex;
+    flex: 1;
+}
+
+body{
+    padding-right: 2.5em;
+    padding-left: 2.5em;
+    background: var(--fondPage);
+}
+
+header, footer{
+    background: var(--degradeHeader);
+}
+
+img{
+    width: 100%;
+}
+
+.image{
+    flex: 2.5;
+}
+
+.image2{
+    flex: 5;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+}
+
+.colonne{
+    flex-direction: column;
+}
+
+.espace{
+    flex: 1;
+}
+
+.espaceMini{
+    flex: 0.2;
+}
+
+.centre{
+    justify-content: center;
+}
+
+.englobeBouton{
+    flex: 3;
+}
+
+.titreHeader{
+    flex: 23;
+    align-items: center;
+    font-size: 3em;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.titreFooter{
+    flex: 23;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+nav{
+    padding: 0.2em 5em;
+    background: var(--degradeNav);
+}
+
+.bouton{
+    position: relative;
+    padding-bottom: 0.2em;
+}
+
+.bouton:hover .sousMenu{
+    display: flex;
+}
+
+.titreMenu{
+    font-size: 1.3em;
+    font-weight: bold;
+    color: var(--colorBouton);
+}
+
+.sousMenu{
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    background: var(--degradeSousMenu);
+}
+
+.sousIndex{
+    font-size: 0.9em;
+}
+
+.sousIndex:hover{
+    border: 1px solid var(--colorSousIndex);
+    color: var(--colorSousIndex);
+}
+
+.marge{
+    margin-top: 1.47em;
+}
+
+.largePage{
+    flex-direction: column;
+}
+
+.page{
+    margin-top: 3em;
+}
+
+.description1{
+    flex: 1;
+}
+
+.description2{
+    flex: 1.7;
+}
+
+.contenu2{
+    flex:2;
+}
+
+.titreDescription, .finDescription{
+    background: var(--degradeNav);
+    justify-content: center;
+    align-items: center;
+    font-size: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.2em;
+    text-decoration: underline;
+    color: var(--colorDescription);
+}
+
+.texteDescription{
+    font-size: 1.05em;
+    overflow-y: scroll;
+    height: 26vh; /* hauteur visible du scroll*/
+    padding-left: 0.5em;
+
+}
+
+.experience{
+    background: var(--colorExperience);
+    padding-bottom: 1.5em;
+}
+
+/************************************************** SECONDE PAGE ****************************************************/
+
+.manga{
+    background: var(--colorManga);
+}
+
+.titreManga{
+    justify-content: center;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+/*************************************************** Troisieme Page **************************************************/
+
+.saison{
+    font-size: 1.2em;
+    font-weight: bold;
+    font-style: italic;
+    padding-top: 0.5em;
+}
+
+ul{
+    list-style-type: circle;
+    font-weight: bolder;
+    font-style: italic;
+}
+
+li {
+    color: var(--colorLi);
+    font-weight: bolder;
+}

@@ -1,0 +1,29 @@
+@media screen and (max-width: 800px) {
+
+    header{
+        display: none;
+    }
+
+    footer{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .grandeImage{
+        display: none;
+    }
+
+    .query{
+        display: flex;
+    }
+
+    .milieu{
+        flex-direction: column;
+    }
+
+    .grandeImageQuery{
+        display: flex;
+        margin-top: 1em;
+        border-top: 3px solid blue;
+    }
+}

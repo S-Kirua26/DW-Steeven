@@ -1,0 +1,202 @@
+:root{
+    --colorBody: #e7e4e4;
+    --white: white;
+    --colorBouton: #4354b3;
+    --colorSousMenu: #4846b8;
+    --colorSousItems: #5997c0;
+    --colorTexteItems: white;
+    --colorHover: #ddda1c;
+    --boutonHover: #4f7ad8;
+    --blue: blue;
+    --fondFooter: #61a5cc;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+body, header, footer, div, nav{
+    display: flex;
+    flex: 1;
+}
+
+body{
+    background-color: var(--colorBody);
+}
+
+footer{
+    padding: 1em 0em;
+    background-color: var(--fondFooter);
+}
+
+nav{
+    background-color: var(--white);
+}
+
+img{
+    width: 100%;
+}
+
+hr{
+    margin-top: 2em;
+    width: 95%;
+}
+
+.flex{
+    flex: 1;
+}
+
+.colonne{
+    flex-direction: column;
+}
+
+.centre{
+    justify-content: center;
+}
+
+.espace{
+    flex: 1;
+}
+
+.espaceMini{
+    flex: 0.3;
+}
+
+.image{
+    flex: 1;
+}
+
+.bouton{
+    flex: 5;
+    position: relative;
+    align-items: center;}
+
+.bouton:hover{
+    background-color: var(--boutonHover);
+}
+
+.bouton:hover .titreBouton{
+    color: var(--white);
+}
+
+.bouton:hover .sousMenu{
+    display: flex;
+}
+
+.titreBouton{
+    color: var(--colorBouton);
+    font-size: 1.2em;
+    font-weight: bold;
+    align-items: center;
+}
+
+.sousMenu{
+    display: none;
+    margin-top: 6.5em;
+    position: absolute;
+    background-color: var(--colorSousMenu);
+    white-space: nowrap;    /*evite le retour à la ligne du sous menu*/
+}
+
+.sousItem{
+    background-color: var(--colorSousItems);
+    color: var(--colorTexteItems);
+}
+
+.sousItem:hover{
+    border: 1px solid var(--colorHover);
+}
+
+.grandeImage{
+    position: relative;
+}
+
+.texteImage{
+    position: absolute;
+    top: 92%;
+    left: 41%;
+    font-size: 1.6em;
+    font-weight: bold;
+    color: var(--white);
+}
+
+.milieu{
+    margin: 1.2em 4em;
+    background-color: var(--white);
+}
+
+.contenu{
+    padding: 1em 1.4em;
+}
+
+.regroupe{
+    display: flex;
+    padding-top: 1.5em;
+}
+
+.titre{
+    color: var(--blue);
+    font-weight: bold;
+    margin-top: 1.2em;
+}
+
+.titre2{
+    color: var(--blue);
+    font-weight: bold;
+}
+
+.texte{
+    padding-top: 1em;
+}
+
+.article{
+    padding-left: 1em;
+    padding-right: 1em;
+}
+.article2{
+    padding-left: 1em;
+    padding-right: 1em;
+    flex: 2;
+}
+
+.contenuFooter{
+    flex: 3;
+}
+
+.titreFooter{
+    font-weight: bold;
+    color: var(--white);
+}
+
+.texteFooter{
+    padding-top: 1em;
+    color: var(--white);
+}
+
+.titreReseaux{
+    color: var(--blue);
+    font-weight: bold;
+    margin-top: 1.2em;
+    flex:3;
+}
+
+/***************************************************** QUERY *****************************************/
+
+.query{
+    display: none;
+}
+
+.titreHeader{
+    flex: 4;
+    color: var(--colorBouton);
+    font-size: 1.2em;
+    font-weight: bold;
+    align-items: center;
+}
+
+.grandeImageQuery{
+    display: none;
+}
+
+
