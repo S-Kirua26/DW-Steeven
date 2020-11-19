@@ -3,6 +3,31 @@
 include "PHP/VUE/head.php";
 include "PHP/VUE/header.php";
 
+
+echo '<div class="page colonne">
+        <div class="contenu colonne">
+            <div class="nomListe">
+                <div class="nomArticle">Liste des article <br><br></div>
+            </div>
+            <div class="regroupeListe">
+                <div class="listeProduits colonne">';
+                    $tableau = ProduitsManager::getList();
+                    foreach ($tableau as $unProduit)
+                        {
+                            echo '<div class="nomProduit>';
+                                $unProduit->toString();
+                            echo '</div>
+                            <div class="boutonProduit>
+                                <button class="bouton1 marginLeft" type="submit">Ajouter</button>
+                                <button class="bouton2 marginLeft" type="submit">Modifier</button>
+                                <button class="bouton3 marginLeft" type="submit">Supprimer</button>
+                            </div>';
+                        }
+                echo '</div>
+            </div>
+        </div>
+    </div>';
+
 // on teste la recherche par ID
 // echo 'recherche id = 1' . '<br>';
 // $p = ProduitsManager::findById(1);

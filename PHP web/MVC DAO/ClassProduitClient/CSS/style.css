@@ -3,8 +3,9 @@ html, body{
     padding: 0;
 }
 
-body, header, footer, div{
+body, header, footer, button,div{
     display: flex;
+    flex: 1;
 }
 
 img, video{
@@ -13,4 +14,34 @@ img, video{
 
 .espace{
     flex: 1;
+}
+
+.page{
+    margin-top: 1.2em;
+}
+
+.colonne{
+    flex-direction: column;
+}
+
+.nomArticle{
+    font-size: 1.2em;
+    font-weight: bold;
+    justify-content: center;
+}
+
+.marginLeft{
+    margin-left: 0.3em;
+}
+
+.bouton1{
+    background-color: rgb(47, 218, 47);
+}
+
+.bouton2{
+    background-color: rgb(218, 207, 47);
+}
+
+.bouton3{
+    background-color: rgb(218, 67, 47);
 }
