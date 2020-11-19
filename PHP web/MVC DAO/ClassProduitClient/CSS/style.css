@@ -49,8 +49,14 @@ a{
     margin-left: 0.3em;
 }
 
+.marginTop{
+    margin-top: 1em;
+}
+
 .nomProduit{
     justify-content: center;
+    border: 1px solid black;
+    background-color: rgb(156, 143, 143);
 }
 
 .bouton1{
@@ -71,9 +77,4 @@ a{
 .bouton4{
     background-color: rgb(99, 235, 189);
     justify-content: center;
-}
-
-.nomProduit{
-    border: 1px solid black;
-    background-color: rgb(156, 143, 143);
 }

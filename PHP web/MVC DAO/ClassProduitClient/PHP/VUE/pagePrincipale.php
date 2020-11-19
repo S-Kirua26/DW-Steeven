@@ -10,10 +10,10 @@ echo '<div class="page"></div>';
     foreach ($tableau as $unProduit)
     {
         echo '<div class="produit">
-            <div class="nomProduit">'.$unProduit->getLibelleProduit().'</div>
-            <button class="bouton4"><a href="detail.php?id='.$unProduit->getIdProduit().'">Aller voir un produit</a></button>
-            <button class="bouton2"><a href="modifier.php?id='.$unProduit->getIdProduit().'">Aller modifier un produit</a></button>
-            <button class="bouton3"><a href="supprimer.php?id='.$unProduit->getIdProduit().'">Aller supprimer un produit</a></button>
+            <div class="nomProduit marginTop">'.$unProduit->getLibelleProduit().'</div>
+            <button class="bouton4 marginTop marginLeft"><a href="detail.php?id='.$unProduit->getIdProduit().'">Aller voir un produit</a></button>
+            <button class="bouton2 marginTop marginLeft"><a href="modifier.php?id='.$unProduit->getIdProduit().'">Aller modifier un produit</a></button>
+            <button class="bouton3 marginTop marginLeft"><a href="supprimer.php?id='.$unProduit->getIdProduit().'">Aller supprimer un produit</a></button>
         </div>';   
     }
 echo '</div>';
