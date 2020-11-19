@@ -9,7 +9,7 @@ include "PHP/VUE/header.php";
 // var_dump($p);
 
 //on affiche la liste des produits
-// echo "Liste des articles" . '<br>';
+// echo "Liste des article" . '<br>';
 // $tableau = ProduitsManager::getList();
 // foreach ($tableau as $unProduit)
 // {
