@@ -3,7 +3,7 @@
         <div class="espace"></div>
         <div class="espace"></div>
         <div class="image">
-            <img src="IMG/logoAfpa.jpg" alt="logo Afpa">
+            <img src="../../IMG/logoAfpa.jpg" alt="logo Afpa">
         </div>
         <div class="espace"></div>
         <div class="espace"></div>
