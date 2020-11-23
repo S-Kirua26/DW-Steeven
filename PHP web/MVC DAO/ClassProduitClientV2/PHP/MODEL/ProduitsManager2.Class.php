@@ -1,7 +1,7 @@
 <?php
 class ProduitsManager2 {
 
-    public static function add(Produits $obj)
+    public static function add(Produits2 $obj)
     {
         $database = DbConnect2::getDb();
         $q = $database->prepare("INSERT INTO info (libelleProduit,prix,dateDePeremption) VALUES (:libelleProduit,:prix,:dateDePeremption)");
@@ -11,7 +11,7 @@ class ProduitsManager2 {
         $q->execute();
     }
 
-    public static function update(Produits $obj)
+    public static function update(Produits2 $obj)
     {
         $database = DbConnect2::getDb();
         $q = $database->prepare("UPDATE info SET libelleProduit=:libelleProduit, prix=:prix, dateDePeremption=:dateDePeremption WHERE idProduit=:idProduit");
@@ -22,7 +22,7 @@ class ProduitsManager2 {
         $q->execute();
     }
 
-    public static function delete(Produits $obj)
+    public static function delete(Produits2 $obj)
     {
         $database = DbConnect2::getDb();
         $database->exec("DELETE FROM info WHERE idProduit=" . $obj->getIdProduit());

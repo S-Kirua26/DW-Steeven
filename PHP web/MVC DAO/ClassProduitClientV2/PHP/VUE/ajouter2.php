@@ -1,6 +1,6 @@
 <?php
 
-echo '<form action"ajoutBdd2.php" method="post">
+echo '<form action="./index2.php?code=ajouterBdd2" method="post">
     <div>
         <label for="nom">Libelle : </label> 
         <input name="libelleProduit">
@@ -17,3 +17,5 @@ echo '<form action"ajoutBdd2.php" method="post">
         <button type="submit">Ajouter</button>
         <button type="reset"><a href="index2.php">Annuler</a></button>
     </div>';
+
+

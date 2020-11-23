@@ -1,7 +1,6 @@
 <?php
 
-include "head.php";
 $produits = new Produits2($_POST);
-ProduisManager2::update($produits);
+ProduitsManager2::update($produits);
 
-header("Location: index2.php");
+ header("Location: index2.php");

@@ -10,7 +10,7 @@ class Produits2
     {
         return $this->_idProduit;
     }
-    public function setIdProduit($_idProduit)
+    public function setIdProduit(int $_idProduit)
     {
         return $this->_idProduit = $_idProduit;
     }
@@ -26,7 +26,7 @@ class Produits2
     {
         return $this->_prix;
     }
-    public function setPrix($_prix)
+    public function setPrix(int $_prix)
     {
         return $this->_prix = $_prix;
     }
