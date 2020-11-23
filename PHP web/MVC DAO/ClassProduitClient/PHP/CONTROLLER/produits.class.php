@@ -34,7 +34,7 @@ class Produits
     {
         return $this->_dateDePeremption;
     }
-    public function setDateDePeremption(int $_dateDePeremption)
+    public function setDateDePeremption($_dateDePeremption)
     {
         return $this->_dateDePeremption = $_dateDePeremption;
     }
