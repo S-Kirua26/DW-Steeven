@@ -1,7 +1,6 @@
 <?php
 
 $idProduits = $_GET["id"];
-var_dump($idProduits);
 
 $pdetail = ProduitsManager2::findById($idProduits);
 
