@@ -10,33 +10,33 @@ class Produits2
     {
         return $this->_idProduit;
     }
-    public function setIdProduit(int $_idProduit)
+    public function setIdProduit(int $idProduit)
     {
-        return $this->_idProduit = $_idProduit;
+        return $this->_idProduit = $idProduit;
     }
     public function getLibelleProduit()
     {
         return $this->_libelleProduit;
     }
-    public function setLibelleProduit($_libelleProduit)
+    public function setLibelleProduit($libelleProduit)
     {
-        return $this->_libelleProduit = $_libelleProduit;
+        return $this->_libelleProduit = $libelleProduit;
     }
     public function getPrix()
     {
         return $this->_prix;
     }
-    public function setPrix(int $_prix)
+    public function setPrix(int $prix)
     {
-        return $this->_prix = $_prix;
+        return $this->_prix = $prix;
     }
     public function getDateDePeremption()
     {
         return $this->_dateDePeremption;
     }
-    public function setDateDePeremption($_dateDePeremption)
+    public function setDateDePeremption($dateDePeremption)
     {
-        return $this->_dateDePeremption = $_dateDePeremption;
+        return $this->_dateDePeremption = $dateDePeremption;
     }
 
     public function __construct(array $options = [])
