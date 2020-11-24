@@ -40,11 +40,10 @@ $routes = [
 
     "liste" => ["PHP/VUE/", "pagePrincipale2", "Liste de produits"],
     "ajouter2" => ["PHP/VUE/", "ajouter2", "Ajout de produit"],
-    "ajouterBdd2" => ["PHP/VUE/", "ajoutBdd2", "Ajout de produit"],
     "detail2" => ["PHP/VUE/", "detail2", "Détail du produit"],
     "modifier2" => ["PHP/VUE/", "modifier2", "Modification de produit"],
-    "modifierBdd2" => ["PHP/VUE/", "modifierBdd2", "Modification de produit"],
-    "supprimer2" => ["PHP/VUE/", "supprimer2", "Suppression de produit"]
+    "ActionProduit" => ["PHP/VUE/", "ActionProduit", "Actions sur les produits"],
+    "FormProduit" => ["PHP/VUE/", "FormProduit", "Formulaire sur la gestion des produits"]
     
 ];
 
