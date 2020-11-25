@@ -59,5 +59,19 @@ class ProduitsManager2 {
         return $liste;
     }
 
-
+    public static function getListByCategorie($idCategorie)
+    {
+        $idCategorie=(int) $idCategorie;
+        $db = DbConnect2::getDb();
+        $liste = [];
+        $q = $db->query("SELECT * FROM produits where idCategorie=$idCategorie");
+        while ($donnees = $q->fetch(PDO::FETCH_ASSOC))
+        {
+            if ($donnees != false)
+            {
+                $liste[] = new Produits2($donnees);
+            }
+        }
+        return $liste;  // tableau contenant les objets Produits
+    }
 }

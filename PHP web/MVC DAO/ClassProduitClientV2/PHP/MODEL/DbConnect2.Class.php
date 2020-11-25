@@ -12,7 +12,7 @@ Class DbConnect2{
             self::$database = new PDO ( 'mysql:host=localhost;dbname=produits;charset=utf8', 'Zoro', 'Roronoa');
         }
         catch (Exception $e){
-            die ('Erreur :' .$e->getMessage(s));
+            die ('Erreur :' .$e->getMessage());
         }
     }
 }

@@ -28,6 +28,7 @@ function AfficherPage($page)
 
     include 'PHP/VUE/head2.php';
     include 'PHP/VUE/header2.php';
+    include 'PHP/VUE/nav2.php';
     include $chemin . $nom . '.php'; //Chargement de la page en fonction du chemin et du nom
     include 'PHP/VUE/footer2.php';
 }
@@ -41,7 +42,12 @@ $routes = [
     "liste" => ["PHP/VUE/", "pagePrincipale2", "Liste de produits"],
     "detail2" => ["PHP/VUE/", "detail2", "Détail du produit"],
     "ActionProduit" => ["PHP/VUE/", "ActionProduit", "Actions sur les produits"],
-    "FormProduit" => ["PHP/VUE/", "FormProduit", "Formulaire sur la gestion des produits"]
+    "FormProduit" => ["PHP/VUE/", "FormProduit", "Formulaire sur la gestion des produits"],
+    "ListeCategorie" => ["PHP/VUE/", "ListeCategorie", "Liste des categories"],
+    "ActionCategorie" => ["PHP/VUE", "ActionCategorie", "Actions sur les categories"],
+    "FormCategorie" => ["PHP/VUE/", "FormCategorie", "Formulaire sur la gestion des categories"],
+    "testSelect" => ["PHP/VUE/", "testSelect", "test sur les categories"],
+    "ActionSelect" => ["PHP/VUE/", "ActionSelect", "modification categories"]
     
 ];
 
