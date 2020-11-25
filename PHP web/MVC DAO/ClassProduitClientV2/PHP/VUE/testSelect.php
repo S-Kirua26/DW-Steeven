@@ -3,7 +3,7 @@ $listeCateg=CategoriesManager2::getList();
 $idCateg=2;
 echo'
 
-<form action="index2.php?codePage=ActionSelect" method="POST">
+<form action="index2.php?code=ActionSelect" method="POST">
 <select name="idCategorie" >';
 foreach ($listeCateg as $uneCategorie)
 {

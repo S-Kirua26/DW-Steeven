@@ -64,7 +64,7 @@ if (isset($_GET['id'])) {
 			{
 				echo '<div class="ligneDetail"><input type="submit" value="Modifier"/>'; break;
 			}
-		case "supprimerCategoriesupprimerCategorie":
+		case "supprimerCategorie":
 			{
 				echo '<div class="ligneDetail"><input type="submit" value="Supprimer"/>'; break;
 			}
