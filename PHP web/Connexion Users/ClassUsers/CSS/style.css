@@ -1,0 +1,34 @@
+html,body{
+    margin: 0;
+    padding: 0;
+}
+
+body, header, footer, nav, div,a,input{
+    display: flex;
+    flex: 1;
+}
+
+.espace{
+    flex: 1;
+}
+
+.centre{
+    align-items: center;
+    justify-content: center;
+}
+
+.colonne{
+    flex-direction: column;
+}
+
+img, video{
+    width: 100%;
+}
+
+.image{
+    flex:1;
+}
+
+.titre{
+    flex:4;
+}
