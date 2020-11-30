@@ -37,7 +37,7 @@ class Utilisateurs
     {
         return $this->_motDePasseUtilisateur;
     }
-    public function setmotDePasseUtilisateur($motDePasseUtilisateur)
+    public function setMotDePasseUtilisateur($motDePasseUtilisateur)
     {
         return $this->_motDePasseUtilisateur = $motDePasseUtilisateur;
     }

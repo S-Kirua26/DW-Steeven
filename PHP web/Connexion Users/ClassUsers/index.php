@@ -29,9 +29,9 @@ function afficherPage($page)
 
 
 $routes=[
-    "default"=>["PHP/VIEW/","formulaireInscription","Page Inscription"],
+    "default"=>["PHP/VIEW/","formulaireConnection","Page Inscription"],
     "FormulaireInscription"=>["PHP/VIEW/","FormulaireInscription","Formulaire des Inscriptions"],
-    "FormulaireConnexion"=>["PHP/VIEW/","FormulaireConnexion","Formulaire des Connections"],
+    "FormulaireConnection"=>["PHP/VIEW/","FormulaireConnection","Formulaire des Connections"],
     "TraitementInscription"=>["PHP/VIEW/","TraitementInscription","Traitement des Inscriptions"],
     "TraitementConnection"=>["PHP/VIEW/","TraitementConnection","Traitement des Connections"]
 ];

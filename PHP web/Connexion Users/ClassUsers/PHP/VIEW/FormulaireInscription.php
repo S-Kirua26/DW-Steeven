@@ -1,78 +1,32 @@
-<?php
 
-$mode = $_GET["mode"];
-
-switch ($mode)
-{
-    case "ajoutUtilisateur":
-    {
-        echo '<form action="index.php?code=TraitementUtilisateur&mode=ajoutUtilisateur" method="post">';
-        break;
-    }
-}
-
-if (isset($_GET['id'])) {
-    $utilisateur = UtilisateursManager::findById($_GET['id']);
-}
-
-?>
-
-<input type="hidden" name="idUtilisateur" value="<?php if (isset($utilisateur)) echo $utilisateur->getIdUtilisateur(); ?>"/>
-<div>
-    <label for="nom">Nom Utilisateur: </label>
-    <div class="input"> 
-        <input type="text" name="nomUtilisateur" value="<?php if (isset($utilisateur)) echo $utilisateur->getNomUtilisateur(); ?>"/>
+<form action="index.php?page=TraitementInscription" method="POST">
+    <div>
+        <label for="nomUtilisateur">Nom: </label>
+        <input type="text"  name="nomUtilisateur" required />
     </div>
-</div>
-<div>
-    <label for="nom">Prenom Utilisateur: </label> 
-    <div class="input"> 
-        <input type="text" name="prenomUtilisateur" value="<?php if (isset($utilisateur)) echo $utilisateur->getPrenomUtilisateur(); ?>"/>
+    <div>
+        <label for="prenomUtilisateur">Prenom: </label>
+        <input type="text" name="prenomUtilisateur" required />
     </div>
-</div>
-<div>
-    <label for="nom">Mot de Passe Utilisateur: </label> 
-    <div class="input">
-        <input type="text" name="motDePasseUtilisateur" value="<?php if (isset($utilisateur)) echo $utilisateur->getMotDePasseUtilisateur(); ?>"/>
+    <div>
+        <label for="motDePasseUtilisateur">Mot De Passe: </label>
+        <input type="password" name="motDePasseUtilisateur" required />
     </div>
-</div>
-<div>
-    <label for="nom">Adresse Mail Utilisateur: </label> 
-    <div class="input">
-        <input type="text" name="adresseMAilUtilisateur" value="<?php if (isset($utilisateur)) echo $utilisateur->getAdresseMailUtilisateur(); ?>"/>
+    <div>
+        <label for="confirmationUtilisateur">Confirmation du mot de passe:</label>
+        <input type="password" name="confirmationUtilisateur" required />
     </div>
-</div>
-<div>
-    <label for="nom">Role Utilisateur:  </label> 
-    <div class="input">
-        <input type="text" name="roleUtilisateur" value="<?php if (isset($utilisateur)) echo $utilisateur->getRoleUtilisateur(); ?>"/>
+    <div>
+        <label for="adresseMailUtilisateur">Adresse mail:</label>
+        <input type="text" name="adresseMailUtilisateur" required />
     </div>
-</div>
-<div>
-    <label for="nom">Pseudo Utilisateur: </label> 
-    <div class="input">
-        <input type="text" name="pseudoUtilisateur" value="<?php if (isset($utilisateur)) echo $utilisateur->getPseudoUtilisateur(); ?>"/>
+    <div>
+        <label for="roleUtilisateur">Role (1 admin 2 user):</label>
+        <input type="text" name="roleUtilisateur" required />
     </div>
-</div>
-
-<?php 
-// en fonction du mode, on affiche les boutons utils
-	switch ($mode) {
-		case "ajoutUtilisateur":
-			{
-                echo '<div class="ligneDetail"><input type="submit" value="Ajouter"/>'; 
-                break;
-			}
-        
-        default:
-        {
-            echo '<div class="ligneDetail">';
-        }
-    }
-// dans tous les cas, on met le bouton annuler
-?>
-
-<a href="index.php" class=" crudBtn crudBtnRetour">Annuler</a>
-</div>
-
+    <div>
+        <label for="pseudoUtilisateur">Pseudo:</label>
+        <input type="text" name="pseudoUtilisateur" required />
+    </div>
+    <button type="submit">Valider</button>
 </form>

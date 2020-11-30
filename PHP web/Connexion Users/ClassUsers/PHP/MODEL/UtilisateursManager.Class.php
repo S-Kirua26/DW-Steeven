@@ -63,4 +63,26 @@ class UtilisateursManager
 		}
 		return $liste;
 	}
+
+	public static function findByPseudo($pseudo)
+    {
+		$db = DbConnect::getDb();
+		var_dump($pseudo);
+        if (!in_array(";",str_split( $pseudo))) // s'il n'y a pas de ; , je lance la requete
+        {
+            $q = $db->query("SELECT * FROM users WHERE pseudoUtilisateur ='" . $pseudo . "'");
+            $results = $q->fetch(PDO::FETCH_ASSOC);
+            if ($results != false)
+            {
+                return new Utilisateurs($results);
+            }
+            else
+            {
+                return false;
+            }}
+        else
+        {
+            return false;
+        }
+    }
 }

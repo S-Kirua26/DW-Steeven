@@ -4,6 +4,5 @@
             <img src="./IMG/logo.png" alt="image PGW">
         </div>
         <div class="titre">Bienvenue sur le site des Inscriptions</div>
-        <div class="image">
-        </div>
+        <div class="image"></div>
     </header>
