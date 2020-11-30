@@ -30,3 +30,4 @@
     </div>
     <button type="submit">Valider</button>
 </form>
+<a href="index.php??page=FormulaireConnection">S'identifier</a>

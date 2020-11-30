@@ -2,11 +2,11 @@
 $utilisateur = UtilisateursManager::findByPseudo($_POST['pseudoUtilisateur']);
 if ($utilisateur != false)
 {
-    if (md5($_POST['motDePasseUtilisateur']) == $utilisateur->getMotDePasseUtilisateur())
+    if (crypte($_POST['motDePasseUtilisateur']) == $utilisateur->getMotDePasseUtilisateur())
     {
         echo 'connection reussie';
         $_SESSION['utilisateur']=$utilisateur;
-        header("refresh:3;url=index.php?page=Accueil");
+        header("refresh:3;url=index.php?page=Admin");
     }
     else
     {

@@ -5,4 +5,3 @@
   <title><?php echo $titre ?></title>
   <link rel="stylesheet" href="CSS/Users.css">
 </head>
-<body>

@@ -1,4 +1,4 @@
-<body class="colonne">
+<body class="colonne centre">
     <header>
         <div class="image">
             <img src="./IMG/logo.png" alt="image PGW">
