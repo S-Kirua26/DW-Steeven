@@ -29,11 +29,13 @@ function afficherPage($page)
 
 
 $routes=[
-    "default"=>["PHP/VIEW/","formulaireConnection","Page Inscription"],
+    "default"=>["PHP/VIEW/","formulaireInscription","Page Inscription"],
     "FormulaireInscription"=>["PHP/VIEW/","FormulaireInscription","Formulaire des Inscriptions"],
     "FormulaireConnection"=>["PHP/VIEW/","FormulaireConnection","Formulaire des Connections"],
     "TraitementInscription"=>["PHP/VIEW/","TraitementInscription","Traitement des Inscriptions"],
-    "TraitementConnection"=>["PHP/VIEW/","TraitementConnection","Traitement des Connections"]
+    "TraitementConnection"=>["PHP/VIEW/","TraitementConnection","Traitement des Connections"],
+    "TraitementDeconnection"=>["PHP/VIEW/","TraitementDeconnection","Traitement pour la deconnection"],
+    "Accueil"=>["PHP/VIEW/","Accueil","Accueil"]
 ];
 
 if(isset($_GET["page"]))
