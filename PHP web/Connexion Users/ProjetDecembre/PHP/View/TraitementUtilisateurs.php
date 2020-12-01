@@ -1,8 +1,10 @@
 <?php
 
 $typeTraitement =$_GET["typeTraitement"];
+var_dump($typeTraitement);
 if ($typeTraitement=="ajouter"){
-    $visiteur= new Utilisateurs(["nomUtilisateur"=>$_POST['nomUtilisateur'],"prenomUtilisateur"=>$_POST['prenomUtilisateur'],"motDePasseUtilisateur"=>$_POST['motDePasseUtilisateur'],"adresseMailUtilisateur"=>$_POST['adresseMailUtilisateur'],"pseudoUtilisateur"=>$_POST['pseudoUtilisateur'],"roleUtilisateur"=>$_POST['roleUtilisateur']]);
+    $visiteur= new Utilisateurs($_POST);
+    $visiteur->setMotDePasseUtilisateur(crypte($visiteur->getMotDePasseUtilisateur()));
     var_dump($visiteur);
     UtilisateursManager::add($visiteur);
 }

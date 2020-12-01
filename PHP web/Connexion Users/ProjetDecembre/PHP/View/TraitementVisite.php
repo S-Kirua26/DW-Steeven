@@ -13,6 +13,7 @@ else if ($typeTraitement=="modifier")
     $visite->setIdVisiteur($_POST['idVisiteur']);
     $visite->setIdConvention($_POST['idConvention']);
 
+    var_dump($visite);
     VisiteManager::update($visite);
 } 
 else if ($typeTraitement=="supprimer")

@@ -3,10 +3,6 @@
 echo '<form method="POST" action="index.php?page=traitementConnexion">
     <div class="contenu colonne">
         <div class="colonne marginLight">
-
-            
-
-
         <div class="colonne marginLight">
             <div class="titreColonne centre">
                 Pseudo Utilisateur
@@ -37,4 +33,5 @@ echo '<form method="POST" action="index.php?page=traitementConnexion">
             <div class="espace"></div>
             </div>
         </div>
-</form>';
+</form>
+<a href="index.php?page=FormulaireInscription">S\inscrire</a>';

@@ -6,9 +6,13 @@ echo '<body class="colonne">
 
     <div class="contenu colonne">
         <div class="margin">
-            <div class="espace"></div>
+            <div class="image">
+                <img src="./IMG/drapeauFrance.jpg" alt="le drapeau de la France">
+            </div>
             <div class="ajouter"><a class="centre" href="index.php?page=formulaireVisite&typeFormulaire=ajouter">Ajouter Visite</a></div>
-            <div class="espace"></div>
+            <div class="image">
+                <img src="./IMG/drapeauAnglais.jpeg" alt="le drapeau Anglais">
+            </div>
         </div>';
         foreach ($visite as $uneVisite)
         {
