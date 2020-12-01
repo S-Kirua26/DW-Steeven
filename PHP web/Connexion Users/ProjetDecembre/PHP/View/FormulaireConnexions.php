@@ -29,7 +29,7 @@ echo '<form method="POST" action="index.php?page=traitementConnexion">
         </div>
         <div>
         <div class="espace"></div>
-            <input type="submit" class="ajouter marginLight centre" name="submit" value="Ajouter"/>
+            <input type="submit" class="ajouter marginLight centre" name="submit" value="Se connecter"/>
             <div class="espace"></div>
             </div>
         </div>

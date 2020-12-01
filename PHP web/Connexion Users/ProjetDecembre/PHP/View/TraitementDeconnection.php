@@ -2,5 +2,5 @@
 
 session_destroy();
 
-header("location:index.php?page=TraitementDeconnection");
+header("location:index.php?page=formulaireConnexions");
 
