@@ -1,8 +1,8 @@
 <footer>
-        <div class="centre tailleFooter">Contact</div>
-        <div class="centre tailleFooter">Calendrier</div>
-        <div class="centre tailleFooter">FAQ</div>
-        <div class="centre tailleFooter">Reseaux</div>
+        <div class="centre tailleFooter"><?php echo texte("contacts") ?></div>
+        <div class="centre tailleFooter"><?php echo texte("calendrier") ?></div>
+        <div class="centre tailleFooter"><?php echo texte("faq") ?></div>
+        <div class="centre tailleFooter"><?php echo texte("reseaux") ?></div>
         <div class="image">
             <img src="./IMG/logo.png" alt="image PGW">
         </div>

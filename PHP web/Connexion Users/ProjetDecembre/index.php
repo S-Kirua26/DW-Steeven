@@ -12,6 +12,7 @@ function ChargerClasse($classe)
 }
 spl_autoload_register("ChargerClasse");
 
+Parametre::init();
 DbConnect::init();
 session_start();  // initialise la variable de Session
 
@@ -32,6 +33,20 @@ function afficherPage($page)
 function crypte($mot) //fonction qui crypte le mot de passe
 {
     return md5(md5($mot) . strlen($mot)*pow(pi(),strlen($mot)));
+}
+
+if (isset($_GET['lang']))
+{
+    $_SESSION['lang'] = $_GET['lang'];
+}
+
+$lang = isset($_SESSION['lang']) ? $_SESSION['lang'] : 'FR';
+
+
+function texte($codetexte)
+{
+    global $lang;
+    return TexteManager::findByCodes($lang, $codetexte);
 }
 
 $routes=[

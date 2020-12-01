@@ -1,24 +1,24 @@
 <nav>
         <div>
-            <div class="libelle"><a class="centre" href="index.php?page=listeAnimateurs">Animateurs</a></div>
+            <div class="libelle"><a class="centre" href="index.php?page=listeAnimateurs"><?php echo texte("animateurs") ?></a></div>
         </div>
         <div>
-            <div class="libelle"><a class="centre" href="index.php?page=listeConventions">Conventions</a></div>
+            <div class="libelle"><a class="centre" href="index.php?page=listeConventions"><?php echo texte("conventions") ?></a></div>
         </div>
         <div>
-            <div class="libelle"><a class="centre" href="index.php?page=listeEmplacements">Emplacements</a></div>
+            <div class="libelle"><a class="centre" href="index.php?page=listeEmplacements"><?php echo texte("emplacements") ?></a></div>
         </div>
         <div>
-            <div class="libelle"><a class="centre" href="index.php?page=listeSalles">Salles</a></div>
+            <div class="libelle"><a class="centre" href="index.php?page=listeSalles"><?php echo texte("salles") ?></a></div>
         </div>
         <div>
-            <div class="libelle"><a class="centre" href="index.php?page=listeVisite">Visite</a></div>
+            <div class="libelle"><a class="centre" href="index.php?page=listeVisite"><?php echo texte("visites") ?></a></div>
         </div>
         <div>
-            <div class="libelle"><a class="centre" href="index.php?page=listeVisiteurs">Visiteurs</a></div>
+            <div class="libelle"><a class="centre" href="index.php?page=listeVisiteurs"><?php echo texte("visiteurs") ?></a></div>
         </div>
         <div>
-            <div class="libelle"><a class="centre" href="index.php?page=formulaireUtilisateurs">Inscription</a></div>
-            <div class="libelle"><a class="centre" href="index.php?page=formulaireConnexions">Connexion</a></div>
+            <div class="libelle"><a class="centre" href="index.php?page=formulaireUtilisateurs"><?php echo texte("inscription") ?></a></div>
+            <div class="libelle"><a class="centre" href="index.php?page=formulaireConnexions"><?php echo texte("connection") ?></a></div>
         </div>
     </nav>

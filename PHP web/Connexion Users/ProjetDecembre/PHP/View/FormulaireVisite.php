@@ -11,7 +11,7 @@ if ($typeFormulaire == "ajouter")
     <div class="contenu colonne">
         <div class="colonne marginLight">
             <div class="titreColonne centre">
-                Date de la visite
+                '.texte("dateVisite").'
             </div>
             <div>
                 <div class="espace"></div>
@@ -21,7 +21,7 @@ if ($typeFormulaire == "ajouter")
         </div>
         <div class="colonne marginLight">
             <div class="titreColonne centre">
-                Id Visiteur
+                '.texte("idVisiteur").'
             </div>
             <div>
                 <div class="espace"></div>
@@ -31,7 +31,7 @@ if ($typeFormulaire == "ajouter")
         </div>
         <div class="colonne marginLight">
             <div class="titreColonne centre">
-                Id Convention
+                '.texte("idConvention").'
             </div>
             <div>
                 <div class="espace"></div>
@@ -68,8 +68,8 @@ if ($typeFormulaire == "ajouter")
 
     echo'</div>
         <div>
-            <div class="return marginLight"><a class="centre" href="index.php?page=listeVisite">Retour</a></div>
-            <input type="submit" class="ajouter marginLight centre" name="submit" value="Ajouter"/>
+            <div class="return marginLight"><a class="centre" href="index.php?page=listeVisite">'.texte("retour").'</a></div>
+            <input type="submit" class="ajouter marginLight centre" name="submit" value='.texte("titreAjouter").'>
         </div>
 </form>';
 
@@ -86,7 +86,7 @@ elseif ( $typeFormulaire == "modifier" )
     <div class="contenu colonne">
         <div class="colonne marginLight">
             <div class="titreColonne centre">
-                Date de la visite
+                '.texte("dateVisite").'
             </div>
             <div>
                 <div class="espace"></div>
@@ -97,7 +97,7 @@ elseif ( $typeFormulaire == "modifier" )
         </div>
         <div class="colonne marginLight">
             <div class="titreColonne centre">
-                Id Visiteur
+                '.texte("idVisiteur").'
             </div>
             <div>
                 <div class="espace"></div>
@@ -107,7 +107,7 @@ elseif ( $typeFormulaire == "modifier" )
         </div>
         <div class="colonne marginLight">
             <div class="titreColonne centre">
-                Id Convention
+                '.texte("idConvention").'
             </div>
             <div>
                 <div class="espace"></div>
@@ -154,8 +154,8 @@ elseif ( $typeFormulaire == "modifier" )
 
     echo '</div>
         <div>
-            <div class="return marginLight"><a class="centre" href="index.php?page=listeVisite">Retour</a></div>
-            <input type="submit" class="ajouter marginLight centre" name="submit" value="Modifier"/>
+            <div class="return marginLight"><a class="centre" href="index.php?page=listeVisite">'.texte("retour").'</a></div>
+            <input type="submit" class="ajouter marginLight centre" name="submit" value='.texte("modifier").'>
         </div>
 </form>';
 }
@@ -170,7 +170,7 @@ elseif ( $typeFormulaire == "details" )
     <div class="contenu colonne">
         <div class="colonne marginLight">
             <div class="titreColonne centre">
-                Date de la visite
+                '.texte("dateVisite").'
             </div>
             <div>
                 <div class="espace"></div>
@@ -180,7 +180,7 @@ elseif ( $typeFormulaire == "details" )
         </div>
         <div class="colonne marginLight">
             <div class="titreColonne centre">
-                Id Visiteur
+                '.texte("idVisiteur").'
             </div>
             <div>
                 <div class="espace"></div>
@@ -190,7 +190,7 @@ elseif ( $typeFormulaire == "details" )
         </div>
         <div class="colonne marginLight">
             <div class="titreColonne centre">
-                Id Convention
+                '.texte("idConvention").'
             </div>
             <div>
                 <div class="espace"></div>
@@ -237,7 +237,7 @@ elseif ( $typeFormulaire == "details" )
 
     echo '</div>
         <div>
-            <div class="return marginLight"><a class="centre" href="index.php?page=listeVisite">Retour</a></div>
+            <div class="return marginLight"><a class="centre" href="index.php?page=listeVisite">'.texte("retour").'</a></div>
         </div>
 </form>';
 }

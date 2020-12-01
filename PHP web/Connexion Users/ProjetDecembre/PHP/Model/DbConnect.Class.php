@@ -11,7 +11,7 @@ class DbConnect
     public static function init()
     {
         try {
-            self::$db = new PDO('mysql:host=localhost;dbname=convention;charset=utf8', 'root', '');
+            self::$db = new PDO('mysql:host='.Parametre::getHost().'; port='.Parametre::getHost().'; dbname='.Parametre::getDbname().'; charset=utf8', Parametre::getLogin(), Parametre::getPwd());
         } catch (Exception $e) {
             die('Erreur :' . $e->getMessage());
         }
