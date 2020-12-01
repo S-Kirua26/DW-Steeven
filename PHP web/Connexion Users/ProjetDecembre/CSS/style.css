@@ -1,0 +1,206 @@
+:root{
+    --couleurBackground: #2F3136;
+    --couleurPolice: whitesmoke;
+    --couleurHF: #1d4299;
+}
+
+html,body{
+    margin: 0;
+    padding: 0;
+}
+
+body, header, footer, nav, div,a,input{
+    display: flex;
+    flex: 1;
+}
+
+
+header,footer{
+    background-color: var(--couleurHF);
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+header{
+    border-bottom: solid 1px whitesmoke;
+}
+
+footer{
+    border-top: solid 1px whitesmoke;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    position: static;
+    bottom: 0;
+    width: 100%;
+}
+
+.tailleFooter{
+    flex: 4;
+}
+
+.centre{
+    align-items: center;
+    justify-content: center;
+}
+
+.colonne{
+    flex-direction: column;
+}
+
+body{
+    background-color: var(--couleurBackground);
+    color: var(--couleurPolice);
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+img, video{
+    width: 100%;
+}
+
+.image{
+    padding: 1em;
+}
+
+.titre{
+    flex: 6;
+    justify-content: center;
+    align-self: center;
+    font-size: 2.5em;
+
+}
+
+.titreColonne{
+    font-size: 1.5em;
+}
+
+.marginLight{
+    margin: 1em;
+}
+
+/*************************************************** les boutons ***********************************************/
+
+.margin{
+    margin: 4em;
+}
+
+.marginBouton{
+    margin: 0em 1.5em;
+}
+
+.supprimer{
+    box-shadow: 3px 4px 0px 0px #b6382c;
+    background:linear-gradient(to bottom, #c62d1f 5%, #f24437 100%);
+    background-color:#c62d1f;
+    border-radius:18px;
+    border:1px solid #d02718;
+    cursor:pointer;
+    padding:7px 25px;
+    text-shadow:0px 1px 0px #810e05;
+}
+
+.supprimer:hover{
+    background:linear-gradient(to bottom, #f24437 5%, #c62d1f 100%);
+    background-color:#f24437;
+}
+
+.supprimer:active{
+    position:relative;
+    top:1px;
+}
+
+.modifier{
+    box-shadow: 3px 4px 0px 0px #213b8a;
+    background:linear-gradient(to bottom, #217cc2 5%, #39b6f0 100%);
+    background-color:#217cc2;
+    border-radius:18px;
+    border:1px solid #197acf;
+    cursor:pointer;
+    padding:7px 25px;
+    text-shadow:0px 1px 0px #050b80;
+}
+
+.modifier:hover{
+    background:linear-gradient(to bottom,#39b6f0  5%,#217cc2  100%);
+    background-color:#2161c2 ;
+}
+
+.modifier:active{
+    position:relative;
+    top:1px;
+}
+
+.details{
+    box-shadow: 3px 4px 0px 0px #7a3e0a;
+    background:linear-gradient(to bottom, #d4630c 5%, #f09e39 100%);
+    background-color:#d4630c;
+    border-radius:18px;
+    border:1px solid #e39435;
+    cursor:pointer;
+    padding:7px 25px;
+    text-shadow:0px 1px 0px #7a680c;
+}
+
+.details:hover{
+    background:linear-gradient(to bottom, #f09e39 5%,#d4630c  100%);
+}
+
+.details:active{
+    position:relative;
+    top:1px;
+}
+
+.ajouter{
+    box-shadow: 3px 4px 0px 0px #3dc21b;
+    background:linear-gradient(to bottom, #44c767 5%, #5cbf2a 100%);
+    background-color:#44c767;
+    border-radius:18px;
+    border:1px solid #18ab29;
+    cursor:pointer;
+    padding:7px 25px;
+    text-shadow:0px 1px 0px #2f6627;
+}
+
+.ajouter:hover{
+    background:linear-gradient(to bottom, #5cbf2a 5%, #44c767 100%);
+    background-color:#5cbf2a;
+}
+
+.ajouter:active{
+    position:relative;
+    top:1px;
+}
+
+.libelle{
+    background:linear-gradient(to bottom, #e8f7ec 5%, #979e93 100%);
+    background-color:#979e93;
+    border-radius:18px;
+    border:1px solid #979e93;
+    padding:7px 25px;
+    text-shadow:0px 1px 0px #979e93;
+    color:black;
+}
+
+.return{
+    box-shadow: 3px 4px 0px 0px #91b8b3;
+    background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+    background-color:#768d87;
+    border-radius:18px;
+    border:1px solid #566963;
+    cursor:pointer;
+    padding:7px 25px;
+    text-shadow:0px 1px 0px #2b665e;
+}
+
+.return:hover{
+    background:linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
+    background-color:#6c7c7c;
+}
+
+.return:active{
+    position:relative;
+    top:1px;
+}

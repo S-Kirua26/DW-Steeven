@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demonstration convention</title>
+    <link href="../CSS/style.css" rel="stylesheet">
+</head>
+
+<body class="colonne">
+    <header>
+        <div class="image">
+            <img src="../IMG/logo.png" alt="image PGW">
+        </div>
+        <div class="titre">Bienvenue sur le site des Conventions</div>
+        <div class="image"></div>
+    </header>
+
+    <nav>
+        <div>
+            <div class="libelle"><a class="centre" href="index.php?page=listeAnimateurs">Animateurs</a></div>
+        </div>
+        <div>
+            <div class="libelle"><a class="centre" href="index.php?page=listeConventions">Conventions</a></div>
+        </div>
+        <div>
+            <div class="libelle"><a class="centre" href="index.php?page=listeEmplacements">Emplacements</a></div>
+        </div>
+        <div>
+            <div class="libelle"><a class="centre" href="index.php?page=listeSalles">Salles</a></div>
+        </div>
+        <div>
+            <div class="libelle"><a class="centre" href="index.php?page=listeVisite">Visite</a></div>
+        </div>
+        <div>
+            <div class="libelle"><a class="centre" href="index.php?page=listeVisiteurs">Visiteurs</a></div>
+        </div>
+    </nav>
+
+    <form method="POST" action="index.php>?page=traitementConvention&typeTraitement=ajouter">
+        <div class="contenu colonne">
+            <div class="colonne">
+                <div class="titreColonne centre">
+                    Nom de la Convention
+                </div>
+                <input class="libelle" type="text" name="nomConvention" placeholder="Nom de la Convention"/>
+            </div>
+            <div class="colonne">
+                <div class="titreColonne centre">
+                    Categorie Convention
+                </div>
+                <input class="libelle" type="text" name="categorieConvention" placeholder="Categorie de la Convention"/>
+            </div>
+            <div class="colonne">
+                <div class="titreColonne centre">
+                    Id Salle
+                </div>
+                <select class="libelle" name="idSalle">
+                    <option value="1">test salle 1</option>
+                    <option value="3"> test salle 3</option>
+                </select>
+            </div>
+            <div class="return marginLight"><a class="centre" href="index.php">Retour</a></div>
+            <input type="submit" class="ajouter marginLight centre" name="submit" value="ajouter"/>
+        </div>
+    </form>
+
+    <footer>
+        <div class="centre tailleFooter">Contact</div>
+        <div class="centre tailleFooter">Calendrier</div>
+        <div class="centre tailleFooter">FAQ</div>
+        <div class="centre tailleFooter">Reseaux</div>
+        <div class="image">
+            <img src="../IMG/logo.png" alt="image PGW">
+        </div>
+    </footer>
+
+</body>
+
+</html>
