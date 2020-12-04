@@ -9,7 +9,9 @@ $employe[2] = new Employe(["nom" => "Gradis", "prenom" => "Lilian", "datembauche
 $employe[3] = new Employe(["nom" => "Poivron", "prenom" => "Alima", "datembauche" => new DateTime('1999-01-23'), "fonction" => "agent immobilier", "salaire" => "2400", "service" => "immobilier"]);
 $employe[4] = new Employe(["nom" => "Fernand", "prenom" => "Léa", "datembauche" => new DateTime('2019-03-08'), "fonction" => "vétérinaire", "salaire" => "2250", "service" => "médical"]);
 
-echo '<!DOCTYPE html>
+?>
+<!-- echo '-->
+<!DOCTYPE html> 
 <html lang="fr">
 
 <head>

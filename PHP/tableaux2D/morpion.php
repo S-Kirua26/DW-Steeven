@@ -28,6 +28,7 @@ for ($i = 0; $i < 7; $i++)
     }
     echo "|";
     echo "\n";
+}
 
     // ----------------------  Affichage du morpion mieux organisés ----------------------------------
 

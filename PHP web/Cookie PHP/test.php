@@ -1,5 +1,5 @@
 <?php
-    echo '<nav>';
+    echo '<nav>
        <div class="englobe">
         <div class="bouton">
             <div class="menu"> Histoire
@@ -29,4 +29,4 @@
             </div>
         </div>
     </div>
-echo '</nav>';
+</nav>';
