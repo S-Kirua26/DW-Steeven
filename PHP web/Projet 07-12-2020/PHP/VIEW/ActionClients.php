@@ -18,7 +18,9 @@ switch ($mode) {
         }
     case "supprimer":
         {
-            $test = ClientsManager::delete($obj);
+            $idRecherche=$_GET['id'];
+            $id=ClientsManager::findById($idRecherche);
+            ClientsManager::delete($id);
             break;
         }
 }

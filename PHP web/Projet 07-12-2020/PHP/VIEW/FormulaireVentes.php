@@ -45,7 +45,7 @@ if (isset($_GET['id']))
             </div>
             <div>
                 <div class="espace"></div>
-                <input class="libelle" name="idRepresentant" <?php if($mode != "ajouter") echo 'value= "'.$choix->getIdRepresentant().'"';if($mode=="details" || $mode=="supprimer") echo '" disabled'; ?>/>
+                <input class="libelle" name="idRepresentant" <?php if($mode != "ajouter") echo 'value= "'.$choix->getIdRepres().'"';if($mode=="details" || $mode=="supprimer") echo '" disabled'; ?>/>
                  <div class="espace"></div>
              </div>
         </div>

@@ -18,7 +18,9 @@ switch ($mode) {
         }
     case "supprimer":
         {
-            $test = UtilisateursManager::delete($obj);
+            $idRecherche=$_GET['id'];
+            $id=UtilisateursManager::findById($idRecherche);
+            UtilisateursManager::delete($id);
             break;
         }
 }

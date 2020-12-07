@@ -18,7 +18,9 @@ switch ($mode) {
         }
     case "supprimer":
         {
-            $test = VentesManager::delete($obj);
+            $idRecherche=$_GET['id'];
+            $id=VentesManager::findById($idRecherche);
+            VentesManager::delete($id);
             break;
         }
 }

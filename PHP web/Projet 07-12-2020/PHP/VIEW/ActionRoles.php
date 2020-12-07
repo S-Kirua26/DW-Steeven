@@ -18,7 +18,9 @@ switch ($mode) {
         }
     case "supprimer":
         {
-            $test = RolesManager::delete($obj);
+            $idRecherche=$_GET['id'];
+            $id=RolesManager::findById($idRecherche);
+            RolesManager::delete($id);
             break;
         }
 }
