@@ -1,13 +1,5 @@
 :root{
-    --couleurHF: #20A24C;
-    --body: #c6d6cf;
-    --colorNav: #ee6b4b;
-    --ajouter: linear-gradient(to bottom, #a2dda2 5%, #4bb42b 100%);
-    --detail: linear-gradient(to bottom, #ccc77c 5%, #ebc548 100%);
-    --modifier: linear-gradient(to bottom, #63dbad 5%, #40c6cf 100%);
-    --supprimer: linear-gradient(to bottom, #d69090 5%, #b4302b 100%); 
-    --return: linear-gradient(to bottom, #acd6cb 5%, #536363 100%);
-    --lien: #3d2f2f;
+
 }
 
 html, body{
@@ -20,12 +12,8 @@ body,header,footer,nav,div,a,input{
     flex: 1;
 }
 
-body{
-    background: var(--body);
-}
-
 header,footer{
-    background-color: var(--couleurHF);
+
 }
 
 footer{
@@ -39,8 +27,7 @@ footer{
 }
 
 nav{
-    background-color: var(--colorNav);
-    padding: 1em;
+
 }
 
 a{
@@ -157,19 +144,7 @@ img{
     text-shadow:0px 1px 0px #2b665e;
 }
 
-a {
-    text-decoration: none;
-    color: black;
-}
-.imgaccueil{
-    margin-top: 3em;
-    border: double 9px var(--couleurHF);
 
-}
-.white{
-    background-color: white;
-}
 
-.grosflex {
-    flex: 5;
-}
+
+

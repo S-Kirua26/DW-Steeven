@@ -18,10 +18,10 @@ else
     <header>
         <div class="logo">
             <a href="index.php?page=default">
-                <img src="./IMG/logoPharmacie.jpg" alt="logo Pharmacie">
+                <img src="./IMG/gestion.png" alt="logo gestion">
             </a>
         </div>
-        <div class="titre"><?php echo texte("Header");?></div>
+        <div class="titre">Bienvenue su le site de gestion</div>
         <div class="logo">
             <a href=" <?php echo $uri; ?>lang=FR">
                 <img src="./IMG/drapeauFrance.jpg" alt="Drapeau France">
