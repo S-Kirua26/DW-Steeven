@@ -45,8 +45,8 @@ if (isset($_GET['id']))
             </div>
             <div>
                 <div class="espace"></div>
-                <input class="libelle" type="text" if($mode=="details" || $mode=="supprimer") echo '" disabled "' name="nomClient" placeholder="Nom du Client" value="<?php if ($mode != "ajouter") echo $choix->getNomClient() ;?>"/>
-                 <div class="espace"></div>
+                <input class="libelle" name="nomClient" <?php if($mode != "ajouter") echo 'value= "'.$choix->getNomClient().'"';if($mode=="details" || $mode=="supprimer") echo '" disabled'; ?>/>
+                <div class="espace"></div>
              </div>
         </div>
         <div class="colonne marginLight">
@@ -55,7 +55,7 @@ if (isset($_GET['id']))
             </div>
             <div>
                 <div class="espace"></div>
-                <input class="libelle" type="text" if($mode=="details" || $mode=="supprimer") echo '" disabled "' name="villeClient" placeholder="Ville du Client" value="<?php if ($mode != "ajouter") echo $choix->getVilleClient() ;?>"/>
+                <input class="libelle" name="villeClient" <?php if($mode != "ajouter") echo 'value= "'.$choix->getVilleClient().'"';if($mode=="details" || $mode=="supprimer") echo '" disabled'; ?>/>
                 <div class="espace"></div>
             </div>
         </div>
@@ -66,17 +66,17 @@ switch ($mode)
     {
 		case "ajouter":
 			{
-                echo '<div><div class="espace"></div><div><input type="submit" class="ajouter marginLight centre" name="submit" value="Ajouter"/></div><div class="espace"></div></div>';
+                echo '<div><div class="espace"></div><div><input type="submit" class="ajouter marginLight size centre" name="submit" value="Ajouter"/></div><div class="espace"></div></div>';
                 break;
 			}
 		case "modifier":
 			{
-                echo '<div><div class="espace"></div><div><input type="submit" class="ajouter marginLight centre" name="submit" value="Modifier"/></div><div class="espace"></div></div>';
+                echo '<div><div class="espace"></div><div><input type="submit" class="modifier marginLight size centre" name="submit" value="Modifier"/></div><div class="espace"></div></div>';
                 break;
 			}
 		case "supprimer":
 			{
-                echo '<div><div class="espace"></div><div><input type="submit" class="ajouter marginLight centre" name="submit" value="Supprimer"/></div><div class="espace"></div></div>';
+                echo '<div><div class="espace"></div><div><input type="submit" class="supprimer marginLight size centre" name="submit" value="Supprimer"/></div><div class="espace"></div></div>';
                 break;
 			}
         

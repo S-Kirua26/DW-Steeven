@@ -86,7 +86,7 @@ $listeRole = RolesManager::getList();
         </div>
 <div>
 <div class="espace"></div>
-<input type="submit" class="ajouter size marginLight centre" name="submit" value="S\'inscrire"/>
+<input type="submit" class="ajouter size marginLight centre" name="submit" value="S'inscrire"/>
 <div class="espace"></div>
 </div>
 </form>

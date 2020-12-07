@@ -45,7 +45,7 @@ if (isset($_GET['id']))
             </div>
             <div>
                 <div class="espace"></div>
-                <input class="libelle" type="text" if($mode=="details" || $mode=="supprimer") echo '" disabled "' name="idRepresentant" placeholder="Id du Representant" value="<?php if ($mode != "ajouter") echo $choix->getIdRepresentant() ;?>"/>
+                <input class="libelle" name="idRepresentant" <?php if($mode != "ajouter") echo 'value= "'.$choix->getIdRepresentant().'"';if($mode=="details" || $mode=="supprimer") echo '" disabled'; ?>/>
                  <div class="espace"></div>
              </div>
         </div>
@@ -55,7 +55,7 @@ if (isset($_GET['id']))
             </div>
             <div>
                 <div class="espace"></div>
-                <input class="libelle" type="text" if($mode=="details" || $mode=="supprimer") echo '" disabled "' name="idProduit" placeholder="Id du Produit" value="<?php if ($mode != "ajouter") echo $choix->getIdProduit() ;?>"/>
+                <input class="libelle" name="idProduit" <?php if($mode != "ajouter") echo 'value= "'.$choix->getIdProduit().'"';if($mode=="details" || $mode=="supprimer") echo '" disabled'; ?>/>
                  <div class="espace"></div>
              </div>
         </div>
@@ -65,8 +65,8 @@ if (isset($_GET['id']))
             </div>
             <div>
                 <div class="espace"></div>
-                <input class="libelle" type="text" if($mode=="details" || $mode=="supprimer") echo '" disabled "' name="idClient" placeholder="Id du Client" value="<?php if ($mode != "ajouter") echo $choix->getIdClient() ;?>"/>
-                 <div class="espace"></div>
+                <input class="libelle" name="idClient" <?php if($mode != "ajouter") echo 'value= "'.$choix->getIdClient().'"';if($mode=="details" || $mode=="supprimer") echo '" disabled'; ?>/>
+                <div class="espace"></div>
              </div>
         </div>
         <div class="contenu colonne">
@@ -75,7 +75,7 @@ if (isset($_GET['id']))
             </div>
             <div>
                 <div class="espace"></div>
-                <input class="libelle" type="text" if($mode=="details" || $mode=="supprimer") echo '" disabled "' name="quantite" placeholder="Quantite" value="<?php if ($mode != "ajouter") echo $choix->getQuantite() ;?>"/>
+                <input class="libelle" name="quantite" <?php if($mode != "ajouter") echo 'value= "'.$choix->getQuantite().'"';if($mode=="details" || $mode=="supprimer") echo '" disabled'; ?>/>
                  <div class="espace"></div>
              </div>
         </div>
@@ -86,17 +86,17 @@ switch ($mode)
     {
 		case "ajouter":
 			{
-                echo '<div><div class="espace"></div><div><input type="submit" class="ajouter marginLight centre" name="submit" value="Ajouter"/></div><div class="espace"></div></div>';
+                echo '<div><div class="espace"></div><div><input type="submit" class="ajouter marginLight size centre" name="submit" value="Ajouter"/></div><div class="espace"></div></div>';
                 break;
 			}
 		case "modifier":
 			{
-                echo '<div><div class="espace"></div><div><input type="submit" class="ajouter marginLight centre" name="submit" value="Modifier"/></div><div class="espace"></div></div>';
+                echo '<div><div class="espace"></div><div><input type="submit" class="modifier marginLight size centre" name="submit" value="Modifier"/></div><div class="espace"></div></div>';
                 break;
 			}
 		case "supprimer":
 			{
-                echo '<div><div class="espace"></div><div><input type="submit" class="ajouter marginLight centre" name="submit" value="Supprimer"/></div><div class="espace"></div></div>';
+                echo '<div><div class="espace"></div><div><input type="submit" class="supprimer marginLight size centre" name="submit" value="Supprimer"/></div><div class="espace"></div></div>';
                 break;
 			}
         

@@ -21,7 +21,7 @@ else
                 <img src="./IMG/gestion.png" alt="logo gestion">
             </a>
         </div>
-        <div class="titre">Bienvenue su le site de gestion</div>
+        <div class="titre">Bienvenue sur le site de gestion</div>
         <div class="logo">
             <a href=" <?php echo $uri; ?>lang=FR">
                 <img src="./IMG/drapeauFrance.jpg" alt="Drapeau France">
