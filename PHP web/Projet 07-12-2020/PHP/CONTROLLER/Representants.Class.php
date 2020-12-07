@@ -5,41 +5,41 @@ class Representants
 
 	/*****************Attributs***************** */
 
-	private $_idRepresentant;
-	private $_nomRepresentant;
-	private $_villeRepresentant;
+	private $_idRepres;
+	private $_nomRepres;
+	private $_villeRepres;
 
 	/***************** Accesseurs ***************** */
 
 
-	public function getIdRepresentant()
+	public function getIdRepres()
 	{
-		return $this->_idRepresentant;
+		return $this->_idRepres;
 	}
 
-	public function setIdRepresentant(int $idRepresentant)
+	public function setIdRepres(int $idRepres)
 	{
-		$this->_idRepresentant=$idRepresentant;
+		$this->_idRepres=$idRepres;
 	}
 
-	public function getNomRepresentant()
+	public function getNomRepres()
 	{
-		return $this->_nomRepresentant;
+		return $this->_nomRepres;
 	}
 
-	public function setNomRepresentant($nomRepresentant)
+	public function setNomRepres($nomRepres)
 	{
-		$this->_nomRepresentant=$nomRepresentant;
+		$this->_nomRepres=$nomRepres;
 	}
 
-	public function getVilleRepresentant()
+	public function getVilleRepres()
 	{
-		return $this->_villeRepresentant;
+		return $this->_villeRepres;
 	}
 
-	public function setVilleRepresentant($villeRepresentant)
+	public function setVilleRepres($villeRepres)
 	{
-		$this->_villeRepresentant=$villeRepresentant;
+		$this->_villeRepres=$villeRepres;
 	}
 
 	/*****************Constructeur***************** */
@@ -72,7 +72,7 @@ class Representants
 	*/
 	public function toString()
 	{
-		return "IdRepresentant : ".$this->getIdRepresentant()."NomRepresentant : ".$this->getNomRepresentant()."VilleRepresentant : ".$this->getVilleRepresentant()."\n";
+		return "IdRepres : ".$this->getIdRepres()."NomRepres : ".$this->getNomRepres()."VilleRepres : ".$this->getVilleRepres()."\n";
 	}
 
 

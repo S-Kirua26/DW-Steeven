@@ -5,10 +5,12 @@ class UtilisateursManager
 	public static function add(Utilisateurs $obj)
 	{
  		$db=DbConnect::getDb();
-		$q=$db->prepare("INSERT INTO utilisateurs (nomUtilisateur,prenomUtilisateur,ageUtilisateur,idRole) VALUES (:nomUtilisateur;:prenomUtilisatuer,:ageUtilisateur,:idRole)");
+		$q=$db->prepare("INSERT INTO utilisateurs (nomUtilisateur,prenomUtilisateur,ageUtilisateur,pseudoUtilisateur,motDePasseUtilisateur,idRole) VALUES (:nomUtilisateur;:prenomUtilisatuer,:ageUtilisateur,:pseudoUtilisateur,:motDePasseUtilisateur,:idRole)");
         $q->bindValue(":nomUtilisateur", $obj->getNomUtilisateur());
         $q->bindValue(":prenomUtilisateur", $obj->getPrenomUtilisateur());
-        $q->bindValue(":ageUtilisateur", $obj->getAgeUtilisateur());
+		$q->bindValue(":ageUtilisateur", $obj->getAgeUtilisateur());
+		$q->bindValue(":pseudoUtilisateur", $obj->getPseudoUtilisateur());
+		$q->bindValue(":motDePasseUtilisateur", $obj->getMotDePasseUtilisateur());
         $q->bindValue(":idRole", $obj->getIdRole());
 		$q->execute();
 	}
@@ -16,11 +18,13 @@ class UtilisateursManager
 	public static function update(Utilisateurs $obj)
 	{
  		$db=DbConnect::getDb();
-		$q=$db->prepare("UPDATE utilisateurs SET idUtilisateur=:idUtilisateur,nomUtilisateur=:nomUtilisateur,prenomUtilisateur=:prenomUtilisateur,ageUtilisateur=:ageUtilisateur,idRole=:idRole WHERE idUtilisateur=:idUtilisateur");
+		$q=$db->prepare("UPDATE utilisateurs SET idUtilisateur=:idUtilisateur,nomUtilisateur=:nomUtilisateur,prenomUtilisateur=:prenomUtilisateur,ageUtilisateur=:ageUtilisateur,pseudoUtilisateur=:pseudoUtilisateur,motDePasseUtilisateur=:motDePasseUtilisateur,idRole=:idRole WHERE idUtilisateur=:idUtilisateur");
 		$q->bindValue(":idUtilisateur", $obj->getIdUtilisateur());
         $q->bindValue(":nomUtilisateur", $obj->getnomUtilisateur());
         $q->bindValue(":prenomUtilisateur", $obj->getprenomUtilisateur());
-        $q->bindValue(":ageUtilisateur", $obj->getageUtilisateur());
+		$q->bindValue(":ageUtilisateur", $obj->getageUtilisateur());
+		$q->bindValue(":pseudoUtilisateur", $obj->getPseudoUtilisateur());
+		$q->bindValue(":motDePasseUtilisateur", $obj->getMotDePasseUtilisateur());
         $q->bindValue(":idRole", $obj->getIdRole());
 		$q->execute();
 	}

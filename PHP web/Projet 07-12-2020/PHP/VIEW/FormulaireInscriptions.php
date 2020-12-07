@@ -4,14 +4,14 @@ $listeRole = RolesManager::getList();
 
 ?>
 
-<form method="POST" action="index.php?page=ActionInscription">
+<form method="POST" action="index.php?page=ActionInscriptions">
 <div class="contenu colonne">
     <div class="colonne marginLight">
             
-        <div class="centre size" for="nomUser">Nom Utilisateur :</div>
+        <div class="centre size" for="nomUtilisateur">Nom Utilisateur :</div>
         <div>
             <div class="espace"></div>
-            <input class="libelle" type="text" name="nomUser" required/>
+            <input class="libelle" type="text" name="nomUtilisateur" required/>
             <div class="espace"></div>
         </div>
             
@@ -21,7 +21,7 @@ $listeRole = RolesManager::getList();
         <div class="centre size" for="prenom">Prenom Utilisateur :</div>
         <div>
             <div class="espace"></div>
-            <input class="libelle" type="text" name="prenomUser" required/>
+            <input class="libelle" type="text" name="prenomUtilisateur" required/>
             <div class="espace"></div>
         </div>
     </div>      
@@ -30,7 +30,7 @@ $listeRole = RolesManager::getList();
         <div class="centre size" for="motDePasse">Mot de Passe Utilisateur :</div>
         <div>
             <div class="espace"></div>
-            <input class="libelle" type="text" name="motDePasseUser" required/>
+            <input class="libelle" type="text" name="motDePasseUtilisateur" required/>
             <div class="espace"></div>
         </div>  
     </div>   
@@ -48,7 +48,7 @@ $listeRole = RolesManager::getList();
         <div class="centre size" for="age"> Age Utilisateur :</div>
         <div>
             <div class="espace"></div>
-            <input class="libelle" type="text" name="ageUser" required/>
+            <input class="libelle" type="text" name="ageUtilisateur" required/>
             <div class="espace"></div>
         </div>
     </div>
@@ -71,10 +71,10 @@ $listeRole = RolesManager::getList();
 
     <div class="colonne marginLight">
             
-        <div class="centre size" for="pseudoUser">Pseudo Utilisateur :</div>
+        <div class="centre size" for="pseudoUtilisateur">Pseudo Utilisateur :</div>
         <div>
             <div class="espace"></div>
-            <input class="libelle" type="text" name="pseudoUser" required/>
+            <input class="libelle" type="text" name="pseudoUtilisateur" required/>
             <div class="espace"></div>
         </div>
     </div>

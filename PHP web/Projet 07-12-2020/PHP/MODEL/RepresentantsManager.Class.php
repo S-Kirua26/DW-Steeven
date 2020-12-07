@@ -5,31 +5,31 @@ class RepresentantsManager
 	public static function add(Representants $obj)
 	{
  		$db=DbConnect::getDb();
-		$q=$db->prepare("INSERT INTO representants (nomRepresentant,villeRepresentant) VALUES (:nomRepresentant,:villeRepresentant)");
-		$q->bindValue(":nomRepresentant", $obj->getNomRepresentant());
-		$q->bindValue(":villeRepresentant", $obj->getVilleRepresentant());
+		$q=$db->prepare("INSERT INTO representants (nomRepres,villeRepres) VALUES (:nomRepres,:villeRepres)");
+		$q->bindValue(":nomRepres", $obj->getNomRepres());
+		$q->bindValue(":villeRepres", $obj->getVilleRepres());
 		$q->execute();
 	}
 
 	public static function update(Representants $obj)
 	{
  		$db=DbConnect::getDb();
-		$q=$db->prepare("UPDATE representants SET idRepresentant=:idRepresentant,nomRepresentant=:nomRepresentant,villeRepresentant=:villeRepresentant WHERE idRepresentant=:idRepresentant");
-		$q->bindValue(":idRepresentant", $obj->getIdRepresentant());
-		$q->bindValue(":nomRepresentant", $obj->getNomRepresentant());
-		$q->bindValue(":villeRepresentant", $obj->getVilleRepresentant());
+		$q=$db->prepare("UPDATE representants SET idRepres=:idRepres,nomRepres=:nomRepres,villeRepres=:villeRepres WHERE idRepres=:idRepres");
+		$q->bindValue(":idRepres", $obj->getIdRepres());
+		$q->bindValue(":nomRepres", $obj->getNomRepres());
+		$q->bindValue(":villeRepres", $obj->getVilleRepres());
 		$q->execute();
 	}
 	public static function delete(Representants $obj)
 	{
  		$db=DbConnect::getDb();
-		$db->exec("DELETE FROM representants WHERE idRepresentant=" .$obj->getIdRepresentant());
+		$db->exec("DELETE FROM representants WHERE idRepres=" .$obj->getIdRepres());
 	}
 	public static function findById($id)
 	{
  		$db=DbConnect::getDb();
 		$id = (int) $id;
-		$q=$db->query("SELECT * FROM representants WHERE idRepresentant =".$id);
+		$q=$db->query("SELECT * FROM representants WHERE idRepres =".$id);
 		$results = $q->fetch(PDO::FETCH_ASSOC);
 		if($results != false)
 		{

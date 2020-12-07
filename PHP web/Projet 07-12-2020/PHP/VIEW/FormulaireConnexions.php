@@ -1,6 +1,6 @@
 <?php
 
-echo '<form method="POST" action="index.php?page=TraitementConnexion">
+echo '<form method="POST" action="index.php?page=ActionConnexions">
     <div class="contenu colonne">
         <div class="colonne marginLight">
         <div class="colonne marginLight">

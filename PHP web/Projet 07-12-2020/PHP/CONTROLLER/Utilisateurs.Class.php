@@ -8,7 +8,9 @@ class Utilisateurs
 	private $_idUtilisateur;
 	private $_nomUtilisateur;
     private $_prenomUtilisateur;
-    private $_ageUtilisateur;
+	private $_ageUtilisateur;
+	private $_pseudoUtilisateur;
+	private $_motDePasseUtilisateur;
     private $_idRole;
 
 	/***************** Accesseurs ***************** */
@@ -51,6 +53,24 @@ class Utilisateurs
 	public function setAgeUtilisateur($ageUtilisateur)
 	{
 		$this->_ageUtilisateur=$ageUtilisateur;
+	}
+	public function getPseudoUtilisateur()
+	{
+		return $this->_pseudoUtilisateur;
+	}
+
+	public function setPseudoUtilisateur($pseudoUtilisateur)
+	{
+		$this->_pseudoUtilisateur=$pseudoUtilisateur;
+	}
+	public function getMotDePasseUtilisateur()
+	{
+		return $this->_motDePasseUtilisateur;
+	}
+
+	public function setMotDePasseUtilisateur($motDePasseUtilisateur)
+	{
+		$this->_motDePasseUtilisateur=$motDePasseUtilisateur;
     }
     public function getIdRole()
 	{
@@ -92,7 +112,8 @@ class Utilisateurs
 	*/
 	public function toString()
 	{
-		return "IdUtilisateur : ".$this->getIdUtilisateur()."NomUtilisateur : ".$this->getNomUtilisateur()."VilleUtilisateur : ".$this->getPrenomUtilisateur().$this->getAgeUtilisateur().$this->getIdRole()."\n";
+		return "IdUtilisateur : ".$this->getIdUtilisateur()."NomUtilisateur : ".$this->getNomUtilisateur()."PrenomUtilisateur : ".$this->getPrenomUtilisateur(). "AgeUtilisateur :". $this->getAgeUtilisateur().
+		"PseudoUtilisateur : ".$this->getPseudoUtilisateur()."MotDePasseUtilisateur : ".$this->getMotDePasseUtilisateur()."IdRole : ".$this->getIdRole()."\n";
 	}
 
 
