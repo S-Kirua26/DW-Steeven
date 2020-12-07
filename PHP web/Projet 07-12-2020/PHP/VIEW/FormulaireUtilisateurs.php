@@ -71,6 +71,26 @@ if (isset($_GET['id']))
                 <div class="espace"></div>
             </div>
         </div>
+        <div class="colonne marginLight">
+            <div class="titreDescriptif centre">
+                Pseudo Utilisateur
+            </div>
+            <div>
+                <div class="espace"></div>
+                <input class="libelle" name="pseudoUtilisateur" <?php if($mode != "ajouter") echo 'value= "'.$choix->getPseudoUtilisateur().'"';if($mode=="details" || $mode=="supprimer") echo '" disabled'; ?>/>
+                <div class="espace"></div>
+            </div>
+        </div>
+        <div class="colonne marginLight">
+            <div class="titreDescriptif centre">
+                Mot de Passe Utilisateur
+            </div>
+            <div>
+                <div class="espace"></div>
+                <input class="libelle" name="motDePasseUtilisateur" <?php if($mode != "ajouter") echo 'value= "'.$choix->getMotDePasseUtilisateur().'"';if($mode=="details" || $mode=="supprimer") echo '" disabled'; ?>/>
+                <div class="espace"></div>
+            </div>
+        </div>
 
         <div class="colonne marginLight">
         <div class="titreDescriptif centre">

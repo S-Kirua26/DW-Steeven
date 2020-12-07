@@ -6,7 +6,7 @@ if ($utilisateur != false)
     if (crypte($_POST['motDePasseUtilisateur']) == $utilisateur->getMotDePasseUtilisateur())
     {
         echo 'connection reussie';
-        $_SESSION['utilisateur']=$utilisateur;
+        $_SESSION['utilisateurs']=$utilisateur;
         header("Location:index.php?page=Accueil");
     }
     else
