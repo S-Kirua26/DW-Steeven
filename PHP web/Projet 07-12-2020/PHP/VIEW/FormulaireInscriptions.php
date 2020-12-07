@@ -36,19 +36,28 @@ $listeRole = RolesManager::getList();
     </div>   
     <div class="colonne marginLight">
             
-        <div class="centre size" for="confirmationMotDePasse">Confirmation Mot de Passe Utilisateur :</div>
-        <div>
-            <div class="espace"></div>
-            <input class="libelle" type="text" name="confirmationMotDePasse" required/>
-            <div class="espace"></div>
+            <div class="centre size" for="confirmationMotDePasse">Confirmation Mot de Passe Utilisateur :</div>
+            <div>
+                <div class="espace"></div>
+                <input class="libelle" type="text" name="confirmationMotDePasse" required/>
+                <div class="espace"></div>
+            </div>
         </div>
-    </div>
     <div class="colonne marginLight">
             
         <div class="centre size" for="age"> Age Utilisateur :</div>
         <div>
             <div class="espace"></div>
             <input class="libelle" type="text" name="ageUtilisateur" required/>
+            <div class="espace"></div>
+        </div>
+    </div>
+    <div class="colonne marginLight">
+            
+        <div class="centre size" for="pseudoUtilisateur">Pseudo Utilisateur :</div>
+        <div>
+            <div class="espace"></div>
+            <input class="libelle" type="text" name="pseudoUtilisateur" required/>
             <div class="espace"></div>
         </div>
     </div>
@@ -67,26 +76,17 @@ $listeRole = RolesManager::getList();
         </select>
         <div class="espace"></div>
     </div>
-    
-
-    <div class="colonne marginLight">
-            
-        <div class="centre size" for="pseudoUtilisateur">Pseudo Utilisateur :</div>
-        <div>
-            <div class="espace"></div>
-            <input class="libelle" type="text" name="pseudoUtilisateur" required/>
-            <div class="espace"></div>
-        </div>
-    </div>
 </div>
+
 <div>
-            <div class="espace"></div>
-            <div class="return marginLight"><a class="centre" href="index.php?page=listeClients">Retour</a></div>
-            <div class="espace"></div>
-        </div>
+    <div class="espace"></div>
+    <div class="return marginLight"><a class="centre" href="index.php?page=listeClients">Retour</a></div>
+    <div class="espace"></div>
+</div>
+
 <div>
-<div class="espace"></div>
-<input type="submit" class="ajouter size marginLight centre" name="submit" value="S'inscrire"/>
-<div class="espace"></div>
+    <div class="espace"></div>
+    <input type="submit" class="ajouter size marginLight centre" name="submit" value="S'inscrire"/>
+    <div class="espace"></div>
 </div>
 </form>

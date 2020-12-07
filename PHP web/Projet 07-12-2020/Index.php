@@ -44,7 +44,9 @@ $routes=[
 	"FormulaireUtilisateurs"=>["PHP/VIEW/","FormulaireUtilisateurs","Formulaire des Utilisateurs"],
 	"ActionUtilisateurs"=>["PHP/VIEW/","ActionUtilisateurs","Action des Utilisateurs"],
 	"FormulaireInscriptions"=>["PHP/VIEW/","FormulaireInscriptions","Formulaire des Inscriptions"],
+	"ActionInscriptions"=>["PHP/VIEW/","ActionInscriptions","Action des Inscriptions"],
 	"FormulaireConnexions"=>["PHP/VIEW/","FormulaireConnexions","Formulaire des Connexions"],
+	"ActionConnexions"=>["PHP/VIEW/","ActionConnexions","Action des Connexions"],
 ];
 
 if(isset($_GET["page"]))

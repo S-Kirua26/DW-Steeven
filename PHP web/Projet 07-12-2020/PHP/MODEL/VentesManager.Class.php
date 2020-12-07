@@ -5,10 +5,10 @@ class VentesManager
 	public static function add(Ventes $obj)
 	{
  		$db=DbConnect::getDb();
-		$q=$db->prepare("INSERT INTO ventes (idClient,idRepresentant,idProduit,quantite) VALUES (:idClient,:idRepresentant;:idProduit,:quantite)");
-		$q->bindValue(":idClient", $obj->getIdClient());
-        $q->bindValue(":idRepresentant", $obj->getIdRepresentant());
+		$q=$db->prepare("INSERT INTO ventes (idRepres,idProduit,idClient,quantite) VALUES (:idRepres,:idProduit,:idClient,:quantite)");
+		$q->bindValue(":idRepres", $obj->getIdRepres());
         $q->bindValue(":idProduit", $obj->getIdProduit());
+        $q->bindValue(":idClient", $obj->getIdClient());
         $q->bindValue(":quantite", $obj->getQuantite());
 		$q->execute();
 	}
@@ -16,11 +16,11 @@ class VentesManager
 	public static function update(Ventes $obj)
 	{
  		$db=DbConnect::getDb();
-		$q=$db->prepare("UPDATE ventes SET idVente=:idVente,idClient=:idClient,idRepresentant=:idRepresentant,idProduit=:idProduit,quantite=:quantite WHERE idVente=:idVente");
-		$q->bindValue(":idProduit", $obj->getIdVente());
-		$q->bindValue(":idClient", $obj->getIdClient());
-        $q->bindValue(":idRepresentant", $obj->getIdRepresentant());
+		$q=$db->prepare("UPDATE ventes SET idVente=:idVente,idRepres=:idRepres,idProduit=:idProduit,idClient=:idClient,quantite=:quantite WHERE idVente=:idVente");
+		$q->bindValue(":idVente", $obj->getIdVente());
+		$q->bindValue(":idRepres", $obj->getIdRepres());
         $q->bindValue(":idProduit", $obj->getIdProduit());
+        $q->bindValue(":idClient", $obj->getIdClient());
         $q->bindValue(":quantite", $obj->getQuantite());
 		$q->execute();
 	}

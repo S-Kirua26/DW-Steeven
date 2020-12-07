@@ -5,7 +5,7 @@ class ProduitsManager
 	public static function add(Produits $obj)
 	{
  		$db=DbConnect::getDb();
-		$q=$db->prepare("INSERT INTO produits (nomProduit,couleurProduit,poidsProduit) VALUES (:nomProduit,:couleurProduit;:poidsProduit)");
+		$q=$db->prepare("INSERT INTO produits (nomProduit,couleurProduit,poidsProduit) VALUES (:nomProduit,:couleurProduit,:poidsProduit)");
 		$q->bindValue(":nomProduit", $obj->getNomProduit());
         $q->bindValue(":couleurProduit", $obj->getCouleurProduit());
         $q->bindValue(":poidsProduit", $obj->getPoidsProduit());
