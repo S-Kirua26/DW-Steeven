@@ -1,5 +1,6 @@
 :root{
-
+    --couleurHF: linear-gradient(to right,#292727, #f0e9e9, #292727);
+    --couleurNav: #34c4a7;
 }
 
 html, body{
@@ -13,7 +14,7 @@ body,header,footer,nav,div,a,input{
 }
 
 header,footer{
-
+    background: var(--couleurHF);
 }
 
 footer{
@@ -27,7 +28,8 @@ footer{
 }
 
 nav{
-
+    background: var(--couleurNav);
+    padding: 1em;
 }
 
 a{
@@ -66,6 +68,9 @@ img{
 .espace{
     flex: 1;
 }
+.espaceLight{
+    flex: 0.5;
+}
 
 .size{
     font-size: 1.2em;
@@ -97,7 +102,7 @@ img{
 }
 
 .libelle{
-    background:linear-gradient(to bottom, #e8f7ec 5%, #979e93 100%);
+    background:linear-gradient(to bottom, #5c5e5c 5%, #e7ebe6 100%);
     background-color:#979e93;
     border-radius: 1.2em;
     border:1px solid #979e93;
