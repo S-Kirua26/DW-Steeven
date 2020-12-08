@@ -6,9 +6,9 @@ class Ventes
 	/*****************Attributs***************** */
 
 	private $_idVente;
+	private $_idRepres;
+	private $_idProduit;
 	private $_idClient;
-	private $_idRepresentant;
-    private $_idProduit;
     private $_quantite;
 
 	/***************** Accesseurs ***************** */
@@ -24,24 +24,14 @@ class Ventes
 		$this->_idVente=$idVente;
 	}
 
-	public function getIdClient()
+	public function getIdRepres()
 	{
-		return $this->_idClient;
+		return $this->_idRepres;
 	}
 
-	public function setIdClient($idClient)
+	public function setIdRepres($idRepres)
 	{
-		$this->_idClient=$idClient;
-	}
-
-	public function getIdRepresentant()
-	{
-		return $this->_idRepresentant;
-	}
-
-	public function setIdRepresentant($idRepresentant)
-	{
-		$this->_idRepresentant=$idRepresentant;
+		$this->_idRepres=$idRepres;
 	}
 
 	public function getIdProduit()
@@ -53,6 +43,17 @@ class Ventes
 	{
 		$this->_idProduit=$idProduit;
     }
+
+	public function getIdClient()
+	{
+		return $this->_idClient;
+	}
+
+	public function setIdClient($idClient)
+	{
+		$this->_idClient=$idClient;
+	}
+
     public function getQuantite()
 	{
 		return $this->_quantite;
@@ -93,7 +94,7 @@ class Ventes
 	*/
 	public function toString()
 	{
-		return "IdVente : ".$this->getIdVente()."IdClient : ".$this->getIdClient()."IdRepresentant : ".$this->getIdRepresentant()."IdProduit : ".$this->getIdProduit()."Quantite: ".$this->getQuantite()."\n";
+		return "IdVente : ".$this->getIdVente()."IdRepresentant : ".$this->getIdRepres()."IdProduit : ".$this->getIdProduit()."IdClient : ".$this->getIdClient()."Quantite: ".$this->getQuantite()."\n";
 	}
 
 

@@ -18,7 +18,14 @@ switch ($mode) {
         }
     case "supprimer":
         {
-            $test = RepresentantsManager::delete($obj);
+            $listeVentes=VentesManager::getListByRepresentant($obj);
+            var_dump($listeVentes);
+            foreach ($listeVentes as $uneVente)
+            {
+                $uneVente->setIdRepres(7);
+                VentesManager::update($uneVente);
+            }
+                RepresentantsManager::delete($obj);
             break;
         }
 }

@@ -5,6 +5,7 @@
     --detail: #e2db79;
     --modifier: #4cb9e4;
     --supprimer: #ce3838;
+    --rechercher: #eb7531;
 }
 
 html, body{
@@ -106,6 +107,14 @@ img{
     border-radius: 1.2em;
     padding:0.7em 1em;
     background: var(--ajouter);
+    cursor:pointer;
+}
+
+.rechercher{
+    border: 2px solid #df6b0d;
+    border-radius: 1.2em;
+    padding:0.7em 1em;
+    background: var(--rechercher);
     cursor:pointer;
 }
 

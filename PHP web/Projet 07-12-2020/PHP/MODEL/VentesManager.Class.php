@@ -5,23 +5,23 @@ class VentesManager
 	public static function add(Ventes $obj)
 	{
  		$db=DbConnect::getDb();
-		$q=$db->prepare("INSERT INTO ventes (idRepres,idProduit,idClient,quantite) VALUES (:idRepres,:idProduit,:idClient,:quantite)");
-		$q->bindValue(":idRepres", $obj->getIdRepres());
-        $q->bindValue(":idProduit", $obj->getIdProduit());
-        $q->bindValue(":idClient", $obj->getIdClient());
-        $q->bindValue(":quantite", $obj->getQuantite());
+		$q=$db->prepare("INSERT INTO ventes (IdRepres,IdProduit,IdClient,Quantite) VALUES (:IdRepres,:IdProduit,:IdClient,:Quantite)");
+		$q->bindValue(":IdRepres", $obj->getIdRepres());
+		$q->bindValue(":IdProduit", $obj->getIdProduit());
+		$q->bindValue(":IdClient", $obj->getIdClient());
+		$q->bindValue(":Quantite", $obj->getQuantite());
 		$q->execute();
 	}
 
 	public static function update(Ventes $obj)
 	{
  		$db=DbConnect::getDb();
-		$q=$db->prepare("UPDATE ventes SET idVente=:idVente,idRepres=:idRepres,idProduit=:idProduit,idClient=:idClient,quantite=:quantite WHERE idVente=:idVente");
-		$q->bindValue(":idVente", $obj->getIdVente());
-		$q->bindValue(":idRepres", $obj->getIdRepres());
-        $q->bindValue(":idProduit", $obj->getIdProduit());
-        $q->bindValue(":idClient", $obj->getIdClient());
-        $q->bindValue(":quantite", $obj->getQuantite());
+		$q=$db->prepare("UPDATE ventes SET IdVente=:IdVente,IdRepres=:IdRepres,IdProduit=:IdProduit,IdClient=:IdClient,Quantite=:Quantite WHERE IdVente=:IdVente");
+		$q->bindValue(":IdVente", $obj->getIdVente());
+		$q->bindValue(":IdRepres", $obj->getIdRepres());
+        $q->bindValue(":IdProduit", $obj->getIdProduit());
+        $q->bindValue(":IdClient", $obj->getIdClient());
+        $q->bindValue(":Quantite", $obj->getQuantite());
 		$q->execute();
 	}
 	public static function delete(Ventes $obj)
@@ -49,6 +49,22 @@ class VentesManager
  		$db=DbConnect::getDb();
 		$liste = [];
 		$q = $db->query("SELECT * FROM ventes");
+		while($donnees = $q->fetch(PDO::FETCH_ASSOC))
+		{
+			if($donnees != false)
+			{
+				$liste[] = new Ventes($donnees);
+			}
+		}
+		return $liste;
+	}
+
+	public static function getListByRepresentant(Representants $representant)
+	{
+		$id=(int) $representant->getIdRepres();
+ 		$db=DbConnect::getDb();
+		$liste = [];
+		$q = $db->query("SELECT * FROM ventes WHERE idRepres=$id");
 		while($donnees = $q->fetch(PDO::FETCH_ASSOC))
 		{
 			if($donnees != false)

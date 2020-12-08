@@ -9,6 +9,8 @@ echo '<body class="colonne">
             <div class="espace"></div>
             <div class="ajouter"><a class="centre size" href="index.php?page=FormulaireProduits&mode=ajouter">Ajouter Produit</a></div>
             <div class="espace"></div>
+            <div class="rechercher"><a class="centre size" href="index.php?page=FormulaireProduits&mode=rechercher">Rechercher Produit</a></div>
+            <div class="espace"></div>
         </div>';
         foreach ($produits as $unProduit)
         {
