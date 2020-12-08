@@ -164,7 +164,7 @@ INSERT	INTO	UTILISATEURS	(IdUtilisateur, nomUtilisateur, prenomUtilisateur, ageU
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"titreHeader","FR","Bienvenue sur le site de gestion");
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"titreHeader","EN","Welcome to the gestion website");
 
-
+/********************************************* liste Client ***************************************************/
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"ajouterClient","FR","Ajouter un client");
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"ajouterClient","EN","Add a customer");
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"detailClient","FR","Details du client");
@@ -174,6 +174,7 @@ INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"modifierCl
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"supprimerClient","FR","Supprimer un client");
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"supprimerClient","EN","Delete a customer");
 
+/********************************************* liste Produit ***************************************************/
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"ajouterProduit","FR","Ajouter un Produit");
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"ajouterProduit","EN","Add a product");
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"rechercherProduit","FR","Rechercher un Produit");
@@ -185,6 +186,7 @@ INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"modifierPr
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"supprimerProduit","FR","Supprimer un Produit");
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"supprimerProduit","EN","Delete a product");
 
+/********************************************* liste Representant ***************************************************/
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"ajouterRepresentant","FR","Ajouter un Representant");
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"ajouterRepresentant","EN","Add a Delegate");
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"detailRepresentant","FR","Details du Representant");
@@ -194,6 +196,7 @@ INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"modifierRe
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"supprimerRepresentant","FR","Supprimer un Representant");
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"supprimerRepresentant","EN","Delete a Delegate");
 
+/********************************************* liste Vente ***************************************************/
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"ajouterVente","FR","Ajouter une Vente");
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"ajouterVente","EN","Add a Sale");
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"detailVente","FR","Details de la Vente");
@@ -203,6 +206,7 @@ INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"modifierVe
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"supprimerVente","FR","Supprimer une Vente");
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"supprimerVente","EN","Delete a Sale");
 
+/********************************************* liste Utilisateur ***************************************************/
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"ajouterUtilisateur","FR","Ajouter un Utilisateur");
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"ajouterUtilisateur","EN","Add a User");
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"detailUtilisateur","FR","Details Utilisateur");
@@ -212,6 +216,7 @@ INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"modifierUt
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"supprimerUtilisateur","FR","Supprimer un Utilisateur");
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"supprimerUtilisateur","EN","Delete a User");
 
+/********************************************* liste Role ***************************************************/
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"ajouterRole","FR","Ajouter un Role");
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"ajouterRole","EN","Add a Role");
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"detailRole","FR","Details du Role");
@@ -222,6 +227,7 @@ INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"supprimerR
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"supprimerRole","EN","Delete a Role");
 
 
+/********************************************* Nav ***************************************************/
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"connection","FR","Connection");
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"connection","EN","Connexion");
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"inscription","FR","Inscription");
@@ -242,6 +248,7 @@ INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"role","FR"
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"role","EN","Role");
 
 
+/********************************************* Footer ***************************************************/
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"contact","FR","Contact");
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"contact","EN","Contact");
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"adressePostal","FR","Adresse Postal");
@@ -254,6 +261,7 @@ INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"reseaux","
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"reseaux","EN","Network");
 
 
+/***************************** Bouton ajouter, modifier, supprimer *******************************/
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"retour","FR","Retour");
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"retour","EN","Return");
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"ajouter","FR","Ajouter");
@@ -264,11 +272,13 @@ INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"supprimer"
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"supprimer","EN","Delete");
 
 
+/********************************************* Formualire Client ***************************************************/
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"nomClient","FR","Nom du Client");
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"nomClient","EN","Customer Name");
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"villeClient","FR","Ville du Client");
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"villeClient","EN","Customer City");
 
+/********************************************* Formualire Produit ***************************************************/
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"nomProduit","FR","Nom du Produit");
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"nomProduit","EN","Product Name");
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"couleurProduit","FR","Couleur du Client");
@@ -276,11 +286,13 @@ INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"couleurPro
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"poidsProduit","FR","Poids du Client");
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"poidsProduit","EN","Product Weight");
 
+/********************************************* Formualire Representant ***************************************************/
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"nomRepresentant","FR","Nom du Representant");
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"nomRepresentant","EN","Delegate Name");
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"villeRepresentant","FR","Ville du Client");
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"villeRepresentant","EN","Delegate City");
 
+/********************************************* Formualire Vente ***************************************************/
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"idRepresentant","FR","ID Representant");
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"idRepresentant","EN","Delegate ID");
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"idProduit","FR","ID Produit");
@@ -290,6 +302,7 @@ INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"idClient",
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"quantite","FR","Quantite");
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"quantite","EN","Quantity");
 
+/********************************************* Formualire Utilisateur ***************************************************/
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"nomUtilisateur","FR","Nom Utilisateur");
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"nomUtilisateur","EN","User Name");
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"prenomUtilisateur","FR","Prenom Utilisateur");
@@ -301,9 +314,11 @@ INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"pseudoUtil
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"motDePasseUtilisateur","FR","Mot De Passe Utilisateur");
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"motDePasseUtilisateur","EN","User Password");
 
+/********************************************* Formualire Role ***************************************************/
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"nomRole","FR","Nom Role");
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"nomRole","EN","Role Name");
 
+/********************************************* Formualire connexion ***************************************************/
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"confirmMDPUtilisateur","FR","Confirmation Mot De Passe Utilisateur");
 INSERT INTO Texte(idTexte, codeTexte, codeLangue, Texte) VALUES(NULL,"confirmMDPUtilisateur","EN","Confirm User Password");
 
