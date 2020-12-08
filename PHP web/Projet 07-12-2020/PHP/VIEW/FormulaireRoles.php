@@ -41,7 +41,7 @@ if (isset($_GET['id']))
     <div class="contenu colonne">
         <div class="colonne marginLight">
             <div class="titreDescriptif centre">
-                Nom Role
+            <?php echo texte("nomRole");?>
             </div>
             <div>
                 <div class="espace"></div>
@@ -56,17 +56,17 @@ switch ($mode)
     {
 		case "ajouter":
 			{
-                echo '<div><div class="espace"></div><div><input type="submit" class="ajouter marginLight size centre" name="submit" value="Ajouter"/></div><div class="espace"></div></div>';
+                echo '<div><div class="espace"></div><div><input type="submit" class="ajouter marginLight size centre" name="submit" value="'.texte("ajouter").'"/></div><div class="espace"></div></div>';
                 break;
 			}
 		case "modifier":
 			{
-                echo '<div><div class="espace"></div><div><input type="submit" class="modifier marginLight size centre" name="submit" value="Modifier"/></div><div class="espace"></div></div>';
+                echo '<div><div class="espace"></div><div><input type="submit" class="modifier marginLight size centre" name="submit" value="'.texte("modifier").'"/></div><div class="espace"></div></div>';
                 break;
 			}
 		case "supprimer":
 			{
-                echo '<div><div class="espace"></div><div><input type="submit" class="supprimer marginLight size centre" name="submit" value="Supprimer"/></div><div class="espace"></div></div>';
+                echo '<div><div class="espace"></div><div><input type="submit" class="supprimer marginLight size centre" name="submit" value="'.texte("supprimer").'"/></div><div class="espace"></div></div>';
                 break;
 			}
         

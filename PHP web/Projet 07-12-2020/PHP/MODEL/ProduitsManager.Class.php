@@ -12,6 +12,15 @@ class ProduitsManager
 		$q->execute();
 	}
 
+	// public static function research(Produits $obj)
+	// {
+	// 	$db=DbConnect::getDb();
+	// 	$q=$db->prepare("SELECT * FROM produits WHERE :nomProduit,:couleurProduit,:poidsProduit LIKE nomProduit=:nomProduit,couleurProduit=:couleurProduit,poidsProduit=:poidsProduit");
+	// 	$q->bindValue(":nomProduit", $obj->getNomProduit());
+    //     $q->bindValue(":couleurProduit", $obj->getCouleurProduit());
+    //     $q->bindValue(":poidsProduit", $obj->getPoidsProduit());
+	// }
+
 	public static function update(Produits $obj)
 	{
  		$db=DbConnect::getDb();

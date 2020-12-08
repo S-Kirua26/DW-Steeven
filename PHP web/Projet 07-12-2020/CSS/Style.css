@@ -5,7 +5,7 @@
     --detail: #e2db79;
     --modifier: #4cb9e4;
     --supprimer: #ce3838;
-    --rechercher: #eb7531;
+    --rechercher: #e78147;
 }
 
 html, body{
@@ -111,7 +111,7 @@ img{
 }
 
 .rechercher{
-    border: 2px solid #df6b0d;
+    border: 2px solid #ff5e00;
     border-radius: 1.2em;
     padding:0.7em 1em;
     background: var(--rechercher);

@@ -1,14 +1,14 @@
 <footer>
         <div class="flex">
-            <div class="centre">Contact</div>
+            <div class="centre"><?php echo texte('contact');?></div>
         </div>
         <div class="colonne flex">
-            <div class="centre">Adresse Postal</div>
-            <div class="centre">Adresse Mail</div>
-            <div class="centre">N° de Téléphone</div>
+            <div class="centre"><?php echo texte('adressePostal');?></div>
+            <div class="centre"><?php echo texte('adresseMail');?></div>
+            <div class="centre"><?php echo texte('numeroTel');?></div>
         </div>
         <div class="colonne flex">
-            <div class="centre">Reseaux</div>
+            <div class="centre"><?php echo texte('reseaux');?></div>
         </div>
         <div class="logo">
             <a href="index.php?page=default">

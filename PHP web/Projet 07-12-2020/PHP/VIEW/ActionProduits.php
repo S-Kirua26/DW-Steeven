@@ -10,6 +10,10 @@ switch ($mode) {
             ProduitsManager::add($obj);
             break;
         }
+    case "rechercher":
+        {
+            ProduitsManager::research($obj);
+        }
     case "modifier":
         {
 

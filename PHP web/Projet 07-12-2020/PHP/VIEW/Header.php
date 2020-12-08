@@ -20,8 +20,8 @@ else
             <a href="index.php?page=default">
                 <img src="./IMG/gestion.png" alt="logo gestion">
             </a>
-        </div>
-        <div class="titre">Bienvenue sur le site de gestion</div>
+        </div> 
+        <div class="titre"><?php echo texte("titreHeader");?></div>
         <div class="logo">
             <a href=" <?php echo $uri; ?>lang=FR">
                 <img src="./IMG/drapeauFrance.jpg" alt="Drapeau France">

@@ -4,8 +4,8 @@ echo '<form method="POST" action="index.php?page=ActionConnexions">
     <div class="contenu colonne">
         <div class="colonne marginLight">
         <div class="colonne marginLight">
-            <div class="titreColonne centre">
-                Pseudo Utilisateur
+            <div class="titreColonne centre size">
+                '.texte("pseudoUtilisateur").'
                 </div>
                 <div>
                 <div class="espace"></div>
@@ -13,8 +13,8 @@ echo '<form method="POST" action="index.php?page=ActionConnexions">
                 <div class="espace"></div>
                 </div>
             </div>
-            <div class="titreColonne centre">
-                Mot de passe Utilisateur
+            <div class="titreColonne centre size">
+                '.texte("motdePasseUtilisateur").'
                 </div>
                 <div>
                 <div class="espace"></div>
@@ -24,12 +24,12 @@ echo '<form method="POST" action="index.php?page=ActionConnexions">
         </div>
             <div>
             <div class="espace"></div>
-            <div class="return marginLight"><a class="centre" href="index.php?page=FormulaireConnexions">Retour</a></div>
+            <div class="return marginLight"><a class="centre size" href="index.php?page=FormulaireConnexions">'.texte("retour").'</a></div>
             <div class="espace"></div>
         </div>
         <div>
         <div class="espace"></div>
-            <input type="submit" class="ajouter marginLight centre" name="submit" value="Se connecter"/>
+            <input type="submit" class="ajouter marginLight centre size" name="submit" value="'.texte("connection").'"/>
             <div class="espace"></div>
             </div>
         </div>

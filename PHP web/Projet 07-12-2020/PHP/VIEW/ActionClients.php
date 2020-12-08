@@ -18,9 +18,19 @@ switch ($mode) {
         }
     case "supprimer":
         {
-            $idRecherche=$_GET['id'];
-            $id=ClientsManager::findById($idRecherche);
-            ClientsManager::delete($id);
-            break;
+            if (isset($_SESSION["utilisateurs"])&& $_SESSION["utilisateurs"]->getIdRole()==1)
+            {
+                $idRecherche=$_GET['id'];
+                $id=ClientsManager::findById($idRecherche);
+                break;
+            }
+            if (isset($_SESSION["utilisateurs"])&& $_SESSION["utilisateurs"]->getIdRole()==2)
+            {
+                $idRecherche=$_GET['id'];
+                $id=ClientsManager::findById($idRecherche);
+                ClientsManager::delete($id);
+                break;
+            }
+
         }
 }
