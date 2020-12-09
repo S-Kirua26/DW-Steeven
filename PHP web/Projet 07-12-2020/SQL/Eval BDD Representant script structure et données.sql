@@ -96,7 +96,7 @@ CREATE TABLE IF NOT EXISTS `utilisateurs` (
   `ageUtilisateur` int(11) DEFAULT NULL,
   `pseudoUtilisateur` varchar(50) DEFAULT NULL,
   `motDePasseUtilisateur` varchar(50) DEFAULT NULL,
-  `IdRepres` int(11) DEFAULT NULL,
+  `IdRole` int(11) DEFAULT NULL,
   PRIMARY KEY (`IdUtilisateur`)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8;
 COMMIT;
