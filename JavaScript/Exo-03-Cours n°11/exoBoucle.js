@@ -113,16 +113,41 @@
 // var mot = window.prompt("Quel est votre mot choisi?");
 
 // var nbLettre = mot.length;
-// var i = 0;
+// var compteur = 0;
 
 // window.alert("Il y a " + nbLettre + " lettres dans votre mot");
 
 // for(i=0;i<=mot.length;i++)
 // {
-//     var lettre = mot.substr(0,1);
-//     if()
+//     switch (mot[i])
+//     {
+//         case "a":
+//             compteur++;
+//         break;
 
+//         case "e":
+//             compteur++
+//         break;
+
+//         case "i":
+//              compteur++;
+//         break;
+
+//         case "o":
+//              compteur++;
+//         break;
+
+//         case  "u":
+//              compteur++;
+//         break;
+
+//         case  "y":
+//              compteur++;
+//         break;
+//     }
 // }
+
+// window.alert("Le nombre de voyelle est de : " + compteur);
 
 /***********************************Exercice 9 *********************************************/
 
@@ -146,17 +171,46 @@
 
 /***********************************Exercice 10 *********************************************/
 
-var nombre = parseInt(window.prompt("Quel est votre nombre?"));
-var i = 2;
+// var nombre = parseInt(window.prompt("Quel est votre nombre?"));
 
-for (i=2;i<nombre;i++)
-{
-    if(nombre%i == 0)
-    {
-        window.alert("Votre nombre est premier");
-    }
-    else
-    {
-        window.alert("Votre nombre n'est pas premier");
-    }
-}
+// for (i=2;i<nombre;i++)
+// {
+//     if(nombre%i == 0)
+//     {
+//         window.alert("Votre nombre est premier");
+//     }
+//     else
+//     {
+//         window.alert("Votre nombre n'est pas premier");
+//     }
+// }
+
+/***********************************Exercice 11 *********************************************/
+
+// do
+// {
+//     var alea = parseInt(Math.random()*100);
+//     var i = 0;
+
+//     do
+//     {
+//         var valeur = window.prompt("Quel est votre valeur");
+//         var compteur = i++;
+
+//         if(valeur > alea)
+//         {
+//             window.alert("C'est trop grand");
+//         }
+//         if(valeur < alea){
+//             window.alert("C'est trop petit");
+//         }
+        
+//     }while(valeur != alea)
+
+//     window.alert("Bravo, vous avez gagné en " + compteur + " tour(s)");
+//     var recommencer = window.confirm("Voulez vous recommencer?");
+
+// }while(recommencer == true)
+
+// window.alert("Bye");
+
