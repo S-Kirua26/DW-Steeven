@@ -170,19 +170,22 @@
 // }while(age < 101)
 
 /***********************************Exercice 10 *********************************************/
+// var nb = parseInt(prompt('entrer un chiffre'));
 
-// var nombre = parseInt(window.prompt("Quel est votre nombre?"));
+// i = 2;
 
-// for (i=2;i<nombre;i++)
+// while (i*i<=nb && nb%i != 0)
 // {
-//     if(nombre%i == 0)
-//     {
-//         window.alert("Votre nombre est premier");
-//     }
-//     else
-//     {
-//         window.alert("Votre nombre n'est pas premier");
-//     }
+//     i++;
+// }
+
+// if (i*i>nb)
+// {
+//     alert(nb+' est premier');
+// }
+// else
+// {
+//     alert(nb+' n est pas premier');
 // }
 
 /***********************************Exercice 11 *********************************************/
