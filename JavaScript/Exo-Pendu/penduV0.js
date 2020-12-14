@@ -1,31 +1,40 @@
 
 function afficherTableau(tableau)
 {
-    for(var propriete in tableau)
+    for(var element in tableau)
     {
-        console.log(propriete + " ");
+        console.log(element + " " + "\t");
     }
 }
 
+// tableau= ["1","2","3"];
+// afficherTableau(tableau);
+
 function coderMot(mot, niveau)
 {
-    var tableau = string_split(mot);
+    var tableau = mot.split('');
+
     if(niveau == 1)
     {
-        for(i=1;i<tableau.length - 1;i++)
+        for(var i=1;i<tableau.length - 1;i++)
         {
             tableau[i] = "_";
         }
     }
     else
     {
-        for(i=0;i<tableau.length;i++)
+        for(var i=0;i<tableau.length;i++)
         {
             tableau[i] = "_";
         }
     }
+    console.log(tableau);
     return tableau;
 }
+
+// var test = "bonjour";
+// console.log("Cette méthode doit donner _ _ _ _ _ _ _  et ça donne: \n");
+// afficherTableau(coderMot(test,1));
 
 function creer_dico()
 {
@@ -770,6 +779,8 @@ function creer_dico()
     return tableauMots;
 }
 
+// console.log(creer_dico());
+
 function dessinerPendu(nombreErreur)
 {
     switch(nombreErreur)
@@ -878,10 +889,12 @@ function dessinerPendu(nombreErreur)
     }
 }
 
+// dessinerPendu(4);
+
 function testerLettre(lettre,tableau,depart)
 {
-    var tableauRec = array_slice(tableau,depart);
-    var resultat = tableauRec.findIndex(lettre);
+    var tableauRec = tableau.slice(depart);
+    var resultat = tableauRec.indexOf(lettre);
 
     if(resultat === -1)
     {
@@ -890,16 +903,26 @@ function testerLettre(lettre,tableau,depart)
     else
     {
         var reponse = resultat + depart;
-        var tableauPosition = array.concat(reponse, testerLettre(lettre, tableau, res+depart+1));
+        var tableauPosition = tableau.concat(reponse, testerLettre(lettre, tableau, resultat + depart + 1));
+        console.log(tableauPosition);
         return tableauPosition;
     }
 }
 
+// console.log("Cette méthode doit donner 1 et 4 et ça donne \n");
+// var tableau = ["B","O","N","J","O","U","R"];
+// afficherTableau(testerLettre("O",tableau,0));
+
 function ajouterUneLettre(lettre, tableau, position)
 {
     tableau[position] = lettre;
+    console.log(tableau);
     return tableau;
 }
+
+// console.log("Cette méthode doit donner BONKOUR et ça donne: \n");
+// var tableau = ["B","O","N","J","O","U","R"];
+// afficherTableau(ajouterUneLettre('K',tableau,3));
 
 function ajouterLesLettres(val,tableau,tableauPosition,niveau)
 {
@@ -941,6 +964,11 @@ function ajouterLesLettres(val,tableau,tableauPosition,niveau)
     return -1;
 }
 
+// var motATrouver = "BONJOUR";
+// var tableau = ["B","O","N","J","O","U","R"];
+// console.log("Cette méthode doit donner BONJOU_ et ça donne: \n");
+// afficherTableau(ajouterLesLettres("O",tableau,testerLettre("O",motATrouver.split(''),0)));
+
 function afficherMauvaisesLettres(listeLettres)
 {
     console.log("Les lettres non présentes sont ");
@@ -958,6 +986,10 @@ function afficherMauvaisesLettres(listeLettres)
         }
     }
 }
+
+// var liste = ["A","B","C"]
+// console.log("Les lettres non présentes sont A,B,C et ça donne: \n");
+// afficherMauvaisesLettres(liste);
 
 function choisirMot(niv)
 {
@@ -993,12 +1025,18 @@ function testerGagner(nbErreur,tableau)
     {
         return -1;
     }
-    if(tableau.IndexOf("_") === false)
+    if(tableau.indexOf("_") === -1)
     {
         return 1;
     }
     return 0;
 }
+
+// var tableau = ["B", "_", "N", "J", "O", "U", "R"];
+// console.log("Cette méthode doit donner -1 et ça donne " + testerGagner(9, tableau)+"\n");
+// console.log("Cette méthode doit donner 0 et ça donne " + testerGagner(3, tableau)+"\n");
+// tableau[1] = "O";
+// console.log("Cette méthode doit donner 1 et ça donne " + testerGagner(2, tableau)+"\n");
 
 function choisirNiveau()
 {
@@ -1086,11 +1124,7 @@ function lancerPartie(niveau)
     }
 }
 
-// tableau = ["1","2","3"];
-// afficherTableau(tableau);
-// coderMot("michel",1);
-// console.log(creer_dico());
-// dessinerPendu(4);
+
 // testerLettre("a",tableau,1);
 // ajouterUneLettre("e",tableau,4);
 //ajouterLesLettres("i",tableau,tableauPosition,niveau);
