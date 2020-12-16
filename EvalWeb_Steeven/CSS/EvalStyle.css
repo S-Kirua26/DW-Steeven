@@ -1,0 +1,107 @@
+:root {
+    --fond: #f8cbad;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body,
+header,
+footer,
+nav,
+div,
+a,
+input {
+    display: flex;
+    flex: 1;
+}
+
+header,
+footer {
+    background-color: var(--fond);
+}
+
+footer {}
+
+nav {
+    background: var(--couleurNav);
+    padding: 1em;
+}
+
+a {
+    text-decoration: none;
+    color: var(--lien)
+}
+
+.flex {
+    flex: 2;
+}
+
+.logo {
+    margin: 1em;
+}
+
+img {
+    width: 100%;
+}
+
+.colonne {
+    flex-direction: column;
+}
+
+.margin {
+    margin: 4em;
+}
+
+.marginLight {
+    margin-top: 1em;
+}
+
+.marginMini {
+    margin: 0.3em;
+}
+
+.centre {
+    justify-content: center;
+    align-items: center;
+}
+
+.espace {
+    flex: 1;
+}
+
+.espaceLight {
+    flex: 0.5;
+}
+
+.size {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.padding {
+    padding: 1em;
+}
+
+.marginBouton {
+    margin: 0em 1.5em;
+}
+
+.titreHeader {
+    flex: 6;
+    font-size: 3em;
+}
+
+.sousTitre {
+    font-size: 0.6em;
+}
+
+.libelle {
+    background-color: #f2a16a;
+    border-radius: 1.2em;
+    border: 1px solid #979e93;
+    color: black;
+}

@@ -1,34 +1,56 @@
 <?php
 
-class Roles 
+class Eleves 
 {
 
 	/*****************Attributs***************** */
 
-	private $_idRole;
-	private $_nomRole;
+	private $_idEleve;
+	private $_nomEleve;
+    private $_prenomEleve;
+    private $_classe;
 
 	/***************** Accesseurs ***************** */
 
 
-	public function getIdRole()
+	public function getIdEleve()
 	{
-		return $this->_idRole;
+		return $this->_idEleve;
 	}
 
-	public function setIdRole(int $idRole)
+	public function setIdEleve(int $idEleve)
 	{
-		$this->_idRole=$idRole;
+		$this->_idEleve=$idEleve;
 	}
 
-	public function getNomRole()
+	public function getNomEleve()
 	{
-		return $this->_nomRole;
+		return $this->_nomEleve;
 	}
 
-	public function setNomRole($nomRole)
+	public function setNomEleve($nomEleve)
 	{
-		$this->_nomRole=$nomRole;
+		$this->_nomEleve=$nomEleve;
+	}
+
+	public function getPrenomEleve()
+	{
+		return $this->_prenomEleve;
+	}
+
+	public function setPrenomEleve($prenomEleve)
+	{
+		$this->_prenomEleve=$prenomEleve;
+    }
+    
+    public function getClasse()
+	{
+		return $this->_classe;
+	}
+
+	public function setClasse($classe)
+	{
+		$this->_classe=$classe;
 	}
 
 	/*****************Constructeur***************** */
@@ -61,7 +83,7 @@ class Roles
 	*/
 	public function toString()
 	{
-		return "IdRole : ".$this->getIdRole()."NomRole : ".$this->getNomRole()."\n";
+		return "IdEleve : ".$this->getIdEleve()."NomEleve : ".$this->getNomEleve()."PrenomEleve : ".$this->getPrenomEleve()."\n";
 	}
 
 
