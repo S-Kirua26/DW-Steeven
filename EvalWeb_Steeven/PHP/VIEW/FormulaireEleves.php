@@ -29,36 +29,36 @@ if (isset($_GET['id']))
 }
 ?>
 
-<?php if($mode != "ajouter") echo  '<input name= "IdEleve" value="'.$choix->getIdEleve().'" type= "hidden">';?>
+<?php if($mode != "ajouter") echo  '<input name= "idEleve" value="'.$choix->getIdEleve().'" type= "hidden">';?>
 
     <div class="contenu colonne">
         <div class="colonne marginLight">
-            <div class="centre">
+            <div class="centre size">
                 Nom:
             </div>
             <div>
                 <div class="espace"></div>
-                <input class="libelle" name="nomEleve" <?php if($mode != "ajouter") echo 'value= "'.$choix->getNomEleve().'"';if($mode=="supprimer") echo '" disabled'; ?>/>
+                <input  name="nomEleve" <?php if($mode != "ajouter") echo 'value= "'.$choix->getNomEleve().'"';if($mode=="supprimer") echo '" disabled'; ?>/>
                  <div class="espace"></div>
              </div>
         </div>
-        <div class="contenu colonne">
-            <div class="centre">
+        <div class="contenu colonne marginLight">
+            <div class="centre size">
                 Prenom:
             </div>
             <div>
                 <div class="espace"></div>
-                <input class="libelle" name="prenomEleve" <?php if($mode != "ajouter") echo 'value= "'.$choix->getPrenomEleve().'"';if($mode=="supprimer") echo '" disabled'; ?>/>
+                <input name="prenomEleve" <?php if($mode != "ajouter") echo 'value= "'.$choix->getPrenomEleve().'"';if($mode=="supprimer") echo '" disabled'; ?>/>
                  <div class="espace"></div>
              </div>
         </div>
-        <div class="contenu colonne">
-            <div class="centre">
+        <div class="contenu colonne marginLight">
+            <div class="centre size">
                 Classe:
             </div>
             <div>
                 <div class="espace"></div>
-                <input class="libelle" name="classe" <?php if($mode != "ajouter") echo 'value= "'.$choix->getClasse().'"';if($mode=="supprimer") echo '" disabled'; ?>/>
+                <input name="classe" <?php if($mode != "ajouter") echo 'value= "'.$choix->getClasse().'"';if($mode=="supprimer") echo '" disabled'; ?>/>
                 <div class="espace"></div>
              </div>
         </div>
@@ -69,17 +69,17 @@ switch ($mode)
     {
 		case "ajouter":
 			{
-                echo '<div><div class="espace"></div><div><input type="submit" class="ajouter marginLight size centre" name="submit" value="ajouter"/></div><div class="espace"></div></div>';
+                echo '<div><div class="espace"></div><div><input type="submit" class="libelle marginLight size centre" name="submit" value="ajouter"/></div><div class="espace"></div></div>';
                 break;
 			}
 		case "modifier":
 			{
-                echo '<div><div class="espace"></div><div><input type="submit" class="modifier marginLight size centre" name="submit" value="modifier"/></div><div class="espace"></div></div>';
+                echo '<div><div class="espace"></div><div><input type="submit" class="libelle marginLight size centre" name="submit" value="modifier"/></div><div class="espace"></div></div>';
                 break;
 			}
 		case "supprimer":
 			{
-                echo '<div><div class="espace"></div><div><input type="submit" class="supprimer marginLight size centre" name="submit" value="supprimer"/></div><div class="espace"></div></div>';
+                echo '<div><div class="espace"></div><div><input type="submit" class="libelle marginLight size centre" name="submit" value="supprimer"/></div><div class="espace"></div></div>';
                 break;
 			}
         
@@ -94,7 +94,7 @@ switch ($mode)
 </div>
 <div>
 <div class="espace"></div>
-<div class="return"><a class="centre size" href="index.php?page=ListeEleves">Retour</a></div>
+<div class=" libelle marginLight"><a class="centre size" href="index.php?page=ListeEleves">annuler</a></div>
 <div class="espace"></div>
 </div>
 

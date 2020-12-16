@@ -1,6 +1,6 @@
 <?php
 
-$utilisateur=UtilisateursManager::findByPseudo($_POST['pseudoUtilisateur']);
+$utilisateur=UtilisateursManager::findByPseudo($_POST['loginUtilisateur']);
 if ($utilisateur != false)
 {
     if (crypte($_POST['motDePasseUtilisateur']) == $utilisateur->getMotDePasseUtilisateur())

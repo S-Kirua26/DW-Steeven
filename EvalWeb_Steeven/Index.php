@@ -3,7 +3,6 @@
 require("./Outils.php");
 
 $parametres = Parametres::init();
-var_dump($parametres);
 
 DbConnect::init();
 
@@ -21,7 +20,7 @@ $lang=isset($_SESSION['lang']) ? $_SESSION['lang'] : 'FR';
 /******Fin des langues******/
 
 $routes=[
-	"default"=>["PHP/VIEW/","ListeEleves","liste des eleves"],
+	"default"=>["PHP/VIEW/","FormulaireConnexions","formulaire des Connexions"],
 	// "TestElevesManager"=>["PHP/MODEL/TESTMANAGER/","TestElevesManager","test eleves"],
 	// "TestEnseignantsManager"=>["PHP/MODEL/TESTMANAGER/","TestEnseignantsManager","test enseignant"],
 	// "TestNotesManager"=>["PHP/MODEL/TESTMANAGER/","TestNotesManager","test notes"],
@@ -41,6 +40,7 @@ $routes=[
 	"FormulaireSuivis"=>["PHP/VIEW/","FormulaireSuivis","formulaire des suivis"],
 	"FormulaireRoles"=>["PHP/VIEW/","FormulaireRoles","formulaire des roles"],
 	"FormulaireUtilisateurs"=>["PHP/VIEW/","FormulaireUtilisateurs","formulaire des utilisateurs"],
+	"FormulaireConnexions"=>["PHP/VIEW/","FormulaireConnexions","formulaire des connexions"],
 
 	"ActionEleves"=>["PHP/VIEW/","ActionEleves","Action des eleves"],
 	"ActionEnseignants"=>["PHP/VIEW/","ActionEnseignants","Action des enseignants"],

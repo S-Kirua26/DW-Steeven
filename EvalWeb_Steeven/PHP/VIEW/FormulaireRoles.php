@@ -40,12 +40,12 @@ if (isset($_GET['id']))
 
     <div class="contenu colonne">
         <div class="colonne marginLight">
-            <div class="titreDescriptif centre">
-            <?php echo texte("nomRole");?>
+            <div class="size marginLight centre">
+            Nom Role:
             </div>
             <div>
                 <div class="espace"></div>
-                <input class="libelle" name="nomRole" <?php if($mode != "ajouter") echo 'value= "'.$choix->getNomRole().'"';if($mode=="details" || $mode=="supprimer") echo '" disabled'; ?>/>
+                <input name="nomRole" <?php if($mode != "ajouter") echo 'value= "'.$choix->getNomRole().'"';if($mode=="details" || $mode=="supprimer") echo '" disabled'; ?>/>
                 <div class="espace"></div>
             </div>
         </div>
@@ -56,17 +56,17 @@ switch ($mode)
     {
 		case "ajouter":
 			{
-                echo '<div><div class="espace"></div><div><input type="submit" class="ajouter marginLight size centre" name="submit" value="'.texte("ajouter").'"/></div><div class="espace"></div></div>';
+                echo '<div><div class="espace"></div><div><input type="submit" class="libelle marginLight size centre" name="submit" value="ajouter"/></div><div class="espace"></div></div>';
                 break;
 			}
 		case "modifier":
 			{
-                echo '<div><div class="espace"></div><div><input type="submit" class="modifier marginLight size centre" name="submit" value="'.texte("modifier").'"/></div><div class="espace"></div></div>';
+                echo '<div><div class="espace"></div><div><input type="submit" class="libelle marginLight size centre" name="submit" value="modifier"/></div><div class="espace"></div></div>';
                 break;
 			}
 		case "supprimer":
 			{
-                echo '<div><div class="espace"></div><div><input type="submit" class="supprimer marginLight size centre" name="submit" value="'.texte("supprimer").'"/></div><div class="espace"></div></div>';
+                echo '<div><div class="espace"></div><div><input type="submit" class="libelle marginLight size centre" name="submit" value="supprimer"/></div><div class="espace"></div></div>';
                 break;
 			}
         
@@ -81,7 +81,7 @@ switch ($mode)
 </div>
 <div>
 <div class="espace"></div>
-<div class="return"><a class="centre size" href="index.php?page=ListeRoles">Retour</a></div>
+<div class="marginLight libelle"><a class="centre size" href="index.php?page=ListeRoles">Annuler</a></div>
 <div class="espace"></div>
 </div>
 

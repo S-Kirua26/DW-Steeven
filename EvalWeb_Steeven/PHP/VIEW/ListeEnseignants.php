@@ -13,10 +13,18 @@ echo '<body class="colonne">
 
         foreach ($enseignants as $unEnseignant)
         {
-            echo '<div class="liste marginLight">
-            <div class="libelle size centre marginBouton">'.$unEnseignant->getLibelleMatiere(). " ".$unEnseignant->getNomEnseignant(). " ".$unEnseignant->getPrenomEnseignant(). " ".$unEnseignant->getPseudoEnseignant().'</div>
-            <div><a href="index.php?page=FormulaireEnseignants&mode=modifier&id='.$unEnseignant->getIdEnseignant().'"><img src="../../IMG/modifier.png" alt="crayon pour modifier"></a></div>
-            <div><a href="index.php?page=FormulaireEnseignants&mode=supprimer&id='.$unEnseignant->getIdEnseignant().'"><img src="../../IMG/supprimer.png" alt="croix rouge pour supprimer"></a></div>';
+            echo '<div class="liste marginLight colonne">
+            <div>
+                <div class="espaceLarge"></div>
+                <div class="size centre flexBouton">'.$unEnseignant->getLibelleMatiere().'</div>
+                <div class="size centre flexBouton">'.$unEnseignant->getNomEnseignant().'</div>
+                <div class="size centre flexBouton">'.$unEnseignant->getPrenomEnseignant().'</div>
+                <div class="size centre flexBouton">'.$unEnseignant->getPseudoEnseignant().'</div>
+                <div><a href="index.php?page=FormulaireEnseignants&mode=modifier&id='.$unEnseignant->getIdEnseignant().'"><img src="./IMG/modifier.png" alt="crayon pour modifier"></a></div>
+                <div class="espaceLight"></div>
+                <div><a href="index.php?page=FormulaireEnseignants&mode=supprimer&id='.$unEnseignant->getIdEnseignant().'"><img src="./IMG/supprimer.png" alt="croix rouge pour supprimer"></a></div>
+                <div class="espaceLarge"></div>
+            </div>';
         }
            
 echo '</div>

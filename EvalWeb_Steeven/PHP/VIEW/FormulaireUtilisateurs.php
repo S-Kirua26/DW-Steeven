@@ -2,7 +2,7 @@
 
 $mode = $_GET['mode'];
 
-$listeRoles = RolesManager::getList();
+$listeUtilisateurs = UtilisateursManager::getList();
 
 switch ($mode)
 {
@@ -42,67 +42,57 @@ if (isset($_GET['id']))
 
     <div class="contenu colonne">
         <div class="colonne marginLight">
-            <div class="titreDescriptif centre">
-                <?php echo texte("nomUtilisateur");?>
+            <div class="size marginLight centre">
+                Nom Utilisateur:
             </div>
             <div>
                 <div class="espace"></div>
-                <input class="libelle" name="nomUtilisateur" <?php if($mode != "ajouter") echo 'value= "'.$choix->getNomUtilisateur().'"';if($mode=="details" || $mode=="supprimer") echo '" disabled'; ?>/>
+                <input  name="nomUtilisateur" <?php if($mode != "ajouter") echo 'value= "'.$choix->getNomUtilisateur().'"';if($mode=="supprimer") echo '" disabled'; ?>/>
                 <div class="espace"></div>
              </div>
         </div>
         <div class="colonne marginLight">
-            <div class="titreDescriptif centre">
-                <?php echo texte("prenomUtilisateur");?>
+            <div class="size marginLight centre">
+                Prenom Utilisateur:
             </div>
             <div>
                 <div class="espace"></div>
-                <input class="libelle" name="prenomUtilisateur" <?php if($mode != "ajouter") echo 'value= "'.$choix->getPrenomUtilisateur().'"';if($mode=="details" || $mode=="supprimer") echo '" disabled'; ?>/>
+                <input  name="prenomUtilisateur" <?php if($mode != "ajouter") echo 'value= "'.$choix->getPrenomUtilisateur().'"';if($mode=="supprimer") echo '" disabled'; ?>/>
                 <div class="espace"></div>
             </div>
         </div>
         <div class="colonne marginLight">
-            <div class="titreDescriptif centre">
-                <?php echo texte("ageUtilisateur");?>    
+            <div class="size marginLight centre">
+                Login Utilisateur:    
             </div>
             <div>
                 <div class="espace"></div>
-                <input class="libelle" name="ageUtilisateur" <?php if($mode != "ajouter") echo 'value= "'.$choix->getAgeUtilisateur().'"';if($mode=="details" || $mode=="supprimer") echo '" disabled'; ?>/>
+                <input  name="loginUtilisateur" <?php if($mode != "ajouter") echo 'value= "'.$choix->getLoginUtilisateur().'"';if($mode=="supprimer") echo '" disabled'; ?>/>
                 <div class="espace"></div>
             </div>
         </div>
         <div class="colonne marginLight">
-            <div class="titreDescriptif centre">
-                <?php echo texte("pseudoUtilisateur");?>
+            <div class="size marginLight centre">
+                Mot de Passe Utilisateur:
             </div>
             <div>
                 <div class="espace"></div>
-                <input class="libelle" name="pseudoUtilisateur" <?php if($mode != "ajouter") echo 'value= "'.$choix->getPseudoUtilisateur().'"';if($mode=="details" || $mode=="supprimer") echo '" disabled'; ?>/>
-                <div class="espace"></div>
-            </div>
-        </div>
-        <div class="colonne marginLight">
-            <div class="titreDescriptif centre">
-                <?php echo texte("motDePasseUtilisateur");?>
-            </div>
-            <div>
-                <div class="espace"></div>
-                <input class="libelle" name="motDePasseUtilisateur" <?php if($mode != "ajouter") echo 'value= "'.$choix->getMotDePasseUtilisateur().'"';if($mode=="details" || $mode=="supprimer") echo '" disabled'; ?>/>
+                <input  name="motDePasseUtilisateur" <?php if($mode != "ajouter") echo 'value= "'.$choix->getMotDePasseUtilisateur().'"';if($mode=="supprimer") echo '" disabled'; ?>/>
                 <div class="espace"></div>
             </div>
         </div>
 
         <div class="colonne marginLight">
-        <div class="titreDescriptif centre">
-            <?php echo texte("role");?>
+        <div class="centre">
+            Role:
         </div>
         <div>
             <div class="espace"></div>
-            <select class="libelle marginLight" name="IdRole">
+            <select class="libelle marginLight" name="idRole">
 
             <?php 
 
-            foreach ( $listeRoles as $unRole )
+            foreach ( $listeUtilisateurs as $unRole )
             {
                 if ($mode != "ajouter")
                 {
@@ -112,7 +102,7 @@ if (isset($_GET['id']))
                     $sel="selected";
                 }
             }
-                echo '<option value="'.$unRole->getIdRole().'"'.$sel; if($mode=="details" || $mode=="supprimer") echo'disabled'; echo '>'.$unRole->getNomRole().'</option>';
+                echo '<option value="'.$unRole->getIdRole().'"'.$sel; if($mode=="supprimer") echo'disabled'; echo '>'.$unRole->getNomRole().'</option>';
             }
             ?>
 
@@ -127,17 +117,17 @@ switch ($mode)
     {
 		case "ajouter":
 			{
-                echo '<div><div class="espace"></div><div><input type="submit" class="ajouter marginLight size centre" name="submit" value="'.texte("ajouter").'"/></div><div class="espace"></div></div>';
+                echo '<div><div class="espace"></div><div><input type="submit" class="ajouter marginLight size centre" name="submit" value="ajouter"/></div><div class="espace"></div></div>';
                 break;
 			}
 		case "modifier":
 			{
-                echo '<div><div class="espace"></div><div><input type="submit" class="modifier marginLight size centre" name="submit" value="'.texte("modifier").'"/></div><div class="espace"></div></div>';
+                echo '<div><div class="espace"></div><div><input type="submit" class="modifier marginLight size centre" name="submit" value="modifier"/></div><div class="espace"></div></div>';
                 break;
 			}
 		case "supprimer":
 			{
-                echo '<div><div class="espace"></div><div><input type="submit" class="supprimer marginLight size centre" name="submit" value="'.texte("supprimer").'"/></div><div class="espace"></div></div>';
+                echo '<div><div class="espace"></div><div><input type="submit" class="supprimer marginLight size centre" name="submit" value="supprimer"/></div><div class="espace"></div></div>';
                 break;
 			}
         
@@ -152,7 +142,7 @@ switch ($mode)
 </div>
 <div>
 <div class="espace"></div>
-<div class="return"><a class="centre size" href="index.php?page=ListeUtilisateurs">Retour</a></div>
+<div class="return libelle"><a class="centre size" href="index.php?page=ListeUtilisateurs">Annuler</a></div>
 <div class="espace"></div>
 </div>
 

@@ -13,10 +13,17 @@ echo '<body class="colonne">
 
         foreach ($eleves as $unEleve)
         {
-            echo '<div class="liste marginLight">
-            <div class="libelle size centre marginBouton">'.$unEleve->getNomEleve(). " ".$unEleve->getPrenomEleve(). " ".$unEleve->getClasse().'</div>
-            <div><a href="index.php?page=FormulaireEleves&mode=modifier&id='.$unEleve->getIdEleve().'"><img src="../../IMG/modifier.png" alt="crayon pour modifier"></a></div>
-            <div><a href="index.php?page=FormulaireEleves&mode=supprimer&id='.$unEleve->getIdEleve().'"><img src="../../IMG/supprimer.png" alt="croix rouge pour supprimer"></a></div>';
+            echo '<div class="liste marginLight colonne">
+            <div>
+                <div class="espaceLarge"></div>
+                <div class="size centre flexBouton">'.$unEleve->getNomEleve().'</div>
+                <div class="size centre flexBouton">'.$unEleve->getPrenomEleve().'</div>
+                <div class="size centre flexBouton">'.$unEleve->getClasse().'</div>
+                <div><a href="index.php?page=FormulaireEleves&mode=modifier&id='.$unEleve->getIdEleve().'"><img src="./IMG/modifier.png" alt="crayon pour modifier"></a></div>
+                <div class"espaceLight"></div>
+                <div><a href="index.php?page=FormulaireEleves&mode=supprimer&id='.$unEleve->getIdEleve().'"><img src="./IMG/supprimer.png" alt="croix rouge pour supprimer"></a></div>
+                <div class="espaceLarge"></div>
+            </div>';
         }
            
 echo '</div>

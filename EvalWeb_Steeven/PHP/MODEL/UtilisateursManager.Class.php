@@ -5,9 +5,9 @@ class UtilisateursManager
 	public static function add(Utilisateurs $obj)
 	{
  		$db=DbConnect::getDb();
-		$q=$db->prepare("INSERT INTO utilisateurs (nomUtilisateur,loginUtilisateur,prenomUtilisateur,ageUtilisateur,motDePasseUtilisateur,idRole) VALUES (:nomUtilisateur,:loginUtiliateur,:prenomUtilisateur,:motDePasseUtilisateur,:idRole)");
+		$q=$db->prepare("INSERT INTO utilisateurs (nomUtilisateur,loginUtilisateur,prenomUtilisateur,motDePasseUtilisateur,idRole) VALUES (:nomUtilisateur,:loginUtilisateur,:prenomUtilisateur,:motDePasseUtilisateur,:idRole)");
 		$q->bindValue(":nomUtilisateur", $obj->getNomUtilisateur());
-		$q->bindValue(":login", $obj->getLoginUtilisateur());
+		$q->bindValue(":loginUtilisateur", $obj->getLoginUtilisateur());
         $q->bindValue(":prenomUtilisateur", $obj->getPrenomUtilisateur());
 		$q->bindValue(":motDePasseUtilisateur", $obj->getMotDePasseUtilisateur());
 		$q->bindValue(":idRole", $obj->getIdRole());
@@ -59,5 +59,23 @@ class UtilisateursManager
 			}
 		}
 		return $liste;
+	}
+
+	public static function findByPseudo($login)
+	{
+		 $db=DbConnect::getDb();
+		 if (!in_array(";",str_split($login)))
+		 {
+			$q=$db->query("SELECT * FROM utilisateurs WHERE loginUtilisateur ='" . $login . "'");
+			$results = $q->fetch(PDO::FETCH_ASSOC);
+			if($results != false)
+			{
+				return new Utilisateurs($results);
+			}
+			else
+			{
+				return false;
+			}
+		 }
 	}
 }

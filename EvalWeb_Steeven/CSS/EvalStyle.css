@@ -60,8 +60,16 @@ img {
     margin-top: 1em;
 }
 
+.marginLarge {
+    margin-top: 5em;
+}
+
 .marginMini {
     margin: 0.3em;
+}
+
+.flexBouton {
+    flex: 8;
 }
 
 .centre {
@@ -75,6 +83,10 @@ img {
 
 .espaceLight {
     flex: 0.5;
+}
+
+.espaceLarge {
+    flex: 5;
 }
 
 .size {
@@ -99,8 +111,4 @@ img {
     background-color: #f2a16a;
     border: 1px solid black;
     color: black;
-}
-
-.blanc {
-    background-color: var(--blanc);
 }
