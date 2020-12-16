@@ -20,7 +20,7 @@ $lang=isset($_SESSION['lang']) ? $_SESSION['lang'] : 'FR';
 /******Fin des langues******/
 
 $routes=[
-	"default"=>["PHP/VIEW/","FormulaireConnexions","formulaire des Connexions"],
+	"default"=>["PHP/VIEW/","MenuProviseur","formulaire des Connexions"],
 	// "TestElevesManager"=>["PHP/MODEL/TESTMANAGER/","TestElevesManager","test eleves"],
 	// "TestEnseignantsManager"=>["PHP/MODEL/TESTMANAGER/","TestEnseignantsManager","test enseignant"],
 	// "TestNotesManager"=>["PHP/MODEL/TESTMANAGER/","TestNotesManager","test notes"],
@@ -41,6 +41,7 @@ $routes=[
 	"FormulaireRoles"=>["PHP/VIEW/","FormulaireRoles","formulaire des roles"],
 	"FormulaireUtilisateurs"=>["PHP/VIEW/","FormulaireUtilisateurs","formulaire des utilisateurs"],
 	"FormulaireConnexions"=>["PHP/VIEW/","FormulaireConnexions","formulaire des connexions"],
+	"MenuProviseur"=>["PHP/VIEW/","MenuProviseur","menu du proviseur "],
 
 	"ActionEleves"=>["PHP/VIEW/","ActionEleves","Action des eleves"],
 	"ActionEnseignants"=>["PHP/VIEW/","ActionEnseignants","Action des enseignants"],
@@ -49,6 +50,7 @@ $routes=[
 	"ActionSuivis"=>["PHP/VIEW/","ActionSuivis","Action des suivis"],
 	"ActionRoles"=>["PHP/VIEW/","ActionRoles","Action des roles"],
 	"ActionUtilisateur"=>["PHP/VIEW/","ActionUtilisateur","Action des utilisateurs"],
+	"ActionConnexions"=>["PHP/VIEW/","ActionConnexions","Action des connexions"],
 ];
 
 if(isset($_GET["page"]))

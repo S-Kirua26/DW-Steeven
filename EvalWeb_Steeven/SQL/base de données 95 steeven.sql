@@ -150,8 +150,8 @@ INSERT INTO Roles (idRole, nomRole) VALUES (NULL, 'Proviseur');
 INSERT INTO Roles (idRole, nomRole) VALUES (NULL, 'Enseignant');
 
 /********************************************* table utilisateurs ***************************************************/
-INSERT INTO Utilisateurs (idUtilisateur, loginUtilisateur, nomUtilisateur, prenomUtilisateur, motDePasseUtilisateur, idRole) VALUES (NULL, 'laureMichel', 'Michel', 'Laure', 'laure06', 1);
-INSERT INTO Utilisateurs (idUtilisateur, loginUtilisateur, nomUtilisateur, prenomUtilisateur, motDePasseUtilisateur, idRole) VALUES (NULL, 'PascalVentil', 'Ventil', 'Pascal', 'PascalVen04', 2);
+INSERT INTO Utilisateurs (idUtilisateur, loginUtilisateur, nomUtilisateur, prenomUtilisateur, motDePasseUtilisateur, idRole) VALUES (NULL, 'laureMichel', 'Michel', 'Laure', 'c32f54777019148fbc5119c52396d2d4', 1);
+INSERT INTO Utilisateurs (idUtilisateur, loginUtilisateur, nomUtilisateur, prenomUtilisateur, motDePasseUtilisateur, idRole) VALUES (NULL, 'PascalVentil', 'Ventil', 'Pascal', '0d7d409f73869ddf285191288349e950', 2);
 
 
 

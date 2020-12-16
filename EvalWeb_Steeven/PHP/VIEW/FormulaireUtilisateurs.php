@@ -82,7 +82,7 @@ if (isset($_GET['id']))
             </div>
         </div>
 
-        <div class="colonne marginLight">
+        <div class="colonne marginLight size">
         <div class="centre">
             Role:
         </div>
