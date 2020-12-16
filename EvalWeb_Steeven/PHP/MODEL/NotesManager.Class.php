@@ -5,7 +5,7 @@ class NotesManager
 	public static function add(Notes $obj)
 	{
  		$db=DbConnect::getDb();
-		$q=$db->prepare("INSERT INTO enseignants (nomEleve,prenomEleve,noteObtenue) VALUES (:nomEleve,:prenomEleve,:noteObtenue)");
+		$q=$db->prepare("INSERT INTO notes (nomEleve,prenomEleve,noteObtenue) VALUES (:nomEleve,:prenomEleve,:noteObtenue)");
         $q->bindValue(":nomEleve", $obj->getNomEleve());
         $q->bindValue(":prenomEleve", $obj->getPrenomEleve());
 		$q->bindValue(":noteObtenue", $obj->getNoteObtenue());
@@ -15,26 +15,25 @@ class NotesManager
 	public static function update(Notes $obj)
 	{
  		$db=DbConnect::getDb();
-		$q=$db->prepare("UPDATE enseignants SET idEnseignant=:idEnseignant,libelleMatiere=:libelleMatiere,nomEnseignant=:nomEnseignant,prenomEnseignant=:prenomEnseignant,pseudoEnseignant=:pseudoEnseignant WHERE idEnseignant=:idEnseignant");
-        $q->bindValue(":idEnseignant", $obj->getIdEnseignant());
-        $q->bindValue(":libelleMatiere", $obj->getLibelleMatiere());
-		$q->bindValue(":nomEnseignant", $obj->getNomEnseignant());
-		$q->bindValue(":prenomEnseignant", $obj->getPrenomEnseignant());
-		$q->bindValue(":pseudoEnseignant", $obj->getPseudoEnseignant());
+		$q=$db->prepare("UPDATE notes SET idNote=:idNote,nomEleve=:nomEleve,prenomEleve=:prenomEleve,noteObtenue=:noteObtenue WHERE idNote=:idNote");
+        $q->bindValue(":idNotes", $obj->getIdNote());
+        $q->bindValue(":nomEleve", $obj->getNomEleve());
+		$q->bindValue(":prenomEleve", $obj->getPrenomEleve());
+		$q->bindValue(":noteObtenue", $obj->getNoteObtenue());
 		$q->execute();
 	}
 
 	public static function delete(Notes $obj)
 	{
  		$db=DbConnect::getDb();
-		$db->exec("DELETE FROM enseignants WHERE idEnseignant=" .$obj->getIdEnseignant());
+		$db->exec("DELETE FROM notes WHERE idNote=" .$obj->getIdNote());
 	}
 
 	public static function findById($id)
 	{
  		$db=DbConnect::getDb();
 		$id = (int) $id;
-		$q=$db->query("SELECT * FROM enseignants WHERE idEnseignant =".$id);
+		$q=$db->query("SELECT * FROM notes WHERE idNote =".$id);
 		$results = $q->fetch(PDO::FETCH_ASSOC);
 		if($results != false)
 		{
@@ -50,7 +49,7 @@ class NotesManager
 	{
  		$db=DbConnect::getDb();
 		$liste = [];
-		$q = $db->query("SELECT * FROM enseignants");
+		$q = $db->query("SELECT * FROM notes");
 		while($donnees = $q->fetch(PDO::FETCH_ASSOC))
 		{
 			if($donnees != false)

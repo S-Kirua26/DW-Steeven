@@ -7,37 +7,37 @@ class Parametres
 	private static $_login;
 	private static $_pwd;
 
-	static function getHost() /**GET TOAST LEL**/
+	static function getHost() 
 	{
 		return self::$_host;
 	}
 
-	static function getPort() /**GET PORC LEL**/
+	static function getPort() 
 	{
 		return self::$_port;
 	}
 
-	static function getDbname() /**Qu'est ce qui est jaune et qui attends ?**/
+	static function getDbname() 
 	{
 		return self::$_dbname;
 	}
 
-	static function getLogin() /**Jaune a temps**/
+	static function getLogin() 
 	{
 		return self::$_login;
 	}
 
-	static function getPwd() /**POWNED**/
+	static function getPwd() 
 	{
 		return self::$_pwd;
 	}
 
-	static function init() /**LES ESQUIMAUX LOL (inuit)**/
+	static function init() 
 	{
 		if (file_exists("parametres.ini"))
 		{
 			$fp=fopen("parametres.ini","r");
-			while(!feof($fp)) /**WHILE SMITH**/
+			while(!feof($fp)) 
 			{
 				$ligne=fgets($fp,4906);
 				if ($ligne)

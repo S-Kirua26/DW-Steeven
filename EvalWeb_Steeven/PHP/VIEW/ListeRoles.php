@@ -7,16 +7,15 @@ echo '<body class="colonne">
     <div class="contenu colonne">
         <div class="margin">
             <div class="espace"></div>
-            <div class="ajouter"><a class="centre size" href="index.php?page=FormulaireRoles&mode=ajouter">'.texte("ajouterRole").'</a></div>
+            <div class="libelle"><a class="centre size" href="index.php?page=FormulaireRoles&mode=ajouter">ajouter un role</a></div>
             <div class="espace"></div>
         </div>';
         foreach ($roles as $unRole)
         {
             echo '<div class="liste marginLight">
             <div class="libelle size centre marginBouton">'.$unRole->getNomRole().'</div>
-            <div class="details marginBouton"><a class="centre size" href="index.php?page=FormulaireRoles&mode=details&id='.$unRole->getIdRole().'">'.texte("detailRole").'</a></div>
-            <div class="modifier marginBouton"><a class="centre size" href="index.php?page=FormulaireRoles&mode=modifier&id='.$unRole->getIdRole().'">'.texte("modifierRole").'</a></div>
-            <div class="supprimer marginBouton"><a class="centre size" href="index.php?page=ActionRoles&mode=supprimer&id='.$unRole->getIdRole().'">'.texte("supprimerRole").'</a></div>
+            <div><a href="index.php?page=FormulaireRoles&mode=modifier&id='.$unRole->getIdRole().'"><img src="../../IMG/modifier.png" alt="crayon pour modifier"></a></div>
+            <div><a href="index.php?page=FormulaireRoles&mode=supprimer&id='.$unRole->getIdRole().'"><img src="../../IMG/supprimer.png" alt="croix rouge pour supprimer"></a></div>
             </div>';
         }
  

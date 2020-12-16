@@ -26,8 +26,6 @@ footer {
     background-color: var(--fond);
 }
 
-footer {}
-
 nav {
     background: var(--couleurNav);
     padding: 1em;

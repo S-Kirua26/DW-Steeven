@@ -5,26 +5,23 @@ class UtilisateursManager
 	public static function add(Utilisateurs $obj)
 	{
  		$db=DbConnect::getDb();
-		$q=$db->prepare("INSERT INTO utilisateurs (nomUtilisateur,prenomUtilisateur,ageUtilisateur,pseudoUtilisateur,motDePasseUtilisateur,idRole) VALUES (:nomUtilisateur,:prenomUtilisateur,:ageUtilisateur,:pseudoUtilisateur,:motDePasseUtilisateur,:idRole)");
-        $q->bindValue(":nomUtilisateur", $obj->getNomUtilisateur());
+		$q=$db->prepare("INSERT INTO utilisateurs (nomUtilisateur,loginUtilisateur,prenomUtilisateur,ageUtilisateur,motDePasseUtilisateur,idRole) VALUES (:nomUtilisateur,:loginUtiliateur,:prenomUtilisateur,:motDePasseUtilisateur,:idRole)");
+		$q->bindValue(":nomUtilisateur", $obj->getNomUtilisateur());
+		$q->bindValue(":login", $obj->getLoginUtilisateur());
         $q->bindValue(":prenomUtilisateur", $obj->getPrenomUtilisateur());
-		$q->bindValue(":ageUtilisateur", $obj->getAgeUtilisateur());
-		$q->bindValue(":pseudoUtilisateur", $obj->getPseudoUtilisateur());
 		$q->bindValue(":motDePasseUtilisateur", $obj->getMotDePasseUtilisateur());
 		$q->bindValue(":idRole", $obj->getIdRole());
-		var_dump($q);
 		$q->execute();
 	}
 
 	public static function update(Utilisateurs $obj)
 	{
  		$db=DbConnect::getDb();
-		$q=$db->prepare("UPDATE utilisateurs SET idUtilisateur=:idUtilisateur,nomUtilisateur=:nomUtilisateur,prenomUtilisateur=:prenomUtilisateur,ageUtilisateur=:ageUtilisateur,pseudoUtilisateur=:pseudoUtilisateur,motDePasseUtilisateur=:motDePasseUtilisateur,idRole=:idRole WHERE idUtilisateur=:idUtilisateur");
+		$q=$db->prepare("UPDATE utilisateurs SET idUtilisateur=:idUtilisateur,nomUtilisateur=:nomUtilisateur,loginUtilisateur=:loginUtilisateur,prenomUtilisateur=:prenomUtilisateur,,motDePasseUtilisateur=:motDePasseUtilisateur,idRole=:idRole WHERE idUtilisateur=:idUtilisateur");
 		$q->bindValue(":idUtilisateur", $obj->getIdUtilisateur());
-        $q->bindValue(":nomUtilisateur", $obj->getnomUtilisateur());
+		$q->bindValue(":nomUtilisateur", $obj->getnomUtilisateur());
+		$q->bindValue(":login", $obj->getLoginUtilisateur());
         $q->bindValue(":prenomUtilisateur", $obj->getprenomUtilisateur());
-		$q->bindValue(":ageUtilisateur", $obj->getageUtilisateur());
-		$q->bindValue(":pseudoUtilisateur", $obj->getPseudoUtilisateur());
 		$q->bindValue(":motDePasseUtilisateur", $obj->getMotDePasseUtilisateur());
         $q->bindValue(":idRole", $obj->getIdRole());
 		$q->execute();
@@ -62,37 +59,5 @@ class UtilisateursManager
 			}
 		}
 		return $liste;
-	}
-	public static function getListByRole(Roles $roles)
-	{
-		$id = (int) $roles->getIdRole();
- 		$db=DbConnect::getDb();
-		$liste = [];
-		$q = $db->query("SELECT * FROM utilisateurs WHERE idRole=$id");
-		while($donnees = $q->fetch(PDO::FETCH_ASSOC))
-		{
-			if($donnees != false)
-			{
-				$liste[] = new Utilisateurs($donnees);
-			}
-		}
-		return $liste;
-	}
-	public static function findByPseudo($pseudo)
-	{
-		 $db=DbConnect::getDb();
-		 if (!in_array(";",str_split($pseudo)))
-		 {
-			$q=$db->query("SELECT * FROM utilisateurs WHERE pseudoUtilisateur ='" . $pseudo . "'");
-			$results = $q->fetch(PDO::FETCH_ASSOC);
-			if($results != false)
-			{
-				return new Utilisateurs($results);
-			}
-			else
-			{
-				return false;
-			}
-		 }
 	}
 }

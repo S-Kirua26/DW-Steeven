@@ -17,13 +17,6 @@ function crypte($mot)
 	return md5(md5($mot));
 }
 
-function texte($codeTexte)
-{
-	
-	global $lang; //on appel la variable globale
-	return TexteManager::findByCodes($lang, $codeTexte);
-}
-
 function afficherPage($page)
 {
 	$chemin=$page[0];

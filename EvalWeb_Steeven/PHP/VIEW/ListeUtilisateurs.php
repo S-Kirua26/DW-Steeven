@@ -7,16 +7,15 @@
     <div class="contenu colonne">
         <div class="margin">
             <div class="espace"></div>
-            <div class="ajouter"><a class="centre size" href="index.php?page=FormulaireUtilisateurs&mode=ajouter">'.texte("ajouterUtilisateur").'</a></div>
+            <div class="libelle"><a class="centre size" href="index.php?page=FormulaireUtilisateurs&mode=ajouter">ajouter un utilisateur</a></div>
             <div class="espace"></div>
         </div>';
         foreach ($utilisateurs as $unUtilisateur)
         {
             echo '<div class="liste marginLight">
             <div class="libelle size centre marginBouton">'.$unUtilisateur->getNomUtilisateur().'</div>
-            <div class="details marginBouton"><a class="centre size" href="index.php?page=FormulaireUtilisateurs&mode=details&id='.$unUtilisateur->getIdUtilisateur().'">'.texte("detailUtilisateur").'</a></div>
-            <div class="modifier marginBouton"><a class="centre size" href="index.php?page=FormulaireUtilisateurs&mode=modifier&id='.$unUtilisateur->getIdUtilisateur().'">'.texte("modifierUtilisateur").'</a></div>
-            <div class="supprimer marginBouton"><a class="centre size" href="index.php?page=ActionUtilisateurs&mode=supprimer&id='.$unUtilisateur->getIdUtilisateur().'">'.texte("supprimerUtilisateur").'</a></div>
+            <div><a href="index.php?page=FormulaireUtilisateur&mode=modifier&id='.$unUtilisateur->getIdUtilisateur().'"><img src="../../IMG/modifier.png" alt="crayon pour modifier"></a></div>
+            <div><a href="index.php?page=FormulaireUtilisateur&mode=supprimer&id='.$unUtilisateur->getIdUtilisateur().'"><img src="../../IMG/supprimer.png" alt="croix rouge pour supprimer"></a></div>
             </div>';
         }
  

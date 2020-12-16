@@ -6,10 +6,9 @@ class Utilisateurs
 	/*****************Attributs***************** */
 
 	private $_idUtilisateur;
+	private $_loginUtilisateur;
 	private $_nomUtilisateur;
     private $_prenomUtilisateur;
-	private $_ageUtilisateur;
-	private $_pseudoUtilisateur;
 	private $_motDePasseUtilisateur;
     private $_idRole;
 
@@ -24,6 +23,16 @@ class Utilisateurs
 	public function setIdUtilisateur(int $idUtilisateur)
 	{
 		$this->_idUtilisateur=$idUtilisateur;
+	}
+
+	public function getLoginUtilisateur()
+	{
+		return $this->_loginUtilisateur;
+	}
+
+	public function setLoginUtilisateur($loginUtilisateur)
+	{
+		$this->_loginUtilisateur=$loginUtilisateur;
 	}
 
 	public function getNomUtilisateur()
@@ -45,24 +54,6 @@ class Utilisateurs
 	{
 		$this->_prenomUtilisateur=$prenomUtilisateur;
     }
-    public function getAgeUtilisateur()
-	{
-		return $this->_ageUtilisateur;
-	}
-
-	public function setAgeUtilisateur($ageUtilisateur)
-	{
-		$this->_ageUtilisateur=$ageUtilisateur;
-	}
-	public function getPseudoUtilisateur()
-	{
-		return $this->_pseudoUtilisateur;
-	}
-
-	public function setPseudoUtilisateur($pseudoUtilisateur)
-	{
-		$this->_pseudoUtilisateur=$pseudoUtilisateur;
-	}
 	public function getMotDePasseUtilisateur()
 	{
 		return $this->_motDePasseUtilisateur;
@@ -112,36 +103,8 @@ class Utilisateurs
 	*/
 	public function toString()
 	{
-		return "IdUtilisateur : ".$this->getIdUtilisateur()."NomUtilisateur : ".$this->getNomUtilisateur()."PrenomUtilisateur : ".$this->getPrenomUtilisateur(). "AgeUtilisateur :". $this->getAgeUtilisateur().
-		"PseudoUtilisateur : ".$this->getPseudoUtilisateur()."MotDePasseUtilisateur : ".$this->getMotDePasseUtilisateur()."IdRole : ".$this->getIdRole()."\n";
+		return "IdUtilisateur : ".$this->getIdUtilisateur()."LoginUtilisateur: ".$this->getLoginUtilisateur()."NomUtilisateur : ".$this->getNomUtilisateur()."PrenomUtilisateur : ".$this->getPrenomUtilisateur().
+		"MotDePasseUtilisateur : ".$this->getMotDePasseUtilisateur()."IdRole : ".$this->getIdRole()."\n";
 	}
 
-
-	
-	/* Renvoit Vrai si lobjet en paramètre est égal 
-	* à l'objet appelant
-	*
-	* @param [type] $obj
-	* @return bool
-	*/
-	public function equalsTo($obj)
-	{
-		return;
-	}
-
-
-	/**
-	* Compare l'objet à un autre
-	* Renvoi 1 si le 1er est >
-	*        0 si ils sont égaux
-	*      - 1 si le 1er est <
-	*
-	* @param [type] $obj1
-	* @param [type] $obj2
-	* @return Integer
-	*/
-	public function compareTo($obj)
-	{
-		return;
-	}
 }
