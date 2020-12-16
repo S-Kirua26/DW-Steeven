@@ -1,26 +1,26 @@
 <?php
 
-class Eleves 
+class Notes 
 {
 
 	/*****************Attributs***************** */
 
-	private $_idEleve;
+	private $_idNote;
 	private $_nomEleve;
     private $_prenomEleve;
-    private $_classe;
+    private $_noteObtenue;
 
 	/***************** Accesseurs ***************** */
 
 
-	public function getIdEleve()
+	public function getIdNote()
 	{
-		return $this->_idEleve;
+		return $this->_idNote;
 	}
 
-	public function setIdEleve(int $idEleve)
+	public function setIdNote(int $idNote)
 	{
-		$this->_idEleve=$idEleve;
+		$this->_idNote=$idNote;
 	}
 
 	public function getNomEleve()
@@ -43,14 +43,14 @@ class Eleves
 		$this->_prenomEleve=$prenomEleve;
     }
     
-    public function getClasse()
+    public function getNoteObtenue()
 	{
-		return $this->_classe;
+		return $this->_noteObtenue;
 	}
 
-	public function setClasse($classe)
+	public function setNoteObtenue($noteObtenue)
 	{
-		$this->_classe=$classe;
+		$this->_noteObtenue=$noteObtenue;
 	}
 
 	/*****************Constructeur***************** */
@@ -83,6 +83,6 @@ class Eleves
 	*/
 	public function toString()
 	{
-		return "IdEleve : ".$this->getIdEleve()."NomEleve : ".$this->getNomEleve()."PrenomEleve : ".$this->getPrenomEleve()."Classe: ".$this->getClasse()."\n";
+		return "IdNote : ".$this->getIdNote()."NomEleve : ".$this->getNomEleve()."PrenomEleve : ".$this->getPrenomEleve()."NoteObtenue: ".$this->getNoteObtenue()."\n";
 	}
 }

@@ -1,56 +1,34 @@
 <?php
 
-class Eleves 
+class Matieres 
 {
 
 	/*****************Attributs***************** */
 
-	private $_idEleve;
-	private $_nomEleve;
-    private $_prenomEleve;
-    private $_classe;
+	private $_idMatiere;
+	private $_libelleMatiere;
 
 	/***************** Accesseurs ***************** */
 
 
-	public function getIdEleve()
+	public function getIdMatiere()
 	{
-		return $this->_idEleve;
+		return $this->_idMatiere;
 	}
 
-	public function setIdEleve(int $idEleve)
+	public function setIdMatiere(int $idMatiere)
 	{
-		$this->_idEleve=$idEleve;
+		$this->_idMatiere=$idMatiere;
 	}
 
-	public function getNomEleve()
+    public function getLibelleMatiere()
 	{
-		return $this->_nomEleve;
+		return $this->_libelleMatiere;
 	}
 
-	public function setNomEleve($nomEleve)
+	public function setLibelleMatiere($_libelleMatiere)
 	{
-		$this->_nomEleve=$nomEleve;
-	}
-
-	public function getPrenomEleve()
-	{
-		return $this->_prenomEleve;
-	}
-
-	public function setPrenomEleve($prenomEleve)
-	{
-		$this->_prenomEleve=$prenomEleve;
-    }
-    
-    public function getClasse()
-	{
-		return $this->_classe;
-	}
-
-	public function setClasse($classe)
-	{
-		$this->_classe=$classe;
+		$this->_libelleMatiere=$_libelleMatiere;
 	}
 
 	/*****************Constructeur***************** */
@@ -83,6 +61,6 @@ class Eleves
 	*/
 	public function toString()
 	{
-		return "IdEleve : ".$this->getIdEleve()."NomEleve : ".$this->getNomEleve()."PrenomEleve : ".$this->getPrenomEleve()."Classe: ".$this->getClasse()."\n";
+		return "IdMatiere : ".$this->getIdMatiere(). "LibelleMatiere : ".$this->getLibelleMatiere()."\n";
 	}
 }

@@ -1,56 +1,56 @@
 <?php
 
-class Eleves 
+class Suivis 
 {
 
 	/*****************Attributs***************** */
 
-	private $_idEleve;
-	private $_nomEleve;
-    private $_prenomEleve;
-    private $_classe;
+	private $_idSuivi;
+	private $_note;
+    private $_idMatiere;
+    private $_idEleve;
 
 	/***************** Accesseurs ***************** */
 
 
-	public function getIdEleve()
+	public function getIdSuivi()
+	{
+		return $this->_idSuivi;
+	}
+
+	public function setIdSuivi(int $idSuivi)
+	{
+		$this->_idSuivi=$idSuivi;
+	}
+
+	public function getNote()
+	{
+		return $this->_note;
+	}
+
+	public function setNomEleve($note)
+	{
+		$this->_note=$note;
+	}
+
+	public function getIdMatiere()
+	{
+		return $this->_idMatiere;
+	}
+
+	public function setIdMatiere($idMatiere)
+	{
+		$this->_idMatiere=$idMatiere;
+    }
+    
+    public function getIdEleve()
 	{
 		return $this->_idEleve;
 	}
 
-	public function setIdEleve(int $idEleve)
+	public function setIdEleve($idEleve)
 	{
 		$this->_idEleve=$idEleve;
-	}
-
-	public function getNomEleve()
-	{
-		return $this->_nomEleve;
-	}
-
-	public function setNomEleve($nomEleve)
-	{
-		$this->_nomEleve=$nomEleve;
-	}
-
-	public function getPrenomEleve()
-	{
-		return $this->_prenomEleve;
-	}
-
-	public function setPrenomEleve($prenomEleve)
-	{
-		$this->_prenomEleve=$prenomEleve;
-    }
-    
-    public function getClasse()
-	{
-		return $this->_classe;
-	}
-
-	public function setClasse($classe)
-	{
-		$this->_classe=$classe;
 	}
 
 	/*****************Constructeur***************** */
@@ -83,6 +83,6 @@ class Eleves
 	*/
 	public function toString()
 	{
-		return "IdEleve : ".$this->getIdEleve()."NomEleve : ".$this->getNomEleve()."PrenomEleve : ".$this->getPrenomEleve()."Classe: ".$this->getClasse()."\n";
+		return "IdSuivi : ".$this->getIdSuivi()."Note : ".$this->getNote()."idMatiere : ".$this->getIdMatiere()."idEleve: ".$this->getIdEleve()."\n";
 	}
 }

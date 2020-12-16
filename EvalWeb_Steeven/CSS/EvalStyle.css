@@ -1,5 +1,6 @@
 :root {
     --fond: #f8cbad;
+    --blanc: white;
 }
 
 html,
@@ -19,6 +20,7 @@ input {
     flex: 1;
 }
 
+body,
 header,
 footer {
     background-color: var(--fond);
@@ -86,10 +88,6 @@ img {
     padding: 1em;
 }
 
-.marginBouton {
-    margin: 0em 1.5em;
-}
-
 .titreHeader {
     flex: 6;
     font-size: 3em;
@@ -101,7 +99,10 @@ img {
 
 .libelle {
     background-color: #f2a16a;
-    border-radius: 1.2em;
-    border: 1px solid #979e93;
+    border: 1px solid black;
     color: black;
+}
+
+.blanc {
+    background-color: var(--blanc);
 }
