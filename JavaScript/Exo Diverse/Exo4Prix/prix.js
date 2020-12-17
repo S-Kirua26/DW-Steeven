@@ -11,7 +11,7 @@ var prixFinal = document.getElementById("prixFinal");
 // quantite2.addEventListener("change",calcul);
 // prixUnitaire2.addEventListener("change",calcul);
 
-var inputs = document.getElementsByTagName("input")
+var inputs = document.getElementsByTagName("input");
 
 for(let i=0;i<inputs.length;i++)
 {
