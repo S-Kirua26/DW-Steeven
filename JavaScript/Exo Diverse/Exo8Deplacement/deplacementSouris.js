@@ -1,14 +1,19 @@
+
 function deplaceSouris(e)
 {
-    carre.style.top = parseInt(e.clientY) - parseInt(window.getComputedStyle(carre).height) / 2 + "px";
-    carre.style.left = parseInt(e.clientX) - parseInt(window.getComputedStyle(carre).width) / 2 + "px";
+    carre.style.top = parseInt(e.clientY) + ecartY + "px";
+    carre.style.left = parseInt(e.clientX) + ecartX + "px";
 };
+
+var ecartY, ecartX;
 
 var carre = document.getElementById('carre');
 var flagMouv = false;
 
 carre.addEventListener("mousedown", (e)=>
 {
+     ecartY = parseInt(window.getComputedStyle(carre).top) - parseInt(e.clientY);
+     ecartX = parseInt(window.getComputedStyle(carre).left) - parseInt(e.clientX);
     flagMouv = true;
 });
 
