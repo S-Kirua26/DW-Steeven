@@ -1,0 +1,40 @@
+html,body{
+    margin: 0;
+    padding: 0;
+}
+
+body,head,footer,div{
+    display: flex;
+    flex: 1;
+}
+
+.colonne{
+    flex-direction: column;
+}
+
+.espace{
+    flex: 1;
+}
+
+.centre{
+    justify-content: center;
+    align-items: center;
+}
+
+.miniEspace{
+    flex: 0.3;
+}
+
+.paddingTop{
+    padding-top: 1em;
+}
+
+#carre{
+    height: 5em;
+    width: 5em;
+    background: turquoise;
+    position: absolute;
+    top: 5em;
+    left: 2em;
+
+}

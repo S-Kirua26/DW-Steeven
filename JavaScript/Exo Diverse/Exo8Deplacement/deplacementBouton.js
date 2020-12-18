@@ -1,11 +1,11 @@
-function deplace(ddirectionGauche, directionHaut) 
+function deplace(directionGauche, directionHaut) 
 {
     var carreStyle = window.getComputedStyle(carre, null);
     var hautActuelle = carreStyle.top;
     var gaucheActuelle = carreStyle.left;
 
     carre.style.top = parseInt(hautActuelle) + directionHaut + 'px';
-    carre.style.left = parseInt(gaucheActuelle) + ddirectionGauche + 'px';
+    carre.style.left = parseInt(gaucheActuelle) + directionGauche + 'px';
 }
 
 var carre = document.getElementById('carre');
