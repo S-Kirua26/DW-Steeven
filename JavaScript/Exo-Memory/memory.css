@@ -1,0 +1,38 @@
+div,
+body {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+.page {
+    width: 80%;
+    flex: none;
+    flex-direction: column;
+    display: block;
+}
+
+img{
+    width: 100%;
+}
+
+.espace{
+    flex: 1;
+}
+
+.colonne{
+    flex-direction: column;
+}
+
+.paddingLight{
+    padding: 1em;
+}
+
+.emplacement{
+    flex-direction: column;
+}
+
+.verso {
+    display: none;
+}
+
