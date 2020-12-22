@@ -16,6 +16,10 @@ body,head,footer,div{
     flex: 1;
 }
 
+img{
+    width: 100%;
+}
+
 .centre{
     justify-content: center;
     align-items: center;
@@ -255,6 +259,14 @@ body,head,footer,div{
     width: 1em;
     top: 15em;
     left: 27em;
+}
+
+#obstacle33{
+    height: 1.5em;
+    width: 1.5em;
+    background: rgb(233, 65, 42);
+    top: 26em;
+    left: 4em;
 }
 
 #arrive{

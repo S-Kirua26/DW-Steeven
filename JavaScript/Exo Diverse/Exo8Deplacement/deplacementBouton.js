@@ -14,15 +14,15 @@ var right = document.getElementById("droite");
 var up = document.getElementById("haut");
 var down = document.getElementById("bas");
 
-gauche.addEventListener("click", function () {
+left.addEventListener("click", function () {
     deplace(-5, 0);
 });
-droite.addEventListener("click", function () {
+right.addEventListener("click", function () {
     deplace(5, 0);
 });
-haut.addEventListener("click", function () {
+up.addEventListener("click", function () {
     deplace(0, -5);
 });
-bas.addEventListener("click", function () {
+down.addEventListener("click", function () {
     deplace(0, 5);
 });
