@@ -1,0 +1,60 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body,
+head,
+footer,
+div {
+    display: flex;
+    flex: 1;
+}
+
+.colonne {
+    flex-direction: column;
+}
+
+.couleur {
+    background-color: rgb(156, 70, 206);
+}
+
+.espace {
+    flex: 1;
+}
+
+.centre {
+    justify-content: center;
+    align-items: center;
+}
+
+.miniEspace {
+    flex: 0.3;
+}
+
+.paddingTop {
+    padding-top: 1em;
+}
+
+.bouton {
+    border: 1px white solid;
+    background-color: black;
+    min-height: 3em;
+    color: rgb(224, 150, 53);
+}
+
+.boutonSpecial {
+    border: 1px white solid;
+    background-color: white;
+    min-height: 3em;
+    color: rgb(255, 255, 255);
+}
+
+.bouton:active {
+    background-color: rgb(5, 6, 7);
+}
+
+.size {
+    font-size: 1em;
+}
