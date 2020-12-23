@@ -29,8 +29,9 @@ for ($lig=1;$lig<5;$lig++)  // on boucle pour faire les lignes
         </div>
         <div class="demi"></div>';
     }
-    echo '  </div>';
+    echo '</div>
+    <div id="compte"></div>';
 }
-echo '<script src="memory2.js"></script>
+echo '<script src="memory.js"></script>
 </body>
 </html>';
