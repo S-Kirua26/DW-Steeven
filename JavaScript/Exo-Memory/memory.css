@@ -12,27 +12,26 @@ body {
     display: block;
 }
 
-img{
+img {
     width: 100%;
 }
 
-.espace{
+.espace {
     flex: 1;
 }
 
-.colonne{
+.colonne {
     flex-direction: column;
 }
 
-.paddingLight{
+.paddingLight {
     padding: 1em;
 }
 
-.emplacement{
+.emplacement {
     flex-direction: column;
 }
 
 .verso {
     display: none;
 }
-

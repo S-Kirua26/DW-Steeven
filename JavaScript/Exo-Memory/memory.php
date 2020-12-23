@@ -31,6 +31,6 @@ for ($lig=1;$lig<5;$lig++)  // on boucle pour faire les lignes
     }
     echo '  </div>';
 }
-echo '<script src="memory.js"></script>
+echo '<script src="memory2.js"></script>
 </body>
 </html>';
