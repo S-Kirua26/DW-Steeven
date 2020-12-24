@@ -1,8 +1,27 @@
+function appuieBouton(element) {
+    var boutonClique = element.target; // je récupére quel est le bouton cliqué
+    boutonVide = document.getElementsByClassName("boutonSpecial")[0]; // je recupere la classe du bouton vide
+    var xClique = parseInt(element.target.getAttribute("coordX")); // je récupére l'abscisse du bouton
+    var yClique = parseInt(element.target.getAttribute("coordY")); // je récupére l'ordonnée du bouton
+
+    if ((Math.abs(xVide - xClique) == 1 ^ Math.abs(yVide - yClique) == 1) && ((Math.abs(yVide - yClique) <2 ) && (Math.abs(xVide - xClique) <2 ))) {
+        xVide = xClique;
+        yVide = yClique;
+        boutonVide.innerHTML = boutonClique.innerHTML;
+        boutonClique.innerHTML = "";
+        boutonClique.setAttribute('class', 'boutonSpecial');
+        boutonVide.setAttribute('class', 'bouton');
+    }
+}
+
 var lesBoutons = document.getElementsByClassName("bouton");
 
 for (let i = 0; i < lesBoutons.length; i++) {
     lesBoutons[i].addEventListener("click", appuieBouton);
 }
+
+var boutonVide = document.getElementsByClassName("boutonSpecial")[0]; // je recupere la classe du bouton vide
+boutonVide.addEventListener("click", appuieBouton);
 
 var xVide = 3;
 var yVide = 3;
@@ -16,24 +35,3 @@ for (let i = 0; i < nb.length; i++) {
     lesBoutons[i].textContent = nb[i];
 }
 
-function appuieBouton(element) {
-    var boutonClique = element.target; // je récupére quel est le bouton cliqué
-    var valeurBouton = boutonClique.textContent; // je récupére la valeur du bouton cliqué
-    var xClique = parseInt(element.target.getAttribute("coordX")); // je récupére l'abscisse du bouton
-    var yClique = parseInt(element.target.getAttribute("coordY")); // je récupére l'ordonnée du bouton
-    var styleBoutonPlein = element.target.style.backgroundColor = "black"; // je récupére la couleur de fond des bouton pleins
-    var styleBoutonVide = element.target.style.backgroundColor = "white"; // je récupére la couleur de fond du bouton vide
-
-    // console.log(valeurBouton);
-    // console.log(xClique);
-    // console.log(yClique);
-
-    if (Math.abs(xVide - xClique) == 1 ^ Math.abs(yVide - yClique) == 1) {
-        xVide = xClique;
-        yVide = yClique;
-        boutonClique = styleBoutonVide;
-        boutonClique = element.target.textContent = "";
-    }
-
-
-}

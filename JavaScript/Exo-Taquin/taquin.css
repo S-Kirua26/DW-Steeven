@@ -42,6 +42,8 @@ div {
     background-color: black;
     min-height: 3em;
     color: rgb(224, 150, 53);
+    justify-content: center;
+    align-items: center;
 }
 
 .boutonSpecial {
@@ -49,6 +51,8 @@ div {
     background-color: white;
     min-height: 3em;
     color: rgb(255, 255, 255);
+    justify-content: center;
+    align-items: center;
 }
 
 .bouton:active {
