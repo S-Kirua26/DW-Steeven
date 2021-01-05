@@ -49,3 +49,7 @@ label{
 input{
     margin-left: 3em;
 }
+
+.checkInput{
+    padding-left: 0.5em;
+}
