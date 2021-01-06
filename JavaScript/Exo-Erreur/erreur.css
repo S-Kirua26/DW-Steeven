@@ -84,4 +84,22 @@ input{
     padding-top: 0.6vh; 
 }
 
+.bouton{
+    justify-content: center;
+    width: 35vw;
+}
+
+#appuie{
+    margin-right: 1em;
+}
+
+.inputLabel{
+    width: 5vw;
+}
+
+.genre{
+    color: black;
+    margin-left: -6em;
+}
+
 
