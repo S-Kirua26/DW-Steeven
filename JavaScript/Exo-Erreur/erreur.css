@@ -17,8 +17,8 @@ input[required] + span::after{
     padding-left: 0.2em;
 }
 
-.espace{
-    flex-direction: 1em;
+.espaceLigth{
+    flex: 0.8;
 }
 
 .colonne{
@@ -30,8 +30,8 @@ input[required] + span::after{
     align-items: center;
 }
 
-.image{
-    flex: 0.5;
+img{
+    width: 100%;
 }
 
 .titre{
@@ -50,6 +50,38 @@ input{
     margin-left: 3em;
 }
 
-.checkInput{
-    padding-left: 0.5em;
+#divName, #divVille, #divPostal, #divNumTel, #divAdresseMail, #divMotDePasse, #divConfirmMDP, #divCommentaire{
+    padding-left: 2.7vw;
 }
+
+#divNaissance{
+    padding-left: 5.5vw;
+}
+
+.interrogation{
+    position: absolute;
+    visibility: visible;
+    width: 1vw;
+    height: 1vw;
+    padding-left: 22.5vw;
+}
+
+.boutonVert, .boutonRouge{
+    position: absolute;
+    visibility: hidden;
+    width: 1vw;
+    height: 1vw;
+    margin-left: 23.5vw;
+    padding-left: 0.3vw;
+}
+
+#oeil{
+    position: absolute;
+    visibility: hidden;
+    width: 1vw;
+    height: 1vw;
+    padding-left: 9vw;
+    padding-top: 0.6vh; 
+}
+
+
