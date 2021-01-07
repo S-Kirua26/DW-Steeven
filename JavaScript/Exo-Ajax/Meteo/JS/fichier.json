@@ -1,0 +1,44 @@
+{
+    "coord": {
+        "lon": 2.5,
+        "lat": 50.8333
+    },
+    "weather": [
+        {
+            "id": 804,
+            "main": "Clouds",
+            "description": "overcast clouds",
+            "icon": "04d"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 276.66,
+        "feels_like": 273.66,
+        "temp_min": 274.26,
+        "temp_max": 278.15,
+        "pressure": 1014,
+        "humidity": 87
+    },
+    "visibility": 3499,
+    "wind": {
+        "speed": 1.79,
+        "deg": 270,
+        "gust": 3.13
+    },
+    "clouds": {
+        "all": 100
+    },
+    "dt": 1610024705,
+    "sys": {
+        "type": 3,
+        "id": 2006560,
+        "country": "FR",
+        "sunrise": 1610005848,
+        "sunset": 1610035285
+    },
+    "timezone": 3600,
+    "id": 3020685,
+    "name": "Arrondissement de Dunkerque",
+    "cod": 200
+}

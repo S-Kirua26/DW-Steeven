@@ -64,9 +64,6 @@ img {
 #divSousTitre{
 	text-align: center;
 }
-.commune , .libelle ,.etat  {
-	flex: 1;
-}
 .place, .adresse, .nbMax{
 	flex: 1;
 	padding-left: 2vw;
@@ -78,4 +75,17 @@ img {
 	display: flex;
 	justify-content: space-between;
 	background-color: darkgrey;
+}
+
+#contenuLieu, #contenuTemps, #contenuVent{
+	padding-top: 1em;
+	font-size: 1em;
+}
+
+#divContenu{
+	text-align: center;
+}
+
+.padding{
+	margin-bottom: 1em;
 }

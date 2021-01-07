@@ -1,5 +1,15 @@
 // Utilisation de l'Ajax pour appeler l'API et récuperer les enregistrements
 var contenu = document.getElementById("contenu");
+var lieu = document.getElementById("lieu");
+var temp = document.getElementById("temp");
+var vent = document.getElementById("vent");
+var contLieu = document.getElementById("contenuLieu");
+var contTemp = document.getElementById("contenuTemps");
+var contVent = document.getElementById("contenuVent");
+var inputBouton = document.getElementById("bouton");
+
+var resultVille = inputBouton.value;
+
 var enregs; // contient la reponse de l'API
 // on définit une requete
 const req = new XMLHttpRequest();
@@ -9,36 +19,18 @@ req.onreadystatechange = function (event) {
         if (this.status === 200) {
             // la requete a abouti et a fournit une reponse
             //on décode la réponse, pour obtenir un objet
+
             reponse = JSON.parse(this.responseText);
             console.log(this.responseText);
             console.log(reponse);
-            enregs = reponse.records;
-            for (let i = 0; i < enregs.length; i++) {
-                // on crée la ligne et les div internes
-                ligne = document.createElement("div");
-                ligne.setAttribute("class", "ligne");
-                ligne.id = i;
-                commune = document.createElement("div");
-                commune.setAttribute("class", "commune");
-                ligne.appendChild(commune);
-                libelle = document.createElement("div");
-                libelle.setAttribute("class", "libelle");
-                ligne.appendChild(libelle);
-                etat = document.createElement("div");
-                etat.setAttribute("class", "etat");
-                ligne.appendChild(etat);
-                contenu.appendChild(ligne);
-                espace = document.createElement("div");
-                espace.setAttribute("class","espaceHorizon");
-                contenu.appendChild(espace);
-                //on met à jour le contenu
-                commune.innerHTML = enregs[i].fields.commune;
-                libelle.innerHTML = enregs[i].fields.libelle;
-                etat.innerHTML = enregs[i].fields.etat;
 
-                // on ajoute un evenement sur ligne pour afficher le detail
-                ligne.addEventListener("click", afficheDetail);
-            }
+            contLieu.textContent =  reponse.name;
+            contTemp.textContent =  reponse.weather[0].description;
+            contVent.textContent =  reponse.main.temp + "°C";
+
+            // on ajoute un evenement sur ligne pour afficher le detail
+            // ligne.addEventListener("click", afficheDetail);
+
             console.log("Réponse reçue: %s", this.responseText);
         } else {
             console.log("Status de la réponse: %d (%s)", this.status, this.statusText);
@@ -46,27 +38,27 @@ req.onreadystatechange = function (event) {
     }
 };
 
-function afficheDetail(e) {
-    veloClique = (e.target).parentNode;
-    veloClique.removeEventListener("click", afficheDetail);
-    detail = document.createElement("div");
-    detail.setAttribute("class", "detail");
-    adresse = document.createElement("div");
-    adresse.setAttribute("class", "adresse");
-    detail.appendChild(adresse);
-    place = document.createElement("div");
-    place.setAttribute("class", "place");
-    detail.appendChild(place);
-    nbMax = document.createElement("div");
-    nbMax.setAttribute("class", "nbMax");
-    detail.appendChild(nbMax);
-    adresse.innerHTML = enregs[veloClique.id].fields.adresse;
-    place.innerHTML=" nb de places dispo " + enregs[veloClique.id].fields.nbplacesdispo;
-    nbMax.innerHTML=" nb de velos dispo " + enregs[veloClique.id].fields.nbvelosdispo;
-    contenu.insertBefore(detail, veloClique.nextSibling);
+// function afficheDetail(e) {
+//     villeClique = (e.target).parentNode;
+//     villeClique.removeEventListener("click", afficheDetail);
+//     detail = document.createElement("div");
+//     detail.setAttribute("class", "detail");
+//     lieux = document.createElement("div");
+//     lieux.setAttribute("class", "lieux");
+//     detail.appendChild(lieux);
+//     temps = document.createElement("div");
+//     temps.setAttribute("class", "temps");
+//     detail.appendChild(temps);
+//     temperature = document.createElement("div");
+//     temperature.setAttribute("class", "temperature");
+//     detail.appendChild(temperature);
+//     lieux.innerHTML = enregs[villeClique.id].name;
+//     temps.innerHTML=" temps Actuelle " + enregs[villeClique.id].weather.description;
+//     temperature.innerHTML=" temperature Actuelle " + enregs[villeClique.id].main.temp;
+//     contenu.insertBefore(detail, villeClique.nextSibling);
 
-}
+// }
 
 //on envoi la requête
-req.open('GET', 'https://opendata.lillemetropole.fr/api/records/1.0/search/?dataset=vlille-realtime&q=&rows=50&facet=libelle&facet=nom&facet=commune&facet=etat&facet=type&facet=etatconnexion', true);
+req.open('GET', 'http://api.openweathermap.org/data/2.5/weather?q=resultVille,fr&appid=4f00f8b80c9b221ffd12e64353e31667&units=metric&lang=fr', true);
 req.send(null);
