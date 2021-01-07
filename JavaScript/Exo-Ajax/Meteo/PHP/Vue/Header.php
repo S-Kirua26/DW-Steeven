@@ -3,11 +3,11 @@
 		<div id="entete">
 			<div id="titre">
 				<div id="logo">
-			 	<img src="IMG/velo.jpg" />
+			 	<img src="IMG/meteo.jpg" />
 				</div>
 
 				<div id="titre_page">
-                  V'Lib de Lille
+                  La meteo de Jojo
                 </div>
             </div>
 		</div>
