@@ -13,6 +13,7 @@ req.onreadystatechange = function (event) {
             console.log(this.responseText);
             console.log(reponse);
             enregs = reponse.records;
+            enregs = enregs.sort(tri);
             for (let i = 0; i < enregs.length; i++) {
                 // on crée la ligne et les div internes
                 ligne = document.createElement("div");
@@ -32,9 +33,18 @@ req.onreadystatechange = function (event) {
                 espace.setAttribute("class","espaceHorizon");
                 contenu.appendChild(espace);
                 //on met à jour le contenu
+
                 commune.innerHTML = enregs[i].fields.commune;
-                libelle.innerHTML = enregs[i].fields.libelle;
-                etat.innerHTML = enregs[i].fields.etat;
+                libelle.innerHTML = enregs[i].fields.type;
+                var verif = enregs[i].fields.etat;
+
+                if(verif == "EN SERVICE")
+                {
+                    etat.style.backgroundColor = "green";
+                }
+                else{
+                    etat.style.backgroundColor = "red"
+                }
 
                 // on ajoute un evenement sur ligne pour afficher le detail
                 ligne.addEventListener("click", afficheDetail);
@@ -65,6 +75,35 @@ function afficheDetail(e) {
     nbMax.innerHTML=" nb de velos dispo " + enregs[veloClique.id].fields.nbvelosdispo;
     contenu.insertBefore(detail, veloClique.nextSibling);
 
+}
+
+function tri(a,b)
+{
+    if(a.fields.commune < b.fields.commune)
+    {
+        return -1;
+    }
+    else{
+        if(a.fields.commune > b.fields.commune)
+        {
+            return 1;
+        }
+        else{
+            if(a.fields.nom < b.fields.nom)
+            {
+                return -1;
+            }
+            else{
+                if(a.fields.nom > b.fields.nom)
+                {
+                    return 1;
+                }
+                else{
+                    return 0;
+                }
+            }
+        }
+    }
 }
 
 //on envoi la requête

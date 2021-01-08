@@ -5,9 +5,9 @@
 </div>
 <div id="divContenu">
 	<div class="ligne titreLigne">
-		<div class="commune">Commune</div>
-		<div class="libelle">Numero du V'lib</div>
-		<div class="etat">Etat</div>
+		<div class="commune">Lieux</div>
+		<div class="libelle">TPE</div>
+		<div class="etat">Etat (En service: vert, Non Disonible: rouge)</div>
 	</div>
 	<div class="espaceHorizon"></div>
 </div>

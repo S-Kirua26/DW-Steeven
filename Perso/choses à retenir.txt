@@ -1,0 +1,80 @@
+HTML = Hyper Text Markup Language
+CSS = Cascading Style Sheet, c'est un langage de style
+PHP = Hypertext Preprocessor, c'est un langage précompiler dont le serveur Apache pourra traduire pour un navigateur
+SQL = Structury Query Language
+UML = Unified Modeling Language, méthode de travail avec modélisation graphique 
+JSON = JavaScript Object Notation, c'est un format de (transfert) données pour véhiculer facilement et légérement les informations
+XML = Extensible Markup Language, c'est un format de (transfert) données pour véhiculer facilement les informations
+API = Application Programming Interface, c'est une interface qui permet le transfert de données d'une application ou à lui-même
+
+Polymorphisme = c'est le fait d'avoir deux methodes/fonctions de même nom mais avec des signatures différentes
+(parametres d'entrée et/ou de sortie différents).
+
+Encapsulation = c'est le principe de base de l'orientée objet (créer un objet, instancier un objet).
+		regrouper pour un objet les attributs et les méthodes.
+
+Framework = ensemble de composant qui permette une generation plus rapide de code pour un langage.
+
+IDE = environnement de développement, qui peut intégrer un éditeur de texte, compilateur etc..
+
+Concatenation = mettre bout à bout une ou plusieurs chaines de caracteres pour n'en faire qu'une seule.
+
+Cookies = fichier(s) qui contiendra les données d'un utilisateur.
+
+MVC = Model/View/Controller, c'est un patern*(bonne pratique acceptés de tous), paradigme*(bonne pratique utilisait par certain).
+      Controller: c'est la vue (classes et objets) métier
+      Vue: Affichage sur l'interface web
+      Model: Accés à la base de données
+
+Objet: instanciation d'une classe.
+
+Interface: c'est une classe mére dans laquels les méthodes sont abstraites(ne sont pas remplies) et dont la classe fille
+doit implémenter ces méthodes et les remplir.
+
+Compilation: C'est la traduction du programme en un exécutable compréhensible par le PC (0 ou 1).
+
+Méthode Agile: méthode de travail permettant de répartir les tâches efficacement en fonction des compétences/points fort.
+	       Le principe est une livraison rapprochées et une étroite collaboration avec le client.
+
+FTP: protocole de transfert de fichiers.
+
+CMS: Content Management Systeme, c'est un système de gestion de contenu (ex: WordPress).
+
+ESN/SSII: entreprise de services numériques.
+
+GIT: c'est un outil de versionning.
+Repository: c'est un entrepot des versions de ces fichiers.
+GITHUB: c'est un outil qui permet de partager le versionning de ces fichiers et de gérer ses repository.
+
+MCD/MLD: Model Conceptuelle de Données (entité, relation), représentation graphique des données.
+	 Model Logique de Données, representation des données sous forme de table.
+
+Clé primaire: c'est un champ d'une table qui permet d'identifier de manière unique un enregistrement de la table.
+
+Clé étrangére: c'est le résultat d'une migration d'une clé primaire d'une table vers une autre table en vue d'établir une relation entre ces tables.
+
+Indéxé: créer un référenciel des données d'une colonne afin d'améliorer la recherche de données.
+
+Une Vue: c'est une table virtuelle qui permet de regrouper plusieurs tables afin de faciliter ...
+
+Produit Carthésiens: résultats d'une multiplication de deux tables.
+
+Truncate: Vider une table d'une base de données.
+
+Procédure Stockées: c'est un regroupement de plusieurs requêtes afin de les utiliser plus tard.
+
+GUI: Graphical User Interface, c'est l'interaction entre l'ordinateur et l'utilisateur.
+
+UX: User Experience, c'est la faciliter que l'utilsiateur pourra avoir sur un site.
+
+Maquettage: c'est un dessin plus ou moins précis qui représente les interfaces (Draw.io, PowerPoint).
+
+Regex: Expressions régulières, c'est un patern/expression qui doit être utiliser par les utilisateurs.
+
+Surcharge: en cas d'héritage, les méthodes sont redéfinis dans la classe fille. (réécris uniquement le contenus).
+
+Surcharge URL: c'est le fait de mettre des variables ou des valeurs qui passent dans l'URL
+
+Injection URL: c'est quand un pirate arrive à mettre des pages webs entières au milieu de l'application
+
+Injection SQL: c'est l'éxécution pirate de requêtes SQL pour pirater la bases de données.
