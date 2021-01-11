@@ -29,6 +29,10 @@ img {
 	flex: 1;
 }
 
+.bleu{
+	color: rgb(12, 9, 219);
+}
+
 .ligne{
 	display: flex;
 	justify-content: space-between;
@@ -94,4 +98,8 @@ img {
 
 .padding{
 	margin-bottom: 1em;
+}
+
+.paddingHard{
+	margin-top: 3em;
 }

@@ -5,16 +5,26 @@
 </div>
 <div id="divContenu">
 	<div class="padding"> Veuilez renseigner une ville: <input id="bouton" type="text"/></div>
-	<div class="padding"><input id="valide" type="submit" value="Valider"/></div>
+	<div class="padding"><input id="valide" type="submit" value="Rechercher"/></div>
 	<div class="ligne titreLigne">
 		<div id="lieu">Lieu
-			<div id="contenuLieu"></div>
+			<div class="bleu" id="contenuLieu"></div>
 		</div>
 		<div id="temp">Temps
-			<div id="contenuTemps"></div>
+			<div class="bleu" id="contenuTemps"></div>
 		</div>
 		<div id="vent">Température
-			<div id="contenuVent"></div>
+			<div class="bleu" id="contenuVent"></div>
+		</div>
+	</div>
+	<div class="paddingHard"></div>
+	<div class="paddingHard"></div>
+	<div class="ligne titreLigne">
+		<div id="sunRise">Lever du soleil
+			<div class="bleu" id="contenuSunRise"></div>
+		</div>
+		<div id="sunSet">Coucher du soleil
+			<div class="bleu" id="contenuSunSet"></div>
 		</div>
 	</div>
 	<div class="photographie ligne">
