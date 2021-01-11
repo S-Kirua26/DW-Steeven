@@ -7,8 +7,8 @@ var contLieu = document.getElementById("contenuLieu");
 var contTemp = document.getElementById("contenuTemps");
 var contVent = document.getElementById("contenuVent");
 var inputBouton = document.getElementById("bouton");
-
-var resultVille = inputBouton.value;
+var valider = document.getElementById("valide");
+var imageMeteo = document.getElementById("imgMeteo");
 
 var enregs; // contient la reponse de l'API
 // on définit une requete
@@ -24,9 +24,14 @@ req.onreadystatechange = function (event) {
             console.log(this.responseText);
             console.log(reponse);
 
-            contLieu.textContent =  reponse.name;
-            contTemp.textContent =  reponse.weather[0].description;
-            contVent.textContent =  reponse.main.temp + "°C";
+            contLieu.textContent =  reponse.name; // récupération de nom de la ville
+            contTemp.textContent =  reponse.weather[0].description; // récupération du temp de la vile
+            contVent.textContent =  reponse.main.temp + "°C"; // récupération de la tempétature de la ville
+            // imageMeteo.style.src =  reponse.weather[0].icon; // récupération de l'image du temp de la ville
+            let icone = reponse.weather[0].icon;
+
+            imageMeteo.setAttribute("src", "./IMG/"+icone+".png");
+
 
             // on ajoute un evenement sur ligne pour afficher le detail
             // ligne.addEventListener("click", afficheDetail);
@@ -59,6 +64,10 @@ req.onreadystatechange = function (event) {
 
 // }
 
-//on envoi la requête
-req.open('GET', 'http://api.openweathermap.org/data/2.5/weather?q=resultVille,fr&appid=4f00f8b80c9b221ffd12e64353e31667&units=metric&lang=fr', true);
-req.send(null);
+valider.addEventListener("click", function() {
+    let recupBouton = inputBouton.value;
+    //on envoi la requête
+    req.open('GET', 'http://api.openweathermap.org/data/2.5/weather?q='+recupBouton+',fr&appid=4f00f8b80c9b221ffd12e64353e31667&units=metric&lang=fr', true);
+    req.send(null);
+});
+

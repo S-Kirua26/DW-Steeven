@@ -7,7 +7,7 @@
 				</div>
 
 				<div id="titre_page">
-                  La meteo de Jojo
+                  La meteo Prévisonnel du jour
                 </div>
             </div>
 		</div>
