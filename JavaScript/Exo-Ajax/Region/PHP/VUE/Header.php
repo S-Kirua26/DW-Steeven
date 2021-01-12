@@ -1,9 +1,9 @@
-<body>
+<body class="colonne">
     <header>
             <div class="logo">
-                <img src="./IMG/region.png" alt="image region">
+                <img src="./IMG/region.jpg" alt="image region">
             </div> 
-            <div class="titre">Liste des départements selon les régions</div>
+            <div class="titre centre">Liste des départements selon les régions</div>
             <div class="logo">
                 <img src="" alt="">
             </div>

@@ -26,7 +26,7 @@ class Departement{
 		return $this->_libelleDepartement;
 	}
 
-	public function setLibelleDepartement(int $libelleDepartement)
+	public function setLibelleDepartement($libelleDepartement)
 	{
 		$this->_libelleDepartement=$libelleDepartement;
     }

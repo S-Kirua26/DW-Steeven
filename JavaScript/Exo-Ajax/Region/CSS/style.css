@@ -36,3 +36,44 @@ img{
 .grodPadding{
     padding: 3em;
 }
+
+.colonne{
+    flex-direction: column;
+}
+
+.titre{
+    flex: 9;
+    font-size: 2em;
+}
+
+.centre{
+    justify-content: center;
+    align-items: center;
+}
+
+.details{
+    border: 2px solid #e7c60a;
+    border-radius: 1.2em;
+    padding:0.7em 1em;
+    background: var(--detail); 
+    cursor:pointer;
+    align-items: center;
+}
+
+.modifier{
+    border: 2px solid #2a41c4;
+    border-radius: 1.2em;
+    padding:0.7em 1em;
+    background: var(--modifier); 
+    cursor:pointer;
+    align-items: center;
+}
+
+.supprimer{
+    border: 2px solid #f10606;
+    border-radius: 1.2em;
+    padding:0.7em 1em;
+    background: var(--supprimer); 
+    cursor:pointer;
+    align-items: center;
+}

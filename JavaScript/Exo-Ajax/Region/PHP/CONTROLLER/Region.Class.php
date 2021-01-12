@@ -24,7 +24,7 @@ class Region{
 		return $this->_libelleRegion;
 	}
 
-	public function setLibelleRegion(int $libelleRegion)
+	public function setLibelleRegion($libelleRegion)
 	{
 		$this->_libelleRegion=$libelleRegion;
 	}

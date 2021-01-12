@@ -5,32 +5,29 @@ $liste = RegionManager::getList(false);
 	<div id="crudBarreOutil">
     <a class=" crudBtn crudBtnOutil" href="/Region/PHP/CONTROLLER/Routes.php?mode=ajout" >Ajouter </a>
 </div>
-		<div id="crudTableau">
-		<table id="crud" class="avectri">
-			<thead class="crudEntete">
-                <th class="crudColonne"  >Nom</th>
-                <th class="crudColonne"  >Prenom</th>
-			</thead>
-			<?php foreach ($liste as $elt) {
-    echo '<tr class="crudLigne">';
+    
+    <div class="contenuBDD colonne">
+        <div class="espace"></div>
+        <div class="contenuRegion">
+            <div class="nomColonne">
+                <div class="libelleColonne">Libelle Regions</div>
+                <div class="modification">Modifications</div>
+            </div>
+        </div>
 
-    echo '<td class="crudColonne">' . $elt->getLibelleRegion() . '</td>';
+        <?php foreach ($liste as $elt) {
+            echo '<div class="ligne"></div>';
 
-    ?>
-				<td class="crudColonneBtn">
-                    <a class=" crudBtn crudBtnEdit" >Afficher </a>
-				<a class=" crudBtn crudBtnModif" >Modifier</a>
-				<a class=" crudBtn crudBtnSuppr" >Supprimer</a></td>
-			</tr>
-			<?php }?>
-				<tr class="crudLigne">
-				<td>total : </td>	
-					<td id="total"></td>
-				</tr>
-		</table>
+            echo '<div class="">' . $elt->getLibelleRegion() . '</div>';
+        ?>
 
-		
-	</div>
+        <div class="affichage">
+            <div class="details">Details</div>
+            <div class="modifier">Modifier</div>
+            <div class="supprimer">Supprimer</div>
+        </div>
+        <?php }?>
+    </div>
 
 
 </div>

@@ -2,9 +2,9 @@
     <div class="logo">
         <img src="./IMG/departement.jpg" alt="image departement">
     </div>
-    <div>En savoir plus sur les départements</div>
+    <div class="titre centre">En savoir plus sur les départements</div>
     <div class="logo">
-        <img src="./IMG/region.png" alt="image region">
+        <img src="./IMG/region.jpg" alt="image region">
     </div>
 </footer>
 
