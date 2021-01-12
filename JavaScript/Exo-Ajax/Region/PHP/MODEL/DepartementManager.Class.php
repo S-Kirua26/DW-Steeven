@@ -78,5 +78,21 @@ class DepartementManager
 		
 		return $donnees;
 	}
+
+	static public function getListeDepartement($api, $idRegion)
+	{
+		$id = (int) $idRegion;
+		$db = DbConnect::getDb();
+		$liste = [];
+		$q = $db->query("SELECT libelleDepartement FROM departements WHERE idRegion=$id");
+
+		while($donnees = $q->fetch(PDO::FETCH_ASSOC))
+		{
+			if($donnees != false)
+			{
+
+			}
+		}
+	}
 	
 }

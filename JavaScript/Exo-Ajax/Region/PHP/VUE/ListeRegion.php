@@ -1,34 +1,18 @@
 <?php
 $liste = RegionManager::getList(false);
 ?>
-<div id="contenu">
-	<div id="crudBarreOutil">
-    <a class=" crudBtn crudBtnOutil" href="/Region/PHP/CONTROLLER/Routes.php?mode=ajout" >Ajouter </a>
-</div>
-    
-    <div class="contenuBDD colonne">
-        <div class="espace"></div>
-        <div class="contenuRegion">
-            <div class="nomColonne">
-                <div class="libelleColonne">Libelle Regions</div>
-                <div class="modification">Modifications</div>
-            </div>
-        </div>
+    <div class="contenu">
+    <div class="espace"></div>
+    <select>
+        <?php
 
-        <?php foreach ($liste as $elt) {
-            echo '<div class="ligne"></div>';
-
-            echo '<div class="">' . $elt->getLibelleRegion() . '</div>';
+        foreach($liste as $elt){
+            $sel="";
+            echo '<option value="'.$elt->getIdRegion().'"'.$sel.'>'.$elt->getLibelleRegion().'</option>';
+        }
         ?>
-
-        <div class="affichage">
-            <div class="details">Details</div>
-            <div class="modifier">Modifier</div>
-            <div class="supprimer">Supprimer</div>
-        </div>
-        <?php }?>
+    </select>
+    <div class="espace"></div>
     </div>
-
-
 </div>
 <div class="espaceHorizon fondBlanc"></div>
