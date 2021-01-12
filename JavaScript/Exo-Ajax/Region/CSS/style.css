@@ -1,0 +1,38 @@
+:root{
+    --couleurBody: #44433f;
+    --couleurHF: #f3dc56;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+body, div, header, footer{
+    display: flex;
+    flex: 1;
+}
+
+body{
+    background: var(--couleurBody);
+}
+
+header,footer{
+    background: var(--couleurHF);
+}
+
+img{
+    width: 100%;
+}
+
+.espace{
+    flex: 1;
+}
+
+.padding{
+    padding: 1em;
+}
+
+.grodPadding{
+    padding: 3em;
+}
