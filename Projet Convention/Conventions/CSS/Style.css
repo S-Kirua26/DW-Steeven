@@ -5,19 +5,22 @@ body
     min-height:100%;
     background:var(--FondPage);
 }
-div,header,footer
+div,header,footer,body,nav,section,form
 {
     display:flex;
     flex:1;
+    justify-content:center;
 }
 img
 {
     width:100%;
 }
-.colonne
+
+.colonne, form
 {
     flex-direction:column;
 }
+
 .centre
 {
     justify-content:center;
@@ -36,13 +39,23 @@ img
     text-shadow: 0.1em 0.1em 0.1em 0.1em var(--CouleurTexte);
 }
 
-.grande{
+.grande, section {
     flex:5;
 }
 
 .info{
     margin:1.5em;
 }
+/******* Form ********/
+label{
+    color: var(--CouleurTexte);
+    text-align: center;
+}
+
+.centerItem{
+    align-items:center;
+}
+
 /******* Boutons ********/
 .bouton
 {
