@@ -110,7 +110,6 @@ CREATE TABLE Entreprises(
         statutJuridiqueEnt Varchar (50) NOT NULL ,
         adresseEnt         Varchar (50) NOT NULL ,
         numSiretEnt        Varchar (14) NOT NULL ,
-        indexSiret         Int (50) NOT NULL,
         telEnt             Varchar (10) NOT NULL ,
         assureurEnt        Varchar (50) NOT NULL ,
         numSocietaire      Varchar (20) NOT NULL ,
@@ -152,7 +151,7 @@ CREATE TABLE Stages(
         frequenceDeplacement Varchar (200) NOT NULL ,
         modeDeplacement      Varchar (200) NOT NULL ,
         attFormReglement     Bool NOT NULL ,
-        libelleAttFormReg    Varchar (200) NOT NULL ,
+        libelleAttFormReg    Varchar (200) ,
         visiteMedical        Bool NOT NULL ,
         travauxDang          Bool NOT NULL ,
         dateDeclarationDerog Date NOT NULL ,
@@ -198,27 +197,27 @@ CREATE TABLE evaluations
 (
         idStage              Int    NOT NULL PRIMARY KEY,
         dateEvaluation       Date NOT NULL ,
-        objectifAcquisition  Int NOT NULL ,
-        comportementMt       Int NOT NULL ,
-        evalComportement     Char (1) NOT NULL ,
-		satisfactionEnt      Int NOT NULL ,
+        objectifAcquisition  Int NOT NULL COMMENT "1:totalement 2:partiellement 3:non",
+        comportementMt       Int NOT NULL COMMENT "1:adapté 2:en progression 3:peu adapté",
+		satisfactionEnt      Int NOT NULL COMMENT "1:satisfaite 2: peu satisfaite 3:pas satisfaite",
         remarqueEnt          Char(250) NOT NULL ,
-        perspectiveEmb       Int NOT NULL 
+        perspectiveEmb       Int NOT NULL COMMENT "1:CDI 2:CDD 3:Alternance 4:Neant"
 
 )ENGINE=InnoDB, CHARSET = UTF8;
 
 CREATE TABLE LibelleTravauxDangereux
 (
-    idTravaux   Int   NOT NULL PRIMARY KEY,
+    idLibelleTravauxDangereux   Int Auto_increment  NOT NULL PRIMARY KEY,
     ordreTravaux INT NOT NULL , 
-    libelleTravaux VARCHAR(50) NOT NULL  
+    libelleTravaux VARCHAR(100) NOT NULL  
 )ENGINE=InnoDB, CHARSET = UTF8;
 
 CREATE TABLE ValeurTravauxDangereux
 (
-    idStage   Int   NOT NULL PRIMARY KEY,
-    idTravaux INT NOT NULL , 
-    valeurTravaux  Int
+    idTravauxDangereux  Int Auto_increment NOT NULL PRIMARY KEY,
+    idStage   Int   NOT NULL,
+    idLibelleTravauxDangereux INT NOT NULL , 
+    valeurTravaux  Int 
 )ENGINE=InnoDB, CHARSET = UTF8;
 
 #------------------------------------------------------------
@@ -227,36 +226,39 @@ CREATE TABLE ValeurTravauxDangereux
 
 CREATE TABLE LibelleHoraires
 (
-    idHoraire   Int   NOT NULL PRIMARY KEY,
+    idLibelleHoraire   Int Auto_increment  NOT NULL PRIMARY KEY,
     ordreHoraire INT NOT NULL , 
     libelleHoraire VARCHAR(40) NOT NULL  
 )ENGINE=InnoDB, CHARSET = UTF8;
 
 CREATE TABLE ValeurHoraires
 (
-    idStage   Int   NOT NULL PRIMARY KEY,
-    idHoraire INT NOT NULL , 
-    valeurHoraire  Int
+    idValeurHoraires   Int Auto_increment NOT NULL PRIMARY KEY,
+    idStage   Int   NOT NULL,
+    idLibelleHoraire INT NOT NULL , 
+    valeurHoraire  Time
 )ENGINE=InnoDB, CHARSET = UTF8;
 
 CREATE TABLE LibelleComportementsProfessionnels
 (
-    idComportement   Int  Auto_increment  NOT NULL PRIMARY KEY,
+    idLibelleComportementProfessionnel   Int  Auto_increment  NOT NULL PRIMARY KEY,
     ordreComportement INT NOT NULL , 
-    libelleComportement VARCHAR(40) NOT NULL  
+    libelleComportement VARCHAR(100) NOT NULL  
 )ENGINE=InnoDB, CHARSET = UTF8;
 
 CREATE TABLE ValeurComportementsProfessionnels
 (
-    idStage   Int  Auto_increment  NOT NULL PRIMARY KEY,
-    idComportement INT NOT NULL , 
+    idComportementProfessionnel Int Auto_increment NOT NULL PRIMARY KEY,
+    idStage   Int NOT NULL,
+    idLibelleComportementProfessionnel INT NOT NULL , 
     valeurComportement INT  
 )ENGINE=InnoDB, CHARSET = UTF8;
 
 
 CREATE TABLE ValeurAcquis
 (
-    idStage   Int  Auto_increment  NOT NULL PRIMARY KEY,
+    idValeurAcquis   Int  Auto_increment NOT NULL PRIMARY KEY,
+    idStage   Int  NOT NULL,
 	ordreAcquis INT NOT NULL,
     libelleAcquis VARCHAR(200) NOT NULL , 
     valeurAcquis INT  
@@ -312,3 +314,37 @@ ADD CONSTRAINT FK_Entreprises_Villes
 FOREIGN KEY (idVille)
 REFERENCES Villes(idVille);
 
+ALTER TABLE ValeurTravauxDangereux
+ADD CONSTRAINT FK_ValeurTravauxDangereux_Stages
+FOREIGN KEY (idStage)
+REFERENCES Stages(idStage);
+
+ALTER TABLE ValeurTravauxDangereux
+ADD CONSTRAINT FK_ValeurTravauxDangereux_LibelleTravauxDangereux
+FOREIGN KEY (idLibelleTravauxDangereux)
+REFERENCES LibelleTravauxDangereux(idLibelleTravauxDangereux);
+
+ALTER TABLE ValeurHoraires
+ADD CONSTRAINT FK_ValeurHoraires_Stages
+FOREIGN KEY (idStage)
+REFERENCES Stages(idStage);
+
+ALTER TABLE ValeurHoraires
+ADD CONSTRAINT FK_ValeurHoraires_LibelleHoraires
+FOREIGN KEY (idLibelleHoraire)
+REFERENCES LibelleHoraires(idLibelleHoraire);
+
+ALTER TABLE ValeurComportementsProfessionnels
+ADD CONSTRAINT FK_ValeurComportementsProfessionnels_Stages
+FOREIGN KEY (idStage)
+REFERENCES Stages(idStage);
+
+ALTER TABLE ValeurComportementsProfessionnels
+ADD CONSTRAINT FK_ValeurCompProf_LibelleCompPro
+FOREIGN KEY (idLibelleComportementProfessionnel)
+REFERENCES LibelleComportementsProfessionnels(idLibelleComportementProfessionnel);
+
+ALTER TABLE ValeurAcquis
+ADD CONSTRAINT FK_ValeurAcquis_Stages
+FOREIGN KEY (idStage)
+REFERENCES Stages(idStage);
