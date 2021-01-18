@@ -20,7 +20,7 @@ $lang=isset($_SESSION['lang']) ? $_SESSION['lang'] : 'FR';
 /******Fin des langues******/
 
 $routes=[
-	"default"=>["PHP/VIEW/","FormEntrepriseInfos","Accueil"],
+	"default"=>["PHP/VIEW/","Accueil","Accueil"],
 	// "TestanimationManager"=>["PHP/MODEL/TESTMANAGER/","TestanimationManager","Test de animation"],
 	// "TestcomportementsprofessionnelsManager"=>["PHP/MODEL/TESTMANAGER/","TestcomportementsprofessionnelsManager","Test de comportementsprofessionnels"],
 	// "TestentreprisesManager"=>["PHP/MODEL/TESTMANAGER/","TestentreprisesManager","Test de entreprises"],
@@ -42,6 +42,7 @@ $routes=[
 	"ActionDeconnexion" => ["PHP/VIEW/", "ActionDeconnexion", "Identification"],
 
 	"StagiaireInfos" => ["PHP/VIEW/", "FormStagiaireInfos", "Identification"],
+	"FormEntrepriseInfos" => ["PHP/VIEW/", "FormEntrepriseInfos", "Identification"],
 ];
 
 if(isset($_GET["page"]))

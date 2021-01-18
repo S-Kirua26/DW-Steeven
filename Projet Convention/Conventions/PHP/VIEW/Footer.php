@@ -9,7 +9,7 @@ if (isset($page))
     switch ($page[1])
     {
         case "FormStagiaireInfos" : echo '<script src="./JS/VerifFormStagiaire.js"></script>';break;
-
+        case "FormEntrepriseInfos" : echo '<script src="./JS/VerifFormEntreprise.js"></script>';break;
     }
 }
       ?>
