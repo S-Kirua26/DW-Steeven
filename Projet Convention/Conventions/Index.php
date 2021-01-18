@@ -20,7 +20,7 @@ $lang=isset($_SESSION['lang']) ? $_SESSION['lang'] : 'FR';
 /******Fin des langues******/
 
 $routes=[
-	"default"=>["PHP/VIEW/","Accueil","Accueil"],
+	"default"=>["PHP/VIEW/","FormEntrepriseInfos","Accueil"],
 	// "TestanimationManager"=>["PHP/MODEL/TESTMANAGER/","TestanimationManager","Test de animation"],
 	// "TestcomportementsprofessionnelsManager"=>["PHP/MODEL/TESTMANAGER/","TestcomportementsprofessionnelsManager","Test de comportementsprofessionnels"],
 	// "TestentreprisesManager"=>["PHP/MODEL/TESTMANAGER/","TestentreprisesManager","Test de entreprises"],
@@ -40,9 +40,27 @@ $routes=[
 	"FormConnexion" => ["PHP/VIEW/", "FormConnexion", "Identification"],
 	"ActionConnexion" => ["PHP/VIEW/", "ActionConnexion", "Identification"],
 	"ActionDeconnexion" => ["PHP/VIEW/", "ActionDeconnexion", "Identification"],
+	
+	/* Fiche de renseignments  */
+	"FormFRStagiaire" => ["PHP/VIEW/", "FormFRStagiaire", "Fiche de renseignments"],
+	"FormFREntreprise" => ["PHP/VIEW/", "FormEntrepriseInfos", "Fiche de renseignments"],
+	
+	/* CRUD */
+	"ListeFormations" => ["PHP/VIEW/", "ListeFormations", "Gestion des formations"],
+	"FormFormation" => ["PHP/VIEW/", "FormFormation", "Gestion des formations"],
+	"ActionFormation" => ["PHP/VIEW/", "ActionFormation", "Gestion des formations"],
 
-	"StagiaireInfos" => ["PHP/VIEW/", "FormStagiaireInfos", "Identification"],
-	"FormEntrepriseInfos" => ["PHP/VIEW/", "FormEntrepriseInfos", "Identification"],
+	"ListeSessions" => ["PHP/VIEW/", "ListeSessions", "Gestion des sessions"],
+	"FormSession" => ["PHP/VIEW/", "FormSession", "Gestion des sessions"],
+	"ActionSession" => ["PHP/VIEW/", "ActionSession", "Gestion des sessions"],
+
+	"ListeUtilisateurs" => ["PHP/VIEW/", "ListeUtilisateurs", "Gestion des Utilisateurs"],
+	"FormUtilisateur" => ["PHP/VIEW/", "FormUtilisateur", "Gestion des Utilisateurs"],
+	"ActionUtilisateur" => ["PHP/VIEW/", "ActionUtilisateur", "Gestion des Utilisateurs"],
+
+	"ListeEntreprises" => ["PHP/VIEW/", "ListeEntreprises", "Gestion des Entreprises"],
+	"FormEntreprise" => ["PHP/VIEW/", "FormEntreprise", "Gestion des Entreprises"],
+	"ActionEntreprise" => ["PHP/VIEW/", "ActionEntreprise", "Gestion des Entreprises"],
 ];
 
 if(isset($_GET["page"]))

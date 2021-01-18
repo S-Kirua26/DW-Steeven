@@ -1,22 +1,3 @@
-function verification(event)
-{
-    var monInput = event.target;
-    var message = (monInput.parentNode).getElementsByClassName("message")[0];
-
-    if(monInput.value == '')
-    {
-        monInput.style.border = "2px solid orange";
-        message.innerHTML = "champ manquant";
-    }else if(!monInput.checkValidity())
-    {
-        message.innerHTML = "format incorrect";
-        monInput.style.border = "2px solid red";
-    }else{
-        message.innerHTML = "";
-        monInput.style.border = "1px solid var(--BordureBouton)";
-    }
-}
-
 // Les Inputs
 var siret = document.getElementById("siret");
 var raisonSociale = document.getElementById("raisonSociale");
@@ -53,27 +34,22 @@ numTuteur.addEventListener("keyup", verification);
 mailTuteur.addEventListener("keyup", verification);
 
 
+function verification(event)
+{
+    var monInput = event.target;
+    var message = (monInput.parentNode).getElementsByClassName("message")[0];
 
-const requ = new XMLHttpRequest();
-
-requ.onreadystatechange = function(event) {
-
-    if (this.readyState === XMLHttpRequest.DONE) {
-        if (this.status === 200) {
-            console.log("Réponse reçue: %s", this.responseText);
-            var divCount  = document.getElementById("total");
-            reponse=JSON.parse(this.responseText);
-            console.log(reponse);
-           //on traite les éléments de la liste ....
-        } else {
-            console.log("Status de la réponse: %d (%s)", this.status, this.statusText);
-        }
+    if(monInput.value == '')
+    {
+        monInput.style.border = "2px solid orange";
+        message.innerHTML = "champ manquant";
+    }else if(!monInput.checkValidity())
+    {
+        message.innerHTML = "format incorrect";
+        monInput.style.border = "2px solid red";
+    }else{
+        message.innerHTML = "";
+        monInput.style.border = "1px solid var(--BordureBouton)";
     }
-};
-
-requ.open('POST', '/06 - Web Dynamique/02 - Ajax/04 - Exemples API Interne/03 - AJAX Personne - avec parametres/index.php?codePage=listeAPI', true);
-requ.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-var args = "idPersonne=1";
-requ.send(args);
-
+}
 
