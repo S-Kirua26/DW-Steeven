@@ -64,7 +64,7 @@ $routes=[
 
 	// "testRegion" => ["PHP/VIEW/", "testRegion", "Gestion des Entreprises"],
 	// "FormEntrepriseInfos" => ["PHP/VIEW/", "FormEntrepriseInfos", "Gestion des Entreprises"],
-	"VillesAPI" => ["PHP/MODEL/API/", "VilleAPI", "Gestion des Entreprises", true],
+	"VillesAPI" => ["PHP/MODEL/API/", "VillesAPI", "Gestion des Entreprises", true],
 ];
 
 if(isset($_GET["page"]))
