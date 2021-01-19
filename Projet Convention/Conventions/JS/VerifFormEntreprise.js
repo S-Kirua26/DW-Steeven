@@ -13,6 +13,7 @@ var tuteur = document.getElementById("tuteur");
 var fonctionTuteur = document.getElementById("fonctionTuteur");
 var numTuteur = document.getElementById("numeroTuteur");
 var mailTuteur = document.getElementById("mailTuteur");
+var requ = new XMLHttpRequest();
 
 // Liste Inputs
 var listeInputs = document.getElementsByTagName("input");
@@ -53,3 +54,48 @@ function verification(event)
     }
 }
 
+var ville = document.getElementById("ville");
+
+
+var region = document.getElementById("region");
+region.addEventListener("change", changeRegion);
+
+requ.onreadystatechange = function (event) {
+    // XMLHttpRequest.DONE === 4
+    if (this.readyState === XMLHttpRequest.DONE) {
+        if (this.status === 200) {
+            console.log("Réponse reçue: %s", this.responseText);
+            reponse = JSON.parse(this.responseText);
+            //on enleve les villes deja presents
+            ville.innerHTML = "";
+            for (let i = 0; i < reponse.length; i++) { //on traite les éléments de la liste ....
+                ajoutVilles(reponse[i].libelleVille, reponse[i].idVille);
+            }
+        } else {
+            console.log("Status de la réponse: %d (%s)", this.status, this.statusText);
+        }
+    }
+};
+
+function ajoutVilles(libelleVille, idVille) {
+
+    let uneVille = document.createElement("option");
+    uneVille.setAttribute("id", idVille);
+    uneVille.innerHTML = libelleVille;
+    ville.appendChild(uneVille);
+}
+
+/**************************FUNCTIONS **********/
+function changeRegion(e) {
+    if (region.value != "defaut") // si c'est pas le choix par defaut
+    {
+        // je lance une requete Ajax
+        requ.open('POST', 'index.php?codePage=VillesAPI', true);
+        requ.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+        var id = region.value;
+        var args = "idRegion=" + id;
+        requ.send(args);
+    }
+
+}

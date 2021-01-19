@@ -33,18 +33,44 @@
             </div>
             <div></div>
             <div class="info colonne">
-            <label for="ville">Ville :</label>
-
-            <select>
-                <?php
-                    $liste = VillesManager::getList(false);
-                    foreach($liste as $elt){
-                        $sel="";
-                        echo '<option value="'.$elt->getNomVille().'"'.$sel.'>'.$elt->getCodePostal().'</option>';
-                    }
-                ?>
-            </select>
-        
+                <label for="ville">Regions :</label>
+                <select id="region">
+                    <?php
+                        $listeRegion = RegionsManager::getList(false);
+                        // $idRegion = RegionsManager::findById($_GET['id']);
+                        // $idDepartement = DepartementsManager::findById($_GET['id']);
+                    
+                                foreach($listeRegion as $elt){
+                                        echo '<option value="'.$elt->getIdRegion().'" type="R">'.$elt->getLibelleRegion().'</option>';
+                                        $listeDepartement = DepartementsManager::getByRegion($elt->getIdRegion());
+                    
+                                        foreach($listeDepartement as $dep)
+                                        {
+                                            if($dep->getLibelleDepartement() == "Nord")
+                                            {
+                                                $sel="selected";
+                                            }
+                                            else{
+                                                $sel="";
+                                            }
+                                            echo '<option value="'.$dep->getIdDepartement().'" type="D" '.$sel.'>&nbsp &nbsp &nbsp'.$dep->getLibelleDepartement().'</option>'; 
+                                            
+                                        }
+                                    }
+                    ?>
+                </select>
+            </div>
+            <div></div>
+            <div class="info colonne">
+                <label for="ville">Ville :</label>
+                <select id="ville">
+                    <?php
+                        $liste = VillesManager::getListByDepartement(59);
+                        foreach($liste as $elt){
+                            echo '<option value="'.$elt->getIdVille().'">'.$elt->getNomVille().'  '.$elt->getCodePostal().'</option>';
+                        }
+                    ?>
+                </select>
             </div>
         </div>
 
