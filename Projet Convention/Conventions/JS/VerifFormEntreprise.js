@@ -94,8 +94,7 @@ function changeRegion(e) {
         requ.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
         var id = region.value;
-        var args = "idRegion=" + id;
+        var args = "idRegion=" + id + '&type=' + region.selectedOptions[0].getAttribute("type");
         requ.send(args);
     }
-
 }
