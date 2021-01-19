@@ -68,5 +68,4 @@ class DepartementsManager
 		}
 		return $liste;
 	}
-	
 }

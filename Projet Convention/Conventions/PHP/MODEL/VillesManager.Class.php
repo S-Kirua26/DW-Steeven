@@ -56,7 +56,7 @@ class VillesManager
 		}
 		return $liste;
 	}
-	public static function getListByDepartement($idDepartement)
+	public static function getListByDepartement($idDepartement,$api)
 	{
  		$db=DbConnect::getDb();
 		$liste = [];
@@ -66,8 +66,10 @@ class VillesManager
 			if($donnees != false)
 			{
 				$liste[] = new Villes($donnees);
+				$json[]= $donnees;
 			}
 		}
+		if ($api) return $json;
 		return $liste;
 	}
 }

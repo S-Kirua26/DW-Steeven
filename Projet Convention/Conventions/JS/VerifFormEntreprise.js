@@ -69,7 +69,7 @@ requ.onreadystatechange = function (event) {
             //on enleve les villes deja presents
             ville.innerHTML = "";
             for (let i = 0; i < reponse.length; i++) { //on traite les éléments de la liste ....
-                ajoutVilles(reponse[i].libelleVille, reponse[i].idVille);
+                ajoutVilles(reponse[i].nomVille+'  '+reponse[i].codePostal, reponse[i].idVille);
             }
         } else {
             console.log("Status de la réponse: %d (%s)", this.status, this.statusText);
@@ -90,7 +90,7 @@ function changeRegion(e) {
     if (region.value != "defaut") // si c'est pas le choix par defaut
     {
         // je lance une requete Ajax
-        requ.open('POST', 'index.php?codePage=VillesAPI', true);
+        requ.open('POST', 'index.php?page=VillesAPI', true);
         requ.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
         var id = region.value;
