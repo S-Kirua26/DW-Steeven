@@ -21,13 +21,13 @@ img {
     width: 100%;
 }
 
-legend {
-    color: var(--CouleurTexte);
-}
-
 .colonne,
 form {
     flex-direction: column;
+}
+
+legend {
+    color: var(--CouleurTexte);
 }
 
 .centre {
@@ -109,6 +109,10 @@ a {
     color: var(--BordureBouton);
 }
 
+button:disabled {
+    border: solid var(--CouleurOmbre) 2px;
+}
+
 
 /********* input & Select *********/
 
@@ -145,6 +149,34 @@ select option {
 
 select option::selection {
     background-color: red;
+}
+
+.absolu {
+    position: absolute;
+    top: 5em;
+    left: 5em;
+}
+
+.relatif {
+    position: relative;
+}
+
+.oeil {
+    position: absolute;
+    left: 32vw;
+    top: 4vh;
+}
+
+.rouge {
+    color: red;
+}
+
+.vert {
+    color: #3db651;
+}
+
+.incorrect {
+    border: red solid 3px;
 }
 
 

@@ -13,6 +13,7 @@ var tuteur = document.getElementById("tuteur");
 var fonctionTuteur = document.getElementById("fonctionTuteur");
 var numTuteur = document.getElementById("numeroTuteur");
 var mailTuteur = document.getElementById("mailTuteur");
+var valider = document.getElementById("valide");
 var requ = new XMLHttpRequest();
 
 // Liste Inputs
@@ -34,24 +35,32 @@ fonctionTuteur.addEventListener("keyup", verification);
 numTuteur.addEventListener("keyup", verification);
 mailTuteur.addEventListener("keyup", verification);
 
+function validation() {
+    valider.disabled = false;
+    for (let i = 0; i < listeInputs.length; i++) {
+        let input = listeInputs[i];
+        if (input.value == "") {
+            valider.disabled = true;
+        }
+    }
+}
 
-function verification(event)
-{
+function verification(event) {
     var monInput = event.target;
     var message = (monInput.parentNode).getElementsByClassName("message")[0];
 
-    if(monInput.value == '')
-    {
+    if (monInput.value == '') {
         monInput.style.border = "2px solid orange";
         message.innerHTML = "champ manquant";
-    }else if(!monInput.checkValidity())
-    {
+    } else if (!monInput.checkValidity()) {
         message.innerHTML = "format incorrect";
-        monInput.style.border = "2px solid red";
-    }else{
+        monInput.style.class = "incorrect";
+    } else {
         message.innerHTML = "";
         monInput.style.border = "1px solid var(--BordureBouton)";
     }
+
+    validation();
 }
 
 var ville = document.getElementById("ville");
@@ -60,7 +69,7 @@ var ville = document.getElementById("ville");
 var region = document.getElementById("region");
 region.addEventListener("change", changeRegion);
 
-requ.onreadystatechange = function (event) {
+requ.onreadystatechange = function(event) {
     // XMLHttpRequest.DONE === 4
     if (this.readyState === XMLHttpRequest.DONE) {
         if (this.status === 200) {
@@ -69,7 +78,7 @@ requ.onreadystatechange = function (event) {
             //on enleve les villes deja presents
             ville.innerHTML = "";
             for (let i = 0; i < reponse.length; i++) { //on traite les éléments de la liste ....
-                ajoutVilles(reponse[i].nomVille+'  '+reponse[i].codePostal, reponse[i].idVille);
+                ajoutVilles(reponse[i].nomVille + '  ' + reponse[i].codePostal, reponse[i].idVille);
             }
         } else {
             console.log("Status de la réponse: %d (%s)", this.status, this.statusText);

@@ -1,27 +1,39 @@
 <section>
 
+<?php
+// $mode=$_GET['mode'];
+
+// switch($mode)
+// {
+//     case "ajouter":
+//     {
+//         echo'<form action="Index.php?page=ActionEntreprise&mode=ajouter" method="POST">';
+//         break;
+//     }
+// }
+?>
     <form action="" method="POST">
         <fieldset>
             <legend>Entreprise</legend>
             <div class="row">
-                <div></div>
+            <div class="demi"></div>
                 <div class="info colonne">
                     <label for="numSiret">Numero SIRET :</label>
                     <input type="text" id="siret" name="siret" title="Veuillez renseigner un numero de SIRET" value="" required pattern="\d{14}">
                     <div id="divSiret" class="message erreur"></div>
                 </div>
-                <div></div>
+            <div class="demi"></div>
             </div>
             <div class="row">
                 <div class="info colonne">
                     <label for="RaisonSociale">Raison Sociale :</label>
-                    <input type="text" id="raisonSociale" name="raison sociale" title="Veuillez renseigner votre raison sociale" required pattern="[a-zA-Z- ]{3,}">
+                    <input type="text" id="raisonSociale" name="raison sociale" title="Veuillez renseigner votre raison sociale" required pattern="[a-zA-Z]{3,}">
                     <div id="divRaisonSociale" class="message erreur"></div>
                 </div>
-                <div></div>
+                <div class="mini"></div>
                 <div class="info colonne">
                     <label for="juridique">Forme Juridique :</label>
-                    <input type="text" id="formeJuridique" name="formeJuridique" title="Veuillez renseigner votre forme juridique" required pattern="[a-zA-Z- ]" value="">
+                    <input type="text" id="formeJuridique" name="formeJuridique" title="Veuillez renseigner votre forme juridique" required pattern="[a-zA-Z]{1,}" value="">
                     <div id="divFormeJuridique" class="message erreur"></div>
                 </div>
             </div>
@@ -29,10 +41,10 @@
             <div class="row">
                 <div class="info colonne">
                     <label for="adresse">Adresse :</label>
-                    <input type="text" id="adresse" name="adresse" value="" title="Veuillez renseigner votre adresse" required pattern="[a-zA-Z- ][0-9]">
+                    <input type="text" id="adresse" name="adresse" value="" title="Veuillez renseigner votre adresse" required pattern="^([0-9a-zA-Z'àâéèêôùûçÀÂÉÈÔÙÛÇ\s-]{1,150})$">
                     <div id="divAdresse" class="message erreur"></div>
                 </div>
-                <div></div>
+                <div class="mini"></div>
                 <div class="info colonne">
                     <label for="ville">Regions :</label>
                     <select id="region">
@@ -72,10 +84,10 @@
                         ?>
                     </select>
                 </div>
-                <div></div>
+                <div class="mini"></div>
                 <div class="info colonne">
                     <label for="representantLegal">Representant Legal :</label>
-                    <input type="text" id="representantLegal" name="representantLegal" value="" title="Veuillez renseigner un représentant légal" required pattern="[a-zA-Z- ]{3,}"> 
+                    <input type="text" id="representantLegal" name="representantLegal" value="" title="Veuillez renseigner un représentant légal" required pattern="[a-zA-Z]{3,}"> 
                     <div id="divRepresentantLegal" class="message erreur"></div>               
                 </div>
                 
@@ -84,10 +96,10 @@
             <div class="row">
                 <div class="info colonne">
                     <label for="fonction">Fonction :</label>
-                    <input type="text" id="fonction" name="fonction" value="" required title="Veuillez renseigner une fonction" pattern="[a-zA-Z- ]{3,}" >
+                    <input type="text" id="fonction" name="fonction" value="" required title="Veuillez renseigner une fonction" pattern="[a-zA-Z]{3,}" >
                     <div id="divFonction" class="message erreur"></div>
                 </div>
-                <div></div>
+                <div class="mini"></div>
                 <div class="info colonne">
                     <label for="adresseMail">Adresse Mail :</label>
                     <input type="text" id="adresseMail" name="adresseMail" value="" required title="Veuillez renseigner une adresse mail" pattern="[a-z]+[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}" >
@@ -101,23 +113,23 @@
                     <input type="text" id="numeroTel" name="numeroTel" value="" required title="Veuillez renseigner un numero de telephone" pattern="\d{10}" >
                     <div id="divNumTelephone" class="message erreur"></div>
                 </div>
-                <div></div>
+                <div class="mini"></div>
                 <div class="info colonne">
                     <label for="assureur">Assureur :</label>
-                    <input type="text" id="assureur" name="assureur" value="" required title="Veuillez renseigner un assureur" pattern="[a-zA-Z- ]{3,}" > 
+                    <input type="text" id="assureur" name="assureur" value="" required title="Veuillez renseigner un assureur" pattern="[a-zA-Z]{3,}" > 
                     <div id="divAssureur" class="message erreur"></div>               
                 </div>
                 
             </div>
 
             <div class="row">
-                <div></div>
                 <div class="info colonne">
                     <label for="numeroSocietaire">Numero Societaire :</label>
-                    <input type="text" id="numeroSocietaire" name="numeroSocietaire" value="" title="Veuillez renseigner un numero societaire" required pattern="\d{16}" >
+                    <input type="text" id="numeroSocietaire" name="numeroSocietaire" value="" title="Veuillez renseigner un numero societaire" required pattern="[a-zA-Z-][0-9]" >
                     <div id="divNumSocietaire" class="message erreur"></div>
                 </div>
-                <div></div>
+                <div class="mini"></div>
+                <div class="info colonne"></div>
             </div>
         </fieldset>
 
@@ -158,11 +170,7 @@
         <div class="row">
             <div></div>
             <div class="info colonne">
-                <button class="bouton" type="submit" disabled><i class="far fa-check-circle"></i> Valider</button>             
-            </div>
-            <div></div>
-            <div class="info colonne">
-                <button class="bouton" type="submit"><i class="far fa-arrow-alt-circle-left"></i> Retour</button>
+                <button id ="valide" class="bouton" type="submit" disabled><i class="far fa-check-circle"></i> Valider</button>             
             </div>
             <div></div>
         </div>
