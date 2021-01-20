@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Mensualité</title>
+    <link href="mensualite.css" rel="stylesheet">
+</head>
+
+<body class="colonne">
+    <header class="espaceHor">
+        <div class="espace"></div>
+        <div class="titre centre"> Calcul du Taux d'intérêt</div>
+        <div class="espace"></div>
+    </header>
+    <div class="espaceHor"></div>
+    <div class="grandEspace"></div>
+    <form>
+        <div class="centre">
+            <div class="espaceMini"></div>
+            <fieldset>
+                <div class="contenu colonne">
+                    <div class="espaceHorMini centre">
+                        <label>Capital emprunté</label>
+                        <input type="text" id="capital" pattern="[0-9]{1,}">
+                        <div class="margin flexMini">€</div>
+                        <div class="erreur"></div>
+                    </div>
+                    <div class="espaceHorMini">
+                        <label>Taux Nominal Annuel</label>
+                        <input type="text" id="tauxNominal" pattern="[0-9]{1,}">
+                        <div class="margin flexMini">%</div>
+                        <div class="erreur"></div>
+                    </div>
+                    <div class="espaceHorMini">
+                        <label>Durée d'emprunt</label>
+                        <input type="text" id="duree" pattern="[0-9]{1,}">
+                        <div class="margin flexMini">Ans</div>
+                        <div class="erreur"></div>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="espaceMini "></div>
+        </div>
+    </form>
+    <div class="espaceHor "></div>
+    <form>
+        <div classs="centre">
+            <div class="espaceMini"></div>
+            <fieldset>
+                <div class="contenu colonne">
+                    <div class="espaceHorMini centre">
+                        <label>Mensualité</label>
+                        <input type="text" id="mensualite" disabled>
+                        <div class="margin flexMini">€</div>
+                        <div class="erreur"></div>
+                    </div>
+                    <div class="espaceHorMini ">
+                        <label>Coût Total</label>
+                        <input type="text" id="cout" disabled>
+                        <div class="margin flexMini">€</div>
+                        <div class="erreur"></div>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="espaceMini "></div>
+        </div>
+    </form>
+    <div class="espaceHor "></div>
+    <div>
+        <div class="grandEspace"></div>
+        <div class="centre ">
+            <button id="calculer" type="submit">Calculer</button>
+        </div>
+        <div class="espaceMini"></div>
+        <div class="centre">
+            <button id="newCalcul" type="submit">Nouveau Calcul</button>
+        </div>
+        <div class="grandEspace "></div>
+    </div>
+
+
+    <script src="mensualite.js "></script>
+</body>
+
+</html>

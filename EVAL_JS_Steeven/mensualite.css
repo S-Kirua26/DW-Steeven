@@ -1,0 +1,88 @@
+/*************************************************************** GLOBAL *********************************************************/
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
+body,
+header,
+div,
+input {
+    display: flex;
+    flex: 1;
+}
+
+body {
+    background-color: wheat;
+}
+
+fieldset {
+    color: black;
+    flex: 1.5;
+}
+
+label {
+    display: inline-block;
+    width: 12em;
+    text-align: right;
+}
+
+input {
+    margin-left: 3em;
+}
+
+
+/************************************************************* Id et Classe *********************************************************/
+
+.espace {
+    flex: 1;
+}
+
+.grandEspace {
+    flex: 2;
+}
+
+.espaceMini {
+    flex: 0.3;
+}
+
+.espaceHor {
+    padding-top: 2em;
+}
+
+.espaceHorMini {
+    padding-top: 0.5em;
+}
+
+.colonne {
+    flex-direction: column;
+}
+
+.flexMini {
+    flex: 0.3;
+}
+
+.centre {
+    justify-content: center;
+    align-items: center;
+}
+
+.titre {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.margin {
+    margin-left: 1em;
+}
+
+.erreur {
+    color: red;
+    font-weight: bold;
+}
+
+.flexMini {
+    flex: 0.3;
+}

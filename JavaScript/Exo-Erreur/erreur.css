@@ -1,8 +1,9 @@
-body{
+body {
     background-color: rgb(32, 32, 32);
 }
 
-body,div{
+body,
+div {
     display: flex;
     flex: 1;
 }
@@ -11,54 +12,61 @@ body,div{
     background: linear-gradient(#FFFFFF, #ddfcba);
 }
 
-input[required] + span::after{
+input[required]+span::after {
     content: "*";
     color: red;
     padding-left: 0.2em;
 }
 
-.espaceLigth{
+.espaceLigth {
     flex: 0.8;
 }
 
-.colonne{
+.colonne {
     flex-direction: column;
 }
 
-.centre{
+.centre {
     justify-content: center;
     align-items: center;
 }
 
-img{
+img {
     width: 100%;
 }
 
-.titre{
+.titre {
     font-size: 1.6em;
     font-weight: bold;
     padding-bottom: 1em;
 }
 
-label{
-    display:inline-block;
-    width:8em;
-    text-align:right;
+label {
+    display: inline-block;
+    width: 8em;
+    text-align: right;
 }
 
-input{
+input {
     margin-left: 3em;
 }
 
-#divName, #divVille, #divPostal, #divNumTel, #divAdresseMail, #divMotDePasse, #divConfirmMDP, #divCommentaire{
+#divName,
+#divVille,
+#divPostal,
+#divNumTel,
+#divAdresseMail,
+#divMotDePasse,
+#divConfirmMDP,
+#divCommentaire {
     padding-left: 2.7vw;
 }
 
-#divNaissance{
+#divNaissance {
     padding-left: 5.5vw;
 }
 
-.interrogation{
+.interrogation {
     position: absolute;
     visibility: visible;
     width: 1vw;
@@ -66,7 +74,8 @@ input{
     padding-left: 22.5vw;
 }
 
-.boutonVert, .boutonRouge{
+.boutonVert,
+.boutonRouge {
     position: absolute;
     visibility: hidden;
     width: 1vw;
@@ -75,31 +84,29 @@ input{
     padding-left: 0.3vw;
 }
 
-#oeil{
+#oeil {
     position: absolute;
     visibility: hidden;
     width: 1vw;
     height: 1vw;
     padding-left: 9vw;
-    padding-top: 0.6vh; 
+    padding-top: 0.6vh;
 }
 
-.bouton{
+.bouton {
     justify-content: center;
     width: 35vw;
 }
 
-#appuie{
+#appuie {
     margin-right: 1em;
 }
 
-.inputLabel{
+.inputLabel {
     width: 5vw;
 }
 
-.genre{
+.genre {
     color: black;
     margin-left: -6em;
 }
-
-
