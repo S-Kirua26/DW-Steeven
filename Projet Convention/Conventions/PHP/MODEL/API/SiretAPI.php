@@ -1,4 +1,4 @@
 <?php
-$id=$_POST["idEntreprise"];
+$siret=$_POST["numSiret"];
 
 ?>

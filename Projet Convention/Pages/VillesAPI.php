@@ -1,6 +1,7 @@
 <?php
 $id=$_POST["idRegion"];
 $type=$_POST["type"];
+
 if($type=="D")
 {
     echo json_encode(VillesManager::getListByDepartement($id,true));
@@ -21,3 +22,7 @@ function compare($a,$b)
 {
     return $a["nomVille"] > $b["nomVille"];
 }
+
+
+
+

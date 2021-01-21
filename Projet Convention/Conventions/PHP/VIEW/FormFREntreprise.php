@@ -12,7 +12,7 @@
 //     }
 // }
 ?>
-    <form action="" method="POST">
+    <form action="index.php?page=ActionEntreprise&mode=ajouter" method="POST">
         <fieldset>
             <legend>Entreprise</legend>
             <div class="row">
@@ -47,7 +47,7 @@
                 <div class="mini"></div>
                 <div class="info colonne">
                     <label for="ville">Regions :</label>
-                    <select id="region">
+                    <select id="region" name="idRegion">
                         <?php
                         $listeRegion = RegionsManager::getList(false);
                             foreach($listeRegion as $elt)
@@ -75,7 +75,7 @@
             <div class="row">
                 <div class="info colonne">
                     <label for="ville">Ville :</label>
-                    <select id="ville">
+                    <select id="ville" name="idVille">
                         <?php
                             $liste = VillesManager::getListByDepartement(59,false);
                             foreach($liste as $elt){

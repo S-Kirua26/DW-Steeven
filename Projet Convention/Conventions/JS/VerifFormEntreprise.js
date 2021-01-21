@@ -26,6 +26,7 @@ var listeInputs = document.getElementsByTagName("input");
 
 // Valeur Inputs
 siret.addEventListener("keyup", verification);
+siret.addEventListener("keyup", recupValeur);
 raisonSociale.addEventListener("keyup", verification);
 formeJuridique.addEventListener("keyup", verification);
 adresseEntreprise.addEventListener("keyup", verification);
@@ -116,7 +117,7 @@ function changeRegion(e) {
     }
 }
 
-function RecupValeur(e) {
+function recupValeur(e) {
         requ.open('POST', 'index.php?page=SiretAPI', true);
         requ.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
