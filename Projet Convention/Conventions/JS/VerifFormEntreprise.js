@@ -2,17 +2,22 @@
 var siret = document.getElementById("siret");
 var raisonSociale = document.getElementById("raisonSociale");
 var formeJuridique = document.getElementById("formeJuridique");
-var adresse = document.getElementById("adresse");
-var represLegal = document.getElementById("representantLegal");
-var fonction = document.getElementById("fonction");
-var mail = document.getElementById("adresseMail");
-var numTel = document.getElementById("numeroTel");
-var assureur = document.getElementById("assureur");
+var adresseEntreprise = document.getElementById("adresseEntreprise");
+var numTelEnt = document.getElementById("numeroTelEnt");
 var numSocietaire = document.getElementById("numeroSocietaire");
-var tuteur = document.getElementById("tuteur");
+var assureur = document.getElementById("assureur");
+var nomRepres = document.getElementById("nomRepresentant");
+var prenomRepres = document.getElementById("prenomRepresentant");
+var fonctionRepres = document.getElementById("fonctionRepresentant");
+var mailRepres = document.getElementById("adresseMailRepresentant");
+var numTelRepres = document.getElementById("numeroTelRepresentant");
+
+var nomTuteur = document.getElementById("nomTuteur");
+var prenomTuteur = document.getElementById("prenomTuteur");
 var fonctionTuteur = document.getElementById("fonctionTuteur");
 var numTuteur = document.getElementById("numeroTuteur");
 var mailTuteur = document.getElementById("mailTuteur");
+
 var valider = document.getElementById("valide");
 var requ = new XMLHttpRequest();
 
@@ -23,14 +28,18 @@ var listeInputs = document.getElementsByTagName("input");
 siret.addEventListener("keyup", verification);
 raisonSociale.addEventListener("keyup", verification);
 formeJuridique.addEventListener("keyup", verification);
-adresse.addEventListener("keyup", verification);
-represLegal.addEventListener("keyup", verification);
-fonction.addEventListener("keyup", verification);
-mail.addEventListener("keyup", verification);
-numTel.addEventListener("keyup", verification);
-assureur.addEventListener("keyup", verification);
+adresseEntreprise.addEventListener("keyup", verification);
+numTelEnt.addEventListener("keyup", verification);
 numSocietaire.addEventListener("keyup", verification);
-tuteur.addEventListener("keyup", verification);
+assureur.addEventListener("keyup", verification);
+nomRepres.addEventListener("keyup", verification);
+prenomRepres.addEventListener("keyup", verification);
+fonctionRepres.addEventListener("keyup", verification);
+mailRepres.addEventListener("keyup", verification);
+numTelRepres.addEventListener("keyup", verification);
+
+nomTuteur.addEventListener("keyup", verification);
+prenomTuteur.addEventListener("keyup", verification);
 fonctionTuteur.addEventListener("keyup", verification);
 numTuteur.addEventListener("keyup", verification);
 mailTuteur.addEventListener("keyup", verification);
@@ -94,7 +103,6 @@ function ajoutVilles(libelleVille, idVille) {
     ville.appendChild(uneVille);
 }
 
-/**************************FUNCTIONS **********/
 function changeRegion(e) {
     if (region.value != "defaut") // si c'est pas le choix par defaut
     {
@@ -106,4 +114,13 @@ function changeRegion(e) {
         var args = "idRegion=" + id + '&type=' + region.selectedOptions[0].getAttribute("type");
         requ.send(args);
     }
+}
+
+function RecupValeur(e) {
+        requ.open('POST', 'index.php?page=SiretAPI', true);
+        requ.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+        var monInput = e.target;
+        var args = "idEntreprise=" + id;
+        requ.send(args);
 }

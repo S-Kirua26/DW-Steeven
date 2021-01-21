@@ -2,21 +2,18 @@
 
 $mode = $_GET['mode'];
 $tuteur = new Tuteurs($_POST);
+
 $entreprise = new Entreprises($_POST);
+EntreprisesManager::add($entreprise);
 
-switch($mode)
-{
-    case "ajouter":
-    {
-        TuteursManager::add($tuteur);
-        EntreprisesManager::add($entreprise);
-        break;
-    }
+$infosTuteur = TuteursManager::getByEntreprise($tuteur->getIdTuteur());
+TuteursManager::add($infostuteur);
 
-    case "modifier":
-    {
-        TuteursManager::update($tuteur);
-        EntreprisesManager::update($entreprise);
-        break;
-    }
+
+    // case "modifier":
+    // {
+    //     TuteursManager::update($tuteur);
+    //     EntreprisesManager::update($entreprise);
+    //     break;
+    // }
 }
