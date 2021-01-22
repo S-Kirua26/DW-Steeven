@@ -76,16 +76,18 @@ class EntreprisesManager
 		}
 		return $liste;
 	}
-	public static function getByNumSiret($numSiretEnt)
+	public static function getByNumSiret($numSiretEnt,$api)
     {
         $db = DbConnect::getDb();
         $num = $numSiretEnt;
-        $liste = [];
+		$liste = [];
         $q = $db->query("SELECT * FROM entreprises where numSiretEnt=".$num);
         $results = $q->fetch(PDO::FETCH_ASSOC);
         if($results != false)
         {
-            return new Entreprises($results);
+			
+			if(!$api) return new Entreprises($results);
+			return $results;
         }
         else
         {

@@ -1,11 +1,11 @@
 <?php
 
-$entreprise = EntreprisesManager::getByNumSiret($_POST["numSiretENT"]);
+$entreprise = EntreprisesManager::getByNumSiret($_POST["numSiretENT"],false);
 if($entreprise == null) // si l'entreprise n'est pas créée alors on l'a créee
 {
     $entreprise = new Entreprises($_POST);
     EntreprisesManager::add($entreprise);
-    $entreprise = EntreprisesManager::getByNumSiret($_POST["numSiretENT"]);
+    $entreprise = EntreprisesManager::getByNumSiret($_POST["numSiretENT"],false);
 }
 else{ // si elle est créée alors on la modifie si il y a à modifier
     $idEntreprise = $entreprise->getIdEntreprise();

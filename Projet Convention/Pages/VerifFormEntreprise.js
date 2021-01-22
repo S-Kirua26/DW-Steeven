@@ -20,13 +20,14 @@ var mailTuteur = document.getElementById("mailTuteur");
 
 var valider = document.getElementById("valide");
 var requ = new XMLHttpRequest();
+var requ1 = new XMLHttpRequest();
 
 // Liste Inputs
 var listeInputs = document.getElementsByTagName("input");
 
 // Valeur Inputs
 siret.addEventListener("keyup", verification);
-siret.addEventListener("keyup", recupValeur);
+siret.addEventListener("input", rechercheEntreprise);
 raisonSociale.addEventListener("keyup", verification);
 formeJuridique.addEventListener("keyup", verification);
 adresseEntreprise.addEventListener("keyup", verification);
@@ -117,11 +118,40 @@ function changeRegion(e) {
     }
 }
 
-function recupValeur(e) {
-        requ.open('POST', 'index.php?page=SiretAPI', true);
-        requ.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-
-        var monInput = e.target;
-        var args = "idEntreprise=" + id;
-        requ.send(args);
+function rechercheEntreprise(event)
+{
+    var siretValue = siret.value;
+    requ1.open('POST', 'index.php?page=SiretAPI', true);
+    requ1.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    var args = "numeroSiret=" + siretValue;
+    requ1.send(args);
 }
+
+
+requ1.onreadystatechange = function(event) {
+    // XMLHttpRequest.DONE === 4
+    if (this.readyState === XMLHttpRequest.DONE) {
+        if (this.status === 200) {
+            console.log("Réponse reçue: %s", this.responseText);
+            reponse1=JSON.parse(this.responseText);
+            console.log(reponse1);
+            document.getElementById("raisonSociale").value = reponse1.raisonSociale;
+            document.getElementById("formeJuridique").value = reponse1.statutJuridiqueEnt;
+            document.getElementById("adresseEntreprise").value = reponse1.adresseEnt;
+            document.getElementById("numeroTelEnt").value = reponse1.telEnt;
+            document.getElementById("numeroSocietaire").value = reponse1.numSocietaire;
+            document.getElementById("assureur").value = reponse1.assureurEnt;
+            document.getElementById("nomRepresentant").value = reponse1.nomRepresentant;
+            document.getElementById("prenomRepresentant").value = reponse1.prenomRepresentant;
+            document.getElementById("fonctionRepresentant").value = reponse1.fctRepresentant;
+            document.getElementById("adresseMailRepresentant").value = reponse1.mailRepresentant;
+            document.getElementById("numeroTelRepresentant").value = reponse1.telRepresentant;
+        //on traite les éléments de la liste ....
+        } else {
+            console.log("Status de la réponse: %d (%s)", this.status, this.statusText);
+        }
+    }
+};
+
+
+
