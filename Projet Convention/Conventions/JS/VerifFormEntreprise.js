@@ -22,6 +22,12 @@ var valider = document.getElementById("valide");
 var requ = new XMLHttpRequest();
 var requ1 = new XMLHttpRequest();
 
+var villeChoisie = "";
+var ville = document.getElementById("ville");
+
+var region = document.getElementById("region");
+region.addEventListener("change", changeRegion);
+
 // Liste Inputs
 var listeInputs = document.getElementsByTagName("input");
 
@@ -74,11 +80,7 @@ function verification(event) {
     validation();
 }
 
-var ville = document.getElementById("ville");
 
-
-var region = document.getElementById("region");
-region.addEventListener("change", changeRegion);
 
 requ.onreadystatechange = function(event) {
     // XMLHttpRequest.DONE === 4
@@ -91,6 +93,9 @@ requ.onreadystatechange = function(event) {
             for (let i = 0; i < reponse.length; i++) { //on traite les éléments de la liste ....
                 ajoutVilles(reponse[i].nomVille + '  ' + reponse[i].codePostal, reponse[i].idVille);
             }
+            if (villeChoisie != "") {
+                ville.value = villeChoisie;
+            }
         } else {
             console.log("Status de la réponse: %d (%s)", this.status, this.statusText);
         }
@@ -101,6 +106,7 @@ function ajoutVilles(libelleVille, idVille) {
 
     let uneVille = document.createElement("option");
     uneVille.setAttribute("id", idVille);
+    uneVille.value = idVille;
     uneVille.innerHTML = libelleVille;
     ville.appendChild(uneVille);
 }
@@ -118,8 +124,7 @@ function changeRegion(e) {
     }
 }
 
-function rechercheEntreprise(event)
-{
+function rechercheEntreprise(event) {
     var siretValue = siret.value;
     requ1.open('POST', 'index.php?page=SiretAPI', true);
     requ1.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -133,25 +138,26 @@ requ1.onreadystatechange = function(event) {
     if (this.readyState === XMLHttpRequest.DONE) {
         if (this.status === 200) {
             console.log("Réponse reçue: %s", this.responseText);
-            reponse1=JSON.parse(this.responseText);
+            reponse1 = JSON.parse(this.responseText)["entreprise"];
+            reponse2 = JSON.parse(this.responseText)["ville"];
+            document.getElementById("region").value = reponse2.idDepartement;
+            changeRegion();
             console.log(reponse1);
             document.getElementById("raisonSociale").value = reponse1.raisonSociale;
             document.getElementById("formeJuridique").value = reponse1.statutJuridiqueEnt;
             document.getElementById("adresseEntreprise").value = reponse1.adresseEnt;
             document.getElementById("numeroTelEnt").value = reponse1.telEnt;
             document.getElementById("numeroSocietaire").value = reponse1.numSocietaire;
+            villeChoisie = reponse1.idVille;
             document.getElementById("assureur").value = reponse1.assureurEnt;
             document.getElementById("nomRepresentant").value = reponse1.nomRepresentant;
             document.getElementById("prenomRepresentant").value = reponse1.prenomRepresentant;
             document.getElementById("fonctionRepresentant").value = reponse1.fctRepresentant;
             document.getElementById("adresseMailRepresentant").value = reponse1.mailRepresentant;
             document.getElementById("numeroTelRepresentant").value = reponse1.telRepresentant;
-        //on traite les éléments de la liste ....
+            //on traite les éléments de la liste ....
         } else {
             console.log("Status de la réponse: %d (%s)", this.status, this.statusText);
         }
     }
 };
-
-
-
