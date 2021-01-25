@@ -65,7 +65,7 @@
                 <label for="ville">Ville :</label>
                 <select id="ville">
                     <?php
-                        $liste = VillesManager::getListByDepartement(59);
+                        $liste = VillesManager::getListByDepartement(59,false);
                         foreach($liste as $elt){
                             echo '<option value="'.$elt->getIdVille().'">'.$elt->getNomVille().'  '.$elt->getCodePostal().'</option>';
                         }
