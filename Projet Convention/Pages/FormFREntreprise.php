@@ -24,6 +24,7 @@
                 </div>
             <div class="demi"></div>
             </div>
+        <div class="colonne" id="test">
             <div class="row">
                 <div class="info colonne">
                     <label for="RaisonSociale">Raison Sociale :</label>
@@ -143,6 +144,7 @@
                 <div class="mini"></div>
                 <div class="info colonne"></div>
             </div>
+        </div>
         </fieldset>
 
         <div class="espaceHor"></div>

@@ -27,7 +27,7 @@ class VillesManager
  		$db=DbConnect::getDb();
 		$db->exec("DELETE FROM Villes WHERE idVille=" .$obj->getIdVille());
 	}
-	public static function findById($id)
+	public static function findById($id,$api)
 	{
  		$db=DbConnect::getDb();
 		$id = (int) $id;
@@ -35,7 +35,13 @@ class VillesManager
 		$results = $q->fetch(PDO::FETCH_ASSOC);
 		if($results != false)
 		{
-			return new Villes($results);
+			if($api)
+			{
+				return $results;
+			}
+			else{
+				return new Villes($results);
+			}
 		}
 		else
 		{

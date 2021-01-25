@@ -80,7 +80,6 @@ class EntreprisesManager
     {
         $db = DbConnect::getDb();
         $num = $numSiretEnt;
-		$liste = [];
         $q = $db->query("SELECT * FROM entreprises where numSiretEnt=".$num);
         $results = $q->fetch(PDO::FETCH_ASSOC);
         if($results != false)
