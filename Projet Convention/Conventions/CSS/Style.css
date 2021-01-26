@@ -222,8 +222,10 @@ footer {
 
 /****************** Provisoire **********************/
 
-
-/** site pour styliser ses input range: http://danielstern.ca/range.css/#/ **/
+.blanc {
+    color: var(--CouleurTexte);
+    font-size: 1.2em;
+}
 
 
 /************* Changement style input range pour Chrome ***********/
@@ -313,8 +315,7 @@ input[type=range]::-ms-thumb {
     cursor: pointer;
 }
 
-
-/* datalist {
+datalist {
     display: flex;
     color: var(--CouleurTexte);
-} */
+}
