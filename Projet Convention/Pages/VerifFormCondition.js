@@ -86,7 +86,7 @@ function creerLigne(nb) {
     divNeutreDeux.appendChild(divADev);
 
     var labelADev = document.createElement("label");
-    labelADev.textContent = "A développer";
+    labelADev.textContent = "A developper";
     divADev.appendChild(labelADev);
 
     var inputADev = document.createElement("input");

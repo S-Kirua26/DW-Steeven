@@ -49,31 +49,14 @@
                 </div>
             </div>
 
-            <div class="row">
-                <div class="info colonne">
-                    <div id="libelleAcquis" class="blanc centre">
-                        Les tests de ouf
-                    </div>
-                </div>
-
-                <div>
-                    <div>
-                        <label>Oui</label>
-                        <input type="radio" name="valeurAcquis" value="Oui" checked>
-                    </div>
-                    <div>
-                        <label>Non</label>
-                        <input type="radio" name="valeurAcquis" value="Non">
-                    </div>
-                    <div>
-                        <label>A développer</label>
-                        <input type="radio" name="valeurAcquis" value="A developper">
-                    </div>
-                    <div>
-                        <label>N'a pas pu être observé</label>
-                        <input type="radio" name="valeurAcquis" value="N'a pas pu être observé">
-                    </div>
-                </div>
+            <?php
+                // for($i=0; $i<count();$i++)
+                // $valeursAcquis = ValeursAcquisManager::findById();
+                // echo '<input type="hidden" name = "idLibelleComportementProfessionnel'.$i.'" value='.$valeurs->getIdLibelleComportementProfessionnel().'>';
+                // echo '<input type="hidden" name = "idComportementProfessionnel'.$i.'" value='.$valeurs->getIdComportementProfessionnel().'>';
+            ?>
+            <div class="row blanc colonne" id="test">
+                <!-- la création des inputs se fait dans la partie javascript --> 
             </div>
 
             <div class="row">
