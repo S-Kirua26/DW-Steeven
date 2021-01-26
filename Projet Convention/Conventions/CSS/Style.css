@@ -314,8 +314,3 @@ input[type=range]::-ms-thumb {
     border-radius: 0.5em;
     cursor: pointer;
 }
-
-datalist {
-    display: flex;
-    color: var(--CouleurTexte);
-}
