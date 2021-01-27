@@ -49,12 +49,6 @@
                 </div>
             </div>
 
-            <?php
-                // for($i=0; $i<count();$i++)
-                // $valeursAcquis = ValeursAcquisManager::findById();
-                // echo '<input type="hidden" name = "idLibelleComportementProfessionnel'.$i.'" value='.$valeurs->getIdLibelleComportementProfessionnel().'>';
-                // echo '<input type="hidden" name = "idComportementProfessionnel'.$i.'" value='.$valeurs->getIdComportementProfessionnel().'>';
-            ?>
             <div class="row blanc colonne" id="test">
                 <!-- la création des inputs se fait dans la partie javascript --> 
             </div>

@@ -65,11 +65,12 @@ $routes=[
 	"FormEntreprise" => ["PHP/VIEW/", "FormEntreprise", "Gestion des Entreprises",false],
 	"ActionEntreprise" => ["PHP/VIEW/", "ActionEntreprise", "Gestion des Entreprises",false],
 
-	"ActionCondition" => ["PHP/VIEW/", "ActionCondition", "Gestion des Entreprises",false],
+	"ActionCondition" => ["PHP/VIEW/", "ActionCondition", "Gestion des evaluations",false],
 
 	/* API */
-	"VillesAPI" => ["PHP/MODEL/API/", "VillesAPI", "Gestion des Entreprises",true],
+	"VillesAPI" => ["PHP/MODEL/API/", "VillesAPI", "Gestion des villes",true],
 	"SiretAPI" => ["PHP/MODEL/API/", "SiretAPI", "Gestion des Entreprises",true],
+	"ValeursAcquisAPI" => ["PHP/MODEL/API/", "ValeursAcquisAPI", "Gestion des evaluations",true],
 
 
 ];
