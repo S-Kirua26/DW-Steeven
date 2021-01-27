@@ -11,7 +11,7 @@ if (isset($page))
         case "FormFRStagiaire" : echo '<script src="./JS/VerifFormStagiaire.js"></script>';break;
         case "FormFREntreprise" : echo '<script src="./JS/VerifFormEntreprise.js"></script>';break;
         case "ListeUtilisateurs" : echo '<script src="./JS/FiltreUtilisateurs.js"></script>';break;
-        case "FormFRCondition" : echo '<script src="./JS/VerifFormCondition.js"></script>';break;
+        case "FormFREvaluation" : echo '<script src="./JS/VerifFormEvaluation.js"></script>';break;
     }
 }
       ?>

@@ -23,25 +23,16 @@ var row = document.getElementById("test");
 var requ = new XMLHttpRequest();
 var nbLignes = 1;
 
-// Valeurs Inputs
-// ponctualite.addEventListener("", verification);
-// presentation.addEventListener("", verification);
-// adaptation.addEventListener("", verification);
-// relationPro.addEventListener("", verification);
-// communication.addEventListener("", verification);
-// tacheAutonome.addEventListener("", verification);
-// respectConsigne.addEventListener("", verification);
-// respectMateriel.addEventListener("", verification);
-// agir.addEventListener("", verification);
-// respectCritere.addEventListener("", verification);
-// respectHygiene.addEventListener("", verification);
-
-creerLigne(nbLignes);
+creerLigne(nbLignes); // permet de creer une ligne au moins une fois
 
 function creerLigne(nb) {
 
     var divContenu = document.createElement("div");
     row.appendChild(divContenu);
+
+    var divEspace = document.createElement("div");
+    divEspace.setAttribute("class", "mini");
+    divContenu.appendChild(divEspace);
 
     // inputs type texte
     var divNeutre = document.createElement("div");
@@ -119,6 +110,9 @@ function creerLigne(nb) {
     inputObserve.addEventListener("click", clickAcquis);
     divObserve.appendChild(inputObserve);
 
-    // var ordreAcquis = nb;
+    var divEspace = document.createElement("div");
+    divEspace.setAttribute("class", "mini");
+    divContenu.appendChild(divEspace);
+
     nbLignes++;
 }

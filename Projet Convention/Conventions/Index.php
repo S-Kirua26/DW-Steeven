@@ -20,7 +20,7 @@ $lang=isset($_SESSION['lang']) ? $_SESSION['lang'] : 'FR';
 /******Fin des langues******/
 
 $routes=[
-	"default"=>["PHP/VIEW/","FormFRCondition","Accueil",false],
+	"default"=>["PHP/VIEW/","FormFREvaluation","Accueil",false],
 	// "TestanimationManager"=>["PHP/MODEL/TESTMANAGER/","TestanimationManager","Test de animation"],
 	// "TestcomportementsprofessionnelsManager"=>["PHP/MODEL/TESTMANAGER/","TestcomportementsprofessionnelsManager","Test de comportementsprofessionnels"],
 	// "TestentreprisesManager"=>["PHP/MODEL/TESTMANAGER/","TestentreprisesManager","Test de entreprises"],
@@ -65,12 +65,11 @@ $routes=[
 	"FormEntreprise" => ["PHP/VIEW/", "FormEntreprise", "Gestion des Entreprises",false],
 	"ActionEntreprise" => ["PHP/VIEW/", "ActionEntreprise", "Gestion des Entreprises",false],
 
-	"ActionCondition" => ["PHP/VIEW/", "ActionCondition", "Gestion des evaluations",false],
+	"ActionEvaluation" => ["PHP/VIEW/", "ActionEvaluation", "Gestion des evaluations",false],
 
 	/* API */
 	"VillesAPI" => ["PHP/MODEL/API/", "VillesAPI", "Gestion des villes",true],
 	"SiretAPI" => ["PHP/MODEL/API/", "SiretAPI", "Gestion des Entreprises",true],
-	"ValeursAcquisAPI" => ["PHP/MODEL/API/", "ValeursAcquisAPI", "Gestion des evaluations",true],
 
 
 ];

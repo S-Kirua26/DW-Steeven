@@ -1,3 +1,12 @@
+// Les fonctions
+function clickAcquis(e) { // fonction permettant de créer une ligne si l'une des valeurs des inputs radio est renseignés
+    var radio = e.target;
+    var numLigne = radio.name.substring(13);
+    if (numLigne == nbLignes - 1) {
+        creerLigne(nbLignes);
+    }
+}
+
 // Les Inputs
 var ponctualite = document.getElementById("ponctualite");
 var presentation = document.getElementById("presentation");
@@ -11,22 +20,10 @@ var agir = document.getElementById("agir");
 var respectCritere = document.getElementById("respectCritere");
 var respectHygiene = document.getElementById("respectHygiene");
 var row = document.getElementById("test");
+var requ = new XMLHttpRequest();
 var nbLignes = 1;
 
-// Valeurs Inputs
-// ponctualite.addEventListener("", verification);
-// presentation.addEventListener("", verification);
-// adaptation.addEventListener("", verification);
-// relationPro.addEventListener("", verification);
-// communication.addEventListener("", verification);
-// tacheAutonome.addEventListener("", verification);
-// respectConsigne.addEventListener("", verification);
-// respectMateriel.addEventListener("", verification);
-// agir.addEventListener("", verification);
-// respectCritere.addEventListener("", verification);
-// respectHygiene.addEventListener("", verification);
-
-creerLigne(nbLignes);
+creerLigne(nbLignes); // permet de creer une ligne au moins une fois
 
 function creerLigne(nb) {
 
@@ -51,7 +48,6 @@ function creerLigne(nb) {
     // inputs type radio
     var divNeutreDeux = document.createElement("div");
     divNeutreDeux.setAttribute("class", "centre double");
-    console.log(divNeutreDeux);
     divContenu.appendChild(divNeutreDeux);
 
     var divOui = document.createElement("div");
@@ -86,7 +82,7 @@ function creerLigne(nb) {
     divNeutreDeux.appendChild(divADev);
 
     var labelADev = document.createElement("label");
-    labelADev.textContent = "A developper";
+    labelADev.textContent = "A développer";
     divADev.appendChild(labelADev);
 
     var inputADev = document.createElement("input");
@@ -111,13 +107,4 @@ function creerLigne(nb) {
     divObserve.appendChild(inputObserve);
 
     nbLignes++;
-}
-
-function clickAcquis(e) {
-    var radio = e.target;
-    var numLigne = radio.name.substring(13);
-    console.log(numLigne);
-    if (numLigne == nbLignes - 1) {
-        creerLigne(nbLignes);
-    }
 }
