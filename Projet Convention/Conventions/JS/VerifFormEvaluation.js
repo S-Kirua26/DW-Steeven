@@ -7,23 +7,46 @@ function clickAcquis(e) { // fonction permettant de créer une ligne si l'une de
     }
 }
 
-// Les Inputs
-var ponctualite = document.getElementById("ponctualite");
-var presentation = document.getElementById("presentation");
-var adaptation = document.getElementById("adaptation");
-var relationPro = document.getElementById("relationPro");
-var communication = document.getElementById("commuication");
-var tacheAutonome = document.getElementById("tacheAutonome");
-var respectConsigne = document.getElementById("respectConsigne");
-var respectMateriel = document.getElementById("respectMateriel");
-var agir = document.getElementById("agir");
-var respectCritere = document.getElementById("respectCritere");
-var respectHygiene = document.getElementById("respectHygiene");
-var row = document.getElementById("test");
-var requ = new XMLHttpRequest();
-var nbLignes = 1;
+function validation() { // fonction permettant d'interdir l'envoie des données tant queles champs ne sont pas valide
+    valider.disabled = false;
+    for (let i = 0; i < listeInputs.length; i++) {
+        let input = listeInputs[i];
+        if (input.value == "") {
+            valider.disabled = true;
+        }
+    }
+}
 
-creerLigne(nbLignes); // permet de creer une ligne au moins une fois
+function verification(event) { // fonction permettant de vérifier la validité des différents champs
+    event.target.parentNode.parentNode.parentNode; // pour l'input texte
+    console.log(event.target);
+    if (monInput.value == '') {
+        monInput.style.border = "2px solid orange";
+    } else if (!monInput.checkValidity()) {
+        monInput.style.class = "incorrect";
+    } else {
+        monInput.style.border = "1px solid var(--BordureBouton)";
+    }
+    validation();
+}
+
+
+function verifRadio(event) {
+
+    verification();
+}
+
+function AjoutEvenement() {
+    var libAcquis = document.getElementsByClassName("libelle");
+    var libRadio = document.getElementsByClassName("radio");
+    for (let i = 0; i < libAcquis.length; i++) {
+        libAcquis[i].addEventListener("input", verification);
+    }
+
+    for (let i = 0; i < libRadio.length; i++) {
+        libRadio[i].addEventListener("input", verification);
+    }
+}
 
 function creerLigne(nb) {
 
@@ -37,7 +60,6 @@ function creerLigne(nb) {
     // inputs type texte
     var divNeutre = document.createElement("div");
     divNeutre.setAttribute("class", "info colonne");
-    console.log(divNeutre);
     divContenu.appendChild(divNeutre);
 
     var libelleA = document.createElement("div");
@@ -46,8 +68,12 @@ function creerLigne(nb) {
 
     var libelleAcquis = document.createElement("input");
     libelleAcquis.setAttribute("type", "texte");
+    libelleAcquis.setAttribute("class", "libelle");
+    libelleAcquis.setAttribute("pattern", "^([0-9a-zA-Z'àâéèêôùûçÀÂÉÈÔÙÛÇ\s-]{1,150})$");
     libelleAcquis.setAttribute("name", "libelleAcquis_" + nb)
     libelleA.appendChild(libelleAcquis);
+
+    AjoutEvenement();
 
     // inputs type radio
     var divNeutreDeux = document.createElement("div");
@@ -63,6 +89,7 @@ function creerLigne(nb) {
 
     var inputOui = document.createElement("input");
     inputOui.setAttribute("type", "radio");
+    inputOui.setAttribute("class", "radio");
     inputOui.setAttribute("name", "valeurAcquis_" + nb);
     inputOui.setAttribute("value", 1);
     inputOui.addEventListener("click", clickAcquis);
@@ -77,6 +104,7 @@ function creerLigne(nb) {
 
     var inputNon = document.createElement("input");
     inputNon.setAttribute("type", "radio");
+    inputNon.setAttribute("class", "radio");
     inputNon.setAttribute("name", "valeurAcquis_" + nb);
     inputNon.setAttribute("value", 2);
     inputNon.addEventListener("click", clickAcquis);
@@ -91,6 +119,7 @@ function creerLigne(nb) {
 
     var inputADev = document.createElement("input");
     inputADev.setAttribute("type", "radio");
+    inputADev.setAttribute("class", "radio");
     inputADev.setAttribute("name", "valeurAcquis_" + nb);
     inputADev.setAttribute("value", 3);
     inputADev.addEventListener("click", clickAcquis);
@@ -105,6 +134,7 @@ function creerLigne(nb) {
 
     var inputObserve = document.createElement("input");
     inputObserve.setAttribute("type", "radio");
+    inputObserve.setAttribute("class", "radio");
     inputObserve.setAttribute("name", "valeurAcquis_" + nb);
     inputObserve.setAttribute("value", 4);
     inputObserve.addEventListener("click", clickAcquis);
@@ -116,3 +146,23 @@ function creerLigne(nb) {
 
     nbLignes++;
 }
+
+// Les Inputs
+var ponctualite = document.getElementById("ponctualite");
+var presentation = document.getElementById("presentation");
+var adaptation = document.getElementById("adaptation");
+var relationPro = document.getElementById("relationPro");
+var communication = document.getElementById("commuication");
+var tacheAutonome = document.getElementById("tacheAutonome");
+var respectConsigne = document.getElementById("respectConsigne");
+var respectMateriel = document.getElementById("respectMateriel");
+var agir = document.getElementById("agir");
+var respectCritere = document.getElementById("respectCritere");
+var respectHygiene = document.getElementById("respectHygiene");
+var row = document.getElementById("test");
+var valider = document.getElementById("valide");
+var nbLignes = 1;
+
+var listeInputs = document.getElementsByTagName("input");
+
+creerLigne(nbLignes); // permet de creer une ligne au moins une fois

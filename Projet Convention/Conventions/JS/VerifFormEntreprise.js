@@ -1,4 +1,4 @@
-function validation() { // fonction permettant d'intrdir l'envoie des données tant queles champs ne sont pas valide
+function validation() { // fonction permettant d'interdir l'envoie des données tant queles champs ne sont pas valide
     valider.disabled = false;
     for (let i = 0; i < listeInputs.length; i++) {
         let input = listeInputs[i];

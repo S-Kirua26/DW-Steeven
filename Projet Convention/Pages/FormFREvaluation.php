@@ -18,6 +18,8 @@
                     echo '<input type="hidden" name = "idStage" value='.$valeurs->getIdStage().'>';
                     
                 echo '<div class="row">
+                    <div class="mini"></div>
+
                     <div class="info colonne">
                         <div id="libelleComportement" class="blanc centre">
                              <div>'.$libelle->getLibelleComportement().'</div>
@@ -34,6 +36,8 @@
                         <option value="5"></option>
                         </datalist>
                     </div>
+
+                    <div class="mini"></div>
                 </div>';
                 }
             ?>
