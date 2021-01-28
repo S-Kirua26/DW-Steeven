@@ -18,8 +18,13 @@ function validation() { // fonction permettant d'interdir l'envoie des données 
 }
 
 function verification(event) { // fonction permettant de vérifier la validité des différents champs
-    event.target.parentNode.parentNode.parentNode; // pour l'input texte
-    console.log(event.target);
+    // if (event.target.getAttribute("type") == "text") {
+    //     var ligne = event.target.parentNode.parentNode.parentNode; // pour l'input texte
+    // } else {
+    //     var ligne = event.target.parentNode.parentNode.parentNode.parentNode; // pour le radio bouton
+    // }
+
+    var monInput = event.target;
     if (monInput.value == '') {
         monInput.style.border = "2px solid orange";
     } else if (!monInput.checkValidity()) {
@@ -32,7 +37,6 @@ function verification(event) { // fonction permettant de vérifier la validité 
 
 
 function verifRadio(event) {
-
     verification();
 }
 

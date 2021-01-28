@@ -60,7 +60,7 @@
             <div class="row">
             <div></div>
             <div class="info colonne">
-                <button id ="valide" class="bouton" type="submit"><i class="far fa-check-circle"></i> Valider</button>             
+                <button id ="valide" class="bouton" type="submit" disabled><i class="far fa-check-circle"></i> Valider</button>             
             </div>
             <div></div>
         </div>

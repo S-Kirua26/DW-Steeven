@@ -29,9 +29,9 @@ else{ // si il est créé alors on le modifie si il y a à modifier
     TuteursManager::update($test);
 }
 
-    $etapeStage = new Stages($_POST);
-    $etapeStage->setEtape(2);
-    StagesManager::update($etapeStage);
+    // $etapeStage = new Stages($_POST);
+    // $etapeStage->setEtape(2);
+    // StagesManager::update($etapeStage);
     
 
 
