@@ -28,13 +28,13 @@
             <div class="row">
                 <div class="info colonne">
                     <label for="RaisonSociale">Raison Sociale :</label>
-                    <input type="text" id="raisonSociale" name="raisonSociale" title="Veuillez renseigner votre raison sociale" required pattern="[a-zA-Z]{3,}">
+                    <input type="text" id="raisonSociale" name="raisonSociale" title="Veuillez renseigner votre raison sociale" required pattern="[a-zA-Z ]{3,}">
                     <div id="divRaisonSociale" class="message erreur"></div>
                 </div>
                 <div class="mini"></div>
                 <div class="info colonne">
                     <label for="juridique">Forme Juridique :</label>
-                    <input type="text" id="formeJuridique" name="statutJuridiqueENT" title="Veuillez renseigner votre forme juridique" required pattern="[a-zA-Z]{1,}" value="">
+                    <input type="text" id="formeJuridique" name="statutJuridiqueENT" title="Veuillez renseigner votre forme juridique" required pattern="[a-zA-Z ]{1,}" value="">
                     <div id="divFormeJuridique" class="message erreur"></div>
                 </div>
             </div>
@@ -42,7 +42,7 @@
             <div class="row">
                 <div class="info colonne">
                     <label for="adresse">Adresse Entreprise:</label>
-                    <input type="text" id="adresseEntreprise" name="adresseENT" value="" title="Veuillez renseigner votre adresse" required pattern="^([0-9a-zA-Z'àâéèêôùûçÀÂÉÈÔÙÛÇ\s-]{1,150})$">
+                    <input type="text" id="adresseEntreprise" name="adresseENT" value="" title="Veuillez renseigner votre adresse" required pattern="^([0-9a-zA-Z'àâéèêôùûçÀÂÉÈÔÙÛÇ\s-.]{1,150})$">
                     <div id="divAdresseEntreprise" class="message erreur"></div>
                 </div>
                 <div class="mini"></div>
@@ -102,7 +102,7 @@
                 <div class="mini"></div>
                 <div class="info colonne">
                     <label for="assureur">Assureur Entreprise:</label>
-                    <input type="text" id="assureur" name="assureurENT" value="" required title="Veuillez renseigner un assureur" pattern="[a-zA-Z]{3,}" > 
+                    <input type="text" id="assureur" name="assureurENT" value="" required title="Veuillez renseigner un assureur" pattern="[a-zA-Z ]{3,}" > 
                     <div id="divAssureur" class="message erreur"></div>               
                 </div>
             </div>
@@ -124,7 +124,7 @@
             <div class="row">
                 <div class="info colonne">
                     <label for="fonction">Fonction Representant:</label>
-                    <input type="text" id="fonctionRepresentant" name="fctRepresentant" value="" required title="Veuillez renseigner la fonction du représentant" pattern="[a-zA-Z]{3,}" >
+                    <input type="text" id="fonctionRepresentant" name="fctRepresentant" value="" required title="Veuillez renseigner la fonction du représentant" pattern="[a-zA-Z ]{3,}" >
                     <div id="divFonctionRepresentant" class="message erreur"></div>
                 </div>
                 <div class="mini"></div>
