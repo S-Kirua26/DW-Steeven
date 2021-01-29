@@ -16,3 +16,5 @@
     $etapeStage->setEtape(5);
     StagesManager::update($etapeStage);
 
+    header("location:Index.php?page=FormFREvaluation");
+

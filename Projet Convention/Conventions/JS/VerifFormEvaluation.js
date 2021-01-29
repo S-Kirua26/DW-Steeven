@@ -1,8 +1,16 @@
 // Les fonctions
-function clickAcquis(e) { // fonction permettant de créer une ligne si l'une des valeurs des inputs radio est renseignés
-    var radio = e.target;
+function clickAcquis(event) { // fonction permettant de créer une ligne si l'une des valeurs des inputs radio est renseignés
+    var radio = event.target;
+    var ligne = event.target.parentNode.parentNode.parentNode.parentNode;
     var numLigne = radio.name.substring(13);
-    if (numLigne == nbLignes - 1) {
+    var radiobouton = document.getElementsByClassName("radio");
+    // if (numLigne == nbLignes - 1) {
+    //     creerLigne(nbLignes);
+    //     verification();
+    // }
+    console.log(numLigne);
+    if (ligne.children[0].children[1].children[0].children[0].value != "") {
+        console.log("test")
         creerLigne(nbLignes);
     }
 }
@@ -24,31 +32,33 @@ function verification(event) { // fonction permettant de vérifier la validité 
     //     var ligne = event.target.parentNode.parentNode.parentNode.parentNode; // pour le radio bouton
     // }
 
-    var monInput = event.target;
-    if (monInput.value == '') {
-        monInput.style.border = "2px solid orange";
-    } else if (!monInput.checkValidity()) {
-        monInput.style.class = "incorrect";
-    } else {
-        monInput.style.border = "1px solid var(--BordureBouton)";
+    for (let i = 0; i < libRadio.length; i++) {
+        libRadio[i].addEventListener("input", function() {
+            if (libRadio[i].checked) {
+                flag = true;
+            } else {
+                flag = false;
+            }
+        })
     }
-    validation();
-}
 
-
-function verifRadio(event) {
-    verification();
+    for (let j = 0; j < nbLignes - 1; j++) {
+        var monInput = event.target;
+        if (monInput.value == '' && flag == true) {
+            monInput.style.border = "2px solid orange";
+        } else if (!monInput.checkValidity()) {
+            monInput.style.class = "incorrect";
+        } else {
+            monInput.style.border = "1px solid var(--BordureBouton)";
+        }
+        validation();
+    }
 }
 
 function AjoutEvenement() {
     var libAcquis = document.getElementsByClassName("libelle");
-    var libRadio = document.getElementsByClassName("radio");
     for (let i = 0; i < libAcquis.length; i++) {
-        libAcquis[i].addEventListener("input", verification);
-    }
-
-    for (let i = 0; i < libRadio.length; i++) {
-        libRadio[i].addEventListener("input", verification);
+        libAcquis[i].addEventListener("input", clickAcquis);
     }
 }
 
@@ -168,5 +178,6 @@ var valider = document.getElementById("valide");
 var nbLignes = 1;
 
 var listeInputs = document.getElementsByTagName("input");
+var libRadio = document.getElementsByClassName("radio");
 
 creerLigne(nbLignes); // permet de creer une ligne au moins une fois

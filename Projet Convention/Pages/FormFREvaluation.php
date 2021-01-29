@@ -1,6 +1,6 @@
 <section>
 
-    <form action="index.php?page=ActionCondition&mode=ajouter" method="POST">
+    <form action="index.php?page=ActionEvaluation&mode=ajouter" method="POST">
         <div class="contenu colonne">
             <div class="row">
                 <div class="info colonne titreColonne">
