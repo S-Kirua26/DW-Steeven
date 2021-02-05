@@ -3,15 +3,9 @@ function clickAcquis(event) { // fonction permettant de créer une ligne si l'un
     var radio = event.target;
     var ligne = event.target.parentNode.parentNode.parentNode.parentNode;
     var numLigne = radio.name.substring(13);
-    var radiobouton = document.getElementsByClassName("radio");
-    // if (numLigne == nbLignes - 1) {
-    //     creerLigne(nbLignes);
-    //     verification();
-    // }
-    console.log(numLigne);
-    if (ligne.children[0].children[1].children[0].children[0].value != "") {
-        console.log("test")
+    if (numLigne == nbLignes - 1) {
         creerLigne(nbLignes);
+        verification();
     }
 }
 
@@ -58,7 +52,7 @@ function verification(event) { // fonction permettant de vérifier la validité 
 function AjoutEvenement() {
     var libAcquis = document.getElementsByClassName("libelle");
     for (let i = 0; i < libAcquis.length; i++) {
-        libAcquis[i].addEventListener("input", clickAcquis);
+        libAcquis[i].addEventListener("input", verification);
     }
 }
 

@@ -1,5 +1,4 @@
 /********* Global **********/
-
 body {
     min-height: 100%;
     background: var(--FondPage);
@@ -73,9 +72,7 @@ section {
     margin: 0.3em;
 }
 
-
 /******* Form ********/
-
 label {
     color: var(--CouleurTexte);
     text-align: center;
@@ -85,14 +82,17 @@ label {
     align-items: center;
 }
 
+.centerSelf {
+    align-self: center;
+}
+
+
 a {
     color: var(--CouleurTexte);
     text-decoration: none
 }
 
-
 /******* Boutons ********/
-
 .bouton {
     background-color: Transparent;
     background-repeat: no-repeat;
@@ -113,9 +113,21 @@ button:disabled {
     border: solid var(--CouleurOmbre) 2px;
 }
 
+.grandBouton {
+    width: 100%;
+    letter-spacing: 0.2em;
+    font-size: 1.2em;
+    font-weight: 900;
+    padding: 0.5em 4em;
+    background: linear-gradient(to right, var(--BordureBouton), var(--FondPage), 90%, var(--BordureBouton));
+
+}
+
+.zoneBouton {
+    padding: 2em 0;
+}
 
 /********* input & Select *********/
-
 input,
 textarea,
 select,
@@ -167,21 +179,9 @@ select option::selection {
     top: 4vh;
 }
 
-.rouge {
-    color: red;
-}
-
-.vert {
-    color: #3db651;
-}
-
-.incorrect {
-    border: red solid 3px;
-}
 
 
 /******** Header ********/
-
 header,
 footer {
     box-shadow: -0.1em 0.1em 0.2em 0.2em var(--CouleurOmbre);
@@ -196,14 +196,12 @@ header {
     flex: 0.5;
 }
 
-.titre {
-    flex: 2;
+.texteClair,
+.label {
     color: var(--CouleurTexte);
 }
 
-
 /******** Footer ******/
-
 footer {
     margin-top: 1em;
     align-items: center;
@@ -217,101 +215,113 @@ footer {
 
 .container {
     padding-bottom: 3.5em;
+    /* flex-direction: column; */
+}
+
+.aideMdp {
     flex-direction: column;
+    z-index: 2;
+    font-size: 0.8em;
+    display: none;
+    white-space: nowrap;
+    border-radius: 2vh;
+    background-color: white;
+    padding: 1vh;
 }
 
-
-/****************** Provisoire **********************/
-
-.blanc {
-    color: var(--CouleurTexte);
-    font-size: 1.2em;
+.oeil {
+    position: absolute;
+    left: 32vw;
+    top: 4vh;
 }
 
+/*   MENU   */
 
-/************* Changement style input range pour Chrome ***********/
 
-input[type=range] {
-    width: 100%;
-    margin-top: 1em;
-    background-color: transparent;
-    -webkit-appearance: none;
-    /** permet d'enlever le mode par défaut des inputs range **/
+.menu a {
+    font-size: 1.5em;
+
 }
 
-
-/** permet de changer le style du petit rond à l'interieur du slider **/
-
-input[type=range]::-webkit-slider-thumb {
-    margin-top: -0.5em;
-    width: 1.5em;
-    height: 1.5em;
-    background: #09881a;
-    border: 2px solid #000000;
-    border-radius: 0.5em;
-    cursor: pointer;
-    -webkit-appearance: none;
+.menu>div {
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+    border: 2px solid var(--CouleurOmbre);
+    padding: 0.2em;
+    transition: 0.2s;
+    height: 100%;
+    margin: 0.5em 0;
+    background: linear-gradient(to right, var(--FondPage), 90%, var(--BordureBouton));
 }
 
-input[type=range]::-webkit-slider-runnable-track {
-    background: var(--BordureBouton);
-    border: 0.2em solid #010101;
-    border-radius: 0.4em;
-    width: 100%;
-    height: 0.8em;
-    cursor: pointer;
+.menu>div:hover a,
+.ongletSelect {
+    color: var(--FondPage) !important;
 }
 
+.menu>div:hover,
+.ongletSelect {
 
-/************* Changement style input range pour Firefox ***********/
-
-input[type=range]::-moz-range-track {
-    background: var(--BordureBouton);
-    border: 0.2em solid #010101;
-    border-radius: 0.4em;
-    width: 100%;
-    height: 0.8em;
-    cursor: pointer;
+    background: linear-gradient(0.25turn, var(--FondPage), 40%, var(--BordureBouton)) !important;
+    border: 2px solid var(--CouleurTexte) !important;
+    background-position: right center !important;
 }
 
-input[type=range]::-moz-range-thumb {
-    margin-top: -0.5em;
-    width: 1.5em;
-    height: 1.5em;
-    background: #09881a;
-    border: 1px solid #000000;
-    border-radius: 0.5em;
-    cursor: pointer;
+/* Interface Utilisateur */
+.bordureTitre {
+    border: 1px solid var(--CouleurTexte);
 }
 
-
-/************* Changement style input range pour IE ***********/
-
-input[type=range]::-ms-track {
-    background: var(--BordureBouton);
-    border-color: transparent;
-    width: 100%;
-    height: 0.8em;
-    cursor: pointer;
+.bordureVerte {
+    border: 1px solid var(--BordureBouton);
 }
 
-input[type=range]::-ms-fill-lower {
-    background: #132e12;
-    border: 0.2px solid #010101;
-    border-radius: 22.6px;
+.indic {
+    flex: none;
+    padding: 0.5em;
+    border-radius: 10em;
+    border: 1px solid var(--BordureBouton);
 }
 
-input[type=range]::-ms-fill-upper {
-    background: rgba(48, 120, 46, 0.6);
-    border: 0.2px solid #010101;
-    border-radius: 22.6px;
+.texteInfoBulle {
+    position: absolute;
+    top: 0.5vh;
+    left: 10vh;
+    font-size: 0.8em;
+    display: none;
+    white-space: nowrap;
+    border-radius: 2vh;
+    background-color: #aaa;
+    color: black;
+    padding: 1vh;
+    z-index: 1;
 }
 
-input[type=range]::-ms-thumb {
-    width: 1.5em;
-    height: 1.5em;
-    background: #09881a;
-    border: 1px solid #000000;
-    border-radius: 0.5em;
-    cursor: pointer;
+/* Condition */
+.hauteurCase {
+    padding: 0.8em 0;
+}
+
+.left {
+    justify-content: left;
+}
+
+.rouge {
+    color: red;
+}
+
+.vert {
+    color: #3db651;
+}
+
+.incorrect {
+    border: red solid 3px;
+}
+
+.correct {
+    border: #3db651 solid 3px;
+}
+
+.cache {
+    display: none;
 }

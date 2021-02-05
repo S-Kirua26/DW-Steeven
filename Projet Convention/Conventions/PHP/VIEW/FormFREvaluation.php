@@ -13,6 +13,7 @@
                 {
                     $libelle = LibellesComportementsProfessionnelsManager::findById($i);
                     $valeurs = ValeursComportementsProfessionnelsManager::findById($i);
+                    if (!$valeurs) $valeurs = new ValeursComportementsProfessionnels();
                     echo '<input type="hidden" name = "idLibelleComportementProfessionnel'.$i.'" value='.$valeurs->getIdLibelleComportementProfessionnel().'>';
                     echo '<input type="hidden" name = "idComportementProfessionnel'.$i.'" value='.$valeurs->getIdComportementProfessionnel().'>';
                     echo '<input type="hidden" name = "idStage" value='.$valeurs->getIdStage().'>';
@@ -22,7 +23,7 @@
 
                     <div class="info colonne">
                         <div id="libelleComportement" class="blanc centre">
-                             <div>'.$libelle->getLibelleComportement().'</div>
+                             <div class="texteClair left">'.$libelle->getLibelleComportement().'</div>
                         </div>
                     </div>
 
