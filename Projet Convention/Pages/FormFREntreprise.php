@@ -156,17 +156,20 @@
                 <div class="info colonne">
                     <label for="nomTuteur">Nom Tuteur :</label>
                     <?php 
-                        // $id = $_POST["idTuteur"];
-                        $tuteur = TuteursManager::findById(1);
-                        echo '<input type="text" id="nomTuteur" name="nomTuteur" value='.$tuteur->getNomTuteur().' required title="Veuillez renseigner le nom du Tuteur" pattern="[a-zA-Z-\ ]{2,}"';  
-                    ?>
-                    > 
+                        $id = $_GET["idTuteur"];
+                        $tuteur = TuteursManager::findById($id);
+                        echo '<input type="text" id="nomTuteur" name="nomTuteur" value='.$tuteur->getNomTuteur().' required title="Veuillez renseigner le nom du Tuteur" pattern="[a-zA-Z-\ ]{2,}">';    
+                    ?> 
                     <div id="divNomTuteur" class="message erreur"></div>               
                 </div>
                 <div class="mini"></div>
                 <div class="info colonne">
                     <label for="prenomTuteur">Prenom Tuteur :</label>
-                    <input type="text" id="prenomTuteur" name="prenomTuteur" value="" required title="Veuillez renseigner le prenom du Tuteur" pattern="[a-zA-Z-\ ]{3,}" > 
+                    <?php 
+                        $id = $_GET["idTuteur"];
+                        $tuteur = TuteursManager::findById($id);
+                        echo '<input type="text" id="prenomTuteur" name="prenomTuteur" value='.$tuteur->getPrenomTuteur().' required title="Veuillez renseigner le prenom du Tuteur" pattern="[a-zA-Z-\ ]{3,}">';    
+                    ?>
                     <div id="divPrenomTuteur" class="message erreur"></div>               
                 </div>
             </div>
@@ -174,13 +177,21 @@
             <div class="row">
                 <div class="info colonne">
                     <label for="fonctionTuteur">Fonction Tuteur :</label>
-                    <input type="text" id="fonctionTuteur" name="fonctionTuteur" value="" required title="Veuillez renseigner la fonction du tuteur" pattern="[a-zA-Z-\ ]{3,}" >
+                    <?php 
+                        $id = $_GET["idTuteur"];
+                        $tuteur = TuteursManager::findById($id);
+                        echo '<input type="text" id="fonctionTuteur" name="fonctionTuteur" value='.$tuteur->getFonctionTuteur().' required title="Veuillez renseigner la fonction du tuteur" pattern="[a-zA-Z-\ ]{3,}">';    
+                    ?>
                     <div id="divFonctionTuteur" class="message erreur"></div>
                 </div>
                 <div class="mini"></div>
                 <div class="info colonne">
                     <label for="tuteur">Numero téléphone du tuteur :</label>
-                    <input type="text" id="numeroTuteur" name="telTuteur" value="" required title="Veuillez renseigner le numero de téléphone du tuteur" pattern="\d{10}" >  
+                    <?php 
+                        $id = $_GET["idTuteur"];
+                        $tuteur = TuteursManager::findById($id);
+                        echo '<input type="text" id="numeroTuteur" name="telTuteur" value='.$tuteur->getTelTuteur().' required title="Veuillez renseigner le numero de téléphone du tuteur" pattern="\d{10}">';    
+                    ?>
                     <div id="divNumTelTuteur" class="message erreur"></div>              
                 </div>
             </div>
@@ -188,7 +199,11 @@
             <div class="row">
                 <div class="info colonne">
                     <label for="fonctionTuteur">Mail Tuteur :</label>
-                    <input type="text" id="mailTuteur" name="emailTuteur" value="" required title="Veuillez renseigner l'adresse mail du tuteur" pattern="[a-z]+[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}">
+                    <?php 
+                        $id = $_GET["idTuteur"];
+                        $tuteur = TuteursManager::findById($id);
+                        echo '<input type="text" id="mailTuteur" name="emailTuteur" value='.$tuteur->getEmailTuteur().' required title="Veuillez renseigner l\'adresse mail du tuteur" pattern="[a-z]+[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}">';    
+                    ?>
                     <div id="divMailTuteur" class="message erreur"></div>
                 </div>
                 <div class="mini"></div>
