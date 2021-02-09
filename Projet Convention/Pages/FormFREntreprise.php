@@ -28,13 +28,13 @@
             <div class="row">
                 <div class="info colonne">
                     <label for="RaisonSociale">Raison Sociale :</label>
-                    <input type="text" id="raisonSociale" name="raisonSociale" title="Veuillez renseigner votre raison sociale" required pattern="[a-zA-Z]{3,}">
+                    <input type="text" id="raisonSociale" name="raisonSociale" title="Veuillez renseigner votre raison sociale" required pattern="[a-zA-Z\ \.-]{3,}">
                     <div id="divRaisonSociale" class="message erreur"></div>
                 </div>
                 <div class="mini"></div>
                 <div class="info colonne">
                     <label for="juridique">Forme Juridique :</label>
-                    <input type="text" id="formeJuridique" name="statutJuridiqueENT" title="Veuillez renseigner votre forme juridique" required pattern="[a-zA-Z]{1,}" value="">
+                    <input type="text" id="formeJuridique" name="statutJuridiqueENT" title="Veuillez renseigner votre forme juridique" required pattern="[a-zA-Z\ \.-]{1,}" value="">
                     <div id="divFormeJuridique" class="message erreur"></div>
                 </div>
             </div>
@@ -42,7 +42,7 @@
             <div class="row">
                 <div class="info colonne">
                     <label for="adresse">Adresse Entreprise:</label>
-                    <input type="text" id="adresseEntreprise" name="adresseENT" value="" title="Veuillez renseigner votre adresse" required pattern="^([0-9a-zA-Z'àâéèêôùûçÀÂÉÈÔÙÛÇ\s-]{1,150})$">
+                    <input type="text" id="adresseEntreprise" name="adresseENT" value="" title="Veuillez renseigner votre adresse" required pattern="^([0-9a-zA-Z'àâéèêôùûçÀÂÉÈÔÙÛÇ\s-\ \.]{1,150})$">
                     <div id="divAdresseEntreprise" class="message erreur"></div>
                 </div>
                 <div class="mini"></div>
@@ -102,7 +102,7 @@
                 <div class="mini"></div>
                 <div class="info colonne">
                     <label for="assureur">Assureur Entreprise:</label>
-                    <input type="text" id="assureur" name="assureurENT" value="" required title="Veuillez renseigner un assureur" pattern="[a-zA-Z]{3,}" > 
+                    <input type="text" id="assureur" name="assureurENT" value="" required title="Veuillez renseigner un assureur" pattern="[a-zA-Z\ \.-]{3,}" > 
                     <div id="divAssureur" class="message erreur"></div>               
                 </div>
             </div>
@@ -110,13 +110,13 @@
             <div class="row">
                 <div class="info colonne">
                     <label for="nomRepresentant">Nom Representant :</label>
-                    <input type="text" id="nomRepresentant" name="nomRepresentant" value="" title="Veuillez renseigner le nom du représentant" required pattern="[a-zA-Z]{2,}"> 
+                    <input type="text" id="nomRepresentant" name="nomRepresentant" value="" title="Veuillez renseigner le nom du représentant" required pattern="[a-zA-Z\ -]{2,}"> 
                     <div id="divNomRepres" class="message erreur"></div>               
                 </div>
                 <div class="mini"></div>
                 <div class="info colonne">
                     <label for="prenomRepresentant">Prenom Representant :</label>
-                    <input type="text" id="prenomRepresentant" name="prenomRepresentant" value="" required title="Veuillez renseigner le prenom du représentant" pattern="[a-zA-Z]{3,}" >
+                    <input type="text" id="prenomRepresentant" name="prenomRepresentant" value="" required title="Veuillez renseigner le prenom du représentant" pattern="[a-zA-Z\ -]{3,}" >
                     <div id="divPrenomRepres" class="message erreur"></div>
                 </div>
             </div>
@@ -124,7 +124,7 @@
             <div class="row">
                 <div class="info colonne">
                     <label for="fonction">Fonction Representant:</label>
-                    <input type="text" id="fonctionRepresentant" name="fctRepresentant" value="" required title="Veuillez renseigner la fonction du représentant" pattern="[a-zA-Z]{3,}" >
+                    <input type="text" id="fonctionRepresentant" name="fctRepresentant" value="" required title="Veuillez renseigner la fonction du représentant" pattern="[a-zA-Z\ -]{3,}" >
                     <div id="divFonctionRepresentant" class="message erreur"></div>
                 </div>
                 <div class="mini"></div>
@@ -155,13 +155,18 @@
             <div class="row">
                 <div class="info colonne">
                     <label for="nomTuteur">Nom Tuteur :</label>
-                    <input type="text" id="nomTuteur" name="nomTuteur" value="" required title="Veuillez renseigner le nom du Tuteur" pattern="[a-zA-Z-]{2,}" > 
+                    <?php 
+                        // $id = $_POST["idTuteur"];
+                        $tuteur = TuteursManager::findById(1);
+                        echo '<input type="text" id="nomTuteur" name="nomTuteur" value='.$tuteur->getNomTuteur().' required title="Veuillez renseigner le nom du Tuteur" pattern="[a-zA-Z-\ ]{2,}"';  
+                    ?>
+                    > 
                     <div id="divNomTuteur" class="message erreur"></div>               
                 </div>
                 <div class="mini"></div>
                 <div class="info colonne">
                     <label for="prenomTuteur">Prenom Tuteur :</label>
-                    <input type="text" id="prenomTuteur" name="prenomTuteur" value="" required title="Veuillez renseigner le prenom du Tuteur" pattern="[a-zA-Z-]{3,}" > 
+                    <input type="text" id="prenomTuteur" name="prenomTuteur" value="" required title="Veuillez renseigner le prenom du Tuteur" pattern="[a-zA-Z-\ ]{3,}" > 
                     <div id="divPrenomTuteur" class="message erreur"></div>               
                 </div>
             </div>
@@ -169,7 +174,7 @@
             <div class="row">
                 <div class="info colonne">
                     <label for="fonctionTuteur">Fonction Tuteur :</label>
-                    <input type="text" id="fonctionTuteur" name="fonctionTuteur" value="" required title="Veuillez renseigner la fonction du tuteur" pattern="[a-zA-Z- ]{3,}" >
+                    <input type="text" id="fonctionTuteur" name="fonctionTuteur" value="" required title="Veuillez renseigner la fonction du tuteur" pattern="[a-zA-Z-\ ]{3,}" >
                     <div id="divFonctionTuteur" class="message erreur"></div>
                 </div>
                 <div class="mini"></div>

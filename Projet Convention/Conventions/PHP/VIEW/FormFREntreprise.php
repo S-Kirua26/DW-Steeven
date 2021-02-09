@@ -155,7 +155,12 @@
             <div class="row">
                 <div class="info colonne">
                     <label for="nomTuteur">Nom Tuteur :</label>
-                    <input type="text" id="nomTuteur" name="nomTuteur" value="" required title="Veuillez renseigner le nom du Tuteur" pattern="[a-zA-Z-\ ]{2,}" > 
+                    <?php 
+                        // $id = $_POST["idTuteur"];
+                        $tuteur = TuteursManager::findById(1);
+                        echo '<input type="text" id="nomTuteur" name="nomTuteur" value='.$tuteur->getNomTuteur().' required title="Veuillez renseigner le nom du Tuteur" pattern="[a-zA-Z-\ ]{2,}"';  
+                    ?>
+                    > 
                     <div id="divNomTuteur" class="message erreur"></div>               
                 </div>
                 <div class="mini"></div>
