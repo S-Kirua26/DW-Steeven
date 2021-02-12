@@ -1,0 +1,41 @@
+body{
+    margin: 0 auto;
+    font-family: sans-serif;
+}
+
+
+h1.titrenav {
+    width: 100vw;
+    height: 7vh;
+    text-align: center;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #000;
+    background-color: #98D077;
+    color: #fff;
+}
+
+.bouton-nav {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.bouton-nav a{
+    color: #fff;
+    border-left:0.5px solid #000;
+    flex: 1;
+    padding: 1em;
+    text-align: center;
+    background-color: #6D8764;
+    text-decoration: none;
+}
+
+
+/*#98D077*/
+/*#6D8764*/
+/*#CDEB8B*/
+
+

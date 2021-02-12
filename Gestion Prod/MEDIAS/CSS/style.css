@@ -1,0 +1,5 @@
+/* --------------- style.css ---------------- */
+/* Importer toutes les autres feuilles de style CSS */
+
+@import url("classic.css");
+@import url("production.css");
